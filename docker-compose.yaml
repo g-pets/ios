@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+    # iOS1 Frontend
+    ios1-front:
+        container_name: ios1-front
+        build:
+            context: ./front
+            dockerfile: Dockerfile
+        image: ios1-front:1.0
+        ports:
+            - 80:5000 # Dev
+            - 81:5001 # Preview
+        environment:
+            HOST: 0.0.0.0
+        volumes:
+            - ./front:/home/app
+            - /home/app/node_modules
+        working_dir: /home/app
+        command: tail -F anything
+        # command: npm run dev
