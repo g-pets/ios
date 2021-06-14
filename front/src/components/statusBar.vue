@@ -45,7 +45,7 @@ export default {
 
 		onMounted(() => {
 			getTime()
-			setInterval(getTime, 1000)
+			// setInterval(getTime, 1000)
 		})
 		
 
@@ -56,7 +56,7 @@ export default {
 
 <style lang="stylus" scoped>
 .status-bar
-	position: fixed
+	// position: fixed
 	width: 100%
 	top: 0
 	left: 0
@@ -68,6 +68,7 @@ export default {
 	display: flex
 	justify-content: space-between
 	align-items: center
+	background: #000
 	.icon
 		width: 1.6em
 		height: 1.5em

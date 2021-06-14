@@ -43,6 +43,11 @@ export default {
 	setup() {
 		const apps = reactive([
 			{
+				id: 11,
+				title: "Notes",
+				key: "notesApp",
+				position: "screen"
+			}, {
 				id: 1,
 				title: "Text",
 				key: "textApp",
@@ -93,11 +98,6 @@ export default {
 				key: "calculatorApp",
 				position: "screen"
 			}, {
-				id: 11,
-				title: "Notes",
-				key: "notesApp",
-				position: "screen"
-			}, {
 				id: 12,
 				title: "Settings",
 				key: "settings",
@@ -141,7 +141,7 @@ export default {
 		padding-top: 2.4em
 		padding-bottom: 0
 		display: grid
-		grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr))
+		grid-template-columns: repeat(4, 1fr)
 		grid-template-rows: repeat(4, 1fr)
 		gap: 1em
 		justify-items: center

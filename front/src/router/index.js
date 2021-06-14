@@ -14,7 +14,8 @@ const mapsApp = () => import('~/apps/mapsApp.vue')
 const weatherApp = () => import('~/apps/weatherApp.vue')
 const clockApp = () => import('~/apps/clockApp.vue')
 const calculatorApp = () => import('~/apps/calculatorApp.vue')
-const notesApp = () => import('~/apps/notesApp.vue')
+const notesApp = () => import('~/apps/notesApp/startScreen.vue')
+const noteScreen = () => import('~/apps/notesApp/noteScreen.vue')
 const settings = () => import('~/apps/settings.vue')
 const phoneApp = () => import('~/apps/phoneApp.vue')
 const mailApp = () => import('~/apps/mailApp.vue')
@@ -71,6 +72,10 @@ const routes = [
 		path: "/apps/notes",
 		name: "notesApp",
 		component: notesApp
+	}, {
+		path: "/apps/notes/:id",
+		name: "noteScreen",
+		component: noteScreen
 	}, {
 		path: "/apps/settings",
 		name: "settings",
