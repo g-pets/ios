@@ -1,0 +1,1 @@
+import{o as n,c as o,a}from"./vendor.8c437ac1.js";const e={class:"app"},p=a("h1",null,"Phone App",-1);const r={name:"phoneApp",render:function(a,r,s,c,t,d){return n(),o("div",e,[p])}};export default r;

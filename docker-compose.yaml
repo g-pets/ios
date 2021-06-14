@@ -9,8 +9,8 @@ services:
             dockerfile: Dockerfile
         image: ios1-front:1.0
         ports:
-            - 80:5000 # Dev
-            - 81:5001 # Preview
+            - 81:5000 # Dev
+            - 80:5001 # Preview
         environment:
             HOST: 0.0.0.0
         volumes:
