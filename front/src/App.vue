@@ -1,15 +1,16 @@
 <template lang="pug">
 .app-container
 	icons-set
-	.status-bar
+	status-bar
 	router-view
 </template>
 
 <script>
-import iconsSet from '~/components/icons/icons-set.vue'
+import iconsSet from '~/components/icons/iconsSet.vue'
+import statusBar from '~/components/statusBar.vue'
 export default {
 	name: "App",
-	components: {iconsSet},
+	components: {iconsSet, statusBar},
 };
 </script>
 
@@ -19,7 +20,4 @@ export default {
 	width: 100vw
 	height: 100vh
 	background: #000
-	.status-bar
-		background: #333
-		height: 1em
 </style>

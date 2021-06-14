@@ -16,6 +16,10 @@ const clockApp = () => import('~/apps/clockApp.vue')
 const calculatorApp = () => import('~/apps/calculatorApp.vue')
 const notesApp = () => import('~/apps/notesApp.vue')
 const settings = () => import('~/apps/settings.vue')
+const phoneApp = () => import('~/apps/phoneApp.vue')
+const mailApp = () => import('~/apps/mailApp.vue')
+const safariApp = () => import('~/apps/safariApp.vue')
+const iPodApp = () => import('~/apps/iPodApp.vue')
 
 // Routes
 const routes = [
@@ -71,6 +75,22 @@ const routes = [
 		path: "/apps/settings",
 		name: "settings",
 		component: settings
+	}, {
+		path: "/apps/phone",
+		name: "phoneApp",
+		component: phoneApp
+	}, {
+		path: "/apps/mail",
+		name: "mailApp",
+		component: mailApp
+	}, {
+		path: "/apps/safari",
+		name: "safariApp",
+		component: safariApp
+	}, {
+		path: "/apps/ipod",
+		name: "iPodApp",
+		component: iPodApp
 	}, {
 		path: "/:pathMatch(.*)*",
 		redirect: { name: "Home Screen" },
