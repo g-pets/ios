@@ -41,6 +41,7 @@ export default {
 		}
 	},
 	setup() {
+		document.title = "Home Screen | iOS"
 		const apps = reactive([
 			{
 				id: 11,

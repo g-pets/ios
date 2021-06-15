@@ -9,6 +9,8 @@
 		"preview": "vite build && vite preview --port 5001"
 	},
 	"dependencies": {
+		"idb": "^6.1.2",
+		"lodash.clonedeep": "^4.5.0",
 		"nib": "^1.1.2",
 		"pug": "^3.0.2",
 		"stylus": "^0.54.8",

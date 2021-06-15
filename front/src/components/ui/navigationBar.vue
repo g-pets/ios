@@ -41,7 +41,8 @@ export default {
 	justify-content: space-between
 	align-items: center
 	z-index: 2
-	position: relative
+	position: sticky
+	top: 0
 	.group
 		width: 5em
 		&.right

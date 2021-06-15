@@ -2,33 +2,28 @@
 .app.note-screen
 	navigation-bar(title="note" back="Notes" :background="['#875D52', '#51372F', '#3B2D21']")
 		template(v-slot:btn)
-			.add-note(@click="addNote") +
-	//- .note(contenteditable @input="onInput") {{note}}
-	
+			.add-note(@click="createRecord(note)") Save
 	.content
 		.line
 		.meta
 			.day Today
 			.date 4/13/15,
 			.time 12:08 PM
-		textarea.note(v-model="note")
+		textarea.note(v-model="note.content")
 </template>
 
 <script>
 import navigationBar from '~/components/ui/navigationBar.vue'
-import {ref} from 'vue'
+import useIdb from "~/plugins/iDb";
 export default {
 	name: "noteScreen",
 	components: {navigationBar},
-	methods: {
-		onInput(e) {
-			this.note = e.target.innerText
-		},
-	},
 	setup() {
-		let note = ref('')
-		note.value = 'Hello World!'
-		return {note}
+		const {createRecord} = useIdb('notes')
+		const note = {
+			content: 'Hello World!',
+		}
+		return {note, createRecord}
 	}
 }
 </script>
