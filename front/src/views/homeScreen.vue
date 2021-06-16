@@ -176,14 +176,10 @@ export default {
 		grid-template-rows: repeat(1, 5em)
 		gap: 1em
 		justify-items: center
-		// background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0, rgba(0, 0, 0, 0.2) 50%), url("/img/ui/dock.png")
-		// background-repeat: repeat-x
 		background: url("/img/ui/dock.jpg")
 		background-repeat: no-repeat
 		background-size: cover
-		border-bottom: 1.5rem solid #6b6b6b
 		width: 100%
-		height: 90px
 		.app-icon
 			.icon
 				box-shadow: 0 0.14em 0.1em rgba(#000,0.6)
