@@ -164,7 +164,7 @@ export default {
 		// grid-template-columns: repeat(4, 1fr)
 		grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr))
 		grid-template-rows: repeat(4, 1fr)
-		gap: 1em
+		gap: 1.5em
 		justify-items: center
 	.dock
 		height: 9rem
