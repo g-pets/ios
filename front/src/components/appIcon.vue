@@ -27,7 +27,7 @@ export default {
 		width: 3.5em
 		height: 3.5em
 		overflow: hidden
-		border-radius: 0.5em
+		border-radius: 0.7em
 		pointer-events: none
 	.name
 		margin-top: 0.5em
