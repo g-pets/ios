@@ -1,16 +1,23 @@
 <template lang="pug">
+icons-set
 .app-container
-	icons-set
 	status-bar
 	router-view
+	.phone-body
+		icon(name="home-button" @click="goHome")
 </template>
 
 <script>
 import iconsSet from '~/components/icons/iconsSet.vue'
-import statusBar from '~/components/statusBar.vue'
+import statusBar from '~/components/ui/statusBar.vue'
 export default {
 	name: "App",
 	components: {iconsSet, statusBar},
+	methods: {
+		goHome() {
+			this.$router.push({name: 'homeScreen'})
+		}
+	}
 };
 </script>
 
@@ -20,4 +27,23 @@ export default {
 	width: 100vw
 	height: 100vh
 	background: #000
+	display: grid
+	grid-template-columns: 1fr
+	grid-template-rows: auto 1fr auto
+	grid-template-areas: 'header' 'main' 'footer'
+	.status-bar
+		position: fixed
+		top: 0
+		left: 0
+
+	.phone-body
+		bakground: #333
+		padding: 1em
+		.icon
+			display: block
+			cursor: pointer
+			width: 7rem
+			height: 7rem
+			margin: 0 auto
+			fill: none
 </style>

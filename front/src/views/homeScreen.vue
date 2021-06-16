@@ -41,87 +41,103 @@ export default {
 		}
 	},
 	setup() {
-		document.title = "Home Screen | iOS"
+		document.title = "Home Screen | iOS 1"
 		const apps = reactive([
 			{
 				id: 11,
 				title: "Notes",
 				key: "notesApp",
+				icon: "notesApp",
 				position: "screen"
 			}, {
 				id: 1,
 				title: "Text",
 				key: "textApp",
+				icon: "textApp",
 				position: "screen"
 			}, {
 				id: 2,
 				title: "Calendar",
 				key: "calendarApp",
+				icon: "tempIconApp",
 				position: "screen"
 			}, {
 				id: 3,
 				title: "Photos",
 				key: "photosApp",
+				icon: "tempIconApp",
 				position: "screen"
 			}, {
 				id: 4,
 				title: "Camera",
 				key: "cameraApp",
+				icon: "tempIconApp",
 				position: "screen"
 			}, {
 				id: 5,
 				title: "YouTube",
 				key: "youTubeApp",
+				icon: "tempIconApp",
 				position: "screen"
 			}, {
 				id: 6,
 				title: "Stocks",
 				key: "stocksApp",
+				icon: "tempIconApp",
 				position: "screen"
 			}, {
 				id: 7,
 				title: "Maps",
 				key: "mapsApp",
+				icon: "tempIconApp",
 				position: "screen"
 			}, {
 				id: 8,
 				title: "Weather",
 				key: "weatherApp",
+				icon: "tempIconApp",
 				position: "screen"
 			}, {
 				id: 9,
 				title: "Clock",
 				key: "clockApp",
+				icon: "tempIconApp",
 				position: "screen"
 			}, {
 				id: 10,
 				title: "Calculator",
 				key: "calculatorApp",
+				icon: "tempIconApp",
 				position: "screen"
 			}, {
 				id: 12,
 				title: "Settings",
 				key: "settings",
+				icon: "tempIconApp",
 				position: "screen"
 			}, {
 				id: 13,
 				title: "Phone",
 				key: "phoneApp",
+				icon: "tempIconApp",
 				position: "dock"
 			}, {
 				id: 14,
 				title: "Mail",
 				key: "mailApp",
+				icon: "tempIconApp",
 				position: "dock"
 			}, {
 				id: 15,
 				title: "Safari",
 				key: "safariApp",
+				icon: "tempIconApp",
 				position: "dock"
 			}, {
 				id: 16,
 				title: "iPod",
 				key: "iPodApp",
+				icon: "tempIconApp",
 				position: "dock"
 			}
 		])
@@ -134,15 +150,16 @@ export default {
 .view-homescreen
 	position: relative
 	z-index: 1
-	display: flex
-	flex-direction: column
-	height: 100%
+	// display: flex
+	// flex-direction: column
+	// height: 100%
 	.apps-grid
 		padding: 1.1em
 		padding-top: 2.4em
 		padding-bottom: 0
 		display: grid
-		grid-template-columns: repeat(4, 1fr)
+		// grid-template-columns: repeat(4, 1fr)
+		grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr))
 		grid-template-rows: repeat(4, 1fr)
 		gap: 1em
 		justify-items: center

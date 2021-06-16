@@ -56,10 +56,7 @@ export default {
 
 <style lang="stylus" scoped>
 .status-bar
-	// position: fixed
 	width: 100%
-	top: 0
-	left: 0
 	line-height: 1
 	padding: 0 0.3em
 	font-size: 0.8em
@@ -79,11 +76,13 @@ export default {
 			fill: #1CC454
 	.group
 		display: flex
-		min-width: 8em
+		min-width: 6em
 		&.left
 			justify-content: flex-start
 		&.right
 			justify-content: flex-end
+		
+
 	.operator, .battery-level
 		font-size: 0.9em
 		margin-top: 0.4em
@@ -91,4 +90,10 @@ export default {
 		margin-left: 0.1em
 	.battery-level
 		margin-right: 0.1em
+	@media screen and (max-width: 250px)
+		justify-content: center
+		.time
+			margin-top: 0.25em
+		.group
+			display: none
 </style>
