@@ -107,7 +107,7 @@ export default {
 				id: 10,
 				title: "Calculator",
 				key: "calculatorApp",
-				icon: "tempIconApp",
+				icon: "calculatorApp",
 				position: "screen"
 			}, {
 				id: 12,
@@ -119,7 +119,7 @@ export default {
 				id: 13,
 				title: "Phone",
 				key: "phoneApp",
-				icon: "tempIconApp",
+				icon: "phoneApp",
 				position: "dock"
 			}, {
 				id: 14,
@@ -137,7 +137,7 @@ export default {
 				id: 16,
 				title: "iPod",
 				key: "iPodApp",
-				icon: "tempIconApp",
+				icon: "iPodApp",
 				position: "dock"
 			}
 		])
