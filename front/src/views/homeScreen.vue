@@ -148,14 +148,17 @@ export default {
 
 <style lang="stylus">
 .view-homescreen
-	position: relative
-	z-index: 1
-	// display: flex
-	// flex-direction: column
-	// height: 100%
+	// position: relative
+	height: 46rem
+	overflow: hidden
+	
+	// z-index: 1
+	display: flex
+	flex-direction: column
 	.apps-grid
+		height: 37rem
 		padding: 1.1em
-		padding-top: 2.4em
+		// padding-top: 2.4em
 		padding-bottom: 0
 		display: grid
 		// grid-template-columns: repeat(4, 1fr)
@@ -164,6 +167,8 @@ export default {
 		gap: 1em
 		justify-items: center
 	.dock
+		height: 9rem
+		overflow: hidden
 		margin-top: auto
 		padding: 0.7em 1em 0
 		display: grid
@@ -171,9 +176,12 @@ export default {
 		grid-template-rows: repeat(1, 5em)
 		gap: 1em
 		justify-items: center
-		background-image: url("/img/ui/dock.jpg")
+		// background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0, rgba(0, 0, 0, 0.2) 50%), url("/img/ui/dock.png")
+		// background-repeat: repeat-x
+		background: url("/img/ui/dock.jpg")
 		background-repeat: no-repeat
 		background-size: cover
+		border-bottom: 1.5rem solid #6b6b6b
 		width: 100%
 		height: 90px
 		.app-icon

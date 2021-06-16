@@ -57,15 +57,15 @@ export default {
 <style lang="stylus" scoped>
 .status-bar
 	width: 100%
-	line-height: 1
+	height: 2rem
 	padding: 0 0.3em
-	font-size: 0.8em
-	font-weight: 400
-	color: #c2c9cf
 	display: flex
-	justify-content: space-between
 	align-items: center
 	background: #000
+	color: #c2c9cf
+	font-size: 0.8em
+	line-height: 1
+	font-weight: 400
 	.icon
 		width: 1.6em
 		height: 1.5em
@@ -82,7 +82,8 @@ export default {
 		&.right
 			justify-content: flex-end
 		
-
+	.time
+		margin: auto
 	.operator, .battery-level
 		font-size: 0.9em
 		margin-top: 0.4em

@@ -2,7 +2,8 @@
 icons-set
 .app-container
 	status-bar
-	router-view
+	.main
+		router-view
 	.phone-body
 		icon(name="home-button" @click="goHome")
 </template>
@@ -29,13 +30,13 @@ export default {
 	background: #000
 	display: grid
 	grid-template-columns: 1fr
-	grid-template-rows: auto 1fr auto
+	grid-template-rows: max-content 1fr auto
 	grid-template-areas: 'header' 'main' 'footer'
-	.status-bar
-		position: fixed
-		top: 0
-		left: 0
-
+	// .status-bar
+		
+	.main
+		overflow: scroll
+		height: 46rem
 	.phone-body
 		bakground: #333
 		padding: 1em
