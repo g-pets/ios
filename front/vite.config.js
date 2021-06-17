@@ -21,23 +21,23 @@ export default defineConfig({
 				"display": "standalone",
 				"background_color": "#000000"
 			}
-		  })
+		})
 	],
-server: {
-	port: 5000,
+	server: {
+		port: 5000,
 		host: '0.0.0.0',
-			hmr: {
-		host: 'localhost',
+		hmr: {
+			host: '10.0.1.4',
 			port: 81,
 		}
-},
-build: {
-	chunkSizeWarningLimit: 50,
+	},
+	build: {
+		chunkSizeWarningLimit: 50,
 		manifest: true,
 	},
-resolve: {
-	alias: {
-		"~": resolve(__dirname, "src"),
+	resolve: {
+		alias: {
+			"~": resolve(__dirname, "src"),
 		},
-},
+	},
 })

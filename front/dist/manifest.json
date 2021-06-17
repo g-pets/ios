@@ -1,6 +1,6 @@
 {
   "index.html": {
-    "file": "assets/index.f275abdb.js",
+    "file": "assets/index.27401531.js",
     "src": "index.html",
     "isEntry": true,
     "imports": [
@@ -27,7 +27,7 @@
       "src/apps/iPodApp.vue"
     ],
     "css": [
-      "assets/index.ce9a9979.css"
+      "assets/index.1e7d45a7.css"
     ]
   },
   "_vendor.c1d6a809.js": {

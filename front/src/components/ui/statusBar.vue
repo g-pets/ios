@@ -1,14 +1,17 @@
 <template lang="pug">
 .status-bar
 	.group.left
-		icon(name="signal")
+		glyph(name="signal")
 		.operator AT&T
-		icon(name="wifi")
+		glyph(name="wifi")
 	.time {{actualTime}}
 	.group.right
-		icon(name="bluetooth")
-		//- .battery-level {{batteryInfo.level * 100}}%
-		icon(name="battery" :class="{charging: batteryInfo.charging}")
+		glyph(name="bluetooth")
+		.battery-status
+			//- .battery-level {{batteryInfo.level * 100}}%
+			svg.battery-icon(viewBox="0 0 20 20")
+				path.battery-energy(:style="batteryLevel" d="M1.53846 6.66667H16.1538V13.3333H1.53846V6.66667Z")
+				path.battery-body(fill-rule="evenodd" clip-rule="evenodd" d="M17.6923 12.5V13.3333C17.6923 14.2538 17.0035 15 16.1538 15H1.53846C0.688792 15 0 14.2538 0 13.3333V6.66667C0 5.74619 0.688793 5 1.53846 5H16.1538C17.0035 5 17.6923 5.74619 17.6923 6.66667V7.5H19.2308C19.6556 7.5 20 7.8731 20 8.33333V11.6667C20 12.1269 19.6556 12.5 19.2308 12.5H17.6923ZM1.53846 5.83333H16.1538C16.5787 5.83333 16.9231 6.20643 16.9231 6.66667V13.3333C16.9231 13.7936 16.5787 14.1667 16.1538 14.1667H1.53846C1.11363 14.1667 0.769231 13.7936 0.769231 13.3333V6.66667C0.769231 6.20643 1.11363 5.83333 1.53846 5.83333ZM17.6923 8.33333V11.6667H19.2308V8.33333H17.6923Z")
 		
 </template>
 
@@ -16,6 +19,16 @@
 import {ref, reactive, onMounted} from 'vue'
 export default {
 	name: "statusBar",
+	computed: {
+		batteryLevel() {
+			let level = this.batteryInfo.level * 100
+			let style = []
+			if(level <= 20) style.push('fill:yellow')
+			if(level <= 10) style.push('fill:red')
+			style.push(`clip-path:polygon(0% 0%, ${level}% 0%, ${level}% 100%, 0% 100%)`)
+			return style
+		}
+	},
 	setup() {
 		let actualTime = ref('')
 		function getTime() {
@@ -26,7 +39,7 @@ export default {
 
 		let batteryInfo = reactive({
 			charging: false,
-			level: 1
+			level: 1,
 		})
 
 		if(navigator.getBattery) {
@@ -55,6 +68,11 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.battery-status
+	.battery-icon
+		width: 1.6em
+		height: 1.5em
+		fill: #c2c9cf
 .status-bar
 	width: 100%
 	height: 2rem

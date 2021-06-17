@@ -1,11 +1,12 @@
 <template lang="pug">
-.app-icon(@click="openApp(data.key)")
-	icon(:name="data.icon")
-	//- img.icon(:src="`/img/apps/${data.key}.png`")
-	.name {{data.title}}
+.next.app-icon
+	component(:is="svgIcon()")
+	.name {{data.name}}
 </template>
 
 <script>
+// import svgNotesIcon from "./src/tempApp.vue"
+import {defineAsyncComponent} from 'vue'
 export default {
 	name: "appIcon",
 	props: {
@@ -14,21 +15,22 @@ export default {
 	methods: {
 		openApp(name) {
 			this.$router.push({name: name})
+		},
+		svgIcon() {
+			return defineAsyncComponent(() => import(`./src/${this.data.icon}.vue`))
 		}
 	},
-	
 };
 </script>
 
 <style lang="stylus" scoped>
-.app-icon
+.next.app-icon
 	cursor: pointer
-	.icon
+	svg
 		width: 3.5em
 		height: 3.5em
 		overflow: hidden
 		border-radius: 0.7em
-		pointer-events: none
 	.name
 		margin-top: 0.5em
 		text-align: center

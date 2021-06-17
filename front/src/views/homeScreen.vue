@@ -2,22 +2,26 @@
 .view.view-homescreen
 	.apps-grid.drop-zone(@drop='onDrop($event, "screen")' @dragover.prevent @dragenter.prevent)
 		app-icon.drag-el(v-for="app in screenApps" :data="app" :key="app.id" :draggable="true" @dragstart='startDrag($event, app)' :class="{onDrag: app.onDrag}")
+		app-icon-set(name="notesAppNext")
 		.app-icon.live.calendar
 			.icon
 				.head {{calendarDate.weekday}}
 				.day {{calendarDate.date}}
 			.name Calendar
-	.dock.drop-zone(@drop='onDrop($event, "dock")' @dragover.prevent @dragenter.prevent)
+		
+	//- .dock.drop-zone(@drop='onDrop($event, "dock")' @dragover.prevent @dragenter.prevent)
 		app-icon.drag-el(v-for="app in dockApps" :data="app" :key="app.id" :draggable="true" @dragstart='startDrag($event, app)')
 //- img.screenshot(src="/screens/01-home.jpg")
 </template>
 
 <script>
-import appIcon from '~/components/appIcon.vue'
+// import appIcon from '~/components/appIcon.vue'
+import appIcon from '~/components/svg/apps/appIcon.vue'
+import appIconSet from '~/components/svg/apps/appIconSet.vue'
 import {reactive} from 'vue'
 export default {
 	name: "HomeScreen",
-	components: {appIcon},
+	components: {appIcon, appIconSet},
 	methods: {
 		openApp(name) {
 			this.$router.push({name: name})
@@ -57,101 +61,102 @@ export default {
 		const apps = reactive([
 			{
 				id: 11,
-				title: "Notes",
+				name: "Notes",
 				key: "notesApp",
 				icon: "notesApp",
 				position: "screen"
 			}, {
 				id: 1,
-				title: "Text",
+				name: "Text",
 				key: "textApp",
 				icon: "textApp",
 				position: "screen"
-			}, {
-				id: 2,
-				title: "Calendar",
-				key: "calendarApp",
-				icon: "calendarApp",
-				position: "screen"
-			}, {
-				id: 3,
-				title: "Photos",
-				key: "photosApp",
-				icon: "tempIconApp",
-				position: "screen"
-			}, {
-				id: 4,
-				title: "Camera",
-				key: "cameraApp",
-				icon: "tempIconApp",
-				position: "screen"
-			}, {
-				id: 5,
-				title: "YouTube",
-				key: "youTubeApp",
-				icon: "youTubeApp",
-				position: "screen"
-			}, {
-				id: 6,
-				title: "Stocks",
-				key: "stocksApp",
-				icon: "tempIconApp",
-				position: "screen"
-			}, {
-				id: 7,
-				title: "Maps",
-				key: "mapsApp",
-				icon: "tempIconApp",
-				position: "screen"
-			}, {
-				id: 8,
-				title: "Weather",
-				key: "weatherApp",
-				icon: "tempIconApp",
-				position: "screen"
-			}, {
-				id: 9,
-				title: "Clock",
-				key: "clockApp",
-				icon: "tempIconApp",
-				position: "screen"
-			}, {
-				id: 10,
-				title: "Calculator",
-				key: "calculatorApp",
-				icon: "calculatorApp",
-				position: "screen"
-			}, {
-				id: 12,
-				title: "Settings",
-				key: "settings",
-				icon: "tempIconApp",
-				position: "screen"
-			}, {
-				id: 13,
-				title: "Phone",
-				key: "phoneApp",
-				icon: "phoneApp",
-				position: "dock"
-			}, {
-				id: 14,
-				title: "Mail",
-				key: "mailApp",
-				icon: "tempIconApp",
-				position: "dock"
-			}, {
-				id: 15,
-				title: "Safari",
-				key: "safariApp",
-				icon: "tempIconApp",
-				position: "dock"
-			}, {
-				id: 16,
-				title: "iPod",
-				key: "iPodApp",
-				icon: "iPodApp",
-				position: "dock"
 			}
+			// }, {
+			// 	id: 2,
+			// 	title: "Calendar",
+			// 	key: "calendarApp",
+			// 	icon: "calendarApp",
+			// 	position: "screen"
+			// }, {
+			// 	id: 3,
+			// 	title: "Photos",
+			// 	key: "photosApp",
+			// 	icon: "tempIconApp",
+			// 	position: "screen"
+			// }, {
+			// 	id: 4,
+			// 	title: "Camera",
+			// 	key: "cameraApp",
+			// 	icon: "tempIconApp",
+			// 	position: "screen"
+			// }, {
+			// 	id: 5,
+			// 	title: "YouTube",
+			// 	key: "youTubeApp",
+			// 	icon: "youTubeApp",
+			// 	position: "screen"
+			// }, {
+			// 	id: 6,
+			// 	title: "Stocks",
+			// 	key: "stocksApp",
+			// 	icon: "tempIconApp",
+			// 	position: "screen"
+			// }, {
+			// 	id: 7,
+			// 	title: "Maps",
+			// 	key: "mapsApp",
+			// 	icon: "tempIconApp",
+			// 	position: "screen"
+			// }, {
+			// 	id: 8,
+			// 	title: "Weather",
+			// 	key: "weatherApp",
+			// 	icon: "tempIconApp",
+			// 	position: "screen"
+			// }, {
+			// 	id: 9,
+			// 	title: "Clock",
+			// 	key: "clockApp",
+			// 	icon: "tempIconApp",
+			// 	position: "screen"
+			// }, {
+			// 	id: 10,
+			// 	title: "Calculator",
+			// 	key: "calculatorApp",
+			// 	icon: "calculatorApp",
+			// 	position: "screen"
+			// }, {
+			// 	id: 12,
+			// 	title: "Settings",
+			// 	key: "settings",
+			// 	icon: "tempIconApp",
+			// 	position: "screen"
+			// }, {
+			// 	id: 13,
+			// 	title: "Phone",
+			// 	key: "phoneApp",
+			// 	icon: "phoneApp",
+			// 	position: "dock"
+			// }, {
+			// 	id: 14,
+			// 	title: "Mail",
+			// 	key: "mailApp",
+			// 	icon: "tempIconApp",
+			// 	position: "dock"
+			// }, {
+			// 	id: 15,
+			// 	title: "Safari",
+			// 	key: "safariApp",
+			// 	icon: "tempIconApp",
+			// 	position: "dock"
+			// }, {
+			// 	id: 16,
+			// 	title: "iPod",
+			// 	key: "iPodApp",
+			// 	icon: "iPodApp",
+			// 	position: "dock"
+			// }
 		])
 		return {apps}
 	}
@@ -191,21 +196,22 @@ export default {
 		line-height: 1
 .view-homescreen
 	// position: relative
-	height: 46rem
+	// height: 46rem
 	overflow: hidden
 	
 	// z-index: 1
 	display: flex
 	flex-direction: column
 	.apps-grid
-		height: 37rem
+		height: 50rem
+		flex: 1 0 auto
 		padding: 1.1em
 		// padding-top: 2.4em
 		padding-bottom: 0
 		display: grid
 		// grid-template-columns: repeat(4, 1fr)
 		grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr))
-		grid-template-rows: repeat(4, 1fr)
+		grid-template-rows: repeat(4, 7rem)
 		gap: 1.5em
 		justify-items: center
 	.dock

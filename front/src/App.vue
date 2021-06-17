@@ -1,19 +1,21 @@
 <template lang="pug">
-icons-set
+glyphs-set
+apps-set
 .app-container
 	status-bar
 	.main
 		router-view
-	.phone-body
-		icon(name="home-button" @click="goHome")
+	//- .phone-body
+	//- 	icon(name="home-button" @click="goHome")
 </template>
 
 <script>
-import iconsSet from '~/components/icons/iconsSet.vue'
+import glyphsSet from '~/components/svg/glyphs/glyphsSet.vue'
+import appsSet from '~/components/svg/apps/src/set.vue'
 import statusBar from '~/components/ui/statusBar.vue'
 export default {
 	name: "App",
-	components: {iconsSet, statusBar},
+	components: {glyphsSet, appsSet, statusBar},
 	methods: {
 		goHome() {
 			this.$router.push({name: 'homeScreen'})
@@ -36,7 +38,7 @@ export default {
 		
 	.main
 		overflow: scroll
-		height: 46rem
+		// height: 46rem
 	.phone-body
 		bakground: #333
 		padding: 1em
