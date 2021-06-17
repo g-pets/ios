@@ -1,5 +1,5 @@
 <template lang="pug">
-.app-item(@click="openApp")
+.app-item(v-if="ready" @click="openApp")
 	component.app-icon(:is="iconComponent")
 	.app-title {{title}}
 </template>
@@ -12,6 +12,11 @@ export default {
 		name: String,
 		title: String
 	},
+	data() {
+		return {
+			ready: true
+		}
+	},
 	computed: {
 		iconComponent() {
 			return defineAsyncComponent(() => import(`./icons/${this.name}.vue`))
@@ -20,7 +25,7 @@ export default {
 	methods: {
 		openApp() {
 			this.$router.push({name: this.name})
-		},
+		}
 	}
 }
 </script>
