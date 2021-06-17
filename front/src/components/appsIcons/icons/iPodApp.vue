@@ -1,17 +1,17 @@
 <template lang="pug">
-.text-app-icon
+.ipod-app-icon
 	icon-glare
 </template>
 
 <script>
 import iconGlare from '../src/iconGlare.vue'
 export default {
-	name: "textAppIcon",
+	name: "ipodAppIcon",
 	components: {iconGlare}
 };
 </script>
 
 <style lang="stylus" scoped>
-.text-app-icon
-	background: linear-gradient(180deg, #29A621 43.75%, #1AD010 100%)	
+.ipod-app-icon
+	background: linear-gradient(180deg, #FF7407 43%, #FFBA0C 100%)
 </style>

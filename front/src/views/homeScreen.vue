@@ -1,12 +1,11 @@
 <template lang="pug">
 .view.view-homescreen
 	.apps-grid.drop-zone(@drop='onDrop($event, "screen")' @dragover.prevent @dragenter.prevent)
-		//- app-icon.drag-el(v-for="app in screenApps" :data="app" :key="app.id" :draggable="true" @dragstart='startDrag($event, app)' :class="{onDrag: app.onDrag}")
-		app-icon.drag-el(v-for="app in screenApps" :name="app.name" :title="app.title" :key="app.id" :draggable="true" @dragstart='startDrag($event, app)' :class="{onDrag: app.onDrag}")
+		app-icon.drag-el(v-for="app in screenApps" :name="app.name" :title="app.title" :key="app.id" :draggable="true" @dragstart='startDrag($event, app)')
 		
 		
-	//- .dock.drop-zone(@drop='onDrop($event, "dock")' @dragover.prevent @dragenter.prevent)
-		app-icon.drag-el(v-for="app in dockApps" :data="app" :key="app.id" :draggable="true" @dragstart='startDrag($event, app)')
+	.dock.drop-zone(@drop='onDrop($event, "dock")' @dragover.prevent @dragenter.prevent)
+		app-icon.drag-el(v-for="app in dockApps" :name="app.name" :title="app.title" :key="app.id" :draggable="true" @dragstart='startDrag($event, app)')
 //- img.screenshot(src="/screens/01-home.jpg")
 </template>
 
@@ -61,86 +60,75 @@ export default {
 				title: "Calendar",
 				name: "calendarApp",
 				position: "screen"
+			}, {
+				id: 9,
+				title: "Clock",
+				name: "clockApp",
+				position: "screen"
+			
+			}, {
+				id: 3,
+				title: "Photos",
+				name: "tempIcon",
+				position: "screen"
+			}, {
+				id: 4,
+				title: "Camera",
+				name: "tempIcon",
+				position: "screen"
+			}, {
+				id: 5,
+				title: "YouTube",
+				name: "tempIcon",
+				position: "screen"
+			}, {
+				id: 6,
+				title: "Stocks",
+				name: "tempIcon",
+				position: "screen"
+			}, {
+				id: 7,
+				title: "Maps",
+				name: "tempIcon",
+				position: "screen"
+			}, {
+				id: 8,
+				title: "Weather",
+				name: "tempIcon",
+				position: "screen"
+			
+			}, {
+				id: 10,
+				title: "Calculator",
+				name: "tempIcon",
+				position: "screen"
+			}, {
+				id: 12,
+				title: "Settings",
+				name: "tempIcon",
+				position: "screen"
+			}, {
+				id: 13,
+				title: "Phone",
+				name: "phoneApp",
+				position: "dock"
+			}, {
+				id: 14,
+				title: "Mail",
+				name: "tempIcon",
+				position: "dock"
+			}, {
+				id: 15,
+				title: "Safari",
+				name: "tempIcon",
+				position: "dock"
+			}, {
+				id: 16,
+				title: "iPod",
+				name: "iPodApp",
+				position: "dock"
+			
 			}
-			// }, {
-			// 	id: 3,
-			// 	title: "Photos",
-			// 	key: "photosApp",
-			// 	icon: "tempIconApp",
-			// 	position: "screen"
-			// }, {
-			// 	id: 4,
-			// 	title: "Camera",
-			// 	key: "cameraApp",
-			// 	icon: "tempIconApp",
-			// 	position: "screen"
-			// }, {
-			// 	id: 5,
-			// 	title: "YouTube",
-			// 	key: "youTubeApp",
-			// 	icon: "youTubeApp",
-			// 	position: "screen"
-			// }, {
-			// 	id: 6,
-			// 	title: "Stocks",
-			// 	key: "stocksApp",
-			// 	icon: "tempIconApp",
-			// 	position: "screen"
-			// }, {
-			// 	id: 7,
-			// 	title: "Maps",
-			// 	key: "mapsApp",
-			// 	icon: "tempIconApp",
-			// 	position: "screen"
-			// }, {
-			// 	id: 8,
-			// 	title: "Weather",
-			// 	key: "weatherApp",
-			// 	icon: "tempIconApp",
-			// 	position: "screen"
-			// }, {
-			// 	id: 9,
-			// 	title: "Clock",
-			// 	key: "clockApp",
-			// 	icon: "tempIconApp",
-			// 	position: "screen"
-			// }, {
-			// 	id: 10,
-			// 	title: "Calculator",
-			// 	key: "calculatorApp",
-			// 	icon: "calculatorApp",
-			// 	position: "screen"
-			// }, {
-			// 	id: 12,
-			// 	title: "Settings",
-			// 	key: "settings",
-			// 	icon: "tempIconApp",
-			// 	position: "screen"
-			// }, {
-			// 	id: 13,
-			// 	title: "Phone",
-			// 	key: "phoneApp",
-			// 	icon: "phoneApp",
-			// 	position: "dock"
-			// }, {
-			// 	id: 14,
-			// 	title: "Mail",
-			// 	key: "mailApp",
-			// 	icon: "tempIconApp",
-			// 	position: "dock"
-			// }, {
-			// 	id: 15,
-			// 	title: "Safari",
-			// 	key: "safariApp",
-			// 	icon: "tempIconApp",
-			// 	position: "dock"
-			// }, {
-			// 	id: 16,
-			// 	title: "iPod",
-			// 	key: "iPodApp",
-			// 	icon: "iPodApp",
-			// 	position: "dock"
-			// }
 		])
 		return {apps}
 	}
@@ -157,7 +145,7 @@ export default {
 	display: flex
 	flex-direction: column
 	.apps-grid
-		height: 50rem
+		// height: 50rem
 		flex: 1 0 auto
 		padding: 1.1em
 		// padding-top: 2.4em
