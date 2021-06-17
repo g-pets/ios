@@ -1,8 +1,27 @@
-<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
-	 <g fill="none" fill-rule="evenodd">
-		<path d="M399.614 15.024l.05-.03 222.248 128.64-111.16 64.195L399.17 143.6 121.297 304.03 66.17 208.16 399.522 14.97l.092.054z" fill="#415b7d"/>
-		<path d="M177.195 529.29l277.83 160.404-55.598 96.299-333.324-192.12H66L66.006 208l111.184 63.527.005 257.762z" fill="#446f9e"/>
-		<path d="M621.714 530.146v-128.71l-111.296 64.46.006-128.903L621.714 273 732.994 209v.015l.016-.01-.006 127.976-.01.006v128.937l.03-.017-.007 127.976-334.04 193.111.05-128.332 222.687-128.516z" fill="#6790bc"/>
-		<path fill="#446f9e" d="M400 273l111 64.024V466l-111-64.952z"/>
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+	<rect width="1024" height="1024" rx="204.8" fill="url(#paint0_linear)"/>
+	<path d="M0 409.6C0 216.51 0 119.97 59.98 59.98 119.97 0 216.51 0 409.6 0h204.8c193.09 0 289.63 0 349.62 59.98C1024 119.97 1024 216.51 1024 409.6v10.24s-133.12 100.7-512 100.7S0 419.83 0 419.83V409.6z" fill="url(#paint1_linear)"/>
+	<g filter="url(#filter0_d)">
+		<path fill-rule="evenodd" clip-rule="evenodd" d="M354.99 75.1a68.27 68.27 0 00-68.27 68.26v744.1a68.27 68.27 0 0068.27 68.27h317.44a68.27 68.27 0 0068.26-68.26V143.36a68.27 68.27 0 00-68.26-68.27H354.99zm122.88 85.33a13.65 13.65 0 100 27.3h71.68a13.65 13.65 0 000-27.3h-71.68zm-163.84 81.92h399.36v559.78H314.03V242.35zM515.4 914.77a40.96 40.96 0 100-81.92 40.96 40.96 0 000 81.92z" fill="#fff"/>
 	</g>
+	<defs>
+		<linearGradient id="paint0_linear" x1="512" y1="0" x2="512" y2="1024" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#3F981F"/>
+			<stop offset=".52" stop-color="#4DA52D"/>
+			<stop offset="1" stop-color="#66CD47"/>
+		</linearGradient>
+		<linearGradient id="paint1_linear" x1="512" y1="0" x2="512" y2="419.84" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#9AD07E"/>
+			<stop offset="1" stop-color="#5EB83D"/>
+		</linearGradient>
+		<filter id="filter0_d" x="283.31" y="71.68" width="481.28" height="907.95" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+			<feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+			<feOffset dx="10.24" dy="10.24"/>
+			<feGaussianBlur stdDeviation="6.83"/>
+			<feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0"/>
+			<feBlend in2="BackgroundImageFix" result="effect1_dropShadow"/>
+			<feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+		</filter>
+	</defs>
 </svg>

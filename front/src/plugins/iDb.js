@@ -7,7 +7,7 @@ function generateId() {
 	return JSON.stringify(Date.now())
 }
 
-const db = await openDB('iOS', 1, {
+const db = openDB('iOS', 1, {
 	upgrade(db) {
 		// Create a store of objects
 		const store = db.createObjectStore('notes', {

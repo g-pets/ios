@@ -6,7 +6,7 @@ import _clonedeep from "lodash.clonedeep"
 
 
 
-const db = await openDB('iOS', 1, {
+const db = openDB('iOS', 1, {
 	upgrade(db) {
 		const store = db.createObjectStore('notes', {
 			keyPath: 'id',
