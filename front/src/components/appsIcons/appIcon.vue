@@ -1,26 +1,40 @@
 <template lang="pug">
-.next.app-icon
-	svgNotesIcon
-	.name Notes
+.app-item(@click="openApp")
+	component.app-icon(:is="iconComponent")
+	.app-title {{title}}
 </template>
 
 <script>
-import svgNotesIcon from "./icons/tempApp.vue"
+import {defineAsyncComponent} from 'vue'
 export default {
-	name: "appIconNext",
-	components: {svgNotesIcon},
-};
+	name: "appIcon",
+	props: {
+		name: String,
+		title: String
+	},
+	computed: {
+		iconComponent() {
+			return defineAsyncComponent(() => import(`./icons/${this.name}.vue`))
+		}
+	},
+	methods: {
+		openApp() {
+			this.$router.push({name: this.name})
+		},
+	}
+}
 </script>
 
 <style lang="stylus" scoped>
-.next.app-icon
+.app-item
 	cursor: pointer
-	svg
+	.app-icon
 		width: 3.5em
 		height: 3.5em
 		overflow: hidden
 		border-radius: 0.7em
-	.name
+		position: relative
+	.app-title
 		margin-top: 0.5em
 		text-align: center
 		font-size: 0.7em

@@ -1,13 +1,9 @@
 <template lang="pug">
 .view.view-homescreen
 	.apps-grid.drop-zone(@drop='onDrop($event, "screen")' @dragover.prevent @dragenter.prevent)
-		app-icon.drag-el(v-for="app in screenApps" :data="app" :key="app.id" :draggable="true" @dragstart='startDrag($event, app)' :class="{onDrag: app.onDrag}")
-		app-icon-set(name="notesAppNext")
-		.app-icon.live.calendar
-			.icon
-				.head {{calendarDate.weekday}}
-				.day {{calendarDate.date}}
-			.name Calendar
+		//- app-icon.drag-el(v-for="app in screenApps" :data="app" :key="app.id" :draggable="true" @dragstart='startDrag($event, app)' :class="{onDrag: app.onDrag}")
+		app-icon.drag-el(v-for="app in screenApps" :name="app.name" :title="app.title" :key="app.id" :draggable="true" @dragstart='startDrag($event, app)' :class="{onDrag: app.onDrag}")
+		
 		
 	//- .dock.drop-zone(@drop='onDrop($event, "dock")' @dragover.prevent @dragenter.prevent)
 		app-icon.drag-el(v-for="app in dockApps" :data="app" :key="app.id" :draggable="true" @dragstart='startDrag($event, app)')
@@ -15,13 +11,11 @@
 </template>
 
 <script>
-// import appIcon from '~/components/appIcon.vue'
-import appIcon from '~/components/svg/apps/appIcon.vue'
-import appIconSet from '~/components/svg/apps/appIconSet.vue'
+import appIcon from '~/components/appsIcons/appIcon.vue'
 import {reactive} from 'vue'
 export default {
 	name: "HomeScreen",
-	components: {appIcon, appIconSet},
+	components: {appIcon},
 	methods: {
 		openApp(name) {
 			this.$router.push({name: name})
@@ -34,13 +28,6 @@ export default {
 		dockApps () {
 			return this.apps.filter(app => app.position === "dock")
 		},
-		calendarDate() {
-			var date = new Date();
-			var weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-			var weekday = date.getDay()
-			var date = date.getDate()
-			return {weekday:weekdays[weekday], date}
-		}
 	},
 	methods: {
 		startDrag: (evt, app) => {
@@ -61,23 +48,20 @@ export default {
 		const apps = reactive([
 			{
 				id: 11,
-				name: "Notes",
-				key: "notesApp",
-				icon: "notesApp",
+				title: "Notes",
+				name: "notesApp",
 				position: "screen"
 			}, {
 				id: 1,
-				name: "Text",
-				key: "textApp",
-				icon: "textApp",
+				title: "Text",
+				name: "textApp",
+				position: "screen"
+			}, {
+				id: 2,
+				title: "Calendar",
+				name: "calendarApp",
 				position: "screen"
 			}
-			// }, {
-			// 	id: 2,
-			// 	title: "Calendar",
-			// 	key: "calendarApp",
-			// 	icon: "calendarApp",
-			// 	position: "screen"
 			// }, {
 			// 	id: 3,
 			// 	title: "Photos",
@@ -164,36 +148,6 @@ export default {
 </script>
 
 <style lang="stylus">
-.app-icon.live.calendar
-	cursor: pointer
-	.icon
-		width: 3.5em
-		height: 3.5em
-		overflow: hidden
-		border-radius: 0.7em
-		background: #fff
-		.head
-			font-size: 0.5em
-			line-height: 2.2
-			text-align: center
-			background: red
-			color: #fff
-			font-weight: bold
-			background: linear-gradient(180deg, #EC9C9E 13.54%, #D13335 100%)
-			// box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.3), inset 0px -3px 3px rgba(0, 0, 0, 0.3)
-			text-shadow: 0px -0.05em 0 rgba(0, 0, 0, 0.35)
-		.day
-			color: #333
-			text-align: center
-			font-size:2.3em
-			font-weight: bold
-			line-height: 1.15
-	.name
-		margin-top: 0.5em
-		text-align: center
-		font-size: 0.7em
-		color: #ccc
-		line-height: 1
 .view-homescreen
 	// position: relative
 	// height: 46rem

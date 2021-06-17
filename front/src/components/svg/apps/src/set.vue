@@ -1,5 +1,5 @@
 <template>
-	<svg width="0" height="0" viewBox="0 0 0 0" version="1.1" xmlns="http://www.w3.org/2000/svg" class="apps-icon-set">
+	<svg class="apps-icon-set" viewBox="0 0 0 0" version="1.1" xmlns="http://www.w3.org/2000/svg">
 		<defs>
 			<!-- Helpers -->
 
@@ -8,6 +8,26 @@
 				<stop offset=".14" stop-color="#7B584C"/>
 				<stop offset="1" stop-color="#45322C"/>
 			</linearGradient>
+
+			<!-- Header Drop Shadow -->
+			<filter
+				id="notesApp_filter0-next"
+				x="-5"
+				y="51"
+				width="190"
+				height="16"
+				filterUnits="userSpaceOnUse"
+				color-interpolation-filters="sRGB">
+				<feFlood flood-opacity="0" result="BackgroundImageFix" />
+				<feColorMatrix
+					in="SourceAlpha"
+					values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+				<feOffset dy="2" />
+				<feGaussianBlur stdDeviation="2.5" />
+				<feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0" />
+				<feBlend in2="BackgroundImageFix" result="effect1_dropShadow" />
+				<feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+			</filter>
 
 
 			
@@ -32,40 +52,14 @@
 						stroke-opacity=".16"
 						stroke-width="3"
 					/>
-					<path class="notes-head" fill="url(#app-icon-head-gradient)" d="M0 0h180v54H0z" />
+					<path class="app-icon-head notes-head" fill="url(#app-icon-head-gradient)" d="M0 0h180v54H0z" />
 				</g>
 				<defs>
 					<mask id="iconMask" maskUnits="userSpaceOnUse" x="0" y="0" width="180" height="180">
 						<path fill="#fff" d="M0 0h180v180H0z" />
 					</mask>
-					
-					
-					
-					<filter
-						id="notesApp_filter0-next"
-						x="-5"
-						y="51"
-						width="190"
-						height="16"
-						filterUnits="userSpaceOnUse"
-						color-interpolation-filters="sRGB"
-					>
-						<feFlood flood-opacity="0" result="BackgroundImageFix" />
-						<feColorMatrix
-							in="SourceAlpha"
-							values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-						/>
-						<feOffset dy="2" />
-						<feGaussianBlur stdDeviation="2.5" />
-						<feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0" />
-						<feBlend in2="BackgroundImageFix" result="effect1_dropShadow" />
-						<feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
-					</filter>
 				</defs>
 			</symbol>
-
-			
-
 		</defs>
 	</svg>
 </template>
@@ -77,4 +71,10 @@
 	width: 0
 	position: absolute
 	visibility: hidden
+	.app-icon-head
+		box-shadow: 10px 10px 5px solid
+	.app-icon-notes-app
+		display: none
+	.notes-body
+		fill: red
 </style>
