@@ -1,6 +1,6 @@
 {
   "index.html": {
-    "file": "assets/index.5990b988.js",
+    "file": "assets/index.b1bc1cda.js",
     "src": "index.html",
     "isEntry": true,
     "imports": [
@@ -34,7 +34,7 @@
     "file": "assets/vendor.c335db97.js"
   },
   "src/views/homeScreen.vue": {
-    "file": "assets/homeScreen.cf6c196d.js",
+    "file": "assets/homeScreen.4ad29327.js",
     "src": "src/views/homeScreen.vue",
     "isDynamicEntry": true,
     "imports": [
