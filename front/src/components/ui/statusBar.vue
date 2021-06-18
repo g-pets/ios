@@ -22,7 +22,9 @@ export default {
 	computed: {
 		batteryLevel() {
 			let level = this.batteryInfo.level * 100
+			let charging = this.batteryInfo.charging
 			let style = []
+			if(charging) style.push('fill:#1CC454')
 			if(level <= 20) style.push('fill:yellow')
 			if(level <= 10) style.push('fill:red')
 			style.push(`clip-path:polygon(0% 0%, ${level}% 0%, ${level}% 100%, 0% 100%)`)
