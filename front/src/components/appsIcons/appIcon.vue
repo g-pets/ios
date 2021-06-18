@@ -1,27 +1,31 @@
 <template lang="pug">
-.app-item(v-if="ready" @click="openApp")
-	component.app-icon(:is="iconComponent")
+.app-item(@click="openApp")
+	component.app-icon(:is="name")
 	.app-title {{title}}
 </template>
 
 <script>
-import {defineAsyncComponent} from 'vue'
+import calendarApp from './icons/calendarApp.vue'
+import clockApp from './icons/clockApp.vue'
+import iPodApp from './icons/iPodApp.vue'
+import notesApp from './icons/notesApp.vue'
+import phoneApp from './icons/phoneApp.vue'
+import textApp from './icons/textApp.vue'
+import tempIcon from './icons/tempIcon.vue'
+
+// import {defineAsyncComponent} from 'vue'
 export default {
 	name: "appIcon",
+	components: {calendarApp, clockApp, iPodApp, notesApp, phoneApp, textApp, tempIcon},
 	props: {
 		name: String,
 		title: String
 	},
-	data() {
-		return {
-			ready: true
-		}
-	},
-	computed: {
-		iconComponent() {
-			return defineAsyncComponent(() => import(`./icons/${this.name}.vue`))
-		}
-	},
+	// computed: {
+	// 	iconComponent() {
+	// 		return defineAsyncComponent(() => import(`./icons/${this.name}.vue`))
+	// 	}
+	// },
 	methods: {
 		openApp() {
 			this.$router.push({name: this.name})

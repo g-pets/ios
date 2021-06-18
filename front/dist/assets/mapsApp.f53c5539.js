@@ -1,1 +1,0 @@
-import{o as a,c as e,a as n}from"./vendor.41e2d907.js";const p={class:"app"},s=n("h1",null,"Maps App",-1);const t={name:"textApp",render:function(n,t,o,r,c,d){return a(),e("div",p,[s])}};export default t;

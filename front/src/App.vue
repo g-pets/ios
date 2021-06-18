@@ -1,8 +1,12 @@
 <template lang="pug">
 glyphs-set
+
 .app-container
 	.screen
-		template(v-if="!ready")
+		template(v-if="ready")
+			systemDialog(
+				title='Update available'
+				content="New version of this App is available.")
 			status-bar
 			.main
 				router-view
@@ -11,15 +15,28 @@ glyphs-set
 </template>
 
 <script>
+import { useRegisterSW } from 'virtual:pwa-register/vue'
 import glyphsSet from '~/components/svg/glyphs/glyphsSet.vue'
 import statusBar from '~/components/ui/statusBar.vue'
+import systemDialog from '~/components/ui/systemDialog.vue'
 export default {
 	name: "App",
-	components: {glyphsSet, statusBar},
+	components: {glyphsSet, statusBar, systemDialog},
+	data() {
+		return {
+			ready: true
+		}
+	},
 	methods: {
 		goHome() {
 			this.$router.push({name: 'homeScreen'})
 		}
+	},
+	setup() {
+		const {offlineReady, needRefresh, updateServiceWorker} = useRegisterSW()
+		console.log(offlineReady)
+		console.log(needRefresh)
+		return {offlineReady, needRefresh, updateServiceWorker}
 	}
 };
 </script>
@@ -35,6 +52,7 @@ export default {
 	.screen
 		background: #000
 		min-height: 480px
+		position: relative
 		display: grid
 		grid-template-columns: 1fr
 		grid-template-rows: max-content 1fr auto
