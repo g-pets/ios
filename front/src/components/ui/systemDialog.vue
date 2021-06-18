@@ -4,14 +4,10 @@
 	uiGlare(height="1.2em" opacity="0.7")
 	.title(v-if="title") {{title}}
 	.content(v-if="content") {{content}}
-	.buttons
-		slot(name="button")
-		button
+	.buttons(v-if="buttons")
+		button(v-for="button in buttons" @click="button.method")
 			uiGlare(height="45%" opacity="0.7" borderRadius="0")
-			.text Cancel
-		button
-			uiGlare(height="45%" opacity="0.7" borderRadius="0")
-			.text Update
+			.label {{button.label}}
 </template>
 
 <script>
@@ -21,7 +17,8 @@ export default {
 	components: {uiGlare},
 	props: {
 		title: String,
-		content: String
+		content: String,
+		buttons: Array
 	}
 }
 </script>

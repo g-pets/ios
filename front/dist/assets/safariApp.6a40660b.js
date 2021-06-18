@@ -1,0 +1,1 @@
+import{o as a,c as r,a as n}from"./vendor.7910e912.js";const s={class:"app"},e=n("h1",null,"Safari App",-1);const o={name:"safariApp",render:function(n,o,p,t,c,f){return a(),r("div",s,[e])}};export default o;

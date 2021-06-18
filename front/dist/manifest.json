@@ -1,10 +1,10 @@
 {
   "index.html": {
-    "file": "assets/index.d2418022.js",
+    "file": "assets/index.a568b888.js",
     "src": "index.html",
     "isEntry": true,
     "imports": [
-      "_vendor.d85c4530.js"
+      "_vendor.7910e912.js"
     ],
     "dynamicImports": [
       "src/views/homeScreen.vue",
@@ -27,177 +27,177 @@
       "src/apps/iPodApp.vue"
     ],
     "css": [
-      "assets/index.793787a5.css"
+      "assets/index.1dfcf9b4.css"
     ]
   },
-  "_vendor.d85c4530.js": {
-    "file": "assets/vendor.d85c4530.js"
+  "_vendor.7910e912.js": {
+    "file": "assets/vendor.7910e912.js"
   },
   "src/views/homeScreen.vue": {
-    "file": "assets/homeScreen.2cfddf24.js",
+    "file": "assets/homeScreen.8f3c50ff.js",
     "src": "src/views/homeScreen.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_vendor.d85c4530.js"
+      "_vendor.7910e912.js"
     ],
     "css": [
       "assets/homeScreen.596d3ea6.css"
     ]
   },
   "src/apps/textApp.vue": {
-    "file": "assets/textApp.bd16a444.js",
+    "file": "assets/textApp.3e0112b5.js",
     "src": "src/apps/textApp.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_vendor.d85c4530.js"
+      "_vendor.7910e912.js"
     ],
     "css": [
       "assets/textApp.d29d1dbd.css"
     ]
   },
   "src/apps/calendarApp.vue": {
-    "file": "assets/calendarApp.5f763dc5.js",
+    "file": "assets/calendarApp.e8bf0f5b.js",
     "src": "src/apps/calendarApp.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_vendor.d85c4530.js"
+      "_vendor.7910e912.js"
     ]
   },
   "src/apps/photosApp.vue": {
-    "file": "assets/photosApp.ce6bf215.js",
+    "file": "assets/photosApp.860a992b.js",
     "src": "src/apps/photosApp.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_vendor.d85c4530.js"
+      "_vendor.7910e912.js"
     ]
   },
   "src/apps/cameraApp.vue": {
-    "file": "assets/cameraApp.0519be2a.js",
+    "file": "assets/cameraApp.4b90db2b.js",
     "src": "src/apps/cameraApp.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_vendor.d85c4530.js"
+      "_vendor.7910e912.js"
     ]
   },
   "src/apps/youTubeApp.vue": {
-    "file": "assets/youTubeApp.578048e2.js",
+    "file": "assets/youTubeApp.494300c4.js",
     "src": "src/apps/youTubeApp.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_vendor.d85c4530.js"
+      "_vendor.7910e912.js"
     ]
   },
   "src/apps/stocksApp.vue": {
-    "file": "assets/stocksApp.71ecbb71.js",
+    "file": "assets/stocksApp.9c3460b2.js",
     "src": "src/apps/stocksApp.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_vendor.d85c4530.js"
+      "_vendor.7910e912.js"
     ]
   },
   "src/apps/mapsApp.vue": {
-    "file": "assets/mapsApp.90a02a3e.js",
+    "file": "assets/mapsApp.47a0683d.js",
     "src": "src/apps/mapsApp.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_vendor.d85c4530.js"
+      "_vendor.7910e912.js"
     ]
   },
   "src/apps/weatherApp.vue": {
-    "file": "assets/weatherApp.f36c82dc.js",
+    "file": "assets/weatherApp.fb6fd3c2.js",
     "src": "src/apps/weatherApp.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_vendor.d85c4530.js"
+      "_vendor.7910e912.js"
     ]
   },
   "src/apps/clockApp.vue": {
-    "file": "assets/clockApp.57646fa2.js",
+    "file": "assets/clockApp.0cb8d348.js",
     "src": "src/apps/clockApp.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_vendor.d85c4530.js"
+      "_vendor.7910e912.js"
     ]
   },
   "src/apps/calculatorApp.vue": {
-    "file": "assets/calculatorApp.c43723fa.js",
+    "file": "assets/calculatorApp.79fb3601.js",
     "src": "src/apps/calculatorApp.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_vendor.d85c4530.js"
+      "_vendor.7910e912.js"
     ]
   },
   "src/apps/notesApp/startScreen.vue": {
-    "file": "assets/startScreen.a70735c5.js",
+    "file": "assets/startScreen.729e91f6.js",
     "src": "src/apps/notesApp/startScreen.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_index.7305e5c7.js",
-      "_vendor.d85c4530.js"
+      "_index.3ee3f66a.js",
+      "_vendor.7910e912.js"
     ],
     "css": [
       "assets/startScreen.76257b3d.css"
     ]
   },
-  "_index.7305e5c7.js": {
-    "file": "assets/index.7305e5c7.js",
+  "_index.3ee3f66a.js": {
+    "file": "assets/index.3ee3f66a.js",
     "imports": [
-      "_vendor.d85c4530.js"
+      "_vendor.7910e912.js"
     ],
     "css": [
       "assets/index.1358b134.css"
     ]
   },
   "src/apps/notesApp/noteScreen.vue": {
-    "file": "assets/noteScreen.c841602f.js",
+    "file": "assets/noteScreen.5d8c5132.js",
     "src": "src/apps/notesApp/noteScreen.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_index.7305e5c7.js",
-      "_vendor.d85c4530.js"
+      "_index.3ee3f66a.js",
+      "_vendor.7910e912.js"
     ],
     "css": [
       "assets/noteScreen.7a985b07.css"
     ]
   },
   "src/apps/settings.vue": {
-    "file": "assets/settings.ad9fc6db.js",
+    "file": "assets/settings.827178d9.js",
     "src": "src/apps/settings.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_vendor.d85c4530.js"
+      "_vendor.7910e912.js"
     ]
   },
   "src/apps/phoneApp.vue": {
-    "file": "assets/phoneApp.9374a55f.js",
+    "file": "assets/phoneApp.17d8df7b.js",
     "src": "src/apps/phoneApp.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_vendor.d85c4530.js"
+      "_vendor.7910e912.js"
     ]
   },
   "src/apps/mailApp.vue": {
-    "file": "assets/mailApp.55ac66db.js",
+    "file": "assets/mailApp.1942657a.js",
     "src": "src/apps/mailApp.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_vendor.d85c4530.js"
+      "_vendor.7910e912.js"
     ]
   },
   "src/apps/safariApp.vue": {
-    "file": "assets/safariApp.4a562f9d.js",
+    "file": "assets/safariApp.6a40660b.js",
     "src": "src/apps/safariApp.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_vendor.d85c4530.js"
+      "_vendor.7910e912.js"
     ]
   },
   "src/apps/iPodApp.vue": {
-    "file": "assets/iPodApp.45450a15.js",
+    "file": "assets/iPodApp.a7a34e36.js",
     "src": "src/apps/iPodApp.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_vendor.d85c4530.js"
+      "_vendor.7910e912.js"
     ]
   }
 }

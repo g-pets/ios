@@ -1,21 +1,21 @@
 <template lang="pug">
 glyphs-set
-
 .app-container
 	.screen
-		template(v-if="ready")
-			systemDialog(
-				title='Update available'
-				content="New version of this App is available.")
-			status-bar
-			.main
-				router-view
+		systemDialog(
+			v-if="needRefresh"
+			title="Update available"
+			content="New version of this App is available."
+			:buttons="[{label: 'Cancel', method: cancelUpdate}, {label: 'Update', method: updateServiceWorker}]")
+		status-bar
+		.main
+			router-view
 	.phone-body
 		.home-button(@click="goHome")
 </template>
 
 <script>
-import { useRegisterSW } from 'virtual:pwa-register/vue'
+import { useRegisterSW } from "virtual:pwa-register/vue"
 import glyphsSet from '~/components/svg/glyphs/glyphsSet.vue'
 import statusBar from '~/components/ui/statusBar.vue'
 import systemDialog from '~/components/ui/systemDialog.vue'
@@ -34,9 +34,11 @@ export default {
 	},
 	setup() {
 		const {offlineReady, needRefresh, updateServiceWorker} = useRegisterSW()
-		console.log(offlineReady)
-		console.log(needRefresh)
-		return {offlineReady, needRefresh, updateServiceWorker}
+		const cancelUpdate = async() => {
+			offlineReady.value = false
+			needRefresh.value = false
+		}
+		return {needRefresh, updateServiceWorker, cancelUpdate}
 	}
 };
 </script>
@@ -46,9 +48,6 @@ export default {
 .app-container
 	width: 100vw
 	height: 100vh
-	
-	// .status-bar
-	
 	.screen
 		background: #000
 		min-height: 480px
