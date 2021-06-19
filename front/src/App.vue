@@ -48,9 +48,11 @@ export default {
 .app-container
 	width: 100vw
 	height: 100vh
+	display: flex
+	flex-direction: column
 	.screen
 		background: #000
-		min-height: 480px
+		flex: 1 0 auto
 		position: relative
 		display: grid
 		grid-template-columns: 1fr
@@ -58,10 +60,10 @@ export default {
 		grid-template-areas: 'header' 'main' 'footer'
 	.main
 		overflow: scroll
-		// height: 46rem
 	.phone-body
-		padding: 1em
-		border-top: 5px solid #262A2D
+		padding: 1em 0
+		border-top: 0.2em solid #262A2D
+		height: max-content
 		.home-button
 			margin: auto
 			display: block

@@ -1,9 +1,7 @@
 <template lang="pug">
-svg.calendar-app-icon(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100")
-	foreignObject.icon-body(x="0" y="30")
-		.date(xmlns="http://www.w3.org/1999/xhtml") {{date.date}}
-	foreignObject.icon-header(x="0" y="0")
-		.header-title(xmlns="http://www.w3.org/1999/xhtml") {{date.weekday}}
+.calendar-app-icon
+	icon-head(:gradient=['#EC9C9E', '#D13335'] :title="date.weekday")
+	.body {{date.date}}
 </template>
 
 <script>
@@ -26,21 +24,28 @@ export default {
 <style lang="stylus" scoped>
 .calendar-app-icon
 	font-size: 1.6rem
-	background: blue
+	width: 70%
+	height: 70%
+	// overflow: hidden
+	border-radius: 0.6em
+	position: relative
+	.icon-background
+		width: 100%
+		height: 100%
+		fill: #fff
 	.icon-header
 		width: 100%
 		height: 100%
-		filter: drop-shadow(0 0.1em 0.3em rgba(#000, 0.5))
+		filter: drop-shadow(0 0.5em 1em rgba(#000, 0.2))
 		.header-title
 			color: #fff
 			text-align: center
 			font-size: 1em
-			line-height: 1
-			padding: 0.6em 0 0.3em
+			line-height: 2
 			font-family: Helvetica
 			font-weight: bold
-			background-image: linear-gradient(180deg, #EC9C9E 12%, #D13335 90%, #7f1517 100%)
-			text-shadow: 0px -0.05em 0 rgba(#000,.5)
+			background-image: linear-gradient(180deg, #EC9C9E 12%, #D13335 100%)
+			text-shadow: 0px -0.05em 0 #000
 	.icon-body
 		width: 100%
 		height: 100%

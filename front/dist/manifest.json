@@ -1,6 +1,6 @@
 {
   "index.html": {
-    "file": "assets/index.265d3f60.js",
+    "file": "assets/index.e4c3ad20.js",
     "src": "index.html",
     "isEntry": true,
     "imports": [
@@ -27,21 +27,21 @@
       "src/apps/iPodApp.vue"
     ],
     "css": [
-      "assets/index.79060548.css"
+      "assets/index.4df76439.css"
     ]
   },
   "_vendor.c335db97.js": {
     "file": "assets/vendor.c335db97.js"
   },
   "src/views/homeScreen.vue": {
-    "file": "assets/homeScreen.4ad29327.js",
+    "file": "assets/homeScreen.af58672a.js",
     "src": "src/views/homeScreen.vue",
     "isDynamicEntry": true,
     "imports": [
       "_vendor.c335db97.js"
     ],
     "css": [
-      "assets/homeScreen.596d3ea6.css"
+      "assets/homeScreen.4960aab0.css"
     ]
   },
   "src/apps/textApp.vue": {
