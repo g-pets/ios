@@ -1,6 +1,6 @@
 <template lang="pug">
 .app-item(@click="openApp")
-	svg.app-icon(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100")
+	svg.app-icon(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000")
 		component(:is="name")
 	.app-title {{title}}
 .app-item.png
@@ -76,9 +76,9 @@ export default {
 				top: 0
 				left: 0
 				width: 100%
-				height: 50%
+				height: 55%
 				background: red
 				border-radius: 0 0 50% 50%/0 0 35% 35%
-				background: linear-gradient(180deg, rgba(#fff, .6) 0%, rgba(#fff, .2) 100%)			
+				background: linear-gradient(180deg, rgba(#fff, .6) 0%, rgba(#fff, .2) 100%)
 
 </style>

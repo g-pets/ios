@@ -2,12 +2,17 @@
 foreignObject.html-icon.icon-glare(x="0" y="0")
 	.icon-body
 		.clock-body
-			//- .hours
-				span(v-for="i in 12") {{i}}
-			svg.arrows(viewBox="0 0 144 144" fill="none" xmlns="http://www.w3.org/2000/svg")
-				path.clock-hand.h-hand(:style="`transform: rotate(${time.h}deg)`" fill-rule="evenodd" clip-rule="evenodd" d="M76.9961 64.5129L72.0671 42L67.1606 64.4105C64.6588 66.0091 63 68.8108 63 72C63 76.9706 67.0294 81 72 81C76.9706 81 81 76.9706 81 72C81 68.8779 79.4102 66.1271 76.9961 64.5129ZM78 72C78 75.3137 75.3137 78 72 78C68.6863 78 66 75.3137 66 72C66 68.6863 68.6863 66 72 66C75.3137 66 78 68.6863 78 72Z")
-				path.clock-hand.m-hand(:style="`transform: rotate(${time.m}deg)`" fill-rule="evenodd" clip-rule="evenodd" d="M78 72C78 75.3137 75.3137 78 72 78C68.6863 78 66 75.3137 66 72C66 68.6863 68.6863 66 72 66C75.3137 66 78 68.6863 78 72ZM81 72C81 76.9706 76.9706 81 72 81C67.0294 81 63 76.9706 63 72C63 68.8512 64.6171 66.0801 67.066 64.4718L72 25L76.934 64.4718C79.3829 66.0801 81 68.8512 81 72Z")
-				path.clock-hand.s-hand(:style="`transform: rotate(${time.s}deg)`" d="M73 6H71L70.0095 67.4119C68.2385 68.1813 67 69.946 67 72C67 74.7614 69.2386 77 72 77C74.7614 77 77 74.7614 77 72C77 69.946 75.7615 68.1813 73.9905 67.4119L73 6Z")
+			svg(viewBox="0 0 670 670" fill="none" xmlns="http://www.w3.org/2000/svg")
+				defs
+					path(id="clockGlare" d="M336.5 207.5c-193.12 0-297.5 43-297.5 43C69.72 114.53 191.25 13 336.5 13c145.26 0 266.8 101.53 297.51 237.5 0 0-104.38-43-297.5-43z")
+				use.clock-glare(xlink:href="#clockGlare")
+				path.clock-hand.h-hand(:style="`transform: rotate(${time.h}deg)`" fill-rule="evenodd" clip-rule="evenodd" d="M359.38 291.87a8.87 8.87 0 003.73 6.23 46 46 0 11-55.1.67 8.86 8.86 0 003.54-6.1l22.95-129.04c.12-1.2 1.88-1.2 2 0l22.88 128.24zm-23.38 8.4a35 35 0 110 70 35 35 0 010-70z")
+				path.clock-hand.m-hand(:style="`transform: rotate(${time.m}deg)`" fill-rule="evenodd" clip-rule="evenodd" d="M359.38 291.14a8.87 8.87 0 003.73 6.23 46 46 0 11-55.1.67 8.86 8.86 0 003.54-6.1L334.5 52.9c.12-1.2 1.88-1.2 2 0l22.88 238.24zm-23.38 8.4a35 35 0 110 70 35 35 0 010-70z")
+				circle.s-base(cx="335" cy="335" r="23")
+				path.clock-hand.s-hand(:style="`transform: rotate(${time.s}deg)`" d="M338 29h-5l-1.97 291.32c-.02 2.79-1.85 5.18-3.8 7.18a11.5 11.5 0 1016.52 0c-1.93-2-3.76-4.4-3.78-7.18L338 29z")
+				use.clock-glare.clock-glare-top(xlink:href="#clockGlare")
+				
+
 </template>
 
 <script>
@@ -24,7 +29,7 @@ export default {
 		}
 		onMounted(() => {
 			getTime()
-			// setInterval(getTime, 1000)
+			setInterval(getTime, 1000)
 		})
 		return {time}
 	}
@@ -34,14 +39,16 @@ export default {
 <style lang="stylus" scoped>
 .icon-body
 	height: 100%
-	background: #000
+	background: #000	
 	.clock-body
-		width: 80px
-		height: 80px
+		width: 800px
+		height: 800px
 		border-radius: 50%
-		background: #fff
-		margin: 10px auto
+		background: #eee
+		margin: 100px auto
 		position: relative
+		overflow: hidden
+		box-shadow: inset 0 20px 15px 10px #222, inset 0 0 0 20px #222
 		.hours
 			position: absolute
 			font-size: 0.7em
@@ -59,18 +66,29 @@ export default {
 			backface-visibility: hidden
 			fill: #000
 			transition: transform 0.3s
-		.h-hand
-			transform: rotate(320deg)
-			// animation: 25s tick infinite linear
+			// filter: drop-shadow(0px 3px 4px rgba(#000, 0.5))
 		.m-hand
-			transform: rotate(90deg)
-			// animation: 10s tick infinite linear
+			filter: drop-shadow(0px 2px 1px rgba(#fff, 0.5))
 		.s-hand
-			transform: rotate(0deg)
-			fill: #FF0000
-			// animation: 3s tick infinite linear
+			fill: #FF0506
+		.s-base
+			fill: #FF7470
+		.clock-glare
+			fill: #fff
+			opacity: 0.6
+			&-top
+				opacity: 0.2
 			
 			
+	// .h-hand
+	// 	// transform: rotate(320deg)
+	// 	animation: 360s tick infinite linear
+	// .m-hand
+	// 	// transform: rotate(90deg)
+	// 	animation: 36s tick infinite linear
+	// .s-hand
+	// 	// transform: rotate(0deg)
+	// 	animation: 6s tick infinite linear
 		
 		
 		
