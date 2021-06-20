@@ -1,16 +1,14 @@
 <template lang="pug">
-svg.calendar-app-icon(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100")
-	foreignObject.icon-body(x="0" y="30")
-		.date(xmlns="http://www.w3.org/1999/xhtml") {{date.date}}
-	foreignObject.icon-header(x="0" y="0")
-		.header-title(xmlns="http://www.w3.org/1999/xhtml") {{date.weekday}}
+foreignObject.html-icon(x="0" y="0")
+	.icon-header
+		.icon-title {{date.weekday}}
+	.icon-body
+		.date {{date.date}}
 </template>
 
 <script>
-import iconHead from '../src/iconHead.vue'
 export default {
 	name: "calendarAppIcon",
-	components: {iconHead},
 	computed: {
 		date() {
 			var date = new Date();
@@ -24,34 +22,16 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.calendar-app-icon
-	font-size: 1.6rem
-	background: blue
-	.icon-header
-		width: 100%
-		height: 100%
-		filter: drop-shadow(0 0.1em 0.3em rgba(#000, 0.5))
-		.header-title
-			color: #fff
-			text-align: center
-			font-size: 1em
-			line-height: 1
-			padding: 0.6em 0 0.3em
-			font-family: Helvetica
-			font-weight: bold
-			background-image: linear-gradient(180deg, #EC9C9E 12%, #D13335 90%, #7f1517 100%)
-			text-shadow: 0px -0.05em 0 rgba(#000,.5)
-	.icon-body
-		width: 100%
-		height: 100%
-		fill: #fff
-		.date
-			background: #fff
-			width: 100%
-			height: 100%
-			color: #333
-			text-align: center
-			font-size: 4em
-			line-height: 1.2
-			font-weight: bold
+.icon-header
+	background-image: linear-gradient(180deg, #EC9C9E 12%, #D13335 90%, #7f1517 100%)
+.icon-body
+	height: 70px
+	background: #fff
+	box-shadow: inset 0px 3px 5px rgba(#000,.3)
+	.date
+		color: #333
+		text-align: center
+		font-size: 4em
+		line-height: 1.2
+		font-weight: bold
 </style>
