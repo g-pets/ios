@@ -1,5 +1,6 @@
 <template lang="pug">
-.view.view-homescreen
+.view.view-homescreen(:class="{shake}")
+	//- .demo-shake
 	.apps-grid.drop-zone(@drop='onDrop($event, "screen")' @dragover.prevent @dragenter.prevent)
 		app-icon.drag-el(v-for="app in screenApps" :name="app.name" :title="app.title" :key="app.id" :draggable="true" @dragstart='startDrag($event, app)')
 
@@ -16,6 +17,11 @@ import {reactive} from 'vue'
 export default {
 	name: "HomeScreen",
 	components: {appIcon},
+	data() {
+		return {
+			shake: false,
+		}
+	},
 	methods: {
 		openApp(name) {
 			this.$router.push({name: name})
@@ -51,11 +57,11 @@ export default {
 				title: "Notes",
 				name: "notesApp",
 				position: "screen"
-			}, {
-				id: 1,
-				title: "Text",
-				name: "textApp",
-				position: "screen"
+			// }, {
+			// 	id: 1,
+			// 	title: "Text",
+			// 	name: "textApp",
+			// 	position: "screen"
 			}, {
 				id: 2,
 				title: "Calendar",
@@ -108,11 +114,11 @@ export default {
 			// 	title: "Settings",
 			// 	name: "tempIcon",
 			// 	position: "screen"
-			}, {
-				id: 13,
-				title: "Phone",
-				name: "phoneApp",
-				position: "screen"
+			// }, {
+			// 	id: 13,
+			// 	title: "Phone",
+			// 	name: "phoneApp",
+			// 	position: "screen"
 			// }, {
 			// 	id: 14,
 			// 	title: "Mail",
@@ -123,12 +129,11 @@ export default {
 			// 	title: "Safari",
 			// 	name: "tempIcon",
 			// 	position: "dock"
-			}, {
-				id: 16,
-				title: "iPod",
-				name: "iPodApp",
-				position: "screen"
-			
+			// }, {
+			// 	id: 16,
+			// 	title: "iPod",
+			// 	name: "iPodApp",
+			// 	position: "screen"
 			}
 		])
 		return {apps}
@@ -136,7 +141,7 @@ export default {
 };
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 .view-homescreen
 	display: flex
 	flex-direction: column
@@ -170,6 +175,36 @@ export default {
 				margin-top: 0.9em
 				color: #eee
 				text-shadow: 0 -1px #333
+
+// Jiggle on Edit
+.view-homescreen
+	.demo-shake
+		width: 3.5em
+		height: 3.5em
+		background: #fff
+	&.shake
+		:deep(.app-item)
+			&:nth-child(2n)
+				.app-icon
+					animation: jiggleOne infinite alternate ease-in-out
+					transform-origin: 50% 10%
+			&:nth-child(2n-1)
+				.app-icon
+					animation: jiggleTwo infinite alternate ease-in-out
+					transform-origin: 30% 5%
+
+	
+	@keyframes jiggleOne
+		from
+			transform: rotate(-1deg)
+		to
+			transform: rotate(1.5deg)
+
+	@keyframes jiggleTwo
+		from
+			transform: rotate(1deg)
+		to
+			transform: rotate(-1.5deg)
 .screenshot
 	position: absolute
 	z-index: 0

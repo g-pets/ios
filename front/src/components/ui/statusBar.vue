@@ -33,9 +33,10 @@ export default {
 	},
 	setup() {
 		let actualTime = ref('')
+		const timeOptions = {hour12: false, hour: '2-digit', minute:'2-digit'}
 		function getTime() {
 			let date = new Date()
-			actualTime.value = date.toLocaleTimeString('en-US', {hour: '2-digit', minute:'2-digit'})
+			actualTime.value = date.toLocaleTimeString('en-US', timeOptions)
 		}
 		
 

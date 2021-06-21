@@ -1,6 +1,6 @@
 <template lang="pug">
 .app-item(@click="openApp")
-	svg.app-icon(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000")
+	svg.app-icon(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" :style="jiggleEffect")
 		component(:is="name")
 	.app-title {{title}}
 //- .app-item.png
@@ -26,14 +26,22 @@ export default {
 		name: String,
 		title: String
 	},
-	// computed: {
-	// 	iconComponent() {
-	// 		return defineAsyncComponent(() => import(`./icons/${this.name}.vue`))
-	// 	}
-	// },
+	computed: {
+		jiggleEffect() {
+			let delay = this.randomNumber(50,750) / 100
+			let duration = this.randomNumber(10,20)
+			return `animation-delay: -.${delay}s; animation-duration: .${duration}s`
+		},
+		// iconComponent() {
+		// 	return defineAsyncComponent(() => import(`./icons/${this.name}.vue`))
+		// }
+	},
 	methods: {
 		openApp() {
 			this.$router.push({name: this.name})
+		},
+		randomNumber(min, max) {
+			return Math.round(Math.random() * (max - min) + min)
 		}
 	}
 }
