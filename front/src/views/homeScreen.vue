@@ -47,21 +47,21 @@ export default {
 		document.title = "Home Screen | iOS 1.0"
 		const apps = reactive([
 			{
-			// 	id: 11,
-			// 	title: "Notes",
-			// 	name: "notesApp",
-			// 	position: "screen"
-			// }, {
-			// 	id: 1,
-			// 	title: "Text",
-			// 	name: "textApp",
-			// 	position: "screen"
-			// }, {
-			// 	id: 2,
-			// 	title: "Calendar",
-			// 	name: "calendarApp",
-			// 	position: "screen"
-			// }, {
+				id: 11,
+				title: "Notes",
+				name: "notesApp",
+				position: "screen"
+			}, {
+				id: 1,
+				title: "Text",
+				name: "textApp",
+				position: "screen"
+			}, {
+				id: 2,
+				title: "Calendar",
+				name: "calendarApp",
+				position: "screen"
+			}, {
 				id: 9,
 				title: "Clock",
 				name: "clockApp",
@@ -108,11 +108,11 @@ export default {
 			// 	title: "Settings",
 			// 	name: "tempIcon",
 			// 	position: "screen"
-			// }, {
-			// 	id: 13,
-			// 	title: "Phone",
-			// 	name: "phoneApp",
-			// 	position: "screen"
+			}, {
+				id: 13,
+				title: "Phone",
+				name: "phoneApp",
+				position: "screen"
 			// }, {
 			// 	id: 14,
 			// 	title: "Mail",
@@ -123,11 +123,11 @@ export default {
 			// 	title: "Safari",
 			// 	name: "tempIcon",
 			// 	position: "dock"
-			// }, {
-			// 	id: 16,
-			// 	title: "iPod",
-			// 	name: "iPodApp",
-			// 	position: "screen"
+			}, {
+				id: 16,
+				title: "iPod",
+				name: "iPodApp",
+				position: "screen"
 			
 			}
 		])

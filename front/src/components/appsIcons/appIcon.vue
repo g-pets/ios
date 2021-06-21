@@ -58,11 +58,11 @@ export default {
 		width: 100%
 		height: 100%
 		.icon-header
-			height: 30px
+			height: 300px
 		.icon-title
 			color: #fff
 			text-align: center
-			font-size: 1em
+			font-size: 10em
 			line-height: 1
 			padding: 0.6em 0 0.3em
 			font-family: Helvetica

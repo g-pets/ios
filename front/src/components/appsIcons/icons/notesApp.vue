@@ -8,9 +8,9 @@ foreignObject.html-icon(x="0" y="0")
 .icon-header
 	background-image: linear-gradient(180deg, #7B584C 12%, #45322C 100%)
 .icon-body
-	height: 70px
-	background: repeating-linear-gradient(#f8f59d, #f8f59d 8px, #d6d593 8px, #d6d593 9px)
-	background-position-y: 4px
+	height: 700px
+	background: repeating-linear-gradient(#f8f59d, #f8f59d 80px, #d6d593 80px, #d6d593 90px)
+	background-position-y: 40px
 	position: relative
 	&:before
 		content: ""
@@ -18,16 +18,16 @@ foreignObject.html-icon(x="0" y="0")
 		top: 0
 		left: 0
 		width: 100%
-		height: 3px
+		height: 30px
 		background: #fbf8a6
-		box-shadow: 0 2px 4px rgba(#000,.5)
+		box-shadow: 0 20px 20px rgba(#000,.5)
 	&:after
 		content: ""
 		position: absolute
 		top: 0
-		left: 12px
-		width: 5px
+		left: 120px
+		width: 50px
 		height: 100%
-		border-left: solid 1px rgba(#880B0B, 0.2)
-		border-right: solid 1px rgba(#880B0B, 0.2)
+		border-left: solid 10px rgba(#880B0B, 0.2)
+		border-right: solid 10px rgba(#880B0B, 0.2)
 </style>

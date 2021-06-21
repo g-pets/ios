@@ -25,13 +25,13 @@ export default {
 .icon-header
 	background-image: linear-gradient(180deg, #EC9C9E 12%, #D13335 90%, #7f1517 100%)
 .icon-body
-	height: 70px
+	height: 700px
 	background: #fff
-	box-shadow: inset 0px 3px 5px rgba(#000,.3)
+	box-shadow: inset 0px 30px 50px rgba(#000,.3)
 	.date
 		color: #333
 		text-align: center
-		font-size: 4em
+		font-size: 40em
 		line-height: 1.2
 		font-weight: bold
 </style>
