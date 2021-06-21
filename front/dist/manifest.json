@@ -1,6 +1,6 @@
 {
   "index.html": {
-    "file": "assets/index.35a3dd10.js",
+    "file": "assets/index.db27b05c.js",
     "src": "index.html",
     "isEntry": true,
     "imports": [
@@ -34,14 +34,14 @@
     "file": "assets/vendor.c335db97.js"
   },
   "src/views/homeScreen.vue": {
-    "file": "assets/homeScreen.e38b60f1.js",
+    "file": "assets/homeScreen.ede6fd4e.js",
     "src": "src/views/homeScreen.vue",
     "isDynamicEntry": true,
     "imports": [
       "_vendor.c335db97.js"
     ],
     "css": [
-      "assets/homeScreen.289983a4.css"
+      "assets/homeScreen.b5aa9f06.css"
     ]
   },
   "src/apps/textApp.vue": {
