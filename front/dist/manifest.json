@@ -1,12 +1,13 @@
 {
   "index.html": {
-    "file": "assets/index.db27b05c.js",
+    "file": "assets/index.f3631580.js",
     "src": "index.html",
     "isEntry": true,
     "imports": [
       "_vendor.c335db97.js"
     ],
     "dynamicImports": [
+      "src/views/lockScreen.vue",
       "src/views/homeScreen.vue",
       "src/apps/textApp.vue",
       "src/apps/calendarApp.vue",
@@ -32,6 +33,17 @@
   },
   "_vendor.c335db97.js": {
     "file": "assets/vendor.c335db97.js"
+  },
+  "src/views/lockScreen.vue": {
+    "file": "assets/lockScreen.fb81514c.js",
+    "src": "src/views/lockScreen.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor.c335db97.js"
+    ],
+    "css": [
+      "assets/lockScreen.f3489bb1.css"
+    ]
   },
   "src/views/homeScreen.vue": {
     "file": "assets/homeScreen.ede6fd4e.js",

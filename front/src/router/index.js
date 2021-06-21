@@ -27,9 +27,12 @@ const iPodApp = () => import('~/apps/iPodApp.vue')
 const routes = [
 	{
 		path: "/",
+		name: "lockScreen",
+		component: lockScreen
+	}, {
+		path: "/home",
 		name: "homeScreen",
 		component: homeScreen
-		// component: lockScreen
 	}, {
 		path: "/apps/text",
 		name: "textApp",
