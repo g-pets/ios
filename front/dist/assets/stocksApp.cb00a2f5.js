@@ -1,0 +1,1 @@
+import{b as e,c as t,d as n}from"./vendor.57cae93e.js";const s={class:"app"},a=n("h1",null,"Stocks App",-1);const o={name:"textApp",render:function(n,o,p,r,c,d){return e(),t("div",s,[a])}};export default o;

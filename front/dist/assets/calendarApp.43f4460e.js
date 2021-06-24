@@ -1,1 +1,0 @@
-import{b as n,c as a,d as e}from"./vendor.5cd743d1.js";const r={class:"app"},t=e("h1",null,"Calendar App",-1);const d={name:"textApp",render:function(e,d,p,s,o,c){return n(),a("div",r,[t])}};export default d;

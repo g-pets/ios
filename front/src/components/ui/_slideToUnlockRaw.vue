@@ -7,8 +7,6 @@
 	.text slide to unlock
 </template>
 
-300/100
-
 <script>
 import {ref} from 'vue'
 export default {

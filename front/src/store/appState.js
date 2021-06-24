@@ -22,9 +22,12 @@ export default function runApp() {
 	return {runApp}
 }
 
-export function stateFn() {
-	function lockPhone() {
-		appState.state.locked != appState.state.locked
+export function appStateFunctions() {
+	function unlockPhone() {
+		appState.locked = false
 	}
-	return {lockPhone}
+	function lockPhone() {
+		appState.locked = true
+	}
+	return {lockPhone, unlockPhone}
 }

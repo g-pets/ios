@@ -1,26 +1,98 @@
 <template lang="pug">
-.slide-to-unlock
-	.toggle(@mousedown="startSliding")
+.slide-to-unlock(ref="container")
+	.toggle(ref="toggle" @mousedown="dragStart" @touchstart="dragStart")
 		svg.arrow(fill="none" viewBox="0 0 160 160")
 			path(d="M6 54h81V26l67 54-67 54v-28H6V54z")
+	.overlay(:style="{opacity: (sliderStyle/300).toFixed(2)}")
 	.text slide to unlock
 </template>
 
-
 <script>
+import {ref} from 'vue'
+import {useRouter} from 'vue-router'
 export default {
-	name: 'slideToUnlock',
-	methods: {
-		//- dragMoving() {
-		//- 	console.log('Start Moving')
-		//- },
-		startSliding() {
-			console.log('Start Moving')
-		},
+	setup() {
+		const router = useRouter()
+		const container = ref(null)
+		const toggle = ref(null)
+		let outerRect = null
+		let lockRect = null
+		let dragProps = ref(null)
+		let sliderStyle = ref()
+		let isTouch = "ontouchstart" in document.documentElement
+
+		function getX(event) {
+			if (isTouch === true) return event.touches[0].pageX
+			else return event.clientX
+		}
+
+		function clamp(value, min, max) {
+			return Math.min(Math.max(value, min), max);
+		}
+
+		function dragStart(e) {
+			outerRect = container.value.getBoundingClientRect()
+			lockRect = toggle.value.getBoundingClientRect()
+			var x = getX(e);
+			dragProps = {
+				start: lockRect.left - outerRect.left,
+				mouseStart: x,
+				newX: 0,
+			};
+			toggle.value.classList.add("dragging");
+			document.addEventListener("mousemove", dragLock, false);
+			document.addEventListener("touchmove", dragLock, false);
+			document.addEventListener("mouseup", dragStop);
+			document.addEventListener("touchend", dragStop);
+		}
+
+		function dragStop(reset) {  
+			toggle.value.classList.remove('dragging');
+			if (reset !== false) {
+				toggle.value.style.left = '0px'
+				sliderStyle.value = 0
+			}
+			document.removeEventListener('mousemove', dragLock, false)
+			document.removeEventListener('touchmove', dragLock, false)
+			document.removeEventListener('mouseup', dragStop)
+			document.removeEventListener('touchend', dragStop)
+		}
+		
+		async function unlock() {
+			toggle.value.classList.remove('unlocked');
+			dragStop(false)
+			toggle.value.removeEventListener("mousedown", dragStart)
+			toggle.value.removeEventListener("touchstart", dragStart)
+			await router.push({name: 'homeScreen'})
+		}
+
+		function dragLock(e) {
+			e.preventDefault()
+			var posX = getX(e)
+			var mouseDiff = posX - dragProps.mouseStart,
+				maxX = outerRect.width - lockRect.width - 7,
+				newX = dragProps.start + mouseDiff,
+				newX = clamp(newX, 0, maxX);
+
+			toggle.value.style.left = newX + "px"
+			sliderStyle.value = newX
+			if (newX >= maxX) {
+				unlock();
+			}
+		}
+
+		
+
+		return {container, toggle, dragStart, sliderStyle}
+		
+		
+
+		
+
+		
 	}
 }
 </script>
-
 
 <style lang="stylus">
 .slide-to-unlock
@@ -40,10 +112,24 @@ export default {
 		background: linear-gradient(180deg, #FEFEFE 0%, #DDDDDD 49%, #CFCFCF 50%, #A1A1A1 100%)
 		border-radius: 0.4em
 		cursor: pointer
+		position: relative
+		z-index: 2
+		left: 0
+		transition: left 0.3s ease-out
+		&.dragging, &.unlocked
+			transition: none
 		.arrow
 			width: 2.3em
 			fill: #8b8b8b
-			
+	.overlay
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background: #000
+		opacity: 0
+		z-index: 1
 	.text
 		position: absolute
 		pointer-events: none

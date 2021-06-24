@@ -4,24 +4,19 @@
 		.time {{dateTime.time}}
 		.date {{dateTime.date}}
 	.bottom-panel.panel-glow
-		//- p {{unlockProgress}}
-		//- input.slide(type="range" min="0" max="10" step="0.01" v-model.number="unlockProgress")
 		slideToUnlock
-		//- .slider
-			.toggle(@mousemove="dragMoving" @mouseup="dragFinish" @touchmove="dragMoving" @touchend="dragFinish")
-				svg.arrow(fill="none" viewBox="0 0 160 160")
-					path(d="M6 54h81V26l67 54-67 54v-28H6V54z")
-			.text slide to unlock
 //- .screenshot
 </template>
 
 <script>
-import {dateTime} from "~/store/appState"
-import slideToUnlock from "~/components/ui/_slideToUnlockRaw.vue"
+import {dateTime, appStateFunctions} from "~/store/appState"
+import slideToUnlock from "~/components/ui/slideToUnlock.vue"
 export default {
 	name: "LockScreen",
 	components: {slideToUnlock},
 	setup() {
+		const {lockPhone} = appStateFunctions()
+		lockPhone()
 		return {dateTime}
 	}
 };
