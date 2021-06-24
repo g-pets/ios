@@ -2,9 +2,11 @@
 .status-bar
 	.group.left
 		glyph(name="signal")
-		.operator AT&T
+		.operator AT&T {{connectionInfo.type}}
 		glyph(name="wifi")
-	.time {{actualTime}}
+	.group.center
+		glyph(v-if="appState.locked" name="locked")
+		.time(v-else) {{dateTime.time}}
 	.group.right
 		glyph(name="bluetooth")
 		.battery-status
@@ -17,6 +19,7 @@
 
 <script>
 import {ref, reactive, onMounted} from 'vue'
+import {dateTime, appState} from "~/store/appState"
 export default {
 	name: "statusBar",
 	computed: {
@@ -32,17 +35,15 @@ export default {
 		}
 	},
 	setup() {
-		let actualTime = ref('')
-		const timeOptions = {hour12: false, hour: '2-digit', minute:'2-digit'}
-		function getTime() {
-			let date = new Date()
-			actualTime.value = date.toLocaleTimeString('en-US', timeOptions)
-		}
-		
+		// const {dateTime} = appState()
 
 		let batteryInfo = reactive({
 			charging: false,
 			level: 1,
+		})
+
+		let connectionInfo = reactive({
+			type: ''
 		})
 
 		if(navigator.getBattery) {
@@ -57,15 +58,27 @@ export default {
 				})
 			})
 		}
+		
+		if(navigator.connection) {
+			let connection = navigator.connection
+			connectionInfo.type = connection.effectiveType
+			connectionInfo.signal = connection.rtt
+			console.log(connection)
+			connection.addEventListener('change', function() {
+				connectionInfo.type = connection.effectiveType
+				connectionInfo.signal = connection.rtt
+			})
+		}
 
 
 		onMounted(() => {
-			getTime()
+			// checkConnection()
+			// getTime()
 			// setInterval(getTime, 1000)
 		})
 		
 
-		return {actualTime, batteryInfo}
+		return {dateTime, appState, batteryInfo, connectionInfo}
 	}
 }
 </script>
@@ -102,9 +115,10 @@ export default {
 			justify-content: flex-start
 		&.right
 			justify-content: flex-end
-		
-	.time
-		margin: auto
+		&.center
+			justify-content: center
+			margin: auto
+			min-width: 0
 	.operator, .battery-level
 		font-size: 0.9em
 		margin-top: 0.4em

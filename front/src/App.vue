@@ -18,6 +18,8 @@ glyphs-set
 </template>
 
 <script>
+import {onMounted} from "vue"
+import appState from "~/store/appState"
 import { useRegisterSW } from "virtual:pwa-register/vue"
 import glyphsSet from '~/components/svg/glyphs/glyphsSet.vue'
 import statusBar from '~/components/ui/statusBar.vue'
@@ -36,11 +38,13 @@ export default {
 		}
 	},
 	setup() {
+		const {runApp} = appState()
 		const {offlineReady, needRefresh, updateServiceWorker} = useRegisterSW()
 		const cancelUpdate = async() => {
 			offlineReady.value = false
 			needRefresh.value = false
 		}
+		onMounted(() => runApp())
 		return {needRefresh, updateServiceWorker, cancelUpdate}
 	}
 };

@@ -1,8 +1,9 @@
 <template lang="pug">
+
 .view.view-homescreen(:class="{shake}")
-	//- .demo-shake
 	.apps-grid.drop-zone(@drop='onDrop($event, "screen")' @dragover.prevent @dragenter.prevent)
-		app-icon.drag-el(v-for="app in screenApps" :name="app.name" :title="app.title" :key="app.id" :draggable="true" @dragstart='startDrag($event, app)')
+		//- transition-group(name="appsIconsTransition")
+		app-icon.drag-el(v-for="(app, index) in screenApps" :class="`item_${index}`" :name="app.name" :title="app.title" :key="app.id" :draggable="true" @dragstart='startDrag($event, app)')
 
 			
 		
@@ -142,16 +143,24 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+// .appsIconsTransition-enter-active, .appsIconsTransition-leave-active
+// 	transition: all 1s ease
+// .appsIconsTransition-enter-from, .appsIconsTransition-leave-to
+// 	opacity: 0
+// 	transform: translateY(30px)
+
 .view-homescreen
 	display: flex
 	flex-direction: column
+	width: 100%
 	height: 100%
+	overflow: hidden
 	.apps-grid
 		flex: 1 0 auto
 		padding: 1.1em
 		padding-bottom: 0
 		display: grid
-		gap: 5vw
+		gap: 50vw
 		grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr))
 		align-content: start
 	.dock
@@ -178,10 +187,10 @@ export default {
 
 // Jiggle on Edit
 .view-homescreen
-	.demo-shake
-		width: 3.5em
-		height: 3.5em
-		background: #fff
+	.apps-grid
+		// animation: .5s appsEnter alternate ease-in-out
+		gap: 5vw
+
 	&.shake
 		:deep(.app-item)
 			&:nth-child(2n)
@@ -205,6 +214,15 @@ export default {
 			transform: rotate(1deg)
 		to
 			transform: rotate(-1.5deg)
+	
+	@keyframes appsEnter
+		from
+			gap: 10vw
+			opacity: 0
+		to
+			gap: 5vw
+			opacity: 1
+		
 .screenshot
 	position: absolute
 	z-index: 0
