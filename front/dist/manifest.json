@@ -1,6 +1,6 @@
 {
   "index.html": {
-    "file": "assets/index.f6876ee7.js",
+    "file": "assets/index.7930479d.js",
     "src": "index.html",
     "isEntry": true,
     "imports": [
@@ -37,14 +37,14 @@
       "src/apps/iPodApp.vue"
     ],
     "css": [
-      "assets/index.4233b8d0.css"
+      "assets/index.8ef20e7e.css"
     ]
   },
   "_vendor.fbc0f821.js": {
     "file": "assets/vendor.fbc0f821.js"
   },
   "src/views/lockScreen.vue": {
-    "file": "assets/lockScreen.3476d50d.js",
+    "file": "assets/lockScreen.1a595a8d.js",
     "src": "src/views/lockScreen.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -56,7 +56,7 @@
     ]
   },
   "src/views/homeScreen.vue": {
-    "file": "assets/homeScreen.2980607f.js",
+    "file": "assets/homeScreen.068b9c6a.js",
     "src": "src/views/homeScreen.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -134,7 +134,7 @@
     ]
   },
   "src/apps/phoneApp/phoneApp.vue": {
-    "file": "assets/phoneApp.e8826958.js",
+    "file": "assets/phoneApp.0712811b.js",
     "src": "src/apps/phoneApp/phoneApp.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -142,7 +142,7 @@
       "_vendor.fbc0f821.js"
     ],
     "css": [
-      "assets/phoneApp.c17d9b9f.css"
+      "assets/phoneApp.3f0d8605.css"
     ]
   },
   "src/apps/phoneApp/favorites.vue": {
@@ -170,14 +170,14 @@
     ]
   },
   "src/apps/phoneApp/keypad.vue": {
-    "file": "assets/keypad.b2fe801e.js",
+    "file": "assets/keypad.5b34ac2a.js",
     "src": "src/apps/phoneApp/keypad.vue",
     "isDynamicEntry": true,
     "imports": [
       "_vendor.fbc0f821.js"
     ],
     "css": [
-      "assets/keypad.e8d87a02.css"
+      "assets/keypad.0d37bc90.css"
     ]
   },
   "src/apps/phoneApp/voicemail.vue": {

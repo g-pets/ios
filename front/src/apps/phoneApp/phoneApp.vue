@@ -2,7 +2,6 @@
 .app.phone-app
 	router-view.content
 	tab-bar(:sections="appSections")
-
 </template>
 
 <script>
@@ -13,11 +12,11 @@ export default {
 	data() {
 		return {
 			appSections: [
-				{name: "phoneApp_favorites", label: "Favorites", glyph: "globe"},
-				{name: "phoneApp_recents", label: "Recents", glyph: "alarm"},
-				{name: "phoneApp_contacts", label: "Contacts", glyph: "stopwatch"},
-				{name: "phoneApp_keypad", label: "Keypad", glyph: "timer"},
-				{name: "phoneApp_voicemail", label: "Voicemail", glyph: "timer"}
+				{name: "phoneApp_favorites", label: "Favorites", glyph: "favorite"},
+				{name: "phoneApp_recents", label: "Recents", glyph: "recent"},
+				{name: "phoneApp_contacts", label: "Contacts", glyph: "contacts"},
+				{name: "phoneApp_keypad", label: "Keypad", glyph: "keypad"},
+				{name: "phoneApp_voicemail", label: "Voicemail", glyph: "voicemail"}
 			]
 		}
 	}
