@@ -24,6 +24,7 @@ export default {
 	components: {notesApp, calendarApp, textApp, phoneApp, iPodApp, clockApp},
 	props: {
 		name: String,
+		router: String,
 		title: String
 	},
 	computed: {
@@ -38,7 +39,7 @@ export default {
 	},
 	methods: {
 		openApp() {
-			this.$router.push({name: this.name})
+			this.$router.push({name: this.router})
 		},
 		randomNumber(min, max) {
 			return Math.round(Math.random() * (max - min) + min)

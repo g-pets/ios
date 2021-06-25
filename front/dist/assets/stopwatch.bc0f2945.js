@@ -1,0 +1,1 @@
+import{b as o,c as n,d as s}from"./vendor.fbc0f821.js";const t={class:"stopwatch coming-soon"},c=s("h2",null,"Coming Soon",-1);const r={render:function(s,r){return o(),n("div",t,[c])}};export default r;

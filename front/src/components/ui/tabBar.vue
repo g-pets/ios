@@ -1,28 +1,15 @@
 <template lang="pug">
 .tab-bar
-	button.active
-		glyph(name="globe")
-		.label World Clock
-	button
-		glyph(name="alarm")
-		.label Alarm
-	button
-		glyph(name="stopwatch")
-		.label Stopwatch
-	button
-		glyph(name="timer")
-		.label Timer
+	router-link(v-for="section in sections" :to="{name: section.name}" custom v-slot="{ navigate, isExactActive }")
+		button.tab-bar-button(:class="{active: isExactActive}" @click="navigate")
+			glyph(:name="section.glyph")
+			.label {{section.label}}
 </template>
 
 <script>
 export default {
 	name: "tabBar",
-	props: {
-		title: String,
-		back: String,
-		background: Array,
-		data: Object
-	},
+	props: {sections: Array}
 }
 </script>
 
@@ -37,7 +24,7 @@ export default {
 	align-items: center
 	width: 100%
 	z-index: 2
-	button
+	button.tab-bar-button
 		display: block
 		flex: 1 1 25%		
 		background: transparent
@@ -62,7 +49,4 @@ export default {
 				filter: drop-shadow(0 2px 1px rgba(#000,.5))
 			.label
 				color: #fff
-				
-
-
 </style>

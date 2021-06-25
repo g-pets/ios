@@ -13,7 +13,17 @@ const youTubeApp = () => import('~/apps/youTubeApp.vue')
 const stocksApp = () => import('~/apps/stocksApp.vue')
 const mapsApp = () => import('~/apps/mapsApp.vue')
 const weatherApp = () => import('~/apps/weatherApp.vue')
-const clockApp = () => import('~/apps/clockApp.vue')
+
+
+// Clock App
+// const clockApp = () => import('~/apps/clockApp.vue')
+const clockApp = () => import('~/apps/clockApp/clockApp.vue')
+const clockApp_worldClock = () => import('~/apps/clockApp/worldClock.vue')
+const clockApp_alarm = () => import('~/apps/clockApp/alarm.vue')
+const clockApp_stopwatch = () => import('~/apps/clockApp/stopwatch.vue')
+const clockApp_timer = () => import('~/apps/clockApp/timer.vue')
+
+
 const calculatorApp = () => import('~/apps/calculatorApp.vue')
 const notesApp = () => import('~/apps/notesApp/startScreen.vue')
 const noteScreen = () => import('~/apps/notesApp/noteScreen.vue')
@@ -33,6 +43,32 @@ const routes = [
 		path: "/home",
 		name: "homeScreen",
 		component: homeScreen
+	}, {
+		path: "/apps/clock",
+		// name: "clockApp",
+		component: clockApp,
+		children: [
+			{
+				path: "world-clock",
+				name: "clockApp_worldClock",
+				component: clockApp_worldClock
+			}, {
+				path: "alarm",
+				name: "clockApp_alarm",
+				component: clockApp_alarm
+			}, {
+				path: "stopwatch",
+				name: "clockApp_stopwatch",
+				component: clockApp_stopwatch
+			}, {
+				path: "timer",
+				name: "clockApp_timer",
+				component: clockApp_timer
+			}, {
+				path: "",
+				redirect: { name: "clockApp_worldClock" },
+			}
+		]
 	}, {
 		path: "/apps/text",
 		name: "textApp",
@@ -65,10 +101,10 @@ const routes = [
 		path: "/apps/weather",
 		name: "weatherApp",
 		component: weatherApp
-	}, {
-		path: "/apps/clock",
-		name: "clockApp",
-		component: clockApp
+	// }, {
+	// 	path: "/apps/clock",
+	// 	name: "clockApp",
+	// 	component: clockApp
 	}, {
 		path: "/apps/calculator",
 		name: "calculatorApp",
