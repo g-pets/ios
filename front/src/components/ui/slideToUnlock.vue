@@ -116,6 +116,7 @@ export default {
 		z-index: 2
 		left: 0
 		transition: left 0.3s ease-out
+		will-change: left
 		&.dragging, &.unlocked
 			transition: none
 		.arrow

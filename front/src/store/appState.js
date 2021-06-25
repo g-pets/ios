@@ -23,11 +23,7 @@ export default function runApp() {
 }
 
 export function appStateFunctions() {
-	function unlockPhone() {
-		appState.locked = false
-	}
-	function lockPhone() {
-		appState.locked = true
-	}
+	function unlockPhone() {appState.locked = false}
+	function lockPhone() {appState.locked = true}
 	return {lockPhone, unlockPhone}
 }

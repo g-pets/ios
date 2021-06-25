@@ -1,14 +1,12 @@
 <template lang="pug">
-
 .view.view-homescreen(:class="{shake}")
 	.apps-grid.drop-zone(@drop='onDrop($event, "screen")' @dragover.prevent @dragenter.prevent)
-		//- transition-group(name="appsIconsTransition")
 		app-icon.drag-el(v-for="(app, index) in screenApps" :class="`item_${index}`" :name="app.name" :title="app.title" :key="app.id" :draggable="true" @dragstart='startDrag($event, app)')
 
 			
 		
 	.dock.drop-zone(@drop='onDrop($event, "dock")' @dragover.prevent @dragenter.prevent)
-		//- app-icon.drag-el(v-for="app in dockApps" :name="app.name" :title="app.title" :key="app.id" :draggable="true" @dragstart='startDrag($event, app)')
+		app-icon.drag-el(v-for="app in dockApps" :name="app.name" :title="app.title" :key="app.id" :draggable="true" @dragstart='startDrag($event, app)')
 //- img.screenshot(src="/screens/01-home.jpg")
 </template>
 

@@ -1,10 +1,11 @@
 <template lang="pug">
-.navigation-bar(:style="style")
+.navigation-bar
 	.group.left
-		.back(v-if="back" @click="goBack") {{back}}
+		//- .back(v-if="back" @click="goBack") {{back}}
+		slot(name="left")
 	.title {{title}}
 	.group.right
-		slot(name="btn")
+		slot(name="right")
 </template>
 
 <script>
@@ -15,13 +16,6 @@ export default {
 		back: String,
 		background: Array,
 		data: Object
-	},
-	computed: {
-		style() {
-			let style = []
-			if(this.background) style.push(`background: linear-gradient(180deg, ${this.background[0]} 0%, ${this.background[1]} 50%, ${this.background[2]} 100%)`)
-			return style
-		}
 	},
 	methods: {
 		goBack() {
@@ -34,23 +28,30 @@ export default {
 <style lang="stylus">
 .navigation-bar
 	background: linear-gradient(180deg, #875D52 0%, #51372F 50%, #3B2D21 100%)
-	color: #EFF1F2
-	padding: 0.5em
+	box-shadow: inset 0 -1px 0 rgba(#000,0.3), inset 0 1px 0 rgba(#fff,0.5)
+	color: #fffffa
+	padding: 0.45em 0.3em
 	text-align: center
 	display: flex
 	justify-content: space-between
 	align-items: center
-	z-index: 2
+	width: 100%
 	position: sticky
 	top: 0
+	// top: 1.26em
+	z-index: 2
+	.title
+		text-shadow: 0px -0.05em 0 rgba(#000,.5)
+		font-size: 1.3em
+		font-weight: bold
+		line-height: 1
+		padding-top: 0.2em
+		letter-spacing: -0.02em
 	.group
-		width: 5em
+		width: 3em
+		display: flex
+		&.left
+			justify-content: flex-start
 		&.right
-			display: flex
 			justify-content: flex-end
-			.add-note
-				padding: 0.2em 0.4em
-				line-height: 1
-				border: 1px solid #222
-				border-radius: 0.3em
 </style>
