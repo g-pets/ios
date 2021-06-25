@@ -1,7 +1,6 @@
 <template lang="pug">
 .navigation-bar
 	.group.left
-		//- .back(v-if="back" @click="goBack") {{back}}
 		slot(name="left")
 	.title {{title}}
 	.group.right

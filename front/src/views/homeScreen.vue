@@ -55,6 +55,11 @@ export default {
 		unlockPhone()
 		const apps = reactive([
 			{
+				id: 9,
+				title: "Clock",
+				name: "clockApp",
+				position: "screen"
+			}, {
 				id: 11,
 				title: "Notes",
 				name: "notesApp",
@@ -68,11 +73,6 @@ export default {
 				id: 2,
 				title: "Calendar",
 				name: "calendarApp",
-				position: "screen"
-			}, {
-				id: 9,
-				title: "Clock",
-				name: "clockApp",
 				position: "screen"
 			
 			// }, {

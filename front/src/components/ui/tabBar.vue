@@ -1,7 +1,17 @@
 <template lang="pug">
 .tab-bar
-	button
+	button.active
 		glyph(name="globe")
+		.label World Clock
+	button
+		glyph(name="alarm")
+		.label Alarm
+	button
+		glyph(name="stopwatch")
+		.label Stopwatch
+	button
+		glyph(name="timer")
+		.label Timer
 </template>
 
 <script>
@@ -16,20 +26,43 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 .tab-bar
 	background: linear-gradient(180deg, #2f2f2f 0%, #181818 50%, #000 100%)
 	box-shadow: 0 -1px 0 rgba(#000,0.3), inset 0 1px 0 rgba(#fff,0.1)
 	color: #fffffa
-	padding: 0.45em 0.3em
+	padding: 0.15em 0.1em
 	text-align: center
 	display: flex
-	justify-content: space-between
 	align-items: center
 	width: 100%
-	position: sticky
-	left: 0
-	bottom: 0
-	// top: 1.26em
 	z-index: 2
+	button
+		display: block
+		flex: 1 1 25%		
+		background: transparent
+		border-radius: 0.2em
+		padding: 0.2em
+		+ button
+			margin-left: 0.2em
+		svg.icon
+			width: 1.8em
+			height: 1.8em
+			fill: #a1a1a1
+		.label
+			color: #a1a1a1
+			font-size: 0.6em
+			font-weight: 600
+			line-height: 1
+			padding-top: 0.4em
+		&.active
+			background: linear-gradient(180deg, #454545 0%, #363636 50%, #252525 50%, #242424 100%)
+			svg.icon
+				fill: #51bff3
+				filter: drop-shadow(0 2px 1px rgba(#000,.5))
+			.label
+				color: #fff
+				
+
+
 </style>

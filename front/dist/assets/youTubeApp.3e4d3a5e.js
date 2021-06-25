@@ -1,1 +1,0 @@
-import{b as e,c as n,d as t}from"./vendor.57cae93e.js";const a={class:"app"},o=t("h1",null,"YouTube App",-1);const p={name:"textApp",render:function(t,p,r,s,c,u){return e(),n("div",a,[o])}};export default p;

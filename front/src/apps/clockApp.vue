@@ -25,7 +25,7 @@
 				.city-time
 					.time 12:38
 					.day Today
-		//- world-map
+		world-map
 	tab-bar
 //- .screenshot
 </template>
@@ -43,9 +43,9 @@ export default {
 	setup() {
 		const cities = reactive([
 			{name: "Los Angeles", shift: 10},
-			{name: "London", shift: 10},
-			{name: "Prague", shift: 10},
-			{name: "Moscow", shift: 10}
+			// {name: "London", shift: 10},
+			// {name: "Prague", shift: 10},
+			// {name: "Moscow", shift: 10}
 		])
 		let time = reactive({s:0,m:0,h:0})
 		function getTime() {
@@ -66,7 +66,7 @@ export default {
 <style lang="stylus" scoped>
 .screenshot
 	position: absolute
-	top: -4em
+	top: -9em
 	left: 0
 	background-image: url("/screens/clockApp-worldMap.jpg")
 	width: 100%
@@ -81,14 +81,18 @@ export default {
 .clock-app
 	height: 100%
 	background: repeating-linear-gradient(90deg, #4C5D73, #4C5D73 10px, #4F6075 10px, #4F6075 11px)
+	display: flex
+	flex-direction: column
 	.content
 		// height: 100%
+		flex: 1 0 auto
 		display: flex
 		flex-direction: column
-		justify-content: space-between
+		justify-content: flex-start
 		.world-map
 			width: 100%
 			height: auto
+			margin: auto
 			fill: #fff
 			opacity: 0.2
 		.city
@@ -133,6 +137,7 @@ export default {
 					backface-visibility: hidden
 			.city-name
 				padding-top: 0.2em
+				line-height: 1.2
 			.city-time
 				text-align: right
 				line-height: 1.2
