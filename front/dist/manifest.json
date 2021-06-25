@@ -1,6 +1,6 @@
 {
   "index.html": {
-    "file": "assets/index.a80fd23e.js",
+    "file": "assets/index.6b8c59c0.js",
     "src": "index.html",
     "isEntry": true,
     "imports": [
@@ -39,7 +39,7 @@
     "file": "assets/vendor.fbc0f821.js"
   },
   "src/views/lockScreen.vue": {
-    "file": "assets/lockScreen.0cce4ecf.js",
+    "file": "assets/lockScreen.38afbabb.js",
     "src": "src/views/lockScreen.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -51,7 +51,7 @@
     ]
   },
   "src/views/homeScreen.vue": {
-    "file": "assets/homeScreen.1ae84c20.js",
+    "file": "assets/homeScreen.f1dd5dc3.js",
     "src": "src/views/homeScreen.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -130,19 +130,19 @@
     ]
   },
   "src/apps/clockApp/clockApp.vue": {
-    "file": "assets/clockApp.b813e030.js",
+    "file": "assets/clockApp.b167a2bd.js",
     "src": "src/apps/clockApp/clockApp.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_navigationBar.042aec48.js",
+      "_navigationBar.e31afa40.js",
       "_vendor.fbc0f821.js"
     ],
     "css": [
-      "assets/clockApp.8a813618.css"
+      "assets/clockApp.2124485e.css"
     ]
   },
-  "_navigationBar.042aec48.js": {
-    "file": "assets/navigationBar.042aec48.js",
+  "_navigationBar.e31afa40.js": {
+    "file": "assets/navigationBar.e31afa40.js",
     "imports": [
       "_vendor.fbc0f821.js"
     ],
@@ -194,11 +194,11 @@
     ]
   },
   "src/apps/notesApp/startScreen.vue": {
-    "file": "assets/startScreen.2bbaeea0.js",
+    "file": "assets/startScreen.197eb987.js",
     "src": "src/apps/notesApp/startScreen.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_navigationBar.042aec48.js",
+      "_navigationBar.e31afa40.js",
       "_index.bc852a36.js",
       "_vendor.fbc0f821.js"
     ],
@@ -210,11 +210,11 @@
     "file": "assets/index.bc852a36.js"
   },
   "src/apps/notesApp/noteScreen.vue": {
-    "file": "assets/noteScreen.76f3b170.js",
+    "file": "assets/noteScreen.00b9b14b.js",
     "src": "src/apps/notesApp/noteScreen.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_navigationBar.042aec48.js",
+      "_navigationBar.e31afa40.js",
       "_index.bc852a36.js",
       "_vendor.fbc0f821.js"
     ],

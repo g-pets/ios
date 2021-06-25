@@ -2,27 +2,10 @@
 .navigation-bar
 	.group.left
 		slot(name="left")
-	.title {{title}}
+	.title {{$route.meta.title}}
 	.group.right
 		slot(name="right")
 </template>
-
-<script>
-export default {
-	name: "textApp",
-	props: {
-		title: String,
-		back: String,
-		background: Array,
-		data: Object
-	},
-	methods: {
-		goBack() {
-			this.$router.back()
-		}
-	}
-}
-</script>
 
 <style lang="stylus">
 .navigation-bar

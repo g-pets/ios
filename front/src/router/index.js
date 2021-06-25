@@ -51,19 +51,23 @@ const routes = [
 			{
 				path: "world-clock",
 				name: "clockApp_worldClock",
-				component: clockApp_worldClock
+				component: clockApp_worldClock,
+				meta: {title: "World Clock"}
 			}, {
 				path: "alarm",
 				name: "clockApp_alarm",
-				component: clockApp_alarm
+				component: clockApp_alarm,
+				meta: {title: "Alarm"}
 			}, {
 				path: "stopwatch",
 				name: "clockApp_stopwatch",
-				component: clockApp_stopwatch
+				component: clockApp_stopwatch,
+				meta: {title: "Stopwatch"}
 			}, {
 				path: "timer",
 				name: "clockApp_timer",
-				component: clockApp_timer
+				component: clockApp_timer,
+				meta: {title: "Timer"}
 			}, {
 				path: "",
 				redirect: { name: "clockApp_worldClock" },

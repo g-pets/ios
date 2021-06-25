@@ -1,6 +1,6 @@
 <template lang="pug">
 .app.clock-app
-	navigation-bar(title="World Clock")
+	navigation-bar
 		template(#left)
 			navigation-bar-button(label="Edit")
 		template(#right)
