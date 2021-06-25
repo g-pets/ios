@@ -6,7 +6,7 @@
 			
 		
 	.dock.drop-zone(@drop='onDrop($event, "dock")' @dragover.prevent @dragenter.prevent)
-		app-icon.drag-el(v-for="app in dockApps" :name="app.name" :title="app.title" :key="app.id" :draggable="true" @dragstart='startDrag($event, app)')
+		app-icon.drag-el(v-for="app in dockApps" :name="app.name" :title="app.title" :router="app.router" :key="app.id" :draggable="true" @dragstart='startDrag($event, app)')
 //- img.screenshot(src="/screens/01-home.jpg")
 </template>
 
@@ -61,20 +61,26 @@ export default {
 				router: "clockApp_worldClock",
 				position: "screen"
 			}, {
-				id: 11,
-				title: "Notes",
-				name: "notesApp",
-				position: "screen"
+				id: 13,
+				title: "Phone",
+				name: "phoneApp",
+				router: "phoneApp_keypad",
+				position: "dock"
+			// }, {
+			// 	id: 11,
+			// 	title: "Notes",
+			// 	name: "notesApp",
+			// 	position: "screen"
 			// }, {
 			// 	id: 1,
 			// 	title: "Text",
 			// 	name: "textApp",
 			// 	position: "screen"
-			}, {
-				id: 2,
-				title: "Calendar",
-				name: "calendarApp",
-				position: "screen"
+			// }, {
+			// 	id: 2,
+			// 	title: "Calendar",
+			// 	name: "calendarApp",
+			// 	position: "screen"
 			
 			// }, {
 			// 	id: 3,
@@ -116,11 +122,6 @@ export default {
 			// 	id: 12,
 			// 	title: "Settings",
 			// 	name: "tempIcon",
-			// 	position: "screen"
-			// }, {
-			// 	id: 13,
-			// 	title: "Phone",
-			// 	name: "phoneApp",
 			// 	position: "screen"
 			// }, {
 			// 	id: 14,

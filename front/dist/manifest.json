@@ -1,6 +1,6 @@
 {
   "index.html": {
-    "file": "assets/index.6b8c59c0.js",
+    "file": "assets/index.f6876ee7.js",
     "src": "index.html",
     "isEntry": true,
     "imports": [
@@ -9,6 +9,17 @@
     "dynamicImports": [
       "src/views/lockScreen.vue",
       "src/views/homeScreen.vue",
+      "src/apps/clockApp/clockApp.vue",
+      "src/apps/clockApp/worldClock.vue",
+      "src/apps/clockApp/alarm.vue",
+      "src/apps/clockApp/stopwatch.vue",
+      "src/apps/clockApp/timer.vue",
+      "src/apps/phoneApp/phoneApp.vue",
+      "src/apps/phoneApp/favorites.vue",
+      "src/apps/phoneApp/recents.vue",
+      "src/apps/phoneApp/contacts.vue",
+      "src/apps/phoneApp/keypad.vue",
+      "src/apps/phoneApp/voicemail.vue",
       "src/apps/textApp.vue",
       "src/apps/calendarApp.vue",
       "src/apps/photosApp.vue",
@@ -17,16 +28,10 @@
       "src/apps/stocksApp.vue",
       "src/apps/mapsApp.vue",
       "src/apps/weatherApp.vue",
-      "src/apps/clockApp/clockApp.vue",
-      "src/apps/clockApp/worldClock.vue",
-      "src/apps/clockApp/alarm.vue",
-      "src/apps/clockApp/stopwatch.vue",
-      "src/apps/clockApp/timer.vue",
       "src/apps/calculatorApp.vue",
       "src/apps/notesApp/startScreen.vue",
       "src/apps/notesApp/noteScreen.vue",
       "src/apps/settings.vue",
-      "src/apps/phoneApp.vue",
       "src/apps/mailApp.vue",
       "src/apps/safariApp.vue",
       "src/apps/iPodApp.vue"
@@ -39,7 +44,7 @@
     "file": "assets/vendor.fbc0f821.js"
   },
   "src/views/lockScreen.vue": {
-    "file": "assets/lockScreen.38afbabb.js",
+    "file": "assets/lockScreen.3476d50d.js",
     "src": "src/views/lockScreen.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -51,7 +56,7 @@
     ]
   },
   "src/views/homeScreen.vue": {
-    "file": "assets/homeScreen.f1dd5dc3.js",
+    "file": "assets/homeScreen.2980607f.js",
     "src": "src/views/homeScreen.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -59,7 +64,128 @@
       "index.html"
     ],
     "css": [
-      "assets/homeScreen.d4e02b54.css"
+      "assets/homeScreen.b4b786ac.css"
+    ]
+  },
+  "src/apps/clockApp/clockApp.vue": {
+    "file": "assets/clockApp.d357b533.js",
+    "src": "src/apps/clockApp/clockApp.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_navigationBar.69d36a25.js",
+      "_vendor.fbc0f821.js",
+      "_tabBar.5f7af887.js"
+    ],
+    "css": [
+      "assets/clockApp.9cd35af8.css"
+    ]
+  },
+  "_navigationBar.69d36a25.js": {
+    "file": "assets/navigationBar.69d36a25.js",
+    "imports": [
+      "_vendor.fbc0f821.js"
+    ],
+    "css": [
+      "assets/navigationBar.c4642202.css"
+    ]
+  },
+  "_tabBar.5f7af887.js": {
+    "file": "assets/tabBar.5f7af887.js",
+    "imports": [
+      "_vendor.fbc0f821.js"
+    ],
+    "css": [
+      "assets/tabBar.c10dbfaf.css"
+    ]
+  },
+  "src/apps/clockApp/worldClock.vue": {
+    "file": "assets/worldClock.a93a08b0.js",
+    "src": "src/apps/clockApp/worldClock.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor.fbc0f821.js"
+    ],
+    "css": [
+      "assets/worldClock.0a04049e.css"
+    ]
+  },
+  "src/apps/clockApp/alarm.vue": {
+    "file": "assets/alarm.f398282b.js",
+    "src": "src/apps/clockApp/alarm.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor.fbc0f821.js"
+    ]
+  },
+  "src/apps/clockApp/stopwatch.vue": {
+    "file": "assets/stopwatch.bc0f2945.js",
+    "src": "src/apps/clockApp/stopwatch.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor.fbc0f821.js"
+    ]
+  },
+  "src/apps/clockApp/timer.vue": {
+    "file": "assets/timer.442cea58.js",
+    "src": "src/apps/clockApp/timer.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor.fbc0f821.js"
+    ]
+  },
+  "src/apps/phoneApp/phoneApp.vue": {
+    "file": "assets/phoneApp.e8826958.js",
+    "src": "src/apps/phoneApp/phoneApp.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_tabBar.5f7af887.js",
+      "_vendor.fbc0f821.js"
+    ],
+    "css": [
+      "assets/phoneApp.c17d9b9f.css"
+    ]
+  },
+  "src/apps/phoneApp/favorites.vue": {
+    "file": "assets/favorites.4aa68f53.js",
+    "src": "src/apps/phoneApp/favorites.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor.fbc0f821.js"
+    ]
+  },
+  "src/apps/phoneApp/recents.vue": {
+    "file": "assets/recents.2a49a5a4.js",
+    "src": "src/apps/phoneApp/recents.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor.fbc0f821.js"
+    ]
+  },
+  "src/apps/phoneApp/contacts.vue": {
+    "file": "assets/contacts.82e4c4a8.js",
+    "src": "src/apps/phoneApp/contacts.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor.fbc0f821.js"
+    ]
+  },
+  "src/apps/phoneApp/keypad.vue": {
+    "file": "assets/keypad.b2fe801e.js",
+    "src": "src/apps/phoneApp/keypad.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor.fbc0f821.js"
+    ],
+    "css": [
+      "assets/keypad.e8d87a02.css"
+    ]
+  },
+  "src/apps/phoneApp/voicemail.vue": {
+    "file": "assets/voicemail.d867fa98.js",
+    "src": "src/apps/phoneApp/voicemail.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor.fbc0f821.js"
     ]
   },
   "src/apps/textApp.vue": {
@@ -129,62 +255,6 @@
       "_vendor.fbc0f821.js"
     ]
   },
-  "src/apps/clockApp/clockApp.vue": {
-    "file": "assets/clockApp.b167a2bd.js",
-    "src": "src/apps/clockApp/clockApp.vue",
-    "isDynamicEntry": true,
-    "imports": [
-      "_navigationBar.e31afa40.js",
-      "_vendor.fbc0f821.js"
-    ],
-    "css": [
-      "assets/clockApp.2124485e.css"
-    ]
-  },
-  "_navigationBar.e31afa40.js": {
-    "file": "assets/navigationBar.e31afa40.js",
-    "imports": [
-      "_vendor.fbc0f821.js"
-    ],
-    "css": [
-      "assets/navigationBar.d1f93e43.css"
-    ]
-  },
-  "src/apps/clockApp/worldClock.vue": {
-    "file": "assets/worldClock.15e0a8da.js",
-    "src": "src/apps/clockApp/worldClock.vue",
-    "isDynamicEntry": true,
-    "imports": [
-      "_vendor.fbc0f821.js"
-    ],
-    "css": [
-      "assets/worldClock.86f31d32.css"
-    ]
-  },
-  "src/apps/clockApp/alarm.vue": {
-    "file": "assets/alarm.f398282b.js",
-    "src": "src/apps/clockApp/alarm.vue",
-    "isDynamicEntry": true,
-    "imports": [
-      "_vendor.fbc0f821.js"
-    ]
-  },
-  "src/apps/clockApp/stopwatch.vue": {
-    "file": "assets/stopwatch.bc0f2945.js",
-    "src": "src/apps/clockApp/stopwatch.vue",
-    "isDynamicEntry": true,
-    "imports": [
-      "_vendor.fbc0f821.js"
-    ]
-  },
-  "src/apps/clockApp/timer.vue": {
-    "file": "assets/timer.442cea58.js",
-    "src": "src/apps/clockApp/timer.vue",
-    "isDynamicEntry": true,
-    "imports": [
-      "_vendor.fbc0f821.js"
-    ]
-  },
   "src/apps/calculatorApp.vue": {
     "file": "assets/calculatorApp.b99b7245.js",
     "src": "src/apps/calculatorApp.vue",
@@ -194,11 +264,11 @@
     ]
   },
   "src/apps/notesApp/startScreen.vue": {
-    "file": "assets/startScreen.197eb987.js",
+    "file": "assets/startScreen.80bbe75e.js",
     "src": "src/apps/notesApp/startScreen.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_navigationBar.e31afa40.js",
+      "_navigationBar.69d36a25.js",
       "_index.bc852a36.js",
       "_vendor.fbc0f821.js"
     ],
@@ -210,11 +280,11 @@
     "file": "assets/index.bc852a36.js"
   },
   "src/apps/notesApp/noteScreen.vue": {
-    "file": "assets/noteScreen.00b9b14b.js",
+    "file": "assets/noteScreen.f5ae6b8b.js",
     "src": "src/apps/notesApp/noteScreen.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_navigationBar.e31afa40.js",
+      "_navigationBar.69d36a25.js",
       "_index.bc852a36.js",
       "_vendor.fbc0f821.js"
     ],
@@ -225,14 +295,6 @@
   "src/apps/settings.vue": {
     "file": "assets/settings.805f7be8.js",
     "src": "src/apps/settings.vue",
-    "isDynamicEntry": true,
-    "imports": [
-      "_vendor.fbc0f821.js"
-    ]
-  },
-  "src/apps/phoneApp.vue": {
-    "file": "assets/phoneApp.d09cefaa.js",
-    "src": "src/apps/phoneApp.vue",
     "isDynamicEntry": true,
     "imports": [
       "_vendor.fbc0f821.js"

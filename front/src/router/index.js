@@ -4,6 +4,25 @@ import { createWebHistory, createRouter } from "vue-router"
 const lockScreen = () => import('~/views/lockScreen.vue')
 const homeScreen = () => import('~/views/homeScreen.vue')
 
+
+
+
+// Clock App
+const clockApp = () => import('~/apps/clockApp/clockApp.vue')
+const clockApp_worldClock = () => import('~/apps/clockApp/worldClock.vue')
+const clockApp_alarm = () => import('~/apps/clockApp/alarm.vue')
+const clockApp_stopwatch = () => import('~/apps/clockApp/stopwatch.vue')
+const clockApp_timer = () => import('~/apps/clockApp/timer.vue')
+
+// Phone App
+const phoneApp = () => import('~/apps/phoneApp/phoneApp.vue')
+const phoneApp_favorites = () => import('~/apps/phoneApp/favorites.vue')
+const phoneApp_recents = () => import('~/apps/phoneApp/recents.vue')
+const phoneApp_contacts = () => import('~/apps/phoneApp/contacts.vue')
+const phoneApp_keypad = () => import('~/apps/phoneApp/keypad.vue')
+const phoneApp_voicemail = () => import('~/apps/phoneApp/voicemail.vue')
+
+
 // Apps
 const textApp = () => import('~/apps/textApp.vue')
 const calendarApp = () => import('~/apps/calendarApp.vue')
@@ -13,22 +32,10 @@ const youTubeApp = () => import('~/apps/youTubeApp.vue')
 const stocksApp = () => import('~/apps/stocksApp.vue')
 const mapsApp = () => import('~/apps/mapsApp.vue')
 const weatherApp = () => import('~/apps/weatherApp.vue')
-
-
-// Clock App
-// const clockApp = () => import('~/apps/clockApp.vue')
-const clockApp = () => import('~/apps/clockApp/clockApp.vue')
-const clockApp_worldClock = () => import('~/apps/clockApp/worldClock.vue')
-const clockApp_alarm = () => import('~/apps/clockApp/alarm.vue')
-const clockApp_stopwatch = () => import('~/apps/clockApp/stopwatch.vue')
-const clockApp_timer = () => import('~/apps/clockApp/timer.vue')
-
-
 const calculatorApp = () => import('~/apps/calculatorApp.vue')
 const notesApp = () => import('~/apps/notesApp/startScreen.vue')
 const noteScreen = () => import('~/apps/notesApp/noteScreen.vue')
 const settings = () => import('~/apps/settings.vue')
-const phoneApp = () => import('~/apps/phoneApp.vue')
 const mailApp = () => import('~/apps/mailApp.vue')
 const safariApp = () => import('~/apps/safariApp.vue')
 const iPodApp = () => import('~/apps/iPodApp.vue')
@@ -43,9 +50,10 @@ const routes = [
 		path: "/home",
 		name: "homeScreen",
 		component: homeScreen
-	}, {
+	},
+	// Clock App
+	{
 		path: "/apps/clock",
-		// name: "clockApp",
 		component: clockApp,
 		children: [
 			{
@@ -71,6 +79,42 @@ const routes = [
 			}, {
 				path: "",
 				redirect: { name: "clockApp_worldClock" },
+			}
+		]
+	},
+	// Phone App
+	{
+		path: "/apps/phone",
+		component: phoneApp,
+		children: [
+			{
+				path: "favorites",
+				name: "phoneApp_favorites",
+				component: phoneApp_favorites,
+				meta: {title: "Favorites"}
+			}, {
+				path: "recents",
+				name: "phoneApp_recents",
+				component: phoneApp_recents,
+				meta: {title: "Recents"}
+			}, {
+				path: "contacts",
+				name: "phoneApp_contacts",
+				component: phoneApp_contacts,
+				meta: {title: "Contacts"}
+			}, {
+				path: "keypad",
+				name: "phoneApp_keypad",
+				component: phoneApp_keypad,
+				meta: {title: "Keypad"}
+			}, {
+				path: "voicemail",
+				name: "phoneApp_voicemail",
+				component: phoneApp_voicemail,
+				meta: {title: "Voicemail"}
+			}, {
+				path: "",
+				redirect: { name: "phoneApp_keypad" },
 			}
 		]
 	}, {
@@ -105,10 +149,6 @@ const routes = [
 		path: "/apps/weather",
 		name: "weatherApp",
 		component: weatherApp
-	// }, {
-	// 	path: "/apps/clock",
-	// 	name: "clockApp",
-	// 	component: clockApp
 	}, {
 		path: "/apps/calculator",
 		name: "calculatorApp",
@@ -125,10 +165,6 @@ const routes = [
 		path: "/apps/settings",
 		name: "settings",
 		component: settings
-	}, {
-		path: "/apps/phone",
-		name: "phoneApp",
-		component: phoneApp
 	}, {
 		path: "/apps/mail",
 		name: "mailApp",

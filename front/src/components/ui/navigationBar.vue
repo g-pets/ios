@@ -20,6 +20,7 @@
 	width: 100%
 	position: sticky
 	top: 0
+	left: 0
 	// top: 1.26em
 	z-index: 2
 	.title

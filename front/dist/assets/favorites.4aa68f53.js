@@ -1,0 +1,1 @@
+import{b as o,c as n,d as s}from"./vendor.fbc0f821.js";const r={class:"favorites coming-soon"},t=s("h2",null,"Coming Soon",-1);const c={render:function(s,c){return o(),n("div",r,[t])}};export default c;
