@@ -17,12 +17,12 @@
 </template>
 
 <script>
+import useStore from "~/store/store"
+import {ref} from 'vue'
 export default {
 	name: "Keypad",
 	data() {
 		return {
-			number: "",
-			calling: false,
 			keys: [
 				{val: "1", add: "&nbsp;"},
 				{val: "2", add: "ABC"},
@@ -44,23 +44,29 @@ export default {
 			]
 		}
 	},
-	methods: {
-		addInt(int) {
-			if(this.number.length >= 14) return
-			this.number += int
-		},
-		removeInt() {
-			if(!this.number.length) return
-			const newNumber = this.number.slice(0, -1)
-			this.number = newNumber
-		},
-		makeCall() {
-			if(!this.number.length) return
-			this.calling = true
-		},
-		endCall() {
-			this.calling = false
+	setup() {
+		document.title = "Keypad - Phone App | iOS"
+		const {createRecord} = useStore('phoneApp')
+		let number = ref("")
+		let calling = ref("")
+		function addInt(int) {
+			if(number.value.length >= 14) return
+			number.value += int
 		}
+		function removeInt() {
+			if(!number.value.length) return
+			const newNumber = number.value.slice(0, -1)
+			number.value = newNumber
+		}
+		function makeCall() {
+			if(!number.value.length) return
+			createRecord({number: number.value})
+			calling.value = true
+		}
+		function endCall() {
+			calling.value = false
+		}
+		return {number, calling, addInt, removeInt, makeCall, endCall}
 	}
 }
 </script>

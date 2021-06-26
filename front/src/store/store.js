@@ -6,22 +6,34 @@ import _clonedeep from "lodash.clonedeep"
 
 
 
-const db = openDB('iOS', 1, {
-	upgrade(db) {
-		const store = db.createObjectStore('notes', {
-			keyPath: 'id',
-			autoIncrement: false,
-		})
-		store.createIndex('id', 'id')
-		store.createIndex('created', 'created')
-	}
-})
+// const db = openDB('iOS', 1, {
+// 	upgrade(db) {
+// 		const store = db.createObjectStore('notes', {
+// 			keyPath: 'id',
+// 			autoIncrement: false,
+// 		})
+// 		store.createIndex('id', 'id')
+// 		store.createIndex('created', 'created')
+// 	}
+// })
 
 
 
 export default function useStore(collection) {
 	const records = ref([])
 
+	const db = openDB('iOS', 1, {
+		upgrade(db) {
+			const store = db.createObjectStore(collection, {
+				keyPath: 'id',
+				autoIncrement: false,
+			})
+			store.createIndex('id', 'id')
+			store.createIndex('created', 'created')
+		}
+	})
+
+	
 
 	const generateId = () => {
 		return JSON.stringify(Date.now())
@@ -30,7 +42,8 @@ export default function useStore(collection) {
 	const getRecords = async () => {
 		let result
 		try {
-			result = await db.getAllFromIndex(collection, 'created')
+			const idb = await db
+			result = await idb.getAllFromIndex(collection, 'created')
 			records.value = result
 		} catch (error) {
 			console.error(error)
@@ -60,8 +73,10 @@ export default function useStore(collection) {
 			newRecord.id = id
 			newRecord.created = Date.now()
 			records.value.push(newRecord)
-			result = await db.add(collection, newRecord)
-			return result
+			const idb = await db
+			result = await idb.add(collection, newRecord)
+			// console.log(await db)
+			// return result
 			// result = await restRequest({method:'post', module, data:newRecord})
 			// if (!result.ok) { delete records[id] }
 		} catch (error) {
@@ -124,7 +139,8 @@ export default function useStore(collection) {
 	const deleteAllRecords = async () => {
 		try {
 			records.value = []
-			await db.clear(collection)
+			const idb = await db
+			await idb.clear(collection)
 		} catch (error) {
 			console.error(error)
 		}

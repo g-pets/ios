@@ -113,6 +113,12 @@
 				<path fill-rule="evenodd" d="M7.943 13.698a4.302 4.302 0 10-2.64.906h9.508v-.002a4.302 4.302 0 10-2.754-.904H7.943zm-2.641-.792a2.604 2.604 0 100-5.208 2.604 2.604 0 000 5.208zm9.396 0a2.604 2.604 0 100-5.208 2.604 2.604 0 000 5.208z" clip-rule="evenodd"/>
 			</symbol>
 
+			<!-- Arrow More -->
+			<symbol id="icon_arrow_more" viewBox="0 0 20 20">
+				<path fill-rule="evenodd" d="M9.841 10L5.17 15.255a2.25 2.25 0 103.363 2.99l5.823-6.55a2.55 2.55 0 000-3.39l-5.823-6.55a2.25 2.25 0 00-3.363 2.99L9.84 10z" clip-rule="evenodd"/>
+			</symbol>
+
+
 		</defs>
 	</svg>
 </template>

@@ -2,14 +2,16 @@
 .navigation-bar
 	.group.left
 		slot(name="left")
-	.title {{$route.meta.title}}
+	.group.center
+		//- .title {{$route.meta.title}}
+		slot(name="center")
 	.group.right
 		slot(name="right")
 </template>
 
 <style lang="stylus">
 .navigation-bar
-	background: linear-gradient(180deg, #875D52 0%, #51372F 50%, #3B2D21 100%)
+	background: linear-gradient(180deg, #c1cbdb 0%, #8093b3 50%, #577398 100%)
 	box-shadow: inset 0 -1px 0 rgba(#000,0.3), inset 0 1px 0 rgba(#fff,0.5)
 	color: #fffffa
 	padding: 0.45em 0.3em
@@ -35,6 +37,9 @@
 		display: flex
 		&.left
 			justify-content: flex-start
+		&.center
+			justify-content: center
+			width: 8em
 		&.right
 			justify-content: flex-end
 </style>

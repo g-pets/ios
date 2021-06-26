@@ -1,0 +1,1 @@
+import{b as s,c as r,d as t,q as a}from"./vendor.06a1fbca.js";const o={class:"navigation-bar"},c={class:"group left"},e={class:"group center"},n={class:"group right"};const i={render:function(i,l){return s(),r("div",o,[t("div",c,[a(i.$slots,"left")]),t("div",e,[a(i.$slots,"center")]),t("div",n,[a(i.$slots,"right")])])}};export{i as _};

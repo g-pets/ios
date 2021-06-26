@@ -1,0 +1,1 @@
+import{b as a,c as n,d as o}from"./vendor.06a1fbca.js";const p={class:"app"},r=o("h1",null,"iPod App",-1);const s={name:"iPodApp",render:function(o,s,d,e,t,c){return a(),n("div",p,[r])}};export default s;

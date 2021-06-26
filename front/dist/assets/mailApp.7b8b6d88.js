@@ -1,1 +1,0 @@
-import{b as a,c as n,d as p}from"./vendor.fbc0f821.js";const r={class:"app"},s=p("h1",null,"Mail App",-1);const e={name:"mailApp",render:function(p,e,o,t,c,l){return a(),n("div",r,[s])}};export default e;
