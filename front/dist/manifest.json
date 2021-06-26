@@ -1,6 +1,6 @@
 {
   "index.html": {
-    "file": "assets/index.d6225a45.js",
+    "file": "assets/index.7b143b23.js",
     "src": "index.html",
     "isEntry": true,
     "imports": [
@@ -44,7 +44,7 @@
     "file": "assets/vendor.06a1fbca.js"
   },
   "src/views/lockScreen.vue": {
-    "file": "assets/lockScreen.e8fa99bc.js",
+    "file": "assets/lockScreen.9c7e4e1b.js",
     "src": "src/views/lockScreen.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -56,7 +56,7 @@
     ]
   },
   "src/views/homeScreen.vue": {
-    "file": "assets/homeScreen.072faf99.js",
+    "file": "assets/homeScreen.c9c3e86f.js",
     "src": "src/views/homeScreen.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -64,7 +64,7 @@
       "index.html"
     ],
     "css": [
-      "assets/homeScreen.b4b786ac.css"
+      "assets/homeScreen.a47eb92c.css"
     ]
   },
   "src/apps/clockApp/clockApp.vue": {
@@ -164,22 +164,22 @@
     ]
   },
   "src/apps/phoneApp/recents.vue": {
-    "file": "assets/recents.855c17f6.js",
+    "file": "assets/recents.a18dbb98.js",
     "src": "src/apps/phoneApp/recents.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_store.c3459de2.js",
+      "_store.5abbeae1.js",
       "_navigationBar.9756a5fe.js",
       "_navigationBarButton.9c9f2c6c.js",
       "_vendor.06a1fbca.js",
       "_index.bc852a36.js"
     ],
     "css": [
-      "assets/recents.9ccd2b35.css"
+      "assets/recents.d537fe56.css"
     ]
   },
-  "_store.c3459de2.js": {
-    "file": "assets/store.c3459de2.js",
+  "_store.5abbeae1.js": {
+    "file": "assets/store.5abbeae1.js",
     "imports": [
       "_index.bc852a36.js",
       "_vendor.06a1fbca.js"
@@ -197,16 +197,16 @@
     ]
   },
   "src/apps/phoneApp/keypad.vue": {
-    "file": "assets/keypad.c5bf79f1.js",
+    "file": "assets/keypad.34cb0b92.js",
     "src": "src/apps/phoneApp/keypad.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_store.c3459de2.js",
+      "_store.5abbeae1.js",
       "_vendor.06a1fbca.js",
       "_index.bc852a36.js"
     ],
     "css": [
-      "assets/keypad.0dc9c971.css"
+      "assets/keypad.8a30a558.css"
     ]
   },
   "src/apps/phoneApp/voicemail.vue": {
@@ -293,12 +293,12 @@
     ]
   },
   "src/apps/notesApp/startScreen.vue": {
-    "file": "assets/startScreen.fed4586a.js",
+    "file": "assets/startScreen.1887ad4d.js",
     "src": "src/apps/notesApp/startScreen.vue",
     "isDynamicEntry": true,
     "imports": [
       "_navigationBar.9756a5fe.js",
-      "_store.c3459de2.js",
+      "_store.5abbeae1.js",
       "_vendor.06a1fbca.js",
       "_index.bc852a36.js"
     ],

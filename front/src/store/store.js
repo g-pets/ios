@@ -44,6 +44,7 @@ export default function useStore(collection) {
 		try {
 			const idb = await db
 			result = await idb.getAllFromIndex(collection, 'created')
+			result.sort((a, b) => {return b.created - a.created})
 			records.value = result
 		} catch (error) {
 			console.error(error)

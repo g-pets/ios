@@ -1,8 +1,8 @@
 <template lang="pug">
 .list-view
 	.list-item(v-for="item in list" :class="{missed: item.missed}")
-		.number {{item.number}}
-		.time 3:13 PM
+		.number {{$phoneNumber(item.number)}}
+		.time {{$unixTime(item.created)}}
 		glyph(name="arrow_more")
 </template>
 

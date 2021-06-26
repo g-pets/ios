@@ -1,6 +1,6 @@
 <template lang="pug">
 .keypad(v-if="!calling")
-	.phone-number {{number}}
+	.phone-number {{$phoneNumber(number)}}
 	button.key(v-for="key in keys" @click="addInt(key.val)")
 		.val {{key.val}}
 		.add(v-html="key.add")
@@ -8,7 +8,7 @@
 		glyph(v-if="action.glyph" :name="action.glyph")
 		.label(v-if="action.label") {{action.label}}
 .calling(v-else)
-	.number {{number}}
+	.number {{$phoneNumber(number)}}
 	button.end-call(@click="endCall()") End Call
 		
 
@@ -18,7 +18,7 @@
 
 <script>
 import useStore from "~/store/store"
-import {ref} from 'vue'
+import {ref, computed} from 'vue'
 export default {
 	name: "Keypad",
 	data() {
@@ -49,20 +49,24 @@ export default {
 		const {createRecord} = useStore('phoneApp')
 		let number = ref("")
 		let calling = ref("")
+		
 		function addInt(int) {
-			if(number.value.length >= 14) return
+			if(number.value.length >= 8) return
 			number.value += int
 		}
+
 		function removeInt() {
 			if(!number.value.length) return
 			const newNumber = number.value.slice(0, -1)
 			number.value = newNumber
 		}
+
 		function makeCall() {
 			if(!number.value.length) return
 			createRecord({number: number.value})
 			calling.value = true
 		}
+
 		function endCall() {
 			calling.value = false
 		}
