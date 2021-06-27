@@ -55,27 +55,29 @@ export default {
 		unlockPhone()
 		const apps = reactive([
 			{
+				id: 1,
+				title: "Phone",
+				name: "phoneApp",
+				router: "phoneApp_keypad",
+				position: "dock"
+			}, {
+				id: 2,
+				title: "Text",
+				name: "textApp",
+				router: "textApp_conversations",
+				position: "dock"
+			}, {
 				id: 9,
 				title: "Clock",
 				name: "clockApp",
 				router: "clockApp_worldClock",
 				position: "screen"
-			}, {
-				id: 13,
-				title: "Phone",
-				name: "phoneApp",
-				router: "phoneApp_keypad",
-				position: "dock"
 			// }, {
 			// 	id: 11,
 			// 	title: "Notes",
 			// 	name: "notesApp",
 			// 	position: "screen"
-			// }, {
-			// 	id: 1,
-			// 	title: "Text",
-			// 	name: "textApp",
-			// 	position: "screen"
+			
 			// }, {
 			// 	id: 2,
 			// 	title: "Calendar",

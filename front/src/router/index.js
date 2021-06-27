@@ -22,23 +22,12 @@ const phoneApp_contacts = () => import('~/apps/phoneApp/contacts.vue')
 const phoneApp_keypad = () => import('~/apps/phoneApp/keypad.vue')
 const phoneApp_voicemail = () => import('~/apps/phoneApp/voicemail.vue')
 
+// Text App
+const textApp = () => import('~/apps/textApp/textApp.vue')
+const textApp_conversations = () => import('~/apps/textApp/conversations.vue')
+const textApp_conversation = () => import('~/apps/textApp/conversation.vue')
 
-// Apps
-const textApp = () => import('~/apps/textApp.vue')
-const calendarApp = () => import('~/apps/calendarApp.vue')
-const photosApp = () => import('~/apps/photosApp.vue')
-const cameraApp = () => import('~/apps/cameraApp.vue')
-const youTubeApp = () => import('~/apps/youTubeApp.vue')
-const stocksApp = () => import('~/apps/stocksApp.vue')
-const mapsApp = () => import('~/apps/mapsApp.vue')
-const weatherApp = () => import('~/apps/weatherApp.vue')
-const calculatorApp = () => import('~/apps/calculatorApp.vue')
-const notesApp = () => import('~/apps/notesApp/startScreen.vue')
-const noteScreen = () => import('~/apps/notesApp/noteScreen.vue')
-const settings = () => import('~/apps/settings.vue')
-const mailApp = () => import('~/apps/mailApp.vue')
-const safariApp = () => import('~/apps/safariApp.vue')
-const iPodApp = () => import('~/apps/iPodApp.vue')
+
 
 // Routes
 const routes = [
@@ -117,66 +106,28 @@ const routes = [
 				redirect: { name: "phoneApp_keypad" },
 			}
 		]
-	}, {
+	},
+	
+	// Text App
+	{
 		path: "/apps/text",
-		name: "textApp",
-		component: textApp
-	}, {
-		path: "/apps/calendar",
-		name: "calendarApp",
-		component: calendarApp
-	}, {
-		path: "/apps/photos",
-		name: "photosApp",
-		component: photosApp
-	}, {
-		path: "/apps/camera",
-		name: "cameraApp",
-		component: cameraApp
-	}, {
-		path: "/apps/youtube",
-		name: "youTubeApp",
-		component: youTubeApp
-	}, {
-		path: "/apps/stocks",
-		name: "stocksApp",
-		component: stocksApp
-	}, {
-		path: "/apps/maps",
-		name: "mapsApp",
-		component: mapsApp
-	}, {
-		path: "/apps/weather",
-		name: "weatherApp",
-		component: weatherApp
-	}, {
-		path: "/apps/calculator",
-		name: "calculatorApp",
-		component: calculatorApp
-	}, {
-		path: "/apps/notes",
-		name: "notesApp",
-		component: notesApp
-	}, {
-		path: "/apps/notes/:id",
-		name: "noteScreen",
-		component: noteScreen
-	}, {
-		path: "/apps/settings",
-		name: "settings",
-		component: settings
-	}, {
-		path: "/apps/mail",
-		name: "mailApp",
-		component: mailApp
-	}, {
-		path: "/apps/safari",
-		name: "safariApp",
-		component: safariApp
-	}, {
-		path: "/apps/ipod",
-		name: "iPodApp",
-		component: iPodApp
+		component: textApp,
+		children: [
+			{
+				path: "conversations",
+				name: "textApp_conversations",
+				component: textApp_conversations,
+				meta: {title: "Messages"}
+			}, {
+				path: "conversations/:id",
+				name: "textApp_conversation",
+				component: textApp_conversation,
+				meta: {title: "Conversation"}
+			}, {
+				path: "",
+				redirect: { name: "textApp_conversations" },
+			}
+		]
 	}, {
 		path: "/:pathMatch(.*)*",
 		redirect: { name: "Home Screen" },

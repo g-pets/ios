@@ -48,7 +48,7 @@ export default {
 			justify-content: flex-start
 		&.center
 			justify-content: center
-			width: 8em
+			width: 10em
 		&.right
 			justify-content: flex-end
 </style>

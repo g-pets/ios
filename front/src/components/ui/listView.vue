@@ -31,11 +31,13 @@ export default {
 		.full-name, .number
 			margin-right: auto
 			padding-top: 0.1em
-		.last-name, .number
-			font-weight: bold
-		.number
 			&.missed
 				color: #B1292D
+		.last-name, .number
+			font-weight: bold
+		.message
+			font-size: 0.7em
+			color: #999
 		.time
 			font-size: 0.65em
 			color: #4B6C99
@@ -51,4 +53,37 @@ export default {
 			border: 0.1em solid #FBF6FA
 			box-shadow: 0 0.01em 0.05em 0.01em rgba(#000,0.5)
 			fill: #fff
+		
+		.message-preview
+			display: flex
+			align-items: center
+			justify-content: space-between
+			width: 100%
+			.unread
+				flex: 0 0 auto
+				width: 0.6em
+				height: 0.6em
+				border-radius: 50%
+				gradient-v50(#81A1CA, #5C8CCA, #3D6DAF, #436CAC)
+				margin-right: 0.6em
+			.message-body
+				margin-right: auto
+				flex: 1 1 auto
+				.header
+					display: flex
+					font-weight: bold
+					.full-name
+						font-size: 0.9em
+						margin-right: auto
+			svg.icon-arrow_more
+				flex: 0 0 auto
+				width: 0.7em
+				height: 0.7em
+				margin-left: auto
+				background: none
+				border-radius: 0
+				padding: 0
+				border: none
+				box-shadow: none
+				fill: #888
 </style>

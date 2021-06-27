@@ -44,7 +44,7 @@ export default function useStore(collection) {
 		try {
 			const db = await openDB('iOS', 1)
 			result = await db.getAllFromIndex(collection, 'created')
-			result.sort((a, b) => {return b.created - a.created})
+			// result.sort((a, b) => {return b.created - a.created})
 			records.value = result
 		} catch (error) {
 			console.error(error)

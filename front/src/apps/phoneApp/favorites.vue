@@ -5,11 +5,11 @@
 			navigation-bar-button(label="Edit")
 		template(#right)
 			navigation-bar-button(glyph="plus")
-	list-view(:list="favorites")
-		template(#default="favorites")
+	list-view(:list="sortedContacts")
+		template(#default="sortedContacts")
 			.full-name
-				span.last-name {{favorites.item.lastName}}&nbsp;
-				span.first-name {{favorites.item.firstName}}
+				span.last-name {{sortedContacts.item.lastName}}&nbsp;
+				span.first-name {{sortedContacts.item.firstName}}
 			glyph(name="arrow_more")
 </template>
 
@@ -24,6 +24,11 @@ import {onMounted, computed} from 'vue'
 export default {
 	name: "Recents",
 	components: {navigationBar, navigationBarButton, toggleButton, listView},
+	computed: {
+		sortedContacts() {
+			return this.$sortObjects(this.favorites, 'lastName')
+		}
+	},
 	setup() {
 		document.title = "Favorite Contacts | iOS"
 		const {records, getRecords} = useStore('contacts')

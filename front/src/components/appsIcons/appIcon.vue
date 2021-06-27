@@ -9,19 +9,12 @@
 </template>
 
 <script>
-import notesApp from './icons/notesApp.vue'
-import calendarApp from './icons/calendarApp.vue'
-import clockApp from './icons/clockApp.vue'
-import iPodApp from './icons/iPodApp.vue'
-
 import phoneApp from './icons/phoneApp.vue'
 import textApp from './icons/textApp.vue'
-// import tempIcon from './icons/tempIcon.vue'
-
-// import {defineAsyncComponent} from 'vue'
+import clockApp from './icons/clockApp.vue'
 export default {
 	name: "appIcon",
-	components: {notesApp, calendarApp, textApp, phoneApp, iPodApp, clockApp},
+	components: {phoneApp, textApp, clockApp},
 	props: {
 		name: String,
 		router: String,
@@ -33,9 +26,6 @@ export default {
 			let duration = this.randomNumber(10,20)
 			return `animation-delay: -.${delay}s; animation-duration: .${duration}s`
 		},
-		// iconComponent() {
-		// 	return defineAsyncComponent(() => import(`./icons/${this.name}.vue`))
-		// }
 	},
 	methods: {
 		openApp() {
@@ -89,5 +79,4 @@ export default {
 				background: red
 				border-radius: 0 0 50% 50%/0 0 35% 35%
 				background: linear-gradient(180deg, rgba(#fff, .6) 0%, rgba(#fff, .2) 100%)
-
 </style>

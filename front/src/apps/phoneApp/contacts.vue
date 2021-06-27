@@ -3,11 +3,11 @@
 	navigation-bar(title="All Contacts")
 		template(#right)
 			navigation-bar-button(glyph="plus")
-	list-view(:list="contacts")
-		template(#default="contacts")
+	list-view(:list="sortedContacts")
+		template(#default="sortedContacts")
 			.full-name
-				span.last-name {{contacts.item.lastName}}&nbsp;
-				span.first-name {{contacts.item.firstName}}
+				span.last-name {{sortedContacts.item.lastName}}&nbsp;
+				span.first-name {{sortedContacts.item.firstName}}
 			//- glyph(name="arrow_more")
 </template>
 
@@ -18,31 +18,20 @@ import navigationBar from '~/components/ui/navigationBar.vue'
 import navigationBarButton from '~/components/buttons/navigationBarButton.vue'
 import toggleButton from '~/components/buttons/toggleButton.vue'
 import listView from "~/components/ui/listView.vue"
-import {onMounted, computed} from 'vue'
+import {onMounted} from 'vue'
 export default {
 	name: "Recents",
 	components: {navigationBar, navigationBarButton, toggleButton, listView},
+	computed: {
+		sortedContacts() {
+			return this.$sortObjects(this.contacts, 'lastName')
+		}
+	},
 	setup() {
 		document.title = "Contacts | iOS"
 		const {records, getRecords} = useStore('contacts')
 		onMounted(() => getRecords())
-		const contacts = computed(() => {
-			records.value.sort((a, b) => {
-				let fa = a.lastName.toLowerCase(),
-					fb = b.lastName.toLowerCase()
-
-				if (fa < fb) {
-					return -1;
-				}
-				if (fa > fb) {
-					return 1;
-				}
-				return 0;
-			});
-			return records.value
-		})
-		// const contacts = records
-		return {contacts}
+		return {contacts: records}
 	}
 }
 </script>

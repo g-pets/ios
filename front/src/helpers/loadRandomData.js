@@ -2,13 +2,6 @@
 import { openDB } from 'idb'
 import _clonedeep from "lodash.clonedeep"
 
-
-const generateId = () => {
-	return JSON.stringify(Date.now())
-}
-
-
-
 async function getRandomData() {
 	try {
 		let response = await fetch('http://localhost:85/v1/ios')
@@ -18,7 +11,7 @@ async function getRandomData() {
 	}
 }
 
-async function createSores(collections) {
+async function createStores(collections) {
 	openDB('iOS', 1, {
 		upgrade(db) {
 			collections.forEach(collection => {
@@ -48,6 +41,6 @@ async function saveRandomData(collection, data) {
 export default async function loadRandomData() {
 	let randomData = await getRandomData()
 	let collections = Object.keys(randomData)
-	await createSores(collections)
+	await createStores(collections)
 	collections.forEach(collection => saveRandomData(collection, randomData[collection]))
 }

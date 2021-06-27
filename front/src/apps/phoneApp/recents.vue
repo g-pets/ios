@@ -5,16 +5,27 @@
 			toggle-button(id="recents-calls" :data="sections" v-model="section")
 		template(#right)
 			navigation-bar-button(label="Clear" @click="deleteAllRecords")
+	
 	list-view(v-if="section.value == 'all'" :list="records")
 		template(#default="records")
-			.number(:class="{missed:records.item.missed}") {{$phoneNumber(records.item.number.number)}}
+			template(v-if="records.item.lastName")
+				.full-name(:class="{missed:records.item.missed}")
+					span.last-name {{records.item.lastName}}&nbsp;
+					span.first-name {{records.item.firstName}}
+			template(v-else)
+				.number(:class="{missed:records.item.missed}") {{$phoneNumber(records.item.number.number)}}
 			.time {{$unixTime(records.item.created)}}
 			glyph(name="arrow_more")
 	
 	
 	list-view(v-else :list="missedCalls")
 		template(#default="records")
-			.number(:class="{missed:records.item.missed}") {{$phoneNumber(records.item.number.number)}}
+			template(v-if="records.item.lastName")
+				.full-name(:class="{missed:records.item.missed}")
+					span.last-name {{records.item.lastName}}&nbsp;
+					span.first-name {{records.item.firstName}}
+			template(v-else)
+				.number(:class="{missed:records.item.missed}") {{$phoneNumber(records.item.number.number)}}
 			.time {{$unixTime(records.item.created)}}
 			glyph(name="arrow_more")
 //- .screenshot
