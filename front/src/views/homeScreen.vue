@@ -1,5 +1,6 @@
 <template lang="pug">
 .view.view-homescreen(:class="{shake}")
+	.generate(@click="generateData") generateData
 	.apps-grid.drop-zone(@drop='onDrop($event, "screen")' @dragover.prevent @dragenter.prevent)
 		app-icon.drag-el(v-for="(app, index) in screenApps" :class="`item_${index}`" :name="app.name" :title="app.title" :router="app.router" :key="app.id" :draggable="true" @dragstart='startDrag($event, app)')
 
@@ -13,6 +14,7 @@
 <script>
 import appIcon from '~/components/appsIcons/appIcon.vue'
 import {appStateFunctions} from "~/store/appState"
+import generateData from "~/generator/generator"
 import {reactive} from 'vue'
 export default {
 	name: "HomeScreen",
@@ -20,11 +22,6 @@ export default {
 	data() {
 		return {
 			shake: false,
-		}
-	},
-	methods: {
-		openApp(name) {
-			this.$router.push({name: name})
 		}
 	},
 	computed: {
@@ -52,6 +49,7 @@ export default {
 	setup() {
 		document.title = "Home Screen | iOS 1.0"
 		const {unlockPhone} = appStateFunctions()
+		// const {generateData} = generateData()
 		unlockPhone()
 		const apps = reactive([
 			{
@@ -142,7 +140,7 @@ export default {
 			// 	position: "screen"
 			}
 		])
-		return {apps}
+		return {apps, generateData}
 	}
 };
 </script>
