@@ -25,6 +25,7 @@ import { useRegisterSW } from "virtual:pwa-register/vue"
 import glyphsSet from '~/components/svg/glyphs/glyphsSet.vue'
 import statusBar from '~/components/ui/statusBar.vue'
 import systemDialog from '~/components/ui/systemDialog.vue'
+import install from '~/install.js'
 export default {
 	name: "App",
 	components: {glyphsSet, statusBar, systemDialog},
@@ -39,6 +40,7 @@ export default {
 		}
 	},
 	setup() {
+		const initApp = install()
 		const {runApp} = appState()
 		const {offlineReady, needRefresh, updateServiceWorker} = useRegisterSW()
 		const cancelUpdate = async() => {
@@ -75,6 +77,8 @@ export default {
 		grid-template-columns: 1fr
 		grid-template-rows: max-content 1fr auto
 		grid-template-areas: 'header' 'main' 'footer'
+		// width: 320px
+		// height: 480px
 		&.loading
 			display: flex
 			background: #fff

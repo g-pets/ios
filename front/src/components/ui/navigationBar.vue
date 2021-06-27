@@ -3,11 +3,20 @@
 	.group.left
 		slot(name="left")
 	.group.center
-		//- .title {{$route.meta.title}}
+		.title(v-if="title") {{title}}
 		slot(name="center")
 	.group.right
 		slot(name="right")
 </template>
+
+<script>
+export default {
+	name: "navigationBar",
+	props: {
+		title: String
+	}
+}
+</script>
 
 <style lang="stylus">
 .navigation-bar

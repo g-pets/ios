@@ -6,7 +6,17 @@
 		template(#right)
 			navigation-bar-button(label="Clear" @click="deleteAllRecords")
 	list-view(v-if="section.value == 'all'" :list="records")
+		template(#default="records")
+			.number(:class="{missed:records.item.missed}") {{$phoneNumber(records.item.number.number)}}
+			.time {{$unixTime(records.item.created)}}
+			glyph(name="arrow_more")
+	
+	
 	list-view(v-else :list="missedCalls")
+		template(#default="records")
+			.number(:class="{missed:records.item.missed}") {{$phoneNumber(records.item.number.number)}}
+			.time {{$unixTime(records.item.created)}}
+			glyph(name="arrow_more")
 //- .screenshot
 </template>
 
@@ -31,8 +41,8 @@ export default {
 		}
 	},
 	setup() {
-		document.title = "Recents - Phone App | iOS"
-		const {records, getRecords, deleteAllRecords} = useStore('phoneApp')
+		document.title = "Recent Calls | iOS"
+		const {records, getRecords, deleteAllRecords} = useStore('calls')
 		onMounted(() => getRecords())
 		const missedCalls = computed(() => {
 			let missedCalls = records.value.filter(call => call.missed)

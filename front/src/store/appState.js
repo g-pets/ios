@@ -6,6 +6,7 @@ const dateOptions = {weekday: 'long', month: 'long', day: 'numeric'}
 export const dateTime = reactive({})
 
 export const appState = reactive({
+	installed: false,
 	locked: true
 })
 

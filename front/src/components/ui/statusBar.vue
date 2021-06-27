@@ -63,7 +63,6 @@ export default {
 			let connection = navigator.connection
 			connectionInfo.type = connection.effectiveType
 			connectionInfo.signal = connection.rtt
-			console.log(connection)
 			connection.addEventListener('change', function() {
 				connectionInfo.type = connection.effectiveType
 				connectionInfo.signal = connection.rtt

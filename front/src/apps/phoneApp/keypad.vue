@@ -18,7 +18,7 @@
 
 <script>
 import useStore from "~/store/store"
-import {ref, computed} from 'vue'
+import {ref} from 'vue'
 export default {
 	name: "Keypad",
 	data() {
@@ -45,8 +45,8 @@ export default {
 		}
 	},
 	setup() {
-		document.title = "Keypad - Phone App | iOS"
-		const {createRecord} = useStore('phoneApp')
+		document.title = "Keypad | iOS"
+		const {createRecord} = useStore('calls')
 		let number = ref("")
 		let calling = ref("")
 		
@@ -63,7 +63,7 @@ export default {
 
 		function makeCall() {
 			if(!number.value.length) return
-			createRecord({number: number.value})
+			createRecord({number: {number: number.value}})
 			calling.value = true
 		}
 

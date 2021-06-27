@@ -26,7 +26,11 @@ export default {
 <style lang="stylus" scoped>
 .phone-app
 	height: 100%
-	background: #000
+	background: #fff
 	display: flex
 	flex-direction: column
+	.content
+		height: 420px
+		// flex: 1 0 auto
+		overflow: scroll
 </style>

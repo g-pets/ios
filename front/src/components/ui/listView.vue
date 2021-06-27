@@ -1,9 +1,7 @@
 <template lang="pug">
 .list-view
-	.list-item(v-for="item in list" :class="{missed: item.missed}")
-		.number {{$phoneNumber(item.number)}}
-		.time {{$unixTime(item.created)}}
-		glyph(name="arrow_more")
+	.list-item(v-for="(item, index) in list")
+		slot(:item="item" :index="index")
 </template>
 
 <script>
@@ -15,7 +13,7 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 @import "../../assets/styles/basic/mixins.styl"
 .list-view
 	height: 100%
@@ -26,15 +24,18 @@ export default {
 		padding: 0.5em 0.45em 0.45em
 		border-bottom: 1px solid #E8E8E8
 		font-size: 1.3em
-		font-weight: bold
 		display: flex
 		align-items: center
 		line-height: 1
-		&.missed
-			color: #B1292D
-		.number
+		
+		.full-name, .number
 			margin-right: auto
 			padding-top: 0.1em
+		.last-name, .number
+			font-weight: bold
+		.number
+			&.missed
+				color: #B1292D
 		.time
 			font-size: 0.65em
 			color: #4B6C99

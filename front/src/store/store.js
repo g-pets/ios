@@ -22,28 +22,28 @@ import _clonedeep from "lodash.clonedeep"
 export default function useStore(collection) {
 	const records = ref([])
 
-	const db = openDB('iOS', 1, {
-		upgrade(db) {
-			const store = db.createObjectStore(collection, {
-				keyPath: 'id',
-				autoIncrement: false,
-			})
-			store.createIndex('id', 'id')
-			store.createIndex('created', 'created')
-		}
-	})
+	// const db = openDB('iOS', 1, {
+	// 	upgrade(db) {
+	// 		const store = db.createObjectStore(collection, {
+	// 			keyPath: 'id',
+	// 			autoIncrement: false,
+	// 		})
+	// 		store.createIndex('id', 'id')
+	// 		store.createIndex('created', 'created')
+	// 	}
+	// })
 
 	
 
-	const generateId = () => {
-		return JSON.stringify(Date.now())
-	}
+	// const generateId = () => {
+	// 	return JSON.stringify(Date.now())
+	// }
 	
 	const getRecords = async () => {
 		let result
 		try {
-			const idb = await db
-			result = await idb.getAllFromIndex(collection, 'created')
+			const db = await openDB('iOS', 1)
+			result = await db.getAllFromIndex(collection, 'created')
 			result.sort((a, b) => {return b.created - a.created})
 			records.value = result
 		} catch (error) {
@@ -69,13 +69,11 @@ export default function useStore(collection) {
 	const createRecord = async (record = {}) => {
 		let id, newRecord, result
 		try {
-			id = generateId()
+			const db = await openDB('iOS', 1)
 			newRecord = _clonedeep(record)
-			newRecord.id = id
 			newRecord.created = Date.now()
 			records.value.push(newRecord)
-			const idb = await db
-			result = await idb.add(collection, newRecord)
+			result = await db.add(collection, newRecord)
 			// console.log(await db)
 			// return result
 			// result = await restRequest({method:'post', module, data:newRecord})
@@ -140,8 +138,8 @@ export default function useStore(collection) {
 	const deleteAllRecords = async () => {
 		try {
 			records.value = []
-			const idb = await db
-			await idb.clear(collection)
+			const db = await openDB('iOS', 1)
+			await db.clear(collection)
 		} catch (error) {
 			console.error(error)
 		}
@@ -167,6 +165,5 @@ export default function useStore(collection) {
 		deleteRecord,
 		createDummyRecords,
 		deleteAllRecords,
-		generateId
 	}
 }
