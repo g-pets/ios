@@ -1,5 +1,5 @@
 
-export const maleNames = [
+const maleNamesDict = [
     "Liam",
     "Noah",
     "Oliver",
@@ -1002,7 +1002,7 @@ export const maleNames = [
     "Ephraim"
 ]
 
-export const femaleNames = [
+const femaleNamesDict = [
     "Olivia",
     "Emma",
     "Ava",
@@ -2005,7 +2005,7 @@ export const femaleNames = [
     "Kadence"
 ]
 
-export const lastNames = [
+const lastNamesDict = [
 	"Smith",
 	"Johnson",
 	"Williams",
@@ -3007,3 +3007,5 @@ export const lastNames = [
 	"Tang",
 	"Archer"
 ]
+
+export { maleNamesDict, femaleNamesDict, lastNamesDict }
