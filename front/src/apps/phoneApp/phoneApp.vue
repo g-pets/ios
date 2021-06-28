@@ -1,6 +1,6 @@
 <template lang="pug">
-.app.phone-app
-	router-view.content
+.app.phone-app.flex-column-container
+	router-view
 	tab-bar(:sections="appSections")
 </template>
 
@@ -25,12 +25,6 @@ export default {
 
 <style lang="stylus" scoped>
 .phone-app
-	height: 100%
 	background: #fff
-	display: flex
-	flex-direction: column
-	.content
-		height: 420px
-		// flex: 1 0 auto
-		overflow: scroll
+	position: relative
 </style>

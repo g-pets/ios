@@ -1,11 +1,11 @@
 <template lang="pug">
-.voicemail
-	navigation-bar(title="Voicemail")
-		template(#left)
-			navigation-bar-button(label="Greeting")
-		template(#right)
-			navigation-bar-button(label="Speaker")
-	list-view
+navigation-bar(title="Voicemail")
+	template(#left)
+		navigation-bar-button(label="Greeting")
+	template(#right)
+		navigation-bar-button(label="Speaker")
+.coming-soon.section-scrolled
+	h2 Coming Soon
 </template>
 
 
@@ -28,9 +28,3 @@ export default {
 	}
 }
 </script>
-
-<style lang="stylus" scoped>
-.voicemail
-	height: 100%
-</style>
-

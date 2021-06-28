@@ -1,5 +1,5 @@
 <template lang="pug">
-.list-view
+.list-view.section-scrolled
 	.list-item(v-for="(item, index) in list")
 		slot(:item="item" :index="index")
 </template>
@@ -16,7 +16,6 @@ export default {
 <style lang="stylus">
 @import "../../assets/styles/basic/mixins.styl"
 .list-view
-	height: 100%
 	background: #fff
 	.list-item
 		// background: #fff

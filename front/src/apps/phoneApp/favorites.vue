@@ -1,16 +1,15 @@
 <template lang="pug">
-.favorites
-	navigation-bar(title="Favorites")
-		template(#left)
-			navigation-bar-button(label="Edit")
-		template(#right)
-			navigation-bar-button(glyph="plus")
-	list-view(:list="sortedContacts")
-		template(#default="sortedContacts")
-			.full-name
-				span.last-name {{sortedContacts.item.lastName}}&nbsp;
-				span.first-name {{sortedContacts.item.firstName}}
-			glyph(name="arrow_more")
+navigation-bar(title="Favorites")
+	template(#left)
+		navigation-bar-button(label="Edit")
+	template(#right)
+		navigation-bar-button(glyph="plus")
+list-view(:list="sortedContacts")
+	template(#default="sortedContacts")
+		.full-name
+			span.last-name {{sortedContacts.item.lastName}}&nbsp;
+			span.first-name {{sortedContacts.item.firstName}}
+		glyph(name="arrow_more")
 </template>
 
 
@@ -41,8 +40,4 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-.favorites
-	height: 100%
-</style>
 

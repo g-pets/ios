@@ -1,1 +1,0 @@
-import{p as a,e as s,f as t,b as e,c,d as o,w as n}from"./vendor.23464d0d.js";const d=n();a("data-v-e1b2ca24");const p={class:"app text-app"};s();const r=d(((a,s,n,d,r,v)=>{const b=t("router-view");return e(),c("div",p,[o(b,{class:"content"})])}));const v={name:"textApp"};v.render=r,v.__scopeId="data-v-e1b2ca24";export default v;

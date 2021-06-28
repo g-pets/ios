@@ -1,5 +1,5 @@
 <template lang="pug">
-.tab-bar
+.tab-bar.section-fixed
 	router-link(v-for="section in sections" :to="{name: section.name}" custom v-slot="{ navigate, isExactActive }")
 		button.tab-bar-button(:class="{active: isExactActive}" @click="navigate")
 			glyph(:name="section.glyph")

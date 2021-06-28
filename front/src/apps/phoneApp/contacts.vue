@@ -1,14 +1,13 @@
 <template lang="pug">
-.contacts
-	navigation-bar(title="All Contacts")
-		template(#right)
-			navigation-bar-button(glyph="plus")
-	list-view(:list="sortedContacts")
-		template(#default="sortedContacts")
-			.full-name
-				span.last-name {{sortedContacts.item.lastName}}&nbsp;
-				span.first-name {{sortedContacts.item.firstName}}
-			//- glyph(name="arrow_more")
+navigation-bar(title="All Contacts")
+	template(#right)
+		navigation-bar-button(glyph="plus")
+list-view(:list="sortedContacts")
+	template(#default="sortedContacts")
+		.full-name
+			span.last-name {{sortedContacts.item.lastName}}&nbsp;
+			span.first-name {{sortedContacts.item.firstName}}
+		//- glyph(name="arrow_more")
 </template>
 
 
@@ -35,8 +34,3 @@ export default {
 	}
 }
 </script>
-
-<style lang="stylus" scoped>
-
-</style>
-

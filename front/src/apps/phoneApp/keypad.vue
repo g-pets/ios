@@ -51,7 +51,7 @@ export default {
 		let calling = ref("")
 		
 		function addInt(int) {
-			if(number.value.length >= 8) return
+			if(number.value.length >= 11) return
 			number.value += int
 		}
 
@@ -104,7 +104,8 @@ export default {
 	display: grid
 	grid-template-columns: repeat(3, 1fr)
 	grid-auto-rows: 1fr
-	border: 0.5px solid #353c44
+	border-left: 1px solid #353c44
+	border-right: 1px solid #353c44
 	width: 100%
 	height: 100%
 	.phone-number
@@ -124,7 +125,7 @@ export default {
 		padding: 0.75em 0 0.55em
 		cursor: pointer
 		font-weight: bold
-		border: 0.5px solid #353c44
+		outline: 1px solid #353c44
 		display: flex
 		flex-direction: column
 		align-items: center

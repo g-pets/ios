@@ -1,5 +1,5 @@
 <template lang="pug">
-.navigation-bar
+.navigation-bar.section-fixed
 	.group.left
 		slot(name="left")
 	.group.center
@@ -18,7 +18,7 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 .navigation-bar
 	background: linear-gradient(180deg, #c1cbdb 0%, #8093b3 50%, #577398 100%)
 	box-shadow: inset 0 -1px 0 rgba(#000,0.3), inset 0 1px 0 rgba(#fff,0.5)
@@ -28,12 +28,6 @@ export default {
 	display: flex
 	justify-content: space-between
 	align-items: center
-	width: 100%
-	position: sticky
-	top: 0
-	left: 0
-	// top: 1.26em
-	z-index: 2
 	.title
 		text-shadow: 0px -0.05em 0 rgba(#000,.5)
 		font-size: 1.3em

@@ -76,7 +76,6 @@ export default {
 				left: 0
 				width: 100%
 				height: 55%
-				background: red
 				border-radius: 0 0 50% 50%/0 0 35% 35%
 				background: linear-gradient(180deg, rgba(#fff, .6) 0%, rgba(#fff, .2) 100%)
 </style>

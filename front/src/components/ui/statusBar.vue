@@ -99,8 +99,8 @@ export default {
 	font-size: 0.8em
 	line-height: 1
 	font-weight: 400
-	position: relative
-	z-index: 1000
+	// position: relative
+	// z-index: 1000
 	.icon
 		width: 1.6em
 		height: 1.5em
