@@ -1,12 +1,32 @@
 // Modules
-import { randomIds, randomTrue, quantityRange } from '../atoms/utils'
-import { randomTexts } from '../molecules/randomTexts'
+import { randomNumber, randomIds, randomTrue, quantityRange } from '../atoms/utils'
+import { randomMessages } from '../molecules/randomTexts'
 
 // Generate Random Conversations
-function randomConversations({q}) {
+function randomConversations({q,contacts}) {
 	try {
-		let randomText = randomTexts({q:1, p:[1,2], s:[1,5], w:[4,10] })
-		console.log(randomText)
+		let quantity = quantityRange(q)
+		let randomConversations = []
+		for (var i = 0; i < quantity; i++) {
+			let contactIndex = randomNumber(0,contacts.length-1)
+			let contact = contacts[contactIndex]
+			let messagesCount = randomNumber(1,100)
+			let messages = randomMessages({q:messagesCount, p:1, s:[1,3], w:[4,10] })
+			let lastMessage = messages[messages.length-1]
+			let randomConversation = {
+				id: randomIds({q:1})[0],
+				contactID: contact.id,
+				firstName:contact.firstName,
+				lastName: contact.lastName,
+				portrait: contact.portrait,
+				phoneNumber: contact.phones[0],
+				lastMessageDate: lastMessage.date,
+				unreadMessage: randomTrue(15),
+				messages: messages
+			}
+			randomConversations.push(randomConversation)
+		}
+		return randomConversations
 	} catch(error) {
 		console.error(error)
 		return ["!Error"]

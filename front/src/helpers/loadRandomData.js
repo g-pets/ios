@@ -3,24 +3,17 @@ import generateData from "~/generator"
 import { openDB } from 'idb'
 import _clonedeep from "lodash.clonedeep"
 
-async function getRandomData() {
-	try {
-		let response = await fetch('http://localhost:85/v1/ios')
-		return await response.json()
-	} catch(error) {
-		console.log(error)
-	}
-}
+
 
 async function createStores(collections) {
 	openDB('iOS', 1, {
 		upgrade(db) {
 			collections.forEach(collection => {
 				let store = db.createObjectStore(collection, {
-					// keyPath: 'id',
-					autoIncrement: true,
+					keyPath: 'id',
+					autoIncrement: false,
 				});
-				store.createIndex('created', 'created')
+				store.createIndex('id', 'id')
 			})
 		}
 	})

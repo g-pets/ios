@@ -17,6 +17,11 @@ import _clonedeep from "lodash.clonedeep"
 // 	}
 // })
 
+// Random ID
+function randomId() {
+    let s4 = () => Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1)
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4()
+}
 
 
 export default function useStore(collection) {
@@ -43,8 +48,7 @@ export default function useStore(collection) {
 		let result
 		try {
 			const db = await openDB('iOS', 1)
-			result = await db.getAllFromIndex(collection, 'created')
-			// result.sort((a, b) => {return b.created - a.created})
+			result = await db.getAllFromIndex(collection, 'id')
 			records.value = result
 		} catch (error) {
 			console.error(error)
@@ -71,7 +75,8 @@ export default function useStore(collection) {
 		try {
 			const db = await openDB('iOS', 1)
 			newRecord = _clonedeep(record)
-			newRecord.created = Date.now()
+			newRecord.id = randomId()
+			newRecord.date = Date.now()
 			records.value.push(newRecord)
 			result = await db.add(collection, newRecord)
 			// console.log(await db)

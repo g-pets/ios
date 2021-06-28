@@ -1,5 +1,6 @@
 // Modules
-import { randomNumber, quantityRange, capitalizeFirstLetter } from '../atoms/utils'
+import { randomNumber, randomTrue, quantityRange, capitalizeFirstLetter } from '../atoms/utils'
+import { randomDatesInRange } from "../molecules/randomDate"
 import { wordsDict } from '../dict/wordsDict'
 
 const dictLength = wordsDict.length
@@ -71,5 +72,26 @@ function randomTexts({q,p,s,w}) {
 	}
 }
 
+// Random Message
+function randomMessages({q,p,s,w}) {
+	try {
+		let quantity = quantityRange(q)
+		let randomMessages = []
+		for (var i = 0; i < quantity; i++) {
+			let randomMessage = {
+				text: randomParagraphs({q:p,s:s,w:w}), // q - paragraphs, s - sentences, w - words
+				date: randomDatesInRange({q:1,days:100})[0],
+				recieved: randomTrue(65)
+			} 
+			randomMessages.push(randomMessage)
+		}
+		randomMessages.sort((a, b) => a.date - b.date) // old messages first
+		return randomMessages
+	} catch(error) {
+		console.error(error)
+		return ["!Error"]
+	}
+}
 
-export { randomWords, randomSentences, randomParagraphs, randomTexts }
+
+export { randomWords, randomSentences, randomParagraphs, randomTexts, randomMessages }

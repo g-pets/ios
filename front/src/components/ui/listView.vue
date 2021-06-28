@@ -59,13 +59,14 @@ export default {
 			align-items: center
 			justify-content: space-between
 			width: 100%
-			.unread
+			.message-badge
 				flex: 0 0 auto
 				width: 0.6em
 				height: 0.6em
 				border-radius: 50%
-				gradient-v50(#81A1CA, #5C8CCA, #3D6DAF, #436CAC)
 				margin-right: 0.6em
+				&.unread
+					gradient-v50(#81A1CA, #5C8CCA, #3D6DAF, #436CAC)
 			.message-body
 				margin-right: auto
 				flex: 1 1 auto
@@ -75,6 +76,8 @@ export default {
 					.full-name
 						font-size: 0.9em
 						margin-right: auto
+				.message
+					line-height: 1.2
 			svg.icon-arrow_more
 				flex: 0 0 auto
 				width: 0.7em

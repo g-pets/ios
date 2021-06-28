@@ -63,7 +63,15 @@ export default {
 
 		function makeCall() {
 			if(!number.value.length) return
-			createRecord({number: {number: number.value}})
+			createRecord({
+				contactID: null,
+				firstName: null,
+				lastName: null,
+				portrait: null,
+				phoneNumber: {raw:number.value},
+				outgoing: true,
+				missed: false
+			})
 			calling.value = true
 		}
 

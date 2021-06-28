@@ -41,7 +41,7 @@ export default {
 	},
 	setup() {
 		document.title = "All Messages | iOS"
-		const {records, getRecords} = useStore('messages')
+		const {records, getRecords} = useStore('conversations')
 		onMounted(() => getRecords())
 		return {records}
 	}

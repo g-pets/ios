@@ -13,8 +13,8 @@
 					span.last-name {{records.item.lastName}}&nbsp;
 					span.first-name {{records.item.firstName}}
 			template(v-else)
-				.number(:class="{missed:records.item.missed}") {{$phoneNumber(records.item.number.number)}}
-			.time {{$unixTime(records.item.created)}}
+				.number(:class="{missed:records.item.missed}") {{$phoneNumber(records.item.phoneNumber.raw)}}
+			.time {{$unixTime(records.item.date)}}
 			glyph(name="arrow_more")
 	
 	
@@ -25,7 +25,7 @@
 					span.last-name {{records.item.lastName}}&nbsp;
 					span.first-name {{records.item.firstName}}
 			template(v-else)
-				.number(:class="{missed:records.item.missed}") {{$phoneNumber(records.item.number.number)}}
+				.number(:class="{missed:records.item.missed}") {{$phoneNumber(records.item.phoneNumber.raw)}}
 			.time {{$unixTime(records.item.created)}}
 			glyph(name="arrow_more")
 //- .screenshot

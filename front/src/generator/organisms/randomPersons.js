@@ -20,14 +20,14 @@ function randomPersons({q}) {
 			let firstName = randomFirstNames({q:1, gender})[0]
 			let lastName = randomLastNames({q:1})[0]
 			let company = randomCompanies({q:1})[0]
-			let personID = randomIds({q:1})[0]
+			let id = randomIds({q:1})[0]
 			let created = randomDatesInRange({q:1,days:500})[0]	// a random date in the range of the last 500 days
 			let favorite = randomTrue(30)
 			let phones = randomPhoneNumbers({q:[1,3],code:"+1"})
 			let emails = randomEmails({q:[1,3], firstName, lastName, company: company.website})
 			// let addresses = randomAddresses({})
 			let portrait = randomPortraits({q:1, gender})[0]
-			let randomPerson = { personID, created, firstName, lastName, company, favorite, phones, emails, portrait }
+			let randomPerson = { id, created, firstName, lastName, company, favorite, phones, emails, portrait }
 			randomPersons.push(randomPerson)
 		}
 		return randomPersons
