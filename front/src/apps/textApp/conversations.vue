@@ -42,8 +42,9 @@ export default {
 	},
 	setup() {
 		document.title = "All Messages | iOS"
-		const {records, getRecords} = useStore('conversations')
+		const {records, getRecords, sortRecords} = useStore('conversations')
 		onMounted(() => getRecords())
+		sortRecords('lastMessageDate')
 		return {records}
 	}
 

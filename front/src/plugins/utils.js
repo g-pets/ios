@@ -19,8 +19,14 @@ export default {
 		app.config.globalProperties.$unixTime = (value) => {
 			try {
 				const timeOptions = {hour12: false, hour: '2-digit', minute:'2-digit'}
+				const dateOptions = {weekday: false, month: 'long', day: 'numeric'}
+				let now = Date.now()
 				let d = new Date(value)
-				let time = d.toLocaleTimeString('en-US', timeOptions)
+				let diff = now - value
+				let time
+				if(diff < 86400000) {time = d.toLocaleTimeString('en-US', timeOptions)}
+				else {time = d.toLocaleDateString('en-US')}
+				
 				return time
 			} catch(error) {
 				console.log(error)

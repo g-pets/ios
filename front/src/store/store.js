@@ -149,6 +149,9 @@ export default function useStore(collection) {
 			console.error(error)
 		}
 	}
+	async function sortRecords(value) {
+		records.value.sort((a, b) => a[value] - b[value])
+	}
 
 	const createDummyRecords = async (type, number) => {
 		try {
@@ -170,5 +173,6 @@ export default function useStore(collection) {
 		deleteRecord,
 		createDummyRecords,
 		deleteAllRecords,
+		sortRecords
 	}
 }

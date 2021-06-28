@@ -1,6 +1,6 @@
 <template lang="pug">
 .view.view-homescreen(:class="{shake}")
-	.generate(@click="generateData") generateData
+	//- .generate(@click="generateData") generateData
 	.apps-grid.drop-zone(@drop='onDrop($event, "screen")' @dragover.prevent @dragenter.prevent)
 		app-icon.drag-el(v-for="(app, index) in screenApps" :class="`item_${index}`" :name="app.name" :title="app.title" :router="app.router" :key="app.id" :draggable="true" @dragstart='startDrag($event, app)')
 

@@ -1,6 +1,6 @@
 {
   "index.html": {
-    "file": "assets/index.87f2c811.js",
+    "file": "assets/index.ec0e3464.js",
     "src": "index.html",
     "isEntry": true,
     "imports": [
@@ -32,7 +32,7 @@
     "file": "assets/vendor.23464d0d.js"
   },
   "src/views/lockScreen.vue": {
-    "file": "assets/lockScreen.1dd9023a.js",
+    "file": "assets/lockScreen.69b6c433.js",
     "src": "src/views/lockScreen.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -44,7 +44,7 @@
     ]
   },
   "src/views/homeScreen.vue": {
-    "file": "assets/homeScreen.94f2ce90.js",
+    "file": "assets/homeScreen.9062bbd9.js",
     "src": "src/views/homeScreen.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -52,7 +52,7 @@
       "index.html"
     ],
     "css": [
-      "assets/homeScreen.9b5b22bb.css"
+      "assets/homeScreen.499f92ab.css"
     ]
   },
   "src/apps/clockApp/clockApp.vue": {
@@ -134,11 +134,11 @@
     ]
   },
   "src/apps/phoneApp/favorites.vue": {
-    "file": "assets/favorites.3d864e90.js",
+    "file": "assets/favorites.b7fa41de.js",
     "src": "src/apps/phoneApp/favorites.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_store.88c4effe.js",
+      "_store.e3bb54cf.js",
       "_navigationBarButton.a1acfb0e.js",
       "_listView.87198e87.js",
       "_vendor.23464d0d.js"
@@ -147,8 +147,8 @@
       "assets/favorites.63dd739f.css"
     ]
   },
-  "_store.88c4effe.js": {
-    "file": "assets/store.88c4effe.js",
+  "_store.e3bb54cf.js": {
+    "file": "assets/store.e3bb54cf.js",
     "imports": [
       "_vendor.23464d0d.js"
     ]
@@ -163,11 +163,11 @@
     ]
   },
   "src/apps/phoneApp/recents.vue": {
-    "file": "assets/recents.673c2cda.js",
+    "file": "assets/recents.fb50fc37.js",
     "src": "src/apps/phoneApp/recents.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_store.88c4effe.js",
+      "_store.e3bb54cf.js",
       "_navigationBarButton.a1acfb0e.js",
       "_listView.87198e87.js",
       "_vendor.23464d0d.js"
@@ -177,22 +177,22 @@
     ]
   },
   "src/apps/phoneApp/contacts.vue": {
-    "file": "assets/contacts.7d8c9647.js",
+    "file": "assets/contacts.0cf86930.js",
     "src": "src/apps/phoneApp/contacts.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_store.88c4effe.js",
+      "_store.e3bb54cf.js",
       "_navigationBarButton.a1acfb0e.js",
       "_listView.87198e87.js",
       "_vendor.23464d0d.js"
     ]
   },
   "src/apps/phoneApp/keypad.vue": {
-    "file": "assets/keypad.1391984f.js",
+    "file": "assets/keypad.c9d2d0e6.js",
     "src": "src/apps/phoneApp/keypad.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_store.88c4effe.js",
+      "_store.e3bb54cf.js",
       "_vendor.23464d0d.js"
     ],
     "css": [
@@ -200,11 +200,11 @@
     ]
   },
   "src/apps/phoneApp/voicemail.vue": {
-    "file": "assets/voicemail.db61b862.js",
+    "file": "assets/voicemail.cd656de5.js",
     "src": "src/apps/phoneApp/voicemail.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_store.88c4effe.js",
+      "_store.e3bb54cf.js",
       "_navigationBarButton.a1acfb0e.js",
       "_listView.87198e87.js",
       "_vendor.23464d0d.js"
@@ -225,25 +225,25 @@
     ]
   },
   "src/apps/textApp/conversations.vue": {
-    "file": "assets/conversations.ba5e3712.js",
+    "file": "assets/conversations.01cdf558.js",
     "src": "src/apps/textApp/conversations.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_store.88c4effe.js",
+      "_store.e3bb54cf.js",
       "_navigationBarButton.a1acfb0e.js",
       "_listView.87198e87.js",
       "_vendor.23464d0d.js"
     ],
     "css": [
-      "assets/conversations.5c18086c.css"
+      "assets/conversations.08b24246.css"
     ]
   },
   "src/apps/textApp/conversation.vue": {
-    "file": "assets/conversation.c0500e8d.js",
+    "file": "assets/conversation.aed79609.js",
     "src": "src/apps/textApp/conversation.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_store.88c4effe.js",
+      "_store.e3bb54cf.js",
       "_navigationBarButton.a1acfb0e.js",
       "_listView.87198e87.js",
       "_vendor.23464d0d.js"
