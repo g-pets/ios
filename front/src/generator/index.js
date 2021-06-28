@@ -1,14 +1,10 @@
-import { randomPersons } from "./organisms/randomPersons"
+import iData from "./templates/iData"
 
 
 export default async function generateData() {
 	let start = Date.now()
 	try {
-		let data = {
-			contacts: randomPersons({q:[50,300]})
-		}
-		console.log(data)
-		return data
+		return await iData()
 	} catch(error) {
 		console.error(error)
 	} finally {

@@ -1,4 +1,5 @@
 "use strict"
+import generateData from "~/generator"
 import { openDB } from 'idb'
 import _clonedeep from "lodash.clonedeep"
 
@@ -39,7 +40,7 @@ async function saveRandomData(collection, data) {
 
 
 export default async function loadRandomData() {
-	let randomData = await getRandomData()
+	let randomData = await generateData()
 	let collections = Object.keys(randomData)
 	await createStores(collections)
 	collections.forEach(collection => saveRandomData(collection, randomData[collection]))
