@@ -1,11 +1,12 @@
 <template lang="pug">
-.app.clock-app
+//- .app.clock-app
+.app.clock-app.flex-column-container
 	navigation-bar
 		template(#left)
 			navigation-bar-button(label="Edit")
 		template(#right)
 			navigation-bar-button(glyph="plus")
-	router-view.content
+	router-view
 	tab-bar(:sections="appSections")
 </template>
 

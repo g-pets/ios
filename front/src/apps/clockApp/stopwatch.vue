@@ -1,4 +1,4 @@
 <template lang="pug">
-.stopwatch.coming-soon
+.stopwatch.section-scrolled.coming-soon
 	h2 Coming Soon
 </template>

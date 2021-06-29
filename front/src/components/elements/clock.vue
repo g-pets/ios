@@ -1,5 +1,5 @@
 <template lang="pug">
-svg.clock(viewBox="0 0 670 670" fill="none" xmlns="http://www.w3.org/2000/svg")
+svg.clock(:class="{night:time.night}" viewBox="0 0 670 670" fill="none" xmlns="http://www.w3.org/2000/svg")
 	defs
 		path(id="clockGlare" d='M334.5 206.5c-193.12 0-297.5 43-297.5 43C67.72 113.53 189.25 12 334.5 12c145.26 0 266.8 101.53 297.51 237.5 0 0-104.38-43-297.5-43z')
 	circle.clock-base(cx='335' cy='335' r='335')
@@ -14,20 +14,32 @@ svg.clock(viewBox="0 0 670 670" fill="none" xmlns="http://www.w3.org/2000/svg")
 
 
 <script>
-import {reactive, onMounted} from 'vue'
+import {reactive, computed, onMounted} from 'vue'
 export default {
 	name: "Clock",
 	props: {
-		shift: Number
+		utc: Number
 	},
 	setup(props) {
 		let time = reactive({s:0,m:0,h:0})
 		function getTime() {
-			let date = new Date()
-			time.s = (360 / 60 * date.getSeconds()).toFixed()
-			time.m = (360 / 60 * date.getMinutes()).toFixed()
-			time.h = (360 / 12 * date.getHours()).toFixed()
+			try {
+				let date = new Date()
+				let offset = date.getTimezoneOffset() / 60
+				// console.log(date)
+				time.s = (360 / 60 * date.getSeconds()).toFixed()
+				time.m = (360 / 60 * date.getMinutes()).toFixed()
+				time.h = (360 / 12 * (date.getHours() + props.utc + offset)).toFixed()
+				if(time.h < 155 || time.h > 630) time.night = true
+			} catch(error) {
+				console.error(error)
+			}
 		}
+		// let isNight = computed(() => {
+		// 	if(time.h > 10) return true
+		// 	else console.log('day')
+		// })
+		
 		onMounted(() => {
 			getTime()
 			setInterval(getTime, 1000)
@@ -64,4 +76,17 @@ svg.clock
 	.clock-hand, .s-base
 		transform-origin: center
 		backface-visibility: hidden
+	&.night
+		.clock-base
+			fill: #222
+		.clock-numbers
+			fill: #fff
+		.h-hand, .s-hand, .m-hand
+			fill: #FFF
+		.s-base
+			fill: #FF7470
+		.clock-glare
+			opacity: 0.1
+			&-top
+				opacity: 0.1
 </style>

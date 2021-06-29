@@ -36,13 +36,14 @@ export default {
 		padding-top: 0.2em
 		letter-spacing: -0.02em
 	.group
-		width: 3em
+		min-width: 6em
+		// flex: 0 0 auto
 		display: flex
 		&.left
 			justify-content: flex-start
 		&.center
 			justify-content: center
-			width: 10em
+			// width: 5em
 		&.right
 			justify-content: flex-end
 </style>

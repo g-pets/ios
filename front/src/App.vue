@@ -14,11 +14,13 @@ glyphs-set
 		router-view
 	.phone-body.section-fixed
 		.home-button(@click="goHome")
+		//- .store-size(v-if="store") Store Size: {{store.length}}
 </template>
 
 <script>
 import {onMounted} from "vue"
 import appState from "~/store/appState"
+import {records} from "~/store/store"
 import { useRegisterSW } from "virtual:pwa-register/vue"
 import glyphsSet from '~/components/svg/glyphs/glyphsSet.vue'
 import statusBar from '~/components/ui/statusBar.vue'
@@ -29,7 +31,8 @@ export default {
 	components: {glyphsSet, statusBar, systemDialog},
 	data() {
 		return {
-			ready: true
+			ready: true,
+			store: records
 		}
 	},
 	methods: {
@@ -54,6 +57,8 @@ export default {
 <style lang="stylus">
 @import "./assets/styles/index.styl"
 
+.store-size
+	color: #fff
 .app-container
 	height: 100vh
 	display: flex
@@ -101,7 +106,5 @@ export default {
 				width: 100%
 				height: 75%
 				background: #000
-				border-radius: 50% 50% 50% 50%/50% 50% 25% 25%
-					
-				
+				border-radius: 50% 50% 50% 50%/50% 50% 25% 25%			
 </style>

@@ -1,6 +1,6 @@
 <template lang="pug">
 .list-view.section-scrolled
-	.list-item(v-for="(item, index) in list")
+	template(v-for="(item, index) in list")
 		slot(:item="item" :index="index")
 </template>
 
@@ -26,7 +26,13 @@ export default {
 		display: flex
 		align-items: center
 		line-height: 1
-		
+		cursor: pointer
+		&:hover
+			color: #000
+			background: #f2f6ff
+		&:active
+			color: #fff
+			gradient-v3(#4882BB, #3D6FB6, #45629A)
 		.full-name, .number
 			margin-right: auto
 			padding-top: 0.1em
@@ -53,7 +59,7 @@ export default {
 			box-shadow: 0 0.01em 0.05em 0.01em rgba(#000,0.5)
 			fill: #fff
 		
-		.message-preview
+		&.message-preview
 			display: flex
 			align-items: center
 			justify-content: space-between

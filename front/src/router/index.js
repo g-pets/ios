@@ -19,7 +19,9 @@ const phoneApp = () => import('~/apps/phoneApp/phoneApp.vue')
 const phoneApp_favorites = () => import('~/apps/phoneApp/favorites.vue')
 const phoneApp_recents = () => import('~/apps/phoneApp/recents.vue')
 const phoneApp_contacts = () => import('~/apps/phoneApp/contacts.vue')
+const phoneApp_contact = () => import('~/apps/phoneApp/contact.vue')
 const phoneApp_keypad = () => import('~/apps/phoneApp/keypad.vue')
+const phoneApp_calling = () => import('~/apps/phoneApp/calling.vue')
 const phoneApp_voicemail = () => import('~/apps/phoneApp/voicemail.vue')
 
 // Text App
@@ -92,10 +94,20 @@ const routes = [
 				component: phoneApp_contacts,
 				meta: {title: "Contacts"}
 			}, {
+				path: "contacts/:id",
+				name: "phoneApp_contact",
+				component: phoneApp_contact,
+				meta: {title: "Contact"}
+			}, {
 				path: "keypad",
 				name: "phoneApp_keypad",
 				component: phoneApp_keypad,
 				meta: {title: "Keypad"}
+			}, {
+				path: "calling/:number",
+				name: "phoneApp_calling",
+				component: phoneApp_calling,
+				meta: {title: "Calling"}
 			}, {
 				path: "voicemail",
 				name: "phoneApp_voicemail",

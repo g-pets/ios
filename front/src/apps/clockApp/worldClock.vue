@@ -1,14 +1,13 @@
 <template lang="pug">
-.world-clock
+.world-clock.section-scrolled
 	.cities
 		.city(v-for="city in cities")
 			.city-name {{city.name}}
-			clock(:shift="city.shift")
+			clock(:utc="city.utc")
 			.city-time
 				.time 12:38
 				.day Today
 	world-map
-//- .screenshot
 </template>
 
 <script>
@@ -20,10 +19,11 @@ export default {
 	components: {worldMap, clock},
 	setup() {
 		const cities = reactive([
-			{name: "Los Angeles", shift: 10},
-			{name: "London", shift: 10},
-			// {name: "Prague", shift: 10},
-			// {name: "Moscow", shift: 10}
+			{name: "Los Angeles", utc: -7},
+			{name: "London", utc: 0},
+			{name: "Prague", utc: 2},
+			// {name: "Moscow", utc: 3},
+			// {name: "Tokio", utc: 10}
 		])
 		let time = reactive({s:0,m:0,h:0})
 		function getTime() {
@@ -42,20 +42,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.screenshot
-	position: absolute
-	top: 0
-	left: 0
-	background-image: url("/screens/clockApp-worldMap.jpg")
-	width: 100%
-	height: 100%
-	background-repeat: no-repeat
-	background-size: cover
-	z-index: 0
-	opacity: 1
-	// opacity: 0.5
-
-
 .world-clock
 	.world-map
 		width: 100%
@@ -63,6 +49,7 @@ export default {
 		margin: auto
 		fill: #fff
 		opacity: 0.2
+		
 	.city
 		display: flex
 		padding: 0.6em 0.5em 0.5em

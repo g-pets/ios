@@ -1,4 +1,4 @@
 <template lang="pug">
-.alarm.coming-soon
+.alarm.section-scrolled.coming-soon
 	h2 Coming Soon
 </template>

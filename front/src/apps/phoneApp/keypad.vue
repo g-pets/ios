@@ -1,5 +1,5 @@
 <template lang="pug">
-.keypad(v-if="!calling")
+.keypad.section-scrolled
 	.phone-number {{$phoneNumber(number)}}
 	button.key(v-for="key in keys" @click="addInt(key.val)")
 		.val {{key.val}}
@@ -7,9 +7,6 @@
 	button.key.action(v-for="action in actions" :class="action.class" @click="action.action")
 		glyph(v-if="action.glyph" :name="action.glyph")
 		.label(v-if="action.label") {{action.label}}
-.calling(v-else)
-	.number {{$phoneNumber(number)}}
-	button.end-call(@click="endCall()") End Call
 		
 
 
@@ -44,6 +41,21 @@ export default {
 			]
 		}
 	},
+	methods: {
+		makeCall(number) {
+			if(!this.number.length) return
+			// this.createRecord({
+			// 	contactID: null,
+			// 	firstName: null,
+			// 	lastName: null,
+			// 	portrait: null,
+			// 	phoneNumber: {raw:this.number},
+			// 	outgoing: true,
+			// 	missed: false
+			// })
+			this.$router.push({name: 'phoneApp_calling', params: {number}})
+		},
+	},
 	setup() {
 		document.title = "Keypad | iOS"
 		const {createRecord} = useStore('calls')
@@ -61,24 +73,24 @@ export default {
 			number.value = newNumber
 		}
 
-		function makeCall() {
-			if(!number.value.length) return
-			createRecord({
-				contactID: null,
-				firstName: null,
-				lastName: null,
-				portrait: null,
-				phoneNumber: {raw:number.value},
-				outgoing: true,
-				missed: false
-			})
-			calling.value = true
-		}
+		// function makeCall() {
+		// 	if(!number.value.length) return
+		// 	createRecord({
+		// 		contactID: null,
+		// 		firstName: null,
+		// 		lastName: null,
+		// 		portrait: null,
+		// 		phoneNumber: {raw:number.value},
+		// 		outgoing: true,
+		// 		missed: false
+		// 	})
+		// 	calling.value = true
+		// }
 
 		function endCall() {
 			calling.value = false
 		}
-		return {number, calling, addInt, removeInt, makeCall, endCall}
+		return {number, calling, addInt, removeInt, endCall}
 	}
 }
 </script>

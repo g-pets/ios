@@ -1,13 +1,12 @@
 <template lang="pug">
 navigation-bar(title="All Contacts")
 	template(#right)
-		navigation-bar-button(glyph="plus")
-list-view(:list="sortedContacts")
-	template(#default="sortedContacts")
+		navigation-bar-button(glyph="plus" v-slot:right)
+list-view(:list="sortedContacts" v-slot="sortedContacts")
+	.list-item(@click="openContact(sortedContacts.item.id)")
 		.full-name
 			span.last-name {{sortedContacts.item.lastName}}&nbsp;
 			span.first-name {{sortedContacts.item.firstName}}
-		//- glyph(name="arrow_more")
 </template>
 
 
@@ -17,20 +16,23 @@ import navigationBar from '~/components/ui/navigationBar.vue'
 import navigationBarButton from '~/components/buttons/navigationBarButton.vue'
 import toggleButton from '~/components/buttons/toggleButton.vue'
 import listView from "~/components/ui/listView.vue"
-import {onMounted} from 'vue'
 export default {
-	name: "Recents",
+	name: "Contacts",
 	components: {navigationBar, navigationBarButton, toggleButton, listView},
 	computed: {
 		sortedContacts() {
-			return this.$sortObjects(this.contacts, 'lastName')
+			return this.$sortObjects(this.records, 'lastName')
 		}
+	},
+	methods: {
+		openContact(id) {
+			this.$router.push({name: 'phoneApp_contact', params: {id}})
+		},
 	},
 	setup() {
 		document.title = "Contacts | iOS"
-		const {records, getRecords} = useStore('contacts')
-		onMounted(() => getRecords())
-		return {contacts: records}
+		const { records } = useStore('contacts')
+		return { records }
 	}
 }
 </script>

@@ -10,7 +10,7 @@ export default {
 				if (phoneNumberLength < 7) {
 					return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`
 				}
-				return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6, 9)}`
+				return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6, 10)}`
 			} catch(error) {
 				console.log(error)
 			}

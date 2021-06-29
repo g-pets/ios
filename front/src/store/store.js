@@ -5,44 +5,60 @@ import _clonedeep from "lodash.clonedeep"
 
 
 
-
-// const db = openDB('iOS', 1, {
-// 	upgrade(db) {
-// 		const store = db.createObjectStore('notes', {
-// 			keyPath: 'id',
-// 			autoIncrement: false,
-// 		})
-// 		store.createIndex('id', 'id')
-// 		store.createIndex('created', 'created')
-// 	}
-// })
-
 // Random ID
 function randomId() {
     let s4 = () => Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1)
     return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4()
 }
 
+function sortObjects(key) {
+	try {
+		records.value.sort((a, b) => {
+			let fa = a[key].toLowerCase(),
+				fb = b[key].toLowerCase()
+		
+			if (fa < fb) {
+				return -1;
+			}
+			if (fa > fb) {
+				return 1;
+			}
+			return 0;
+		})
+	} catch(error) {
+		console.log(error)
+	}
+}
+
+
+export const records = ref([])
+
+
+
 
 export default function useStore(collection) {
-	const records = ref([])
+	
+	const recordsToStore = async () => {
+		try {
+			const db = await openDB('iOS', 1)
+			let result = await db.getAllFromIndex(collection, 'id')
+			records.value = result
+			console.info(`Records To Store (${records.value.length}):  ${collection}`)
+		} catch (error) {
+			console.error(error)
+		}
+	}
+	
+	const cleanStore = async () => {
+		try {
+			records.value = []
+		} catch (error) {
+			console.error(error)
+		}
+	}
 
-	// const db = openDB('iOS', 1, {
-	// 	upgrade(db) {
-	// 		const store = db.createObjectStore(collection, {
-	// 			keyPath: 'id',
-	// 			autoIncrement: false,
-	// 		})
-	// 		store.createIndex('id', 'id')
-	// 		store.createIndex('created', 'created')
-	// 	}
-	// })
 
 	
-
-	// const generateId = () => {
-	// 	return JSON.stringify(Date.now())
-	// }
 	
 	const getRecords = async () => {
 		let result
@@ -50,6 +66,7 @@ export default function useStore(collection) {
 			const db = await openDB('iOS', 1)
 			result = await db.getAllFromIndex(collection, 'id')
 			records.value = result
+			console.log('Get records: ' + collection)
 		} catch (error) {
 			console.error(error)
 		} finally {
@@ -165,6 +182,8 @@ export default function useStore(collection) {
 
 	return {
 		records,
+		recordsToStore,
+		cleanStore,
 		getRecordF,
 		getRecords,
 		createRecord,

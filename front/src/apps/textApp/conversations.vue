@@ -1,22 +1,20 @@
 <template lang="pug">
-navigation-bar(:title="`Messages (${records.length})`")
+navigation-bar(title="Messages")
 	template(#left)
 		navigation-bar-button(label="Edit")
 	template(#right)
 		navigation-bar-button(glyph="plus")
-list-view(:list="records")
-	template(#default="records")
-		.message-preview(@click="openConversation(records.item.contactID)")
-			.message-badge(:class="{unread: records.item.unreadMessage}")
-			.message-body
-				.header
-					.full-name
-						span.last-name {{records.item.lastName}}&nbsp;
-						span.first-name {{records.item.firstName}}
-					.time {{$unixTime(records.item.lastMessageDate)}}
-				.message {{messagePreview(records.item.messages[records.item.messages.length-1].text[0])}}
-			glyph(name="arrow_more")
-	
+list-view(:list="records" v-slot="records")
+	.list-item.message-preview(@click="openConversation(records.item.contactID)")
+		.message-badge(:class="{unread: records.item.unreadMessage}")
+		.message-body
+			.header
+				.full-name
+					span.last-name {{records.item.lastName}}&nbsp;
+					span.first-name {{records.item.firstName}}
+				.time {{$unixTime(records.item.lastMessageDate)}}
+			.message {{messagePreview(records.item.messages[records.item.messages.length-1].text[0])}}
+		glyph(name="arrow_more")
 	
 </template>
 
@@ -41,10 +39,8 @@ export default {
 	},
 	setup() {
 		document.title = "All Messages | iOS"
-		const {records, getRecords, sortRecords} = useStore('conversations')
-		onMounted(() => getRecords())
-		sortRecords('lastMessageDate')
-		return {records}
+		const { records } = useStore('conversations')
+		return { records }
 	}
 
 }

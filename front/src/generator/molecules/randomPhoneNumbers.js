@@ -16,7 +16,7 @@ function randomPhoneNumbers({q, countryCode = '+1'}) {
 			let randomPhoneNumber = {
 				type: typesDict[phoneTypeIndex],
 				raw: countryCode + areaCode + subscriberNumber,
-				formated: `${countryCode} (${areaCode}) ${formattedSubscriberNumber}`
+				formatted: `${countryCode} (${areaCode}) ${formattedSubscriberNumber}`
 			}
 			randomPhoneNumbers.push(randomPhoneNumber)
 		}

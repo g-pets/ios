@@ -5,28 +5,35 @@ navigation-bar
 	template(#right)
 		navigation-bar-button(label="Clear" @click="deleteAllRecords")
 
-list-view(v-if="section.value == 'all'" :list="records")
-	template(#default="records")
-		template(v-if="records.item.lastName")
-			.full-name(:class="{missed:records.item.missed}")
-				span.last-name {{records.item.lastName}}&nbsp;
-				span.first-name {{records.item.firstName}}
-		template(v-else)
-			.number(:class="{missed:records.item.missed}") {{$phoneNumber(records.item.phoneNumber.raw)}}
-		.time {{$unixTime(records.item.date)}}
-		glyph(name="arrow_more")
+list-view(v-if="section.value == 'all'" :list="records" v-slot="records")
+	.list-item(@click="openContact(records.item.id)")
+		.full-name
+			span.last-name {{records.item.lastName}}&nbsp;
+			span.first-name {{records.item.firstName}}
+
+//- list-view(v-if="section.value == 'all'" :list="records")
+//- 	template(#default="records")
+//- 		template(v-if="records.item.lastName")
+//- 			.full-name(:class="{missed:records.item.missed}")
+//- 				span.last-name {{records.item.lastName}}&nbsp;
+//- 				span.first-name {{records.item.firstName}}
+//- 		template(v-else)
+//- 			.number(:class="{missed:records.item.missed}") {{$phoneNumber(records.item.phoneNumber.raw)}}
+//- 		.time {{$unixTime(records.item.date)}}
+//- 		glyph(name="arrow_more")
 
 
-list-view(v-else :list="missedCalls")
-	template(#default="records")
-		template(v-if="records.item.lastName")
-			.full-name(:class="{missed:records.item.missed}")
-				span.last-name {{records.item.lastName}}&nbsp;
-				span.first-name {{records.item.firstName}}
-		template(v-else)
-			.number(:class="{missed:records.item.missed}") {{$phoneNumber(records.item.phoneNumber.raw)}}
-		.time {{$unixTime(records.item.date)}}
-		glyph(name="arrow_more")
+
+//- list-view(v-else :list="missedCalls")
+//- 	template(#default="records")
+//- 		template(v-if="records.item.lastName")
+//- 			.full-name(:class="{missed:records.item.missed}")
+//- 				span.last-name {{records.item.lastName}}&nbsp;
+//- 				span.first-name {{records.item.firstName}}
+//- 		template(v-else)
+//- 			.number(:class="{missed:records.item.missed}") {{$phoneNumber(records.item.phoneNumber.raw)}}
+//- 		.time {{$unixTime(records.item.date)}}
+//- 		glyph(name="arrow_more")
 //- .screenshot
 </template>
 
@@ -52,12 +59,11 @@ export default {
 	},
 	setup() {
 		document.title = "Recent Calls | iOS"
-		const {records, getRecords, deleteAllRecords} = useStore('calls')
-		onMounted(() => getRecords())
+		const { records, deleteAllRecords } = useStore('calls')
 		const missedCalls = computed(() => {
 			let missedCalls = records.value.filter(call => call.missed)
 			return missedCalls
-		});
+		})
 		
 		return {records, missedCalls, deleteAllRecords}
 	}
