@@ -1,5 +1,5 @@
 "use strict"
-import loadRandomData from '~/helpers/loadRandomData.js'
+import loadRandomData from '~/utils/loadRandomData.js'
 export default async function install() {
 	if (localStorage.getItem('installed')) return
 	console.log('Installation')

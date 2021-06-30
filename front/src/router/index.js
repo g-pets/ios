@@ -32,14 +32,15 @@ const textApp_conversation = () => import('~/apps/textApp/conversation.vue')
 
 
 
+
 // Routes
 const routes = [
 	{
-		path: "/",
+		path: "/loading",
 		name: "loadingScreen",
 		component: loadingScreen
 	}, {
-		path: "/lock",
+		path: "/locked",
 		name: "lockScreen",
 		component: lockScreen
 	}, {
@@ -145,9 +146,10 @@ const routes = [
 				redirect: { name: "textApp_conversations" },
 			}
 		]
-	}, {
+	},
+	{
 		path: "/:pathMatch(.*)*",
-		redirect: { name: "Home Screen" },
+		redirect: { name: "homeScreen" },
 	}
 ]
 export default createRouter({

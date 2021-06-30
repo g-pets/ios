@@ -1,0 +1,1 @@
+import{o,c as n,a as s}from"./vendor.fc0894b6.js";const r={class:"timer section-scrolled coming-soon"},c=s("h2",null,"Coming Soon",-1);const e={render:function(s,e){return o(),n("div",r,[c])}};export default e;

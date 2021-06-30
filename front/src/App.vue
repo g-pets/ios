@@ -7,9 +7,10 @@
 </template>
 
 <script>
-import {onMounted} from "vue"
-import { useRegisterSW } from "virtual:pwa-register/vue"
-import install from '~/install.js'
+import { useRouter } from 'vue-router'
+// import {onMounted} from "vue"
+// import { useRegisterSW } from "virtual:pwa-register/vue"
+// import install from '~/install.js'
 export default {
 	name: "App",
 	data() {
@@ -22,17 +23,17 @@ export default {
 			this.$router.push({name: 'homeScreen'})
 		}
 	},
-	// setup() {
-	// 	const initApp = install()
-	// 	const {runApp} = appState()
-	// 	const {offlineReady, needRefresh, updateServiceWorker} = useRegisterSW()
-	// 	const cancelUpdate = async() => {
-	// 		offlineReady.value = false
-	// 		needRefresh.value = false
-	// 	}
-	// 	onMounted(() => runApp())
-	// 	return {needRefresh, updateServiceWorker, cancelUpdate}
-	// }
+	setup() {
+		const router = useRouter()
+		// const {offlineReady, needRefresh, updateServiceWorker} = useRegisterSW()
+		
+		let installed = localStorage.getItem('installed')
+		router.beforeEach((to, from, next) => {
+			if (to.name !== 'loadingScreen' && !installed) next({ name: 'loadingScreen' })
+			else next()
+		})
+		// return {needRefresh, updateServiceWorker, cancelUpdate}
+	}
 };
 </script>
 

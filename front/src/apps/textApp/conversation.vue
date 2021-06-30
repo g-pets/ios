@@ -16,7 +16,7 @@ import navigationBar from '~/components/ui/navigationBar.vue'
 import navigationBarButton from '~/components/buttons/navigationBarButton.vue'
 import toggleButton from '~/components/buttons/toggleButton.vue'
 import listView from "~/components/ui/listView.vue"
-import {onMounted, ref} from 'vue'
+import { onMounted } from 'vue'
 export default {
 	name: "textMessages",
 	components: {navigationBar, navigationBarButton, toggleButton, listView},
