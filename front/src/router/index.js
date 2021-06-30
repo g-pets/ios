@@ -1,6 +1,7 @@
 import { createWebHistory, createRouter } from "vue-router"
 
 // Views
+const loadingScreen = () => import('~/views/loadingScreen.vue')
 const lockScreen = () => import('~/views/lockScreen.vue')
 const homeScreen = () => import('~/views/homeScreen.vue')
 
@@ -35,6 +36,10 @@ const textApp_conversation = () => import('~/apps/textApp/conversation.vue')
 const routes = [
 	{
 		path: "/",
+		name: "loadingScreen",
+		component: loadingScreen
+	}, {
+		path: "/lock",
 		name: "lockScreen",
 		component: lockScreen
 	}, {

@@ -1,1 +1,0 @@
-import{c as o,d as n,e as s}from"./vendor.7c4942a9.js";const c={class:"stopwatch section-scrolled coming-soon"},t=s("h2",null,"Coming Soon",-1);const e={render:function(s,e){return o(),n("div",c,[t])}};export default e;
