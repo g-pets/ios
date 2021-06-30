@@ -1,21 +1,20 @@
 <template lang="pug">
 .view.view-lockscreen
 	.top-panel.panel-glow
-		.time {{dateTime.time}}
-		.date {{dateTime.date}}
+		.time {{ dateTime.time }}
+		.date {{ dateTime.date }}
 	.bottom-panel.panel-glow
 		slideToUnlock
-//- .screenshot
 </template>
 
 <script>
-import {dateTime, appStateFunctions} from "~/store/appState"
-import slideToUnlock from "~/components/ui/slideToUnlock.vue"
+import { dateTime, appStateFunctions } from "~/store/appState"
+import slideToUnlock from "~/components/elements/slideToUnlock.vue"
 export default {
 	name: "LockScreen",
-	components: {slideToUnlock},
+	components: { slideToUnlock },
 	setup() {
-		const {lockPhone} = appStateFunctions()
+		const { lockPhone } = appStateFunctions()
 		lockPhone()
 		return {dateTime}
 	}
@@ -23,16 +22,6 @@ export default {
 </script>
 
 <style lang="stylus">
-.screenshot
-	position: absolute
-	top: 0
-	left: 0
-	background-image: url("/screens/lockScreen.png")
-	width: 100%
-	height: 100%
-	background-repeat: no-repeat
-	background-size: contain
-	opacity: 0.5
 .view-lockscreen
 	background-image: url("/img/wallpapers/002.png")
 	width: 100%

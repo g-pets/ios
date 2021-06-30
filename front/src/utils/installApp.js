@@ -1,7 +1,8 @@
 "use strict"
-import { ref, reactive } from "vue"
+import { reactive } from "vue"
 import { useRouter } from 'vue-router'
-// import loadRandomData from './loadRandomData.js'
+import loadRandomData from './loadRandomData.js'
+import { registerSW } from "virtual:pwa-register"
 
 
 function localStorageTest() {
@@ -22,7 +23,7 @@ function localStorageTest() {
 
 function indexedDBTest() {
 	try {
-		if (window.indexedDB) throw 'IndexedDB not detected'
+		if(!window.indexedDB) throw 'IndexedDB not detected'
 		return true
 	} catch(error) {
 		console.error(error)
@@ -34,10 +35,10 @@ function indexedDBTest() {
 const installationState = reactive({
 	localStorage: false,
 	indexedDB: false,
-	generateData: false
+	fetchDataset: false,
+	serviceWorker: false
 })
 
-const installed = ref(false)
 
 const runInstallation = async () => {
 	try {
@@ -45,13 +46,14 @@ const runInstallation = async () => {
 		console.info('Installation...')
 		installationState.localStorage = await localStorageTest()
 		installationState.indexedDB = await indexedDBTest()
-		// installationState.generateData = await loadRandomData()
-		
+		installationState.serviceWorker = await registerSW()
+		installationState.fetchDataset = await loadRandomData()
 		localStorage.setItem("installed", true)
-		router.push({name: 'lockScreen'})
+		router.push({name:'lockScreen'})
+		console.log('Installed!')
 	} catch (error) {
 		console.error('Application not installed')
 	}
 }
 
-export { runInstallation, installationState, installed }
+export { runInstallation, installationState }
