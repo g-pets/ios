@@ -17,3 +17,8 @@ export default {
 	}
 }
 </script>
+
+<style lang="stylus" scoped>
+.app.text-app
+	background: #DBE1EE
+</style>

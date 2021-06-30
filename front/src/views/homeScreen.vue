@@ -173,18 +173,20 @@ export default {
 		padding: 0.7em 1em 0
 		display: grid
 		grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr))
-		grid-template-rows: repeat(1, 5em)
+		// grid-template-rows: repeat(1, 5em)
 		gap: 1em
 		justify-items: center
-		background: url("/img/ui/dock.jpg")
-		background-repeat: no-repeat
-		background-size: cover
+		// background: url("/img/ui/dock.jpg")
+		// background-repeat: no-repeat
+		// background-size: contain
+		background: linear-gradient(180deg, #8d8d8d 80%, #6e6e6e 80%)
+		// border-bottom: 1em solid #6e6e6e
 		width: 100%
 		:deep(.app-item)
 			.app-icon
 				box-shadow: 0 0.14em 0.1em rgba(#000,0.3)
 			.app-title
-				margin-top: 0.6em
+				margin-top: 0.5em
 				color: #eee
 				text-shadow: 0 -1px #333
 

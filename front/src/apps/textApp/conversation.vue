@@ -4,9 +4,9 @@ navigation-bar(title="Messages")
 		navigation-bar-button(label="Messages" @click="goBack()")
 	template(#right)
 		navigation-bar-button(label="Clear")
-.messages.section-scrolled(v-if="conversation")
-	.message(v-for="message in conversation.messages" :class="{recieved:message.recieved, unread:message.unread}")
-		p(v-for="p in message.text") {{p}}	
+.messages.section-scrolled(ref="messagesContainer" v-if="conversation" :class="{visible}")
+		.message(v-for="message in conversation.messages" :class="{recieved:message.recieved, unread:message.unread}")
+			p(v-for="p in message.text") {{p}}
 </template>
 
 
@@ -20,6 +20,11 @@ import {onMounted, ref} from 'vue'
 export default {
 	name: "textMessages",
 	components: {navigationBar, navigationBarButton, toggleButton, listView},
+	data() {
+		return {
+			visible: false
+		}
+	},
 	methods: {
 		goBack() {
 			this.$router.push({name: 'textApp_conversations'})
@@ -32,25 +37,25 @@ export default {
 		conversation() {
 			let id = this.$route.params
 			let conversation = this.records.find(record => record.contactID === id.id)
-			
 			return conversation
 		}
+	},
+	 updated() {
+		let container = this.$refs.messagesContainer
+		container.scrollTo(0,container.scrollHeight)
+		this.visible = true
 	},
 	setup() {
 		document.title = "All Messages | iOS"
 		const {records, getRecords} = useStore('conversations')
-		onMounted(() => {
-			getRecords()
-		})
-		return {records}
+		onMounted(() => getRecords())
+		return { records }
 	}
 
 }
 </script>
 
 <style lang="stylus" scoped>
-#last
-	height: 1px
 .messages
 	padding: 0.7em
 	display: flex
@@ -59,6 +64,8 @@ export default {
 	gap: 0.8em
 	color: #000
 	background: #DBE1EE
+	visibility: hidden
+	opacity: 0
 	.message
 		padding: 0.5em
 		line-height: 1.2
@@ -67,10 +74,14 @@ export default {
 		max-width: 70%
 		background: #B1D552
 		box-shadow: 0 2px 3px rgba(#000,0.5)
+		
 		&.recieved
 			align-self: flex-start
 			border-radius: 1em
 			border-bottom-left-radius: 0
 			background: #E5E5E5
+	&.visible
+		visibility: visible
+		opacity: 1
 </style>
 

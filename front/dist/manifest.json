@@ -1,6 +1,6 @@
 {
   "index.html": {
-    "file": "assets/index.b3248e3a.js",
+    "file": "assets/index.72cd6d19.js",
     "src": "index.html",
     "isEntry": true,
     "imports": [
@@ -34,7 +34,7 @@
     "file": "assets/vendor.7c4942a9.js"
   },
   "src/views/lockScreen.vue": {
-    "file": "assets/lockScreen.50eeb012.js",
+    "file": "assets/lockScreen.429aede7.js",
     "src": "src/views/lockScreen.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -46,7 +46,7 @@
     ]
   },
   "src/views/homeScreen.vue": {
-    "file": "assets/homeScreen.59607f2f.js",
+    "file": "assets/homeScreen.0ed98e30.js",
     "src": "src/views/homeScreen.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -54,7 +54,7 @@
       "index.html"
     ],
     "css": [
-      "assets/homeScreen.a4750d18.css"
+      "assets/homeScreen.a3c115d8.css"
     ]
   },
   "src/apps/clockApp/clockApp.vue": {
@@ -124,7 +124,7 @@
     ]
   },
   "src/apps/phoneApp/phoneApp.vue": {
-    "file": "assets/phoneApp.257ebc32.js",
+    "file": "assets/phoneApp.f6bf3f0f.js",
     "src": "src/apps/phoneApp/phoneApp.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -137,7 +137,7 @@
     ]
   },
   "src/apps/phoneApp/favorites.vue": {
-    "file": "assets/favorites.966252d2.js",
+    "file": "assets/favorites.47515447.js",
     "src": "src/apps/phoneApp/favorites.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -157,7 +157,7 @@
     ]
   },
   "src/apps/phoneApp/recents.vue": {
-    "file": "assets/recents.b5d18a57.js",
+    "file": "assets/recents.cff165be.js",
     "src": "src/apps/phoneApp/recents.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -181,7 +181,7 @@
     ]
   },
   "src/apps/phoneApp/contacts.vue": {
-    "file": "assets/contacts.b684569e.js",
+    "file": "assets/contacts.2886fe9f.js",
     "src": "src/apps/phoneApp/contacts.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -193,7 +193,7 @@
     ]
   },
   "src/apps/phoneApp/contact.vue": {
-    "file": "assets/contact.39d22b6b.js",
+    "file": "assets/contact.6ff1e281.js",
     "src": "src/apps/phoneApp/contact.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -208,7 +208,7 @@
     ]
   },
   "src/apps/phoneApp/keypad.vue": {
-    "file": "assets/keypad.61a5dc10.js",
+    "file": "assets/keypad.13e40b02.js",
     "src": "src/apps/phoneApp/keypad.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -220,7 +220,7 @@
     ]
   },
   "src/apps/phoneApp/calling.vue": {
-    "file": "assets/calling.04d73d7e.js",
+    "file": "assets/calling.b7fab038.js",
     "src": "src/apps/phoneApp/calling.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -232,7 +232,7 @@
     ]
   },
   "src/apps/phoneApp/voicemail.vue": {
-    "file": "assets/voicemail.97016d4a.js",
+    "file": "assets/voicemail.97366740.js",
     "src": "src/apps/phoneApp/voicemail.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -244,16 +244,19 @@
     ]
   },
   "src/apps/textApp/textApp.vue": {
-    "file": "assets/textApp.418adae1.js",
+    "file": "assets/textApp.518dc40f.js",
     "src": "src/apps/textApp/textApp.vue",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
       "_vendor.7c4942a9.js"
+    ],
+    "css": [
+      "assets/textApp.29801468.css"
     ]
   },
   "src/apps/textApp/conversations.vue": {
-    "file": "assets/conversations.5c09eaab.js",
+    "file": "assets/conversations.bb71971c.js",
     "src": "src/apps/textApp/conversations.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -268,7 +271,7 @@
     ]
   },
   "src/apps/textApp/conversation.vue": {
-    "file": "assets/conversation.328fb56b.js",
+    "file": "assets/conversation.732860b3.js",
     "src": "src/apps/textApp/conversation.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -279,7 +282,7 @@
       "_vendor.7c4942a9.js"
     ],
     "css": [
-      "assets/conversation.af36034a.css"
+      "assets/conversation.6258ad28.css"
     ]
   }
 }

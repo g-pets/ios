@@ -14,7 +14,7 @@ glyphs-set
 		router-view
 	.phone-body.section-fixed
 		.home-button(@click="goHome")
-		.store-size(v-if="store") Store Size: {{store.length}}
+		//- .store-size(v-if="store") Store Size: {{store.length}}
 </template>
 
 <script>
