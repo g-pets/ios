@@ -1,7 +1,7 @@
 <template lang="pug">
 .app-item(@click="openApp")
 	svg.app-icon(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" :style="jiggleEffect")
-		component(:is="name")
+		component.html-icon(:is="name")
 	.app-title {{title}}
 //- .app-item.png
 //- 	img.app-icon(:src="`/img/apps/${name}.png`")
@@ -54,8 +54,11 @@ export default {
 		line-height: 1
 	
 	:deep(.html-icon)
-		width: 100%
-		height: 100%
+		width: 100rem
+		height: 100rem
+		.icon-body
+			width: 100%
+			height: 100%
 		.icon-header
 			height: 300px
 		.icon-title
@@ -67,6 +70,7 @@ export default {
 			font-family: Helvetica
 			font-weight: bold
 			text-shadow: 0px -0.05em 0 rgba(#000,.5)
+		
 		&.icon-glare
 			position: relative
 			&:before

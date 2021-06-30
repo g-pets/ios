@@ -5,7 +5,7 @@ navigation-bar(title="Messages")
 	template(#right)
 		navigation-bar-button(label="Clear")
 .messages.section-scrolled(v-if="conversation")
-	.message(v-for="message in conversation.messages" :class="{recieved:message.recieved}")
+	.message(v-for="message in conversation.messages" :class="{recieved:message.recieved, unread:message.unread}")
 		p(v-for="p in message.text") {{p}}	
 </template>
 
@@ -16,7 +16,7 @@ import navigationBar from '~/components/ui/navigationBar.vue'
 import navigationBarButton from '~/components/buttons/navigationBarButton.vue'
 import toggleButton from '~/components/buttons/toggleButton.vue'
 import listView from "~/components/ui/listView.vue"
-import {onMounted} from 'vue'
+import {onMounted, ref} from 'vue'
 export default {
 	name: "textMessages",
 	components: {navigationBar, navigationBarButton, toggleButton, listView},

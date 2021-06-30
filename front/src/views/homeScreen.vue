@@ -180,11 +180,11 @@ export default {
 		background-repeat: no-repeat
 		background-size: cover
 		width: 100%
-		.app-icon
-			.icon
-				box-shadow: 0 0.14em 0.1em rgba(#000,0.6)
-			.name
-				margin-top: 0.9em
+		:deep(.app-item)
+			.app-icon
+				box-shadow: 0 0.14em 0.1em rgba(#000,0.3)
+			.app-title
+				margin-top: 0.6em
 				color: #eee
 				text-shadow: 0 -1px #333
 

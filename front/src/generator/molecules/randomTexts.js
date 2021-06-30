@@ -86,6 +86,12 @@ function randomMessages({q,p,s,w}) {
 			randomMessages.push(randomMessage)
 		}
 		randomMessages.sort((a, b) => a.date - b.date) // old messages first
+		// Last message "unread"?
+		let lastMessage = randomMessages[randomMessages.length-1]
+		if(lastMessage.recieved) {
+			let unread = randomTrue(25)
+			lastMessage.unread = unread
+		}
 		return randomMessages
 	} catch(error) {
 		console.error(error)

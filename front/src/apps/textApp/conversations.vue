@@ -6,7 +6,7 @@ navigation-bar(title="Messages")
 		navigation-bar-button(glyph="plus")
 list-view(:list="records" v-slot="records")
 	.list-item.message-preview(@click="openConversation(records.item.contactID)")
-		.message-badge(:class="{unread: records.item.unreadMessage}")
+		.message-badge(:class="{unread: isUnread(records.item.messages)}")
 		.message-body
 			.header
 				.full-name
@@ -35,6 +35,9 @@ export default {
 		},
 		messagePreview(message) {
 			return message.substring(0, 60) + '...'
+		},
+		isUnread(messages) {
+			return messages.filter(message => message.unread).length
 		}
 	},
 	setup() {

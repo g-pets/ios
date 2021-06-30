@@ -30,7 +30,7 @@ export default {
 				time.s = (360 / 60 * date.getSeconds()).toFixed()
 				time.m = (360 / 60 * date.getMinutes()).toFixed()
 				time.h = (360 / 12 * (date.getHours() + props.utc + offset)).toFixed()
-				if(time.h < 155 || time.h > 630) time.night = true
+				if(time.h <= 155 || time.h >= 630) time.night = true
 			} catch(error) {
 				console.error(error)
 			}

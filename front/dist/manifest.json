@@ -1,10 +1,10 @@
 {
   "index.html": {
-    "file": "assets/index.a32d33fe.js",
+    "file": "assets/index.b3248e3a.js",
     "src": "index.html",
     "isEntry": true,
     "imports": [
-      "_vendor.4a6d3ba9.js"
+      "_vendor.7c4942a9.js"
     ],
     "dynamicImports": [
       "src/views/lockScreen.vue",
@@ -18,229 +18,268 @@
       "src/apps/phoneApp/favorites.vue",
       "src/apps/phoneApp/recents.vue",
       "src/apps/phoneApp/contacts.vue",
+      "src/apps/phoneApp/contact.vue",
       "src/apps/phoneApp/keypad.vue",
+      "src/apps/phoneApp/calling.vue",
       "src/apps/phoneApp/voicemail.vue",
       "src/apps/textApp/textApp.vue",
       "src/apps/textApp/conversations.vue",
       "src/apps/textApp/conversation.vue"
     ],
     "css": [
-      "assets/index.0c644f28.css"
+      "assets/index.aa6511c2.css"
     ]
   },
-  "_vendor.4a6d3ba9.js": {
-    "file": "assets/vendor.4a6d3ba9.js"
+  "_vendor.7c4942a9.js": {
+    "file": "assets/vendor.7c4942a9.js"
   },
   "src/views/lockScreen.vue": {
-    "file": "assets/lockScreen.20eb367d.js",
+    "file": "assets/lockScreen.50eeb012.js",
     "src": "src/views/lockScreen.vue",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_vendor.4a6d3ba9.js"
+      "_vendor.7c4942a9.js"
     ],
     "css": [
       "assets/lockScreen.e14cb2dd.css"
     ]
   },
   "src/views/homeScreen.vue": {
-    "file": "assets/homeScreen.fbccbbc5.js",
+    "file": "assets/homeScreen.59607f2f.js",
     "src": "src/views/homeScreen.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_vendor.4a6d3ba9.js",
+      "_vendor.7c4942a9.js",
       "index.html"
     ],
     "css": [
-      "assets/homeScreen.deb849fb.css"
+      "assets/homeScreen.a4750d18.css"
     ]
   },
   "src/apps/clockApp/clockApp.vue": {
-    "file": "assets/clockApp.c0ab4d26.js",
+    "file": "assets/clockApp.cf12c8b8.js",
     "src": "src/apps/clockApp/clockApp.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_navigationBarButton.75291d21.js",
-      "_tabBar.4413e255.js",
-      "_vendor.4a6d3ba9.js"
+      "_navigationBarButton.4147c144.js",
+      "_tabBar.8c77f1df.js",
+      "_vendor.7c4942a9.js"
     ],
     "css": [
-      "assets/clockApp.315bee0d.css"
+      "assets/clockApp.00b64049.css"
     ]
   },
-  "_navigationBarButton.75291d21.js": {
-    "file": "assets/navigationBarButton.75291d21.js",
+  "_navigationBarButton.4147c144.js": {
+    "file": "assets/navigationBarButton.4147c144.js",
     "imports": [
-      "_vendor.4a6d3ba9.js"
+      "_vendor.7c4942a9.js"
     ],
     "css": [
-      "assets/navigationBarButton.766a3a49.css"
+      "assets/navigationBarButton.5a5c9bb2.css"
     ]
   },
-  "_tabBar.4413e255.js": {
-    "file": "assets/tabBar.4413e255.js",
+  "_tabBar.8c77f1df.js": {
+    "file": "assets/tabBar.8c77f1df.js",
     "imports": [
-      "_vendor.4a6d3ba9.js"
+      "_vendor.7c4942a9.js"
     ],
     "css": [
       "assets/tabBar.2d73dccd.css"
     ]
   },
   "src/apps/clockApp/worldClock.vue": {
-    "file": "assets/worldClock.a53d409f.js",
+    "file": "assets/worldClock.dc7ace76.js",
     "src": "src/apps/clockApp/worldClock.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_vendor.4a6d3ba9.js"
+      "_vendor.7c4942a9.js"
     ],
     "css": [
-      "assets/worldClock.0a04049e.css"
+      "assets/worldClock.8ab548b4.css"
     ]
   },
   "src/apps/clockApp/alarm.vue": {
-    "file": "assets/alarm.2acb4a12.js",
+    "file": "assets/alarm.f6fe12e8.js",
     "src": "src/apps/clockApp/alarm.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_vendor.4a6d3ba9.js"
+      "_vendor.7c4942a9.js"
     ]
   },
   "src/apps/clockApp/stopwatch.vue": {
-    "file": "assets/stopwatch.65d66111.js",
+    "file": "assets/stopwatch.2b257df2.js",
     "src": "src/apps/clockApp/stopwatch.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_vendor.4a6d3ba9.js"
+      "_vendor.7c4942a9.js"
     ]
   },
   "src/apps/clockApp/timer.vue": {
-    "file": "assets/timer.9d316f4a.js",
+    "file": "assets/timer.ef442de4.js",
     "src": "src/apps/clockApp/timer.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_vendor.4a6d3ba9.js"
+      "_vendor.7c4942a9.js"
     ]
   },
   "src/apps/phoneApp/phoneApp.vue": {
-    "file": "assets/phoneApp.6d683247.js",
+    "file": "assets/phoneApp.257ebc32.js",
     "src": "src/apps/phoneApp/phoneApp.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_tabBar.4413e255.js",
-      "_vendor.4a6d3ba9.js"
+      "_tabBar.8c77f1df.js",
+      "index.html",
+      "_vendor.7c4942a9.js"
     ],
     "css": [
-      "assets/phoneApp.3bfe082c.css"
+      "assets/phoneApp.14e3668f.css"
     ]
   },
   "src/apps/phoneApp/favorites.vue": {
-    "file": "assets/favorites.00888571.js",
+    "file": "assets/favorites.966252d2.js",
     "src": "src/apps/phoneApp/favorites.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_store.1ff14714.js",
-      "_navigationBarButton.75291d21.js",
-      "_listView.b01ee7bf.js",
-      "_vendor.4a6d3ba9.js"
+      "_navigationBarButton.4147c144.js",
+      "_listView.e3229307.js",
+      "index.html",
+      "_vendor.7c4942a9.js"
     ]
   },
-  "_store.1ff14714.js": {
-    "file": "assets/store.1ff14714.js",
+  "_listView.e3229307.js": {
+    "file": "assets/listView.e3229307.js",
     "imports": [
-      "_vendor.4a6d3ba9.js"
-    ]
-  },
-  "_listView.b01ee7bf.js": {
-    "file": "assets/listView.b01ee7bf.js",
-    "imports": [
-      "_vendor.4a6d3ba9.js"
+      "_vendor.7c4942a9.js"
     ],
     "css": [
-      "assets/listView.8a034540.css"
+      "assets/listView.d505a2fd.css"
     ]
   },
   "src/apps/phoneApp/recents.vue": {
-    "file": "assets/recents.b8732b2e.js",
+    "file": "assets/recents.b5d18a57.js",
     "src": "src/apps/phoneApp/recents.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_store.1ff14714.js",
-      "_navigationBarButton.75291d21.js",
-      "_listView.b01ee7bf.js",
-      "_vendor.4a6d3ba9.js"
+      "index.html",
+      "_navigationBarButton.4147c144.js",
+      "_toggleButton.d556d73f.js",
+      "_listView.e3229307.js",
+      "_vendor.7c4942a9.js"
     ],
     "css": [
-      "assets/recents.97db26b2.css"
+      "assets/recents.cb65037d.css"
+    ]
+  },
+  "_toggleButton.d556d73f.js": {
+    "file": "assets/toggleButton.d556d73f.js",
+    "imports": [
+      "_vendor.7c4942a9.js"
+    ],
+    "css": [
+      "assets/toggleButton.973ed10c.css"
     ]
   },
   "src/apps/phoneApp/contacts.vue": {
-    "file": "assets/contacts.936239ec.js",
+    "file": "assets/contacts.b684569e.js",
     "src": "src/apps/phoneApp/contacts.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_store.1ff14714.js",
-      "_navigationBarButton.75291d21.js",
-      "_listView.b01ee7bf.js",
-      "_vendor.4a6d3ba9.js"
+      "index.html",
+      "_navigationBarButton.4147c144.js",
+      "_toggleButton.d556d73f.js",
+      "_listView.e3229307.js",
+      "_vendor.7c4942a9.js"
+    ]
+  },
+  "src/apps/phoneApp/contact.vue": {
+    "file": "assets/contact.39d22b6b.js",
+    "src": "src/apps/phoneApp/contact.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_navigationBarButton.4147c144.js",
+      "_toggleButton.d556d73f.js",
+      "_listView.e3229307.js",
+      "_vendor.7c4942a9.js"
+    ],
+    "css": [
+      "assets/contact.a55006c6.css"
     ]
   },
   "src/apps/phoneApp/keypad.vue": {
-    "file": "assets/keypad.afc73554.js",
+    "file": "assets/keypad.61a5dc10.js",
     "src": "src/apps/phoneApp/keypad.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_store.1ff14714.js",
-      "_vendor.4a6d3ba9.js"
+      "index.html",
+      "_vendor.7c4942a9.js"
     ],
     "css": [
-      "assets/keypad.011cffb3.css"
+      "assets/keypad.fc14754b.css"
+    ]
+  },
+  "src/apps/phoneApp/calling.vue": {
+    "file": "assets/calling.04d73d7e.js",
+    "src": "src/apps/phoneApp/calling.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_vendor.7c4942a9.js"
+    ],
+    "css": [
+      "assets/calling.77001039.css"
     ]
   },
   "src/apps/phoneApp/voicemail.vue": {
-    "file": "assets/voicemail.8422b8db.js",
+    "file": "assets/voicemail.97016d4a.js",
     "src": "src/apps/phoneApp/voicemail.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_store.1ff14714.js",
-      "_navigationBarButton.75291d21.js",
-      "_listView.b01ee7bf.js",
-      "_vendor.4a6d3ba9.js"
+      "index.html",
+      "_navigationBarButton.4147c144.js",
+      "_toggleButton.d556d73f.js",
+      "_listView.e3229307.js",
+      "_vendor.7c4942a9.js"
     ]
   },
   "src/apps/textApp/textApp.vue": {
-    "file": "assets/textApp.e447e67d.js",
+    "file": "assets/textApp.418adae1.js",
     "src": "src/apps/textApp/textApp.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_vendor.4a6d3ba9.js"
+      "index.html",
+      "_vendor.7c4942a9.js"
     ]
   },
   "src/apps/textApp/conversations.vue": {
-    "file": "assets/conversations.6fd26c36.js",
+    "file": "assets/conversations.5c09eaab.js",
     "src": "src/apps/textApp/conversations.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_store.1ff14714.js",
-      "_navigationBarButton.75291d21.js",
-      "_listView.b01ee7bf.js",
-      "_vendor.4a6d3ba9.js"
+      "index.html",
+      "_navigationBarButton.4147c144.js",
+      "_toggleButton.d556d73f.js",
+      "_listView.e3229307.js",
+      "_vendor.7c4942a9.js"
     ],
     "css": [
-      "assets/conversations.ef33f0cd.css"
+      "assets/conversations.7511f499.css"
     ]
   },
   "src/apps/textApp/conversation.vue": {
-    "file": "assets/conversation.3807f01e.js",
+    "file": "assets/conversation.328fb56b.js",
     "src": "src/apps/textApp/conversation.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_store.1ff14714.js",
-      "_navigationBarButton.75291d21.js",
-      "_listView.b01ee7bf.js",
-      "_vendor.4a6d3ba9.js"
+      "index.html",
+      "_navigationBarButton.4147c144.js",
+      "_toggleButton.d556d73f.js",
+      "_listView.e3229307.js",
+      "_vendor.7c4942a9.js"
     ],
     "css": [
-      "assets/conversation.bca019f2.css"
+      "assets/conversation.af36034a.css"
     ]
   }
 }

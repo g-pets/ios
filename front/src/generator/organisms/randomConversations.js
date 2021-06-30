@@ -21,7 +21,6 @@ function randomConversations({q,contacts}) {
 				portrait: contact.portrait,
 				phoneNumber: contact.phones[0],
 				lastMessageDate: lastMessage.date,
-				unreadMessage: randomTrue(15),
 				messages: messages
 			}
 			randomConversations.push(randomConversation)

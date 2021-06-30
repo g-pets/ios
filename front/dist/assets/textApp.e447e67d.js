@@ -1,1 +1,0 @@
-import{f as t,b as a,c as e,d as n}from"./vendor.4a6d3ba9.js";const o={class:"app text-app flex-column-container"};const r={render:function(r,s){const c=t("router-view");return a(),e("div",o,[n(c)])}};export default r;
