@@ -8,7 +8,8 @@ export default defineConfig({
 		vue(),
 		VitePWA({
 			base: '/',
-			includeAssets: ['img/**/*.*'],
+			// includeAssets: ['img/**/*.*'],
+			includeAssets: ['img/wallpapers/*.*'],
 			manifest: {
 				"name": "iOS 1.0",
 				"short_name": "iOS",

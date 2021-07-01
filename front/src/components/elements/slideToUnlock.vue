@@ -13,8 +13,8 @@ import { useRouter } from 'vue-router'
 import deviceControl from "~/store/deviceState"
 export default {
 	setup() {
-		const { unlockedDevice } = deviceControl()
-		document.addEventListener('touchmove', event => event.preventDefault(), { passive:false });
+		const { deviceUnlocked } = deviceControl()
+		document.addEventListener('touchmove', event => event.preventDefault(), { passive:false })
 		const router = useRouter()
 		const container = ref(null)
 		const toggle = ref(null)
@@ -25,7 +25,7 @@ export default {
 		let isTouch = "ontouchstart" in document.documentElement
 
 
-		onMounted(() => unlockedDevice(false))
+		onMounted(() => deviceUnlocked(false))
 
 		function getX(event) {
 			if (isTouch === true) return event.touches[0].pageX
@@ -62,6 +62,7 @@ export default {
 			document.removeEventListener('touchmove', dragLock, false)
 			document.removeEventListener('mouseup', dragStop)
 			document.removeEventListener('touchend', dragStop)
+			document.removeEventListener('touchmove', event => event.preventDefault())
 		}
 		
 
@@ -80,13 +81,14 @@ export default {
 			}
 		}
 
-		async function unlock() {
-			toggle.value.classList.remove('unlocked');
+		function unlock() {
+			toggle.value.classList.remove('unlocked')			
 			dragStop(false)
 			toggle.value.removeEventListener("mousedown", dragStart)
 			toggle.value.removeEventListener("touchstart", dragStart)
-			await router.push({name: 'homeScreen'})
-			unlockedDevice(true)
+			
+			deviceUnlocked(true)
+			router.push({name: 'homeScreen'})
 		}
 
 		

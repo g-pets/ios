@@ -4,6 +4,8 @@ import { useRouter } from 'vue-router'
 import loadRandomData from './loadRandomData.js'
 // const loadRandomData = () => import('./loadRandomData.js')
 import { registerSW } from "virtual:pwa-register"
+import deviceControl from "~/store/deviceState"
+
 
 
 
@@ -33,6 +35,7 @@ function indexedDBTest() {
 	}
 	
 }
+   
 
 const installationState = reactive({
 	localStorage: false,
@@ -63,7 +66,8 @@ const runInstallation = async () => {
 			console.log('4. registerSW')
 		}, 1500)
 		await setTimeout(function(){
-			localStorage.setItem("installed", true)
+			const { appInstalled } = deviceControl()
+			appInstalled(true)
 			router.push({name:'lockScreen'})
 			console.log('5. Router')
 		}, 2000)

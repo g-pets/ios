@@ -2,14 +2,20 @@
 import { reactive } from "vue"
 
 const deviceState = reactive({
-	unlocked: false
+	appInstalled: false,
+	deviceUnlocked: false
 })
 
 export default function deviceControl() {
-	deviceState.unlocked = localStorage.getItem("unlocked")
-	const unlockedDevice = (state) => {
-		deviceState.unlocked = state
-		localStorage.setItem("unlocked", state)
+
+	const appInstalled = (state) => {
+		deviceState.appInstalled = state
+		localStorage.setItem("appInstalled", state)
 	}
-	return { deviceState, unlockedDevice }
+
+	const deviceUnlocked = (state) => {
+		deviceState.deviceUnlocked = state
+		localStorage.setItem("deviceUnlocked", state)
+	}
+	return { deviceState, appInstalled, deviceUnlocked }
 }

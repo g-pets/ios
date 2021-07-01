@@ -3,12 +3,16 @@ import { reactive, onMounted } from "vue"
 
 const timeOptions = {hour12: false, hour: '2-digit', minute:'2-digit'}
 const dateOptions = {weekday: 'long', month: 'long', day: 'numeric'}
-export const dateTime = reactive({})
+const dateTime = reactive({})
 
 export const appState = reactive({
 	installed: false,
 	locked: true
 })
+
+
+
+
 
 export default function runApp() {
 	function getTime() {
@@ -28,3 +32,8 @@ export function appStateFunctions() {
 	const toggleDeviceLock = () => appState.locked = !appState.locked
 	return {toggleDeviceLock}
 }
+
+export { dateTime }
+
+
+

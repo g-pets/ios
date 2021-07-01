@@ -1,1 +1,0 @@
-import{o as s,c as t,F as e,k as i,q as o}from"./vendor.7a90928c.js";const r={class:"list-view section-scrolled"};const a={name:"listView",props:{list:Array},render:function(a,l,n,c,d,m){return s(),t("div",r,[(s(!0),t(e,null,i(n.list,((s,t)=>o(a.$slots,"default",{item:s,index:t}))),256))])}};export{a as _};

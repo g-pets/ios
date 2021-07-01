@@ -5,7 +5,7 @@
 		.operator AT&T {{connectionInfo.type}}
 		glyph(name="wifi")
 	.group.center
-		glyph(v-if="!deviceState.unlocked" name="locked")
+		glyph(v-if="!deviceState.deviceUnlocked" name="locked")
 		.time(v-else) {{dateTime.time}}
 	.group.right
 		glyph(name="bluetooth")
