@@ -23,8 +23,8 @@ export default function runApp() {
 	return {runApp}
 }
 
+
 export function appStateFunctions() {
-	function unlockPhone() {appState.locked = false}
-	function lockPhone() {appState.locked = true}
-	return {lockPhone, unlockPhone}
+	const toggleDeviceLock = () => appState.locked = !appState.locked
+	return {toggleDeviceLock}
 }

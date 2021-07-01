@@ -1,6 +1,6 @@
 {
   "index.html": {
-    "file": "assets/index.7af9901e.js",
+    "file": "assets/index.257f06c6.js",
     "src": "index.html",
     "isEntry": true,
     "imports": [
@@ -59,30 +59,30 @@
     "file": "assets/workbox-window.prod.es5.28eaf433.js"
   },
   "src/layers/entryLayer.vue": {
-    "file": "assets/entryLayer.44a74841.js",
+    "file": "assets/entryLayer.bdf78052.js",
     "src": "src/layers/entryLayer.vue",
     "isDynamicEntry": true,
     "imports": [
       "_vendor.326f3398.js",
-      "_appState.3f5d36cc.js",
+      "_deviceState.039492a6.js",
       "_workbox-window.prod.es5.28eaf433.js"
     ],
     "css": [
-      "assets/entryLayer.512e38a4.css"
+      "assets/entryLayer.6e6a5dd7.css"
     ]
   },
-  "_appState.3f5d36cc.js": {
-    "file": "assets/appState.3f5d36cc.js",
+  "_deviceState.039492a6.js": {
+    "file": "assets/deviceState.039492a6.js",
     "imports": [
       "_vendor.326f3398.js"
     ]
   },
   "src/views/lockScreen.vue": {
-    "file": "assets/lockScreen.2a55c6c2.js",
+    "file": "assets/lockScreen.f6bef358.js",
     "src": "src/views/lockScreen.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_appState.3f5d36cc.js",
+      "_deviceState.039492a6.js",
       "_vendor.326f3398.js"
     ],
     "css": [
@@ -90,16 +90,15 @@
     ]
   },
   "src/views/homeScreen.vue": {
-    "file": "assets/homeScreen.ac3088db.js",
+    "file": "assets/homeScreen.a0d4291e.js",
     "src": "src/views/homeScreen.vue",
     "isDynamicEntry": true,
     "imports": [
       "_vendor.326f3398.js",
-      "_appState.3f5d36cc.js",
       "_index.8f3a9f9e.js"
     ],
     "css": [
-      "assets/homeScreen.a3c115d8.css"
+      "assets/homeScreen.6105692f.css"
     ]
   },
   "src/apps/clockApp/clockApp.vue": {
@@ -265,7 +264,7 @@
     ]
   },
   "src/apps/phoneApp/keypad.vue": {
-    "file": "assets/keypad.c6daadda.js",
+    "file": "assets/keypad.e83598b2.js",
     "src": "src/apps/phoneApp/keypad.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -274,7 +273,7 @@
       "_index.cc4b6a56.js"
     ],
     "css": [
-      "assets/keypad.fc14754b.css"
+      "assets/keypad.8d164336.css"
     ]
   },
   "src/apps/phoneApp/calling.vue": {

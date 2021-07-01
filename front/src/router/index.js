@@ -156,14 +156,12 @@ const router = createRouter({
 	routes
 })
 
-let installed = localStorage.getItem('installed')
-router.beforeEach((to, from, next) => {
+router.beforeEach(async (to, from, next) => {
+	let installed = await localStorage.getItem('installed')
+	let unlocked = await localStorage.getItem('unlocked')
 	if (to.name !== 'loadingScreen' && !installed) next({ name: 'loadingScreen' })
+	if (to.name !== 'lockScreen' && !unlocked) next({ name: 'lockScreen' })
 	else next()
 })
 
 export default router
-// export default createRouter({
-// 	history: createWebHistory(),
-// 	routes
-// })

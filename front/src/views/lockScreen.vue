@@ -8,14 +8,12 @@
 </template>
 
 <script>
-import { dateTime, appStateFunctions } from "~/store/appState"
+import { dateTime } from "~/store/appState"
 import slideToUnlock from "~/components/elements/slideToUnlock.vue"
 export default {
 	name: "LockScreen",
 	components: { slideToUnlock },
 	setup() {
-		const { lockPhone } = appStateFunctions()
-		lockPhone()
 		return {dateTime}
 	}
 };

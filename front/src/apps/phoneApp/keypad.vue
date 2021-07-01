@@ -126,6 +126,7 @@ export default {
 		background: #000
 		font-size: 2.3em
 		line-height: 1
+		min-height: 1.5em
 		text-align: center
 		background: linear-gradient(180deg, #687b95 0%, #254167 50%, #0b2a55 50%, #0b2a55 100%)
 		display: flex

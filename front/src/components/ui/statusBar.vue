@@ -5,7 +5,7 @@
 		.operator AT&T {{connectionInfo.type}}
 		glyph(name="wifi")
 	.group.center
-		glyph(v-if="appState.locked" name="locked")
+		glyph(v-if="!deviceState.unlocked" name="locked")
 		.time(v-else) {{dateTime.time}}
 	.group.right
 		glyph(name="bluetooth")
@@ -19,7 +19,8 @@
 
 <script>
 import {ref, reactive, onMounted} from 'vue'
-import {dateTime, appState} from "~/store/appState"
+import { dateTime } from "~/store/appState"
+import deviceControl from "~/store/deviceState"
 export default {
 	name: "statusBar",
 	computed: {
@@ -36,6 +37,7 @@ export default {
 	},
 	setup() {
 		// const {dateTime} = appState()
+		const { deviceState } = deviceControl()
 
 		let batteryInfo = reactive({
 			charging: false,
@@ -77,7 +79,7 @@ export default {
 		})
 		
 
-		return {dateTime, appState, batteryInfo, connectionInfo}
+		return {dateTime, deviceState, batteryInfo, connectionInfo}
 	}
 }
 </script>

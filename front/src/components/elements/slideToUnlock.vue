@@ -1,6 +1,6 @@
 <template lang="pug">
 .slide-to-unlock(ref="container")
-	.toggle(ref="toggle" @mousedown="dragStart" @touchstart="dragStart")
+	.toggle(ref="toggle" @mousedown="dragStart" @touchstart.passive="dragStart")
 		svg.arrow(fill="none" viewBox="0 0 160 160")
 			path(d="M6 54h81V26l67 54-67 54v-28H6V54z")
 	.overlay(:style="{opacity: (sliderStyle/300).toFixed(2)}")
@@ -8,10 +8,13 @@
 </template>
 
 <script>
-import {ref} from 'vue'
-import {useRouter} from 'vue-router'
+import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+import deviceControl from "~/store/deviceState"
 export default {
 	setup() {
+		const { unlockedDevice } = deviceControl()
+		document.addEventListener('touchmove', event => event.preventDefault(), { passive:false });
 		const router = useRouter()
 		const container = ref(null)
 		const toggle = ref(null)
@@ -20,6 +23,9 @@ export default {
 		let dragProps = ref(null)
 		let sliderStyle = ref()
 		let isTouch = "ontouchstart" in document.documentElement
+
+
+		onMounted(() => unlockedDevice(false))
 
 		function getX(event) {
 			if (isTouch === true) return event.touches[0].pageX
@@ -58,16 +64,9 @@ export default {
 			document.removeEventListener('touchend', dragStop)
 		}
 		
-		async function unlock() {
-			toggle.value.classList.remove('unlocked');
-			dragStop(false)
-			toggle.value.removeEventListener("mousedown", dragStart)
-			toggle.value.removeEventListener("touchstart", dragStart)
-			await router.push({name: 'homeScreen'})
-		}
 
 		function dragLock(e) {
-			e.preventDefault()
+			// e.preventDefault()
 			var posX = getX(e)
 			var mouseDiff = posX - dragProps.mouseStart,
 				maxX = outerRect.width - lockRect.width - 7,
@@ -77,8 +76,17 @@ export default {
 			toggle.value.style.left = newX + "px"
 			sliderStyle.value = newX
 			if (newX >= maxX) {
-				unlock();
+				unlock()
 			}
+		}
+
+		async function unlock() {
+			unlockedDevice(true)
+			toggle.value.classList.remove('unlocked');
+			dragStop(false)
+			toggle.value.removeEventListener("mousedown", dragStart)
+			toggle.value.removeEventListener("touchstart", dragStart)
+			await router.push({name: 'homeScreen'})
 		}
 
 		

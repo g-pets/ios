@@ -13,7 +13,6 @@
 
 <script>
 import appIcon from '~/components/appsIcons/appIcon.vue'
-import {appStateFunctions} from "~/store/appState"
 import generateData from "~/generator"
 import {reactive} from 'vue'
 export default {
@@ -48,9 +47,6 @@ export default {
 	},
 	setup() {
 		document.title = "Home Screen | iOS 1.0"
-		const {unlockPhone} = appStateFunctions()
-		// const {generateData} = generateData()
-		unlockPhone()
 		const apps = reactive([
 			{
 				id: 1,
