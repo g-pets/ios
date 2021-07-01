@@ -1,4 +1,5 @@
 import { createWebHistory, createRouter } from "vue-router"
+import deviceControl from "~/store/deviceState"
 
 // Layers
 const loadingLayer = () => import('~/layers/loadingLayer.vue')
@@ -131,12 +132,12 @@ const routes = [
 						path: "conversations/",
 						name: "textApp_conversations",
 						component: textApp_conversations,
-						meta: {title: "Messages"}
+						meta: { title: "Messages" }
 					}, {
 						path: "conversations/:id/",
 						name: "textApp_conversation",
 						component: textApp_conversation,
-						meta: {title: "Conversation"}
+						meta: { title: "Conversation" }
 					}, {
 						path: "",
 						redirect: { name: "textApp_conversations" },
@@ -156,12 +157,20 @@ const router = createRouter({
 	routes
 })
 
+
+// const { deviceState } = deviceControl()
 router.beforeEach(async (to, from, next) => {
-	let installed = await localStorage.getItem('installed')
-	let unlocked = await localStorage.getItem('unlocked')
+	let installed = localStorage.getItem('installed')
+	// let unlocked = await deviceState.unlocked
+	// installed = false
+	// unlocked = false
 	if (to.name !== 'loadingScreen' && !installed) next({ name: 'loadingScreen' })
-	if (to.name !== 'lockScreen' && !unlocked) next({ name: 'lockScreen' })
+	// else if (to.name !== 'lockScreen' && !unlocked) next({ name: 'lockScreen' })
 	else next()
 })
 
 export default router
+// export default createRouter({
+// 	history: createWebHistory(),
+// 	routes
+// })

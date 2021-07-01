@@ -1,0 +1,1 @@
+import{b as e,g as t}from"./vendor.7a90928c.js";const n={hour12:!1,hour:"2-digit",minute:"2-digit"},o={weekday:"long",month:"long",day:"numeric"},a=e({});function i(){function e(){let e=new Date;a.time=e.toLocaleTimeString("en-US",n),a.date=e.toLocaleDateString("en-US",o)}return t((()=>{e(),setInterval(e,1e3)})),{runApp:i}}e({installed:!1,locked:!0});export{a as d,i as r};

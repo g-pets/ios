@@ -7,10 +7,6 @@
 	button.key.action(v-for="action in actions" :class="action.class" @click="action.action")
 		glyph(v-if="action.glyph" :name="action.glyph")
 		.label(v-if="action.label") {{action.label}}
-		
-
-
-//- .screenshot
 </template>
 
 <script>

@@ -81,12 +81,12 @@ export default {
 		}
 
 		async function unlock() {
-			unlockedDevice(true)
 			toggle.value.classList.remove('unlocked');
 			dragStop(false)
 			toggle.value.removeEventListener("mousedown", dragStart)
 			toggle.value.removeEventListener("touchstart", dragStart)
 			await router.push({name: 'homeScreen'})
+			unlockedDevice(true)
 		}
 
 		

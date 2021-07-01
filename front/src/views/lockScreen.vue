@@ -21,7 +21,8 @@ export default {
 
 <style lang="stylus">
 .view-lockscreen
-	background-image: url("/img/wallpapers/002.png")
+	// background-image: url("/img/wallpapers/001-mobile.jpg")
+	background-image: url("/img/wallpapers/planet.jpg")
 	width: 100%
 	height: 100%
 	background-repeat: no-repeat

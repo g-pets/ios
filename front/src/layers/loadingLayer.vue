@@ -59,6 +59,7 @@ export default {
 		.progress-bar
 			height: 100%
 			width: 0%
+			transition: width 0.3s
 			background: #F6F7F6
 			border-radius: 0 0.1em 0.1em 0
 </style>

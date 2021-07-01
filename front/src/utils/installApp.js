@@ -2,7 +2,9 @@
 import { reactive } from "vue"
 import { useRouter } from 'vue-router'
 import loadRandomData from './loadRandomData.js'
+// const loadRandomData = () => import('./loadRandomData.js')
 import { registerSW } from "virtual:pwa-register"
+
 
 
 function localStorageTest() {
@@ -44,12 +46,34 @@ const runInstallation = async () => {
 	try {
 		const router = useRouter()
 		console.info('Installation...')
-		installationState.localStorage = await localStorageTest()
-		installationState.indexedDB = await indexedDBTest()
-		installationState.serviceWorker = await registerSW()
-		installationState.fetchDataset = await loadRandomData()
-		localStorage.setItem("installed", true)
-		router.push({name:'lockScreen'})
+		await setTimeout(function(){
+			installationState.localStorage = localStorageTest()
+			console.log('1. localStorageTest')
+		}, 500)
+		await setTimeout(function(){
+			installationState.indexedDB = indexedDBTest()
+			console.log('2. indexedDBTest')
+		}, 700)
+		await setTimeout(function(){
+			installationState.fetchDataset = loadRandomData()
+			console.log('3. loadRandomData')
+		}, 1000)
+		await setTimeout(function(){
+			installationState.serviceWorker = registerSW()
+			console.log('4. registerSW')
+		}, 1500)
+		await setTimeout(function(){
+			localStorage.setItem("installed", true)
+			router.push({name:'lockScreen'})
+			console.log('5. Router')
+		}, 2000)
+		// installationState.localStorage = await localStorageTest()
+		// installationState.indexedDB = await indexedDBTest()
+		// installationState.serviceWorker = await registerSW()
+		// installationState.fetchDataset = await loadRandomData()
+		
+		
+		
 		console.log('Installed!')
 	} catch (error) {
 		console.error('Application not installed')
