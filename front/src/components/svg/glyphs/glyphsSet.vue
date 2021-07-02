@@ -154,6 +154,27 @@
 			</symbol>
 
 
+			<!-- Plus (Calc) -->
+			<symbol id="icon_plus_calc" viewBox="0 0 200 200">
+				<path d="M118 118h72V82h-72V10H82v72H10v36h72v72h36v-72z"/>
+			</symbol>
+
+			<!-- Minus (Calc) -->
+			<symbol id="icon_minus_calc" viewBox="0 0 200 200">
+				<path d="M10 82h180v36H10V82z"/>
+			</symbol>
+
+			<!-- Multyply (Calc) -->
+			<symbol id="icon_multyply_calc" viewBox="0 0 200 200">
+				<path d="M100 125.46l50.91 50.9 25.46-25.45L125.46 100l50.9-50.91-25.45-25.46L100 74.54l-50.91-50.9-25.46 25.45L74.54 100l-50.9 50.91 25.45 25.46L100 125.46z"/>
+			</symbol>
+
+			<!-- Divide (Calc) -->
+			<symbol id="icon_divide_calc" viewBox="0 0 200 200">
+				<path d="M10 82h180v36H10V82zM124 34a24 24 0 11-48 0 24 24 0 0148 0zM124 166a24 24 0 11-48 0 24 24 0 0148 0z"/>
+			</symbol>
+
+
 
 
 		</defs>

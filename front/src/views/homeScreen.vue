@@ -1,7 +1,7 @@
 <template lang="pug">
 .view.view-homescreen(:class="{shake}")
 	.apps-grid.drop-zone(@drop='onDrop($event, "screen")' @dragover.prevent @dragenter.prevent)
-		app-icon.drag-el(v-for="(app, index) in screenApps" :class="`item_${index}`" :name="app.name" :title="app.title" :router="app.router" :key="app.id" :draggable="true" @dragstart='startDrag($event, app)')
+		app-icon.drag-el(v-for="(app, index) in screenApps" :soon="app.soon" :name="app.name" :title="app.title" :router="app.router" :key="app.id" :draggable="true" @dragstart='startDrag($event, app)')
 
 			
 		
@@ -72,14 +72,14 @@ export default {
 				name: "iPodApp",
 				position: "screen",
 				router: "comingSoon",
-				soon: "true"
+				soon: true
 			}, {
 				id: 11,
 				title: "Notes",
 				name: "notesApp",
 				position: "screen",
 				router: "comingSoon",
-				soon: "true"
+				soon: true
 			
 			}, {
 				id: 2,
@@ -87,14 +87,21 @@ export default {
 				name: "calendarApp",
 				position: "screen",
 				router: "comingSoon",
-				soon: "true"
+				soon: true
 			}, {
 				id: 2,
 				title: "Calculator",
 				name: "calculatorApp",
 				position: "screen",
 				router: "comingSoon",
-				soon: "true"
+				soon: true
+			}, {
+				id: 2,
+				title: "Weather",
+				name: "weatherApp",
+				position: "screen",
+				router: "comingSoon",
+				soon: true
 			
 			// }, {
 			// 	id: 3,
@@ -169,12 +176,14 @@ export default {
 	width: 100%
 	height: 100%
 	overflow: hidden
+
 	.apps-grid
 		flex: 1 0 auto
 		padding: 1.1em
 		padding-bottom: 0
 		display: grid
-		gap: 50vw
+		gap: 5vw
+		gap: 0.2em
 		grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr))
 		align-content: start
 	.dock
@@ -205,7 +214,7 @@ export default {
 .view-homescreen
 	.apps-grid
 		// animation: .5s appsEnter alternate ease-in-out
-		gap: 5vw
+		// gap: 5vw
 
 	&.shake
 		:deep(.app-item)

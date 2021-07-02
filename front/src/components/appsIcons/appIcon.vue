@@ -1,7 +1,10 @@
 <template lang="pug">
-.app-item(@click="openApp")
+.app-item(@click="openApp" :class="{soon}")
 	svg.app-icon(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" :style="jiggleEffect")
 		component.html-icon(:is="name")
+	.app-title {{title}}
+.app-item(@click="openApp")
+	img.app-icon.temp-icon(:src="`/temp/apps/${name}.png`")
 	.app-title {{title}}
 </template>
 
@@ -15,13 +18,15 @@ import iPodApp from './icons/iPodApp.vue'
 import notesApp from './icons/notesApp.vue'
 import calendarApp from './icons/calendarApp.vue'
 import calculatorApp from './icons/calculatorApp.vue'
+import weatherApp from './icons/weatherApp.vue'
 export default {
 	name: "appIcon",
-	components: {phoneApp, textApp, clockApp, iPodApp, notesApp, calendarApp, calculatorApp},
+	components: {phoneApp, textApp, clockApp, iPodApp, notesApp, calendarApp, calculatorApp, weatherApp},
 	props: {
 		name: String,
 		router: String,
-		title: String
+		title: String,
+		soon: Boolean
 	},
 	computed: {
 		jiggleEffect() {
@@ -45,6 +50,8 @@ export default {
 .app-item
 	cursor: pointer
 	text-align: center
+	// &.soon
+	// 	filter: saturate(0)
 	.app-icon
 		width: 100%
 		overflow: hidden
@@ -84,5 +91,5 @@ export default {
 				width: 100%
 				height: 55%
 				border-radius: 0 0 50% 50%/0 0 35% 35%
-				background: linear-gradient(180deg, rgba(#fff, .6) 0%, rgba(#fff, .2) 100%)
+				background: linear-gradient(180deg, rgba(#fff, .75) 0%, rgba(#fff, .15) 100%)
 </style>

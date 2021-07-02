@@ -6,10 +6,10 @@ foreignObject.html-icon(x="0" y="0")
 
 <style lang="stylus" scoped>
 .icon-header
-	background-image: linear-gradient(180deg, #7B584C 12%, #45322C 100%)
+	background-image: linear-gradient(180deg, #845c4c 12%, #4b332a 100%)
 .icon-body
 	height: 700px
-	background: repeating-linear-gradient(#f8f59d, #f8f59d 80px, #d6d593 80px, #d6d593 90px)
+	background: repeating-linear-gradient(#f8f59d, #f8f59d 98px, #B6BE92 98px, #B6BE92 105px)
 	background-position-y: 40px
 	position: relative
 	&:before

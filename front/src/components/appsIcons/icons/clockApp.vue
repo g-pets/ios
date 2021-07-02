@@ -37,18 +37,21 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.html-icon.icon-glare:before
+	background: linear-gradient(180deg, rgba(#fff, .5) 0%, rgba(#fff, .2) 100%) !important
+
 .icon-body
 	height: 100%
 	background: #000
 	.clock-body
-		margin: 100px auto
+		margin: 75px auto
 		position: relative
 		svg.clock-face
 			box-shadow: inset 0 0 0 20px #222, inset 0 15px 10px 10px #555
 			border: 20px solid #222
 			border-radius: 50%
-			width: 800px
-			height: 800px
+			width: 850px
+			height: 850px
 			.clock-base
 				fill: #eee
 			.clock-numbers

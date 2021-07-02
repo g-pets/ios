@@ -11,8 +11,8 @@ foreignObject.html-icon.icon-glare(x="0" y="0")
 	display: flex
 	svg.icon
 		margin: auto
-		width: 50em
-		height: 50em
+		width: 46em
+		height: 46em
 		fill: #fff
-		filter: drop-shadow(0px 0.8em 0.5em rgba(#000, 0.3))
+		filter: drop-shadow(0px 0.8em 0.5em rgba(#000, 0.2))
 </style>
