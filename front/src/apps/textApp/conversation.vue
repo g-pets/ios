@@ -7,6 +7,7 @@ navigation-bar(title="Messages")
 .messages.section-scrolled(ref="messagesContainer" v-if="conversation" :class="{visible}")
 		.message(v-for="message in conversation.messages" :class="{recieved:message.recieved, unread:message.unread}")
 			p(v-for="p in message.text") {{p}}
+keyboard
 </template>
 
 
@@ -14,12 +15,12 @@ navigation-bar(title="Messages")
 import useStore from "~/store/store"
 import navigationBar from '~/components/ui/navigationBar.vue'
 import navigationBarButton from '~/components/buttons/navigationBarButton.vue'
-import toggleButton from '~/components/buttons/toggleButton.vue'
+import keyboard from '~/components/elements/keyboard.vue'
 import listView from "~/components/ui/listView.vue"
 import { onMounted } from 'vue'
 export default {
 	name: "textMessages",
-	components: {navigationBar, navigationBarButton, toggleButton, listView},
+	components: {navigationBar, navigationBarButton, listView, keyboard},
 	data() {
 		return {
 			visible: false
@@ -74,7 +75,6 @@ export default {
 		max-width: 70%
 		background: #B1D552
 		box-shadow: 0 2px 3px rgba(#000,0.5)
-		
 		&.recieved
 			align-self: flex-start
 			border-radius: 1em

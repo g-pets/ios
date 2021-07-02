@@ -2,6 +2,9 @@ import { createWebHistory, createRouter } from "vue-router"
 // import deviceControl from "~/store/deviceState"
 // const { appInstalled, deviceUnlocked } = deviceControl()
 
+
+const comingSoon = () => import('~/apps/comingSoon.vue')
+
 // Layers
 const installationLayer = () => import('~/layers/installationLayer.vue')
 const entryLayer = () => import('~/layers/entryLayer.vue')
@@ -74,6 +77,12 @@ const routes = [
 						path: "home/",
 						name: "homeScreen",
 						component: homeScreen
+					},
+					// Coming Soon
+					{
+						path: "apps/soon/",
+						name: "comingSoon",
+						component: comingSoon
 					},
 					// Clock App
 					{

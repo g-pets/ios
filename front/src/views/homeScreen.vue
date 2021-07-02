@@ -1,6 +1,5 @@
 <template lang="pug">
 .view.view-homescreen(:class="{shake}")
-	//- .generate(@click="generateData") generateData
 	.apps-grid.drop-zone(@drop='onDrop($event, "screen")' @dragover.prevent @dragenter.prevent)
 		app-icon.drag-el(v-for="(app, index) in screenApps" :class="`item_${index}`" :name="app.name" :title="app.title" :router="app.router" :key="app.id" :draggable="true" @dragstart='startDrag($event, app)')
 
@@ -13,7 +12,6 @@
 
 <script>
 import appIcon from '~/components/appsIcons/appIcon.vue'
-import generateData from "~/generator"
 import {reactive} from 'vue'
 export default {
 	name: "HomeScreen",
@@ -66,17 +64,37 @@ export default {
 				name: "clockApp",
 				router: "clockApp_worldClock",
 				position: "screen"
-			// }, {
-			// 	id: 11,
-			// 	title: "Notes",
-			// 	name: "notesApp",
-			// 	position: "screen"
+
+
+			}, {
+				id: 16,
+				title: "iPod",
+				name: "iPodApp",
+				position: "screen",
+				router: "comingSoon",
+				soon: "true"
+			}, {
+				id: 11,
+				title: "Notes",
+				name: "notesApp",
+				position: "screen",
+				router: "comingSoon",
+				soon: "true"
 			
-			// }, {
-			// 	id: 2,
-			// 	title: "Calendar",
-			// 	name: "calendarApp",
-			// 	position: "screen"
+			}, {
+				id: 2,
+				title: "Calendar",
+				name: "calendarApp",
+				position: "screen",
+				router: "comingSoon",
+				soon: "true"
+			}, {
+				id: 2,
+				title: "Calculator",
+				name: "calculatorApp",
+				position: "screen",
+				router: "comingSoon",
+				soon: "true"
 			
 			// }, {
 			// 	id: 3,
@@ -130,13 +148,10 @@ export default {
 			// 	name: "tempIcon",
 			// 	position: "dock"
 			// }, {
-			// 	id: 16,
-			// 	title: "iPod",
-			// 	name: "iPodApp",
-			// 	position: "screen"
+			
 			}
 		])
-		return {apps, generateData}
+		return { apps }
 	}
 };
 </script>

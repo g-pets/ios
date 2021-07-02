@@ -1,6 +1,6 @@
 {
   "index.html": {
-    "file": "assets/index.5c38624a.js",
+    "file": "assets/index.a2a6a7d2.js",
     "src": "index.html",
     "isEntry": true,
     "imports": [
@@ -37,12 +37,11 @@
     "file": "assets/vendor.77a37f1f.js"
   },
   "src/layers/installationLayer.vue": {
-    "file": "assets/installationLayer.14dd155a.js",
+    "file": "assets/installationLayer.b8e1edce.js",
     "src": "src/layers/installationLayer.vue",
     "isDynamicEntry": true,
     "imports": [
       "_vendor.77a37f1f.js",
-      "_index.8f3a9f9e.js",
       "_index.cc4b6a56.js",
       "_workbox-window.prod.es5.28eaf433.js",
       "_deviceState.57fb83aa.js"
@@ -56,9 +55,6 @@
     "imports": [
       "_vendor.77a37f1f.js"
     ]
-  },
-  "_index.8f3a9f9e.js": {
-    "file": "assets/index.8f3a9f9e.js"
   },
   "_index.cc4b6a56.js": {
     "file": "assets/index.cc4b6a56.js"
@@ -111,15 +107,14 @@
     ]
   },
   "src/views/homeScreen.vue": {
-    "file": "assets/homeScreen.5572340f.js",
+    "file": "assets/homeScreen.2746de5a.js",
     "src": "src/views/homeScreen.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_vendor.77a37f1f.js",
-      "_index.8f3a9f9e.js"
+      "_vendor.77a37f1f.js"
     ],
     "css": [
-      "assets/homeScreen.6105692f.css"
+      "assets/homeScreen.07682395.css"
     ]
   },
   "src/apps/clockApp/clockApp.vue": {

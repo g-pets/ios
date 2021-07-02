@@ -33,6 +33,32 @@ async function saveRandomData(collection, data) {
 }
 
 
+async function fetchRandomData() {
+	let options, response, data
+	const apiUrl = 'http://10.0.1.4:85/v1/idata'
+	try {
+		options = {
+			mode: 'cors',
+			cache: 'no-cache',
+			headers: {
+				'Content-Type': 'application/json;charset=utf-8',
+				'Access-Control-Max-Age': '86400',
+			}
+		}
+		response = await fetch(`${apiUrl}`)
+		data = await response.json()
+		return data.data
+	} catch(error) {
+		console.error(`Catch in fetchRandomData: ${error}`)
+		return {error: error.message}
+	} finally {
+		options = null
+		response = null
+		data = null
+	}
+}
+
+
 export default async function loadRandomData() {
 	let randomData, collections
 	try {

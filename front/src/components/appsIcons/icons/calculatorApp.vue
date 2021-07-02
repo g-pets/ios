@@ -7,7 +7,7 @@ foreignObject.html-icon.icon-glare(x="0" y="0")
 <style lang="stylus" scoped>
 .icon-body
 	height: 100%
-	background: linear-gradient(180deg, #FF7407 40%, #FFBA0C 100%)
+	background: linear-gradient(180deg, #FCFCFC 0%, #898A8E 100%)
 	display: flex
 	svg.icon
 		margin: auto

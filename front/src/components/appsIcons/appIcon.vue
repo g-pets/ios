@@ -3,18 +3,21 @@
 	svg.app-icon(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" :style="jiggleEffect")
 		component.html-icon(:is="name")
 	.app-title {{title}}
-//- .app-item.png
-//- 	img.app-icon(:src="`/img/apps/${name}.png`")
-//- 	.app-title {{title}}
 </template>
 
 <script>
 import phoneApp from './icons/phoneApp.vue'
 import textApp from './icons/textApp.vue'
 import clockApp from './icons/clockApp.vue'
+
+// Soon
+import iPodApp from './icons/iPodApp.vue'
+import notesApp from './icons/notesApp.vue'
+import calendarApp from './icons/calendarApp.vue'
+import calculatorApp from './icons/calculatorApp.vue'
 export default {
 	name: "appIcon",
-	components: {phoneApp, textApp, clockApp},
+	components: {phoneApp, textApp, clockApp, iPodApp, notesApp, calendarApp, calculatorApp},
 	props: {
 		name: String,
 		router: String,
