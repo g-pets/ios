@@ -16,7 +16,7 @@ foreignObject.html-icon.icon-glare(x="0" y="0")
 	padding: 2.5em
 	.temp
 		line-height: 1
-		font-size: 20rem
+		font-size: 12em
 		margin-top: 0.55em
 		color: #fff
 		text-align: center
@@ -30,23 +30,21 @@ foreignObject.html-icon.icon-glare(x="0" y="0")
 		&:before, &:after
 			content: ''
 			position: absolute
+			border-radius: 50%
 		&:before
 			top: -10%
 			left: -50%
 			width: 200%
 			height: 150%
-			transform-origin: center
-			border-radius: 50%
-			-webkit-mask-image: radial-gradient(#000 10%, transparent 75%)
+			-webkit-mask-image: radial-gradient(#000 10%, transparent 65%)
 			mask-image: radial-gradient(#000 10%, transparent 65%)
-			background: repeating-conic-gradient(from 0deg, rgba(gold,0.5) 0deg 7deg, rgba(gold,0.4) 0deg 5deg, transparent 5deg 18deg)
-			filter: blur(10px)
+			background: repeating-conic-gradient(from 0deg, rgba(gold,.5) 0deg 7deg, rgba(gold,.4) 0deg 5deg, transparent 5deg 18deg)
+			filter: blur(0.6em)
 		&:after
 			top: 0
 			left: 0
 			width: 100%
 			height: 100%
-			border-radius: 50%
 			background: radial-gradient(95% 90% at 50% 10%, #FFC79A 0%, #FFB351 35%, #FFBD1F 55%, #FFF914 100%)
-			box-shadow: inset 0 -2em 1em #fefa1b, inset 0 2.6em 1.4em rgba(#fff,0.8), 0 0 5em 2.5em rgba(#FFBD1F,0.7), 0 3em 4em rgba(#000,0.2)
+			box-shadow: inset 0 -2em 1em #fefa1b, inset 0 2.6em 1.4em rgba(#fff,.8), 0 0 5em 2.5em rgba(#FFBD1F,.7), 0 3em 4em rgba(#000,.2)
 </style>
