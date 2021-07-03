@@ -40,11 +40,11 @@ foreignObject.html-icon(x="0" y="0")
 		&:after
 			content: ''
 			width: 100%
-			height: 50%
+			height: 51%
 			position: absolute
 			top: 0
 			left: 0
-			border-radius: 0 0 50% 50%/0 0 35% 35%
+			border-radius: 0 0 80% 80%/0 0 45% 45%
 			background: linear-gradient(180deg, rgba(#fff, .7) 0%, rgba(#fff, .15) 100%)
 	svg
 		background: #333

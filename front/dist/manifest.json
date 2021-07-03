@@ -1,6 +1,6 @@
 {
   "index.html": {
-    "file": "assets/index.e7b237aa.js",
+    "file": "assets/index.6b3ea888.js",
     "src": "index.html",
     "isEntry": true,
     "imports": [
@@ -116,14 +116,14 @@
     ]
   },
   "src/views/homeScreen.vue": {
-    "file": "assets/homeScreen.6e3cb40b.js",
+    "file": "assets/homeScreen.bc697649.js",
     "src": "src/views/homeScreen.vue",
     "isDynamicEntry": true,
     "imports": [
       "_vendor.1c3aff63.js"
     ],
     "css": [
-      "assets/homeScreen.5d4c60d3.css"
+      "assets/homeScreen.ac9a15cf.css"
     ]
   },
   "src/apps/clockApp/clockApp.vue": {

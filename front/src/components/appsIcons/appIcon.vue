@@ -20,10 +20,11 @@ import calendarApp from './icons/calendarApp.vue'
 import settingsApp from './icons/settingApp.vue'
 import calculatorApp from './icons/calculatorApp.vue'
 import weatherApp from './icons/weatherApp.vue'
+import stocksApp from './icons/stocksApp.vue'
 
 export default {
 	name: "appIcon",
-	components: {phoneApp, textApp, clockApp, iPodApp, notesApp, calendarApp, calculatorApp, weatherApp, settingsApp},
+	components: {phoneApp, textApp, clockApp, iPodApp, notesApp, calendarApp, calculatorApp, weatherApp, settingsApp, stocksApp},
 	props: {
 		name: String,
 		router: String,
@@ -91,7 +92,7 @@ export default {
 				top: 0
 				left: 0
 				width: 100%
-				height: 55%
-				border-radius: 0 0 50% 50%/0 0 35% 35%
+				height: 53%
+				border-radius: 0 0 70% 70%/0 0 45% 45%
 				background: linear-gradient(180deg, rgba(#fff, .75) 0%, rgba(#fff, .15) 100%)
 </style>
