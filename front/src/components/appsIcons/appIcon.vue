@@ -3,9 +3,9 @@
 	svg.app-icon(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" :style="jiggleEffect")
 		component.html-icon(:is="name")
 	.app-title {{title}}
-.app-item(@click="openApp")
-	img.app-icon.temp-icon(:src="`/temp/apps/${name}.png`")
-	.app-title {{title}}
+//- .app-item(@click="openApp")
+//- 	img.app-icon.temp-icon(:src="`/temp/apps/${name}.png`")
+//- 	.app-title {{title}}
 </template>
 
 <script>
@@ -17,11 +17,13 @@ import clockApp from './icons/clockApp.vue'
 import iPodApp from './icons/iPodApp.vue'
 import notesApp from './icons/notesApp.vue'
 import calendarApp from './icons/calendarApp.vue'
+import settingsApp from './icons/settingApp.vue'
 import calculatorApp from './icons/calculatorApp.vue'
 import weatherApp from './icons/weatherApp.vue'
+
 export default {
 	name: "appIcon",
-	components: {phoneApp, textApp, clockApp, iPodApp, notesApp, calendarApp, calculatorApp, weatherApp},
+	components: {phoneApp, textApp, clockApp, iPodApp, notesApp, calendarApp, calculatorApp, weatherApp, settingsApp},
 	props: {
 		name: String,
 		router: String,

@@ -1,1 +1,0 @@
-import{f as e}from"./vendor.77a37f1f.js";const t=e({appInstalled:!1,deviceUnlocked:!1});function a(){return{deviceState:t,appInstalled:e=>{t.appInstalled=e,localStorage.setItem("appInstalled",e)},deviceUnlocked:e=>{t.deviceUnlocked=e,localStorage.setItem("deviceUnlocked",e)}}}export{a as d};
