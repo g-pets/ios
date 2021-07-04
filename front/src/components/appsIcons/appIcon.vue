@@ -21,10 +21,11 @@ import settingsApp from './icons/settingApp.vue'
 import calculatorApp from './icons/calculatorApp.vue'
 import weatherApp from './icons/weatherApp.vue'
 import stocksApp from './icons/stocksApp.vue'
+import mapsApp from './icons/mapsApp.vue'
 
 export default {
 	name: "appIcon",
-	components: {phoneApp, textApp, clockApp, iPodApp, notesApp, calendarApp, calculatorApp, weatherApp, settingsApp, stocksApp},
+	components: {phoneApp, textApp, clockApp, iPodApp, notesApp, calendarApp, calculatorApp, weatherApp, settingsApp, stocksApp, mapsApp},
 	props: {
 		name: String,
 		router: String,

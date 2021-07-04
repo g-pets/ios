@@ -116,6 +116,13 @@ export default {
 				position: "screen",
 				router: "comingSoon",
 				soon: true
+			}, {
+				id: 2,
+				title: "Maps",
+				name: "mapsApp",
+				position: "screen",
+				router: "comingSoon",
+				soon: true
 			
 			// }, {
 			// 	id: 3,
