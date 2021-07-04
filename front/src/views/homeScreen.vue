@@ -186,6 +186,7 @@ export default {
 		gap: 5vw
 		// gap: 0.2em
 		grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr))
+		// grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr))
 		align-content: start
 	.dock
 		height: 9rem
