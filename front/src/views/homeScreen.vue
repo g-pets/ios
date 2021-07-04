@@ -123,6 +123,13 @@ export default {
 				position: "screen",
 				router: "comingSoon",
 				soon: true
+			}, {
+				id: 2,
+				title: "Mail",
+				name: "mailApp",
+				position: "screen",
+				router: "comingSoon",
+				soon: true
 			
 			// }, {
 			// 	id: 3,
