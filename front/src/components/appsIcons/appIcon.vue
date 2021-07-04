@@ -22,11 +22,17 @@ import calculatorApp from './icons/calculatorApp.vue'
 import weatherApp from './icons/weatherApp.vue'
 import stocksApp from './icons/stocksApp.vue'
 import mapsApp from './icons/mapsApp.vue'
+
+// Not Optimized
 import mailApp from './icons/mailApp.vue'
+import safariApp from './icons/safariApp.vue'
+import photosApp from './icons/photosApp.vue'
+import cameraApp from './icons/cameraApp.vue'
+import youTubeApp from './icons/youTubeApp.vue'
 
 export default {
 	name: "appIcon",
-	components: {phoneApp, textApp, clockApp, iPodApp, notesApp, calendarApp, calculatorApp, weatherApp, settingsApp, stocksApp, mapsApp, mailApp},
+	components: {phoneApp, textApp, clockApp, iPodApp, notesApp, calendarApp, calculatorApp, weatherApp, settingsApp, stocksApp, mapsApp, mailApp, safariApp, photosApp, cameraApp, youTubeApp},
 	props: {
 		name: String,
 		router: String,

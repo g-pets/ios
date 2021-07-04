@@ -54,136 +54,109 @@ export default {
 				position: "dock"
 			}, {
 				id: 2,
-				title: "Text",
-				name: "textApp",
-				router: "textApp_conversations",
-				position: "dock"
-			}, {
-				id: 9,
-				title: "Clock",
-				name: "clockApp",
-				router: "clockApp_worldClock",
-				position: "screen"
-
-
-			}, {
-				id: 16,
-				title: "iPod",
-				name: "iPodApp",
-				position: "screen",
+				title: "Mail",
+				name: "mailApp",
+				position: "dock",
 				router: "comingSoon",
 				soon: true
 			}, {
-				id: 11,
-				title: "Notes",
-				name: "notesApp",
-				position: "screen",
+				id: 3,
+				title: "Safari",
+				name: "safariApp",
+				position: "dock",
+				router: "comingSoon",
+				soon: true
+			}, {
+				id: 4,
+				title: "iPod",
+				name: "iPodApp",
+				position: "dock",
 				router: "comingSoon",
 				soon: true
 			
+			// Screen
 			}, {
-				id: 2,
+				id: 5,
+				title: "Text",
+				name: "textApp",
+				router: "textApp_conversations",
+				position: "screen"
+			}, {
+				id: 6,
 				title: "Calendar",
 				name: "calendarApp",
 				position: "screen",
 				router: "comingSoon",
 				soon: true
 			}, {
-				id: 2,
-				title: "Calculator",
-				name: "calculatorApp",
+				id: 7,
+				title: "Photos",
+				name: "photosApp",
 				position: "screen",
 				router: "comingSoon",
 				soon: true
 			}, {
-				id: 2,
-				title: "Weather",
-				name: "weatherApp",
+				id: 8,
+				title: "Camera",
+				name: "cameraApp",
 				position: "screen",
 				router: "comingSoon",
 				soon: true
 			}, {
-				id: 2,
-				title: "Settings",
-				name: "settingsApp",
+				id: 9,
+				title: "YouTube",
+				name: "youTubeApp",
 				position: "screen",
 				router: "comingSoon",
 				soon: true
 			}, {
-				id: 2,
+				id: 10,
 				title: "Stocks",
 				name: "stocksApp",
 				position: "screen",
 				router: "comingSoon",
 				soon: true
 			}, {
-				id: 2,
+				id: 11,
 				title: "Maps",
 				name: "mapsApp",
 				position: "screen",
 				router: "comingSoon",
 				soon: true
 			}, {
-				id: 2,
-				title: "Mail",
-				name: "mailApp",
+				id: 12,
+				title: "Weather",
+				name: "weatherApp",
 				position: "screen",
 				router: "comingSoon",
 				soon: true
-			
-			// }, {
-			// 	id: 3,
-			// 	title: "Photos",
-			// 	name: "tempIcon",
-			// 	position: "screen"
-			// }, {
-			// 	id: 4,
-			// 	title: "Camera",
-			// 	name: "tempIcon",
-			// 	position: "screen"
-			// }, {
-			// 	id: 5,
-			// 	title: "YouTube",
-			// 	name: "tempIcon",
-			// 	position: "screen"
-			// }, {
-			// 	id: 6,
-			// 	title: "Stocks",
-			// 	name: "tempIcon",
-			// 	position: "screen"
-			// }, {
-			// 	id: 7,
-			// 	title: "Maps",
-			// 	name: "tempIcon",
-			// 	position: "screen"
-			// }, {
-			// 	id: 8,
-			// 	title: "Weather",
-			// 	name: "tempIcon",
-			// 	position: "screen"
-			
-			// }, {
-			// 	id: 10,
-			// 	title: "Calculator",
-			// 	name: "tempIcon",
-			// 	position: "screen"
-			// }, {
-			// 	id: 12,
-			// 	title: "Settings",
-			// 	name: "tempIcon",
-			// 	position: "screen"
-			// }, {
-			// 	id: 14,
-			// 	title: "Mail",
-			// 	name: "tempIcon",
-			// 	position: "dock"
-			// }, {
-			// 	id: 15,
-			// 	title: "Safari",
-			// 	name: "tempIcon",
-			// 	position: "dock"
-			// }, {
-			
+			}, {
+				id: 13,
+				title: "Clock",
+				name: "clockApp",
+				router: "clockApp_worldClock",
+				position: "screen"
+			}, {
+				id: 14,
+				title: "Calculator",
+				name: "calculatorApp",
+				position: "screen",
+				router: "comingSoon",
+				soon: true
+			}, {
+				id: 15,
+				title: "Notes",
+				name: "notesApp",
+				position: "screen",
+				router: "comingSoon",
+				soon: true
+			}, {
+				id: 16,
+				title: "Settings",
+				name: "settingsApp",
+				position: "screen",
+				router: "comingSoon",
+				soon: true
 			}
 		])
 		return { apps }
