@@ -183,20 +183,20 @@ export default {
 		padding: 1.1em
 		padding-bottom: 0
 		display: grid
-		gap: 5vw
+		gap: 4vw
 		// gap: 0.2em
-		grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr))
+		grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr))
 		// grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr))
 		align-content: start
 	.dock
-		height: 9rem
+		// height: 9rem
 		overflow: hidden
 		margin-top: auto
-		padding: 0.7em 1em 0
+		padding: 0.7em 1em 0.4em
 		display: grid
-		grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr))
+		grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr))
 		// grid-template-rows: repeat(1, 5em)
-		gap: 5vw
+		gap: 4vw
 		// justify-items: center
 		// background: url("/img/ui/dock.jpg")
 		// background-repeat: no-repeat

@@ -7,5 +7,8 @@ foreignObject.html-icon.icon-glare(x="0" y="0")
 .icon-body
 	height: 100%
 	width: 100%
-	background: linear-gradient(180deg, #1F67D5 52%, #62E6FD 100%)
+	background: url('/img/appIcons/photosAppIcon.jpg')
+	background-size: cover
+	background-position: center
+	background-repeat: no-repeat
 </style>
