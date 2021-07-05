@@ -170,7 +170,7 @@ const routes = [
 								redirect: { name: "textApp_conversations" },
 							}
 						]
-					}
+					},
 				]
 			}
 		]

@@ -5,7 +5,7 @@
 			.city-name {{city.name}}
 			clock(:utc="city.utc")
 			.city-time
-				.time 12:38
+				.time {{city.hour}}:{{city.minute}}
 				.day Today
 	world-map
 </template>
@@ -25,18 +25,26 @@ export default {
 			// {name: "Moscow", utc: 3},
 			// {name: "Tokio", utc: 10}
 		])
-		let time = reactive({s:0,m:0,h:0})
 		function getTime() {
-			let date = new Date()
-			time.s = (360 / 60 * date.getSeconds()).toFixed()
-			time.m = (360 / 60 * date.getMinutes()).toFixed()
-			time.h = (360 / 12 * date.getHours()).toFixed()
+			let d = new Date()
+			let hours = d.getHours()
+			let minutes = d.getMinutes()
+			let offset = d.getTimezoneOffset() / 60
+			cities.forEach(city => {
+				city.hour = hours + city.utc + offset
+				city.minute = minutes
+			});
+			// let date = new Date()
+			// time.s = (360 / 60 * date.getSeconds()).toFixed()
+			// time.m = (360 / 60 * date.getMinutes()).toFixed()
+			// time.h = (360 / 12 * date.getHours()).toFixed()
 		}
+
 		onMounted(() => {
 			getTime()
-			setInterval(getTime, 1000)
+			// setInterval(getTime, 1000)
 		})
-		return {time, cities}
+		return {cities}
 	}
 }
 </script>

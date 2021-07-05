@@ -21,25 +21,19 @@ export default {
 		utc: Number
 	},
 	setup(props) {
-		let time = reactive({s:0,m:0,h:0})
+		let time = reactive({})
 		function getTime() {
-			try {
-				let date = new Date()
-				let offset = date.getTimezoneOffset() / 60
-				// console.log(date)
-				time.s = (360 / 60 * date.getSeconds()).toFixed()
-				time.m = (360 / 60 * date.getMinutes()).toFixed()
-				time.h = (360 / 12 * (date.getHours() + props.utc + offset)).toFixed()
-				if(time.h <= 155 || time.h >= 630) time.night = true
-			} catch(error) {
-				console.error(error)
-			}
+			let d = new Date()
+			let hours = d.getHours()
+			let minutes = d.getMinutes()
+			let seconds = d.getSeconds()
+			let offset = d.getTimezoneOffset() / 60
+			time.h = 30 * (hours + props.utc + offset) + .5 * minutes
+			time.m = 6 * minutes + .1 * seconds
+			time.s = 6 * seconds
+			if(time.h <= 155 || time.h >= 630) time.night = true
 		}
-		// let isNight = computed(() => {
-		// 	if(time.h > 10) return true
-		// 	else console.log('day')
-		// })
-		
+
 		onMounted(() => {
 			getTime()
 			setInterval(getTime, 1000)
@@ -60,7 +54,7 @@ svg.clock
 		fill: #000
 	.clock-hand
 		fill: #000
-		transition: transform 0.3s
+		// transition: transform 0.3s
 		filter: drop-shadow(0px 3px 4px rgba(#000, 0.3))
 	.m-hand
 		filter: drop-shadow(0px 0px 3px rgba(#fff, 0.8))
