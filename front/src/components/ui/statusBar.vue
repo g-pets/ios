@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import {ref, reactive, onMounted} from 'vue'
+import { reactive } from 'vue'
 import { dateTime } from "~/store/appState"
 import deviceControl from "~/store/deviceState"
 export default {
@@ -36,7 +36,6 @@ export default {
 		}
 	},
 	setup() {
-		// const {dateTime} = appState()
 		const { deviceState } = deviceControl()
 
 		let batteryInfo = reactive({
@@ -69,15 +68,7 @@ export default {
 				connectionInfo.type = connection.effectiveType
 				connectionInfo.signal = connection.rtt
 			})
-		}
-
-
-		onMounted(() => {
-			// checkConnection()
-			// getTime()
-			// setInterval(getTime, 1000)
-		})
-		
+		}		
 
 		return {dateTime, deviceState, batteryInfo, connectionInfo}
 	}

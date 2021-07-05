@@ -78,7 +78,7 @@ export default {
 	width: 100%
 	height: 100%
 	background: #000
-	background-image: url("/img/wallpapers/planet.jpg")
+	background-image: url("/img/wallpapers/planet.webp")
 	background-size: cover
 	background-position: center
 	display: flex

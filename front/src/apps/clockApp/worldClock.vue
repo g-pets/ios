@@ -20,10 +20,8 @@ export default {
 	setup() {
 		const cities = reactive([
 			{name: "Los Angeles", utc: -7},
-			{name: "London", utc: 0},
-			{name: "Prague", utc: 2},
-			// {name: "Moscow", utc: 3},
-			// {name: "Tokio", utc: 10}
+			{name: "London", utc: 1},
+			{name: "Prague", utc: 2}
 		])
 		function getTime() {
 			let d = new Date()
@@ -33,16 +31,11 @@ export default {
 			cities.forEach(city => {
 				city.hour = hours + city.utc + offset
 				city.minute = minutes
-			});
-			// let date = new Date()
-			// time.s = (360 / 60 * date.getSeconds()).toFixed()
-			// time.m = (360 / 60 * date.getMinutes()).toFixed()
-			// time.h = (360 / 12 * date.getHours()).toFixed()
+			})
 		}
 
 		onMounted(() => {
 			getTime()
-			// setInterval(getTime, 1000)
 		})
 		return {cities}
 	}
