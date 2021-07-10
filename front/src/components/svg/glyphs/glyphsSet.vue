@@ -174,6 +174,13 @@
 				<path d="M10 82h180v36H10V82zM124 34a24 24 0 11-48 0 24 24 0 0148 0zM124 166a24 24 0 11-48 0 24 24 0 0148 0z"/>
 			</symbol>
 
+			<!-- Equals (Calc) -->
+			<symbol id="icon_equals_calc" viewBox="0 0 200 200">
+				<path fill="#fff" d="M10 45h180v36H10V45zM10 119h180v36H10v-36z"/>
+			</symbol>
+
+
+
 
 
 

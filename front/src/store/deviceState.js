@@ -9,11 +9,11 @@ const deviceState = reactive({
 export default function deviceControl() {
 
 	if(localStorage.getItem("appInstalled")) {
-		deviceState.appInstalled = true
+		deviceState.appInstalled = JSON.parse(localStorage.getItem("appInstalled"))
 	}
 	
 	if(localStorage.getItem("deviceUnlocked")) {
-		deviceState.deviceUnlocked = true
+		deviceState.deviceUnlocked = JSON.parse(localStorage.getItem("deviceUnlocked"))
 	}
 
 	const appInstalled = (state) => {

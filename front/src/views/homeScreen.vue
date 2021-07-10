@@ -141,7 +141,7 @@ export default {
 				title: "Calculator",
 				name: "calculatorApp",
 				position: "screen",
-				router: "comingSoon",
+				router: "calculatorApp",
 				soon: true
 			}, {
 				id: 15,
@@ -185,7 +185,7 @@ export default {
 		display: grid
 		gap: 4vw
 		// gap: 0.2em
-		grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr))
+		grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr))
 		// grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr))
 		align-content: start
 	.dock
@@ -194,7 +194,7 @@ export default {
 		margin-top: auto
 		padding: 0.7em 1em 0.4em
 		display: grid
-		grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr))
+		grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr))
 		// grid-template-rows: repeat(1, 5em)
 		gap: 4vw
 		// justify-items: center

@@ -1,7 +1,10 @@
 <template lang="pug">
 foreignObject.html-icon(x="0" y="0")
 	.icon-body
-		svg.camera-lens(xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 666 668")
+		.lens
+			.outer
+			.inner
+		//- svg.camera-lens(xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 666 668")
 			g.border(filter="url(#lensBorderFilter)")
 				circle(cx="333" cy="331" r="331" fill="url(#lensBorderRadialGradient)")
 			g.outer
@@ -150,4 +153,28 @@ foreignObject.html-icon(x="0" y="0")
 		width: 65%
 		height: 65%
 		margin: auto
+	.lens
+		width: 65%
+		height: 65%
+		margin: auto
+		position: relative
+		.outer
+			width: 100%
+			height: 100%
+			border-radius: 50%
+			position: absolute
+			top: 0
+			left: 0
+			background: radial-gradient(117.99% 100% at 50% 100%, rgba(0, 0, 0, 0) 34.38%, rgba(0, 0, 0, 0.8) 89.01%), radial-gradient(50% 50% at 50% 50%, #3C3C3C 0%, #090909 73.89%, #606060 74.2%, #373737 82.29%, #535353 82.36%, #363636 84.86%, #505050 84.89%, #323232 87.43%, #4D4D4D 87.46%, #323232 90.06%, #505050 90.1%, #343434 92.89%, #515151 92.92%, #4D4D4D 99.56%, #373735 100%)
+		.inner
+			width: 80%
+			height: 80%
+			border-radius: 50%
+			position: absolute
+			margin: auto
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.83) 38.33%, rgba(0, 0, 0, 0.77) 62.26%, rgba(0, 0, 0, 0) 100%), radial-gradient(83.56% 100% at 50% 0%, rgba(255, 255, 255, 0.05) 77.02%, rgba(0, 0, 0, 0.46) 100%), radial-gradient(50% 50% at 50% 50%, #2C3E52 0%, #47555D 75.14%, #424E51 76.08%, #878E92 76.5%, #242C30 76.73%, #343C3F 77.51%, #0F1113 77.88%, #000000 79.15%, #4C4C4C 79.2%, #3C3C3C 91.22%, #292929 100%)
 </style>

@@ -19,8 +19,13 @@ export default {
 .device
 	height: 100vh
 	width: 100vw
+	// width: 320px
+	// height: 580px
+	// border: 1px solid #444
+	margin: auto
 	display: flex
 	flex-direction: column
+	position: relative
 	.screen
 		height: 100%
 		width: 100%

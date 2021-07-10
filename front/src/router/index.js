@@ -36,6 +36,8 @@ const textApp = () => import('~/apps/textApp/textApp.vue')
 const textApp_conversations = () => import('~/apps/textApp/conversations.vue')
 const textApp_conversation = () => import('~/apps/textApp/conversation.vue')
 
+// Calculator App
+const calculatorApp = () => import('~/apps/calculatorApp/calculatorApp.vue')
 
 
 
@@ -171,6 +173,12 @@ const routes = [
 							}
 						]
 					},
+					// Calculator App
+					{
+						path: "apps/calculator/",
+						name: "calculatorApp",
+						component: calculatorApp
+					}
 				]
 			}
 		]
