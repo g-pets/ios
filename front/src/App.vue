@@ -62,11 +62,14 @@ export default {
 
 @media (min-width: 400px)
 	.app-container
-		background: #fff
 		display: flex
 		width: 100vw
 		min-height: 100vh
 		padding: 2em
+		@media (prefers-color-scheme: light)
+			background: #fff
+		@media (prefers-color-scheme: dark)
+			background: #222
 	.device
 		width: max-content
 		border-radius: 4em

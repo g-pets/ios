@@ -72,7 +72,6 @@ export default {
 	background: #181918
 	display: flex
 	flex-direction: column
-	font-size: 5vw
 	.display
 		width: 100%
 		min-height: 1.2em

@@ -1,14 +1,14 @@
 <template lang="pug">
 .view.view-homescreen
 	.apps-grid.drop-zone(@drop='onDrop($event, "screen")' @dragover.prevent @dragenter.prevent)
-		app-icon.drag-el(v-for="(app, index) in screenApps" :name="app.name" :title="app.title" :router="app.router" :key="app.id" :draggable="true" @dragstart='startDrag($event, app)')
+		app-icon.drag-el(v-for="(app, index) in screenApps" :icon="app.icon" :title="app.title" :route="app.route" :draggable="false" @dragstart='startDrag($event, app)')
 	.dock.drop-zone(@drop='onDrop($event, "dock")' @dragover.prevent @dragenter.prevent)
-		app-icon.drag-el(v-for="app in dockApps" :name="app.name" :title="app.title" :router="app.router" :key="app.id" :draggable="true" @dragstart='startDrag($event, app)')
+		app-icon.drag-el(v-for="app in dockApps" :icon="app.icon" :title="app.title" :route="app.route" :draggable="false" @dragstart='startDrag($event, app)')
 </template>
 
 
 <script>
-import appIcon from "~/components/appsIcons/appIcon.vue"
+import appIcon from "~/components/AppsIcons/IconBase.vue"
 import { reactive } from "vue"
 export default {
 	components: { appIcon },
@@ -37,88 +37,87 @@ export default {
 		document.title = "Home Screen | iOS 1.0"
 		const apps = reactive([
 			{
+				icon: "IconPhoneApp",
 				title: "Phone",
-				name: "phoneApp",
-				router: "PhoneAppKeypad",
+				route: "PhoneAppKeypad",
 				position: "dock"
 			}, {
+				icon: "IconMailApp",
 				title: "Mail",
-				name: "mailApp",
-				position: "dock",
-				router: "ComingSoon",
+				route: "ComingSoon",
+				position: "dock"
 			}, {
+				icon: "IconSafariApp",
 				title: "Safari",
-				name: "safariApp",
-				position: "dock",
-				router: "ComingSoon",
+				route: "ComingSoon",
+				position: "dock"
 			}, {
+				icon: "IconiPodApp",
 				title: "iPod",
-				name: "iPodApp",
-				position: "dock",
-				router: "ComingSoon",
+				route: "ComingSoon",
+				position: "dock"
 			
 			// Screen
 			}, {
+				icon: "IconTextApp",
 				title: "Text",
-				name: "textApp",
-				router: "TextAppConversations",
+				route: "TextAppConversations",
 				position: "screen"
 			}, {
+				icon: "IconCalendarApp",
 				title: "Calendar",
-				name: "calendarApp",
-				position: "screen",
-				router: "ComingSoon",
-			}, {
-				title: "Photos",
-				name: "photosApp",
-				position: "screen",
-				router: "PhotosAppAlbums",
-			}, {
-				title: "Camera",
-				name: "cameraApp",
-				position: "screen",
-				router: "CameraAppEntry",
-			}, {
-				title: "YouTube",
-				name: "youTubeApp",
-				position: "screen",
-				router: "ComingSoon",
-			}, {
-				title: "Stocks",
-				name: "stocksApp",
-				position: "screen",
-				router: "ComingSoon",
-			}, {
-				title: "Maps",
-				name: "mapsApp",
-				position: "screen",
-				router: "ComingSoon",
-			}, {
-				title: "Weather",
-				name: "weatherApp",
-				position: "screen",
-				router: "ComingSoon",
-			}, {
-				title: "Clock",
-				name: "clockApp",
-				router: "ClockAppWorldClock",
+				route: "ComingSoon",
 				position: "screen"
 			}, {
+				icon: "IconPhotosApp",
+				title: "Photos",
+				route: "PhotosAppAlbums",
+				position: "screen"
+			}, {
+				icon: "IconCameraApp",
+				title: "Camera",
+				route: "CameraAppEntry",
+				position: "screen"
+			}, {
+				icon: "IconYouTubeApp",
+				title: "YouTube",
+				route: "ComingSoon",
+				position: "screen"
+			}, {
+				icon: "IconStocksApp",
+				title: "Stocks",
+				route: "ComingSoon",
+				position: "screen"
+			}, {
+				icon: "IconMapsApp",
+				title: "Maps",
+				route: "ComingSoon",
+				position: "screen"
+			}, {
+				icon: "IconWeatherApp",
+				title: "Weather",
+				route: "ComingSoon",
+				position: "screen"
+			}, {
+				icon: "IconClockApp",
+				title: "Clock",
+				route: "ClockAppWorldClock",
+				position: "screen"
+			}, {
+				icon: "IconCalculatorApp",
 				title: "Calculator",
-				name: "CalculatorApp",
-				router: "CalculatorAppEntry",
-				position: "screen",
+				route: "CalculatorAppEntry",
+				position: "screen"
 			}, {
+				icon: "IconNotesApp",
 				title: "Notes",
-				name: "notesApp",
-				position: "screen",
-				router: "ComingSoon",
+				route: "ComingSoon",
+				position: "screen"
 			}, {
-				id: 16,
+				icon: "IconSettingsApp",
 				title: "Settings",
-				name: "settingsApp",
-				position: "screen",
-				router: "ComingSoon",
+				route: "ComingSoon",
+				position: "screen"
 			}
 		])
 		return { apps }
@@ -145,17 +144,19 @@ export default {
 	.dock
 		overflow: hidden
 		margin-top: auto
-		padding: 0.7em 1em 0.4em
+		padding: 0.7em 1em 0.1em
 		display: grid
 		grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr))
 		gap: 1em
-		background: linear-gradient(180deg, #8d8d8d 80%, #6e6e6e 80%)
+		// background: linear-gradient(180deg, #8d8d8d 80%, #6e6e6e 80%)
+		background: url("/temp/ui/dock.jpg")
+		background-size: cover
 		width: 100%
 		:deep(.app-item)
 			.app-icon
 				box-shadow: 0 0.14em 0.1em rgba(#000,0.3)
 			.app-title
-				margin-top: 0.5em
+				margin-top: 0.7em
 				color: #eee
 				text-shadow: 0 -1px #333
 </style>
