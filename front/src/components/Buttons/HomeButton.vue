@@ -21,7 +21,7 @@
 	&:before
 		margin: auto
 		border-radius: .3em
-		border: 1px solid #999
+		border: 0.1em solid #999
 		width: 30%
 		height: 30%
 		right: 0

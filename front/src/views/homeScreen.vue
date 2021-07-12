@@ -139,7 +139,7 @@ export default {
 		padding: 1.1em
 		padding-bottom: 0
 		display: grid
-		gap: 4vw
+		gap: 1em
 		grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr))
 		align-content: start
 	.dock
@@ -148,7 +148,7 @@ export default {
 		padding: 0.7em 1em 0.4em
 		display: grid
 		grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr))
-		gap: 4vw
+		gap: 1em
 		background: linear-gradient(180deg, #8d8d8d 80%, #6e6e6e 80%)
 		width: 100%
 		:deep(.app-item)

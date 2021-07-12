@@ -88,7 +88,7 @@ export default {
 			toggle.value.removeEventListener("touchstart", dragStart)
 			
 			deviceUnlocked(true)
-			router.push({name: 'homeScreen'})
+			router.push({name: 'HomeScreen'})
 		}
 
 		
