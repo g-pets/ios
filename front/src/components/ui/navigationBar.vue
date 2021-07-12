@@ -1,5 +1,5 @@
 <template lang="pug">
-.navigation-bar.section-fixed
+.navigation-bar.section-fixed(:class="{sticky}")
 	.group.left
 		slot(name="left")
 	.group.center
@@ -13,7 +13,8 @@
 export default {
 	name: "navigationBar",
 	props: {
-		title: String
+		title: String,
+		sticky: Boolean
 	}
 }
 </script>
@@ -36,7 +37,7 @@ export default {
 		padding-top: 0.2em
 		letter-spacing: -0.02em
 	.group
-		min-width: 6em
+		// min-width: 6em
 		// flex: 0 0 auto
 		display: flex
 		&.left
@@ -46,4 +47,9 @@ export default {
 			// width: 5em
 		&.right
 			justify-content: flex-end
+	&.sticky
+		z-index: 5
+		position: sticky
+		top: 0
+		left: 0
 </style>

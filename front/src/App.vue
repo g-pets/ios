@@ -4,13 +4,22 @@
 		router-view
 	.buttom-side.section-fixed
 		home-button
+		//- .test(@click="test()") Test
 </template>
 
 <script>
 import homeButton from '~/components/elements/homeButton.vue'
+import { unsplashPhotosFromCollection_Short } from '~/generator/atoms/unsplash'
+// import { randomPhotoAlbums } from '~/generator/organisms/randomPhotoAlbums'
 export default {
 	name: "App",
-	components: { homeButton }
+	components: { homeButton },
+	methods: {
+		async test() {
+			// console.log(randomPhotoAlbums({q:1}))
+			// console.log(await unsplashPhotosFromCollection_Short(11474384, 8))
+		}
+	}
 }
 </script>
 

@@ -49,4 +49,25 @@ async function unsplashPhotosFromCollection(collectionId, pages) {
 	return photos.flat(1)
 }
 
-export { unsplashPhotosFromCollection }
+// Get Photos from Collection (Short)
+async function unsplashPhotosFromCollection_Short(collectionId, pages) {
+	let photos = []
+	let page
+	for (page = 1; page <= pages; page++) {
+		let originalPhotosFromPage = await unsplashPhotosFromCollectionPage(collectionId, page)
+		let simplifiedPhotosFromPage = []
+		originalPhotosFromPage.forEach(photo => {
+			let simplifiedPhoto = {
+				id: photo.id,
+				blur_hash: photo.blur_hash,
+				path: photo.urls.full,
+				author: photo.user.name
+			}
+			simplifiedPhotosFromPage.push(simplifiedPhoto)
+		})
+		photos.push(simplifiedPhotosFromPage)
+	}
+	return photos.flat(1)
+}
+
+export { unsplashPhotosFromCollection, unsplashPhotosFromCollection_Short }

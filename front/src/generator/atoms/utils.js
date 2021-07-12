@@ -56,4 +56,9 @@ function shuffleArray(array) {
     }
 }
 
-export { randomNumber, randomTrue, randomFalse, randomIO, randomIds, quantityRange, capitalizeFirstLetter, shuffleArray }
+function uniqObjects(array, key) {
+	let unique = [...new Map(array.map(item => [item[key], item])).values()]
+	return unique
+}
+
+export { randomNumber, randomTrue, randomFalse, randomIO, randomIds, quantityRange, capitalizeFirstLetter, shuffleArray, uniqObjects }

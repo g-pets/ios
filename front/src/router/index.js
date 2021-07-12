@@ -39,6 +39,15 @@ const textApp_conversation = () => import('~/apps/textApp/conversation.vue')
 // Calculator App
 const calculatorApp = () => import('~/apps/calculatorApp/calculatorApp.vue')
 
+// Camera App
+const cameraApp = () => import('~/apps/cameraApp/cameraApp.vue')
+
+// Photos App
+const photosApp = () => import('~/apps/photosApp/index.vue')
+const photosApp_albums = () => import('~/apps/photosApp/albums.vue')
+const photosApp_album = () => import('~/apps/photosApp/album.vue')
+
+
 
 
 // Routes
@@ -178,6 +187,28 @@ const routes = [
 						path: "apps/calculator/",
 						name: "calculatorApp",
 						component: calculatorApp
+					},
+					// Camera App
+					{
+						path: "apps/camera/",
+						name: "cameraApp",
+						component: cameraApp
+					},
+					// Photos App
+					{
+						path: "apps/photos/",
+						component: photosApp,
+						children: [
+							{
+								path: "albums/",
+								name: "photosApp_albums",
+								component: photosApp_albums,
+							}, {
+								path: "albums/:id/",
+								name: "photosApp_album",
+								component: photosApp_album,
+							}
+						]
 					}
 				]
 			}

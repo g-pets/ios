@@ -93,14 +93,14 @@ export default {
 				title: "Photos",
 				name: "photosApp",
 				position: "screen",
-				router: "comingSoon",
+				router: "photosApp_albums",
 				soon: true
 			}, {
 				id: 8,
 				title: "Camera",
 				name: "cameraApp",
 				position: "screen",
-				router: "comingSoon",
+				router: "cameraApp",
 				soon: true
 			}, {
 				id: 9,

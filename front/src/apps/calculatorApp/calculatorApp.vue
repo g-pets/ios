@@ -2,7 +2,7 @@
 .app.calculator-app.section-scrolled
 	.display {{display}}
 	.keys
-		button.key(v-for="key in keys" @click="pressKey(key.val)" :class="key.class")
+		button.key(v-for="key in keys" @click="pressKey(key)" :class="[key.class, {holded:key.holded}]")
 			glyph(v-if="key.glyph" :name="key.glyph")
 			.val.light-text__shadow(v-else)
 				.label {{key.val}}
@@ -12,49 +12,57 @@
 
 
 <script>
-import { ref, watch } from "vue"
+import { ref, reactive } from "vue"
 export default {
 	name: "calculatorApp",
 	setup() {
 		document.title = "Calculator App | iOS"
 		let display = ref("")
-		// const displayContainer = ref(null)
-		// const displayFontSize = ref("")
-		const keys = [
-			{val: "m+", class: "memory"},
+		const keys = reactive([
+			{val: "m+", action: "memory", class: "memory"},
 			{val: "m-", class: "memory"},
 			{val: "mr", val2: "mc", class: "memory"},
-			{val: "/", class: "", glyph: "divide_calc"},
-			{val: "7", class: "number"},
-			{val: "8", class: "number"},
-			{val: "9", class: "number"},
-			{val: "*", class: "", glyph: "multyply_calc"},
-			{val: "4", class: "number"},
-			{val: "5", class: "number"},
-			{val: "6", class: "number"},
-			{val: "+", class: "", glyph: "plus_calc"},
-			{val: "1", class: "number"},
-			{val: "2", class: "number"},
-			{val: "3", class: "number"},
-			{val: "-", class: "", glyph: "minus_calc"},
-			{val: "0", class: "number"},
+			{val: "/", type: "operator", class: "", glyph: "divide_calc"},
+			{val: "7", type: "number", class: "number"},
+			{val: "8", type: "number", class: "number"},
+			{val: "9", type: "number", class: "number"},
+			{val: "*", type: "operator", class: "", glyph: "multyply_calc"},
+			{val: "4", type: "number", class: "number"},
+			{val: "5", type: "number", class: "number"},
+			{val: "6", type: "number", class: "number"},
+			{val: "+", type: "operator", class: "", glyph: "plus_calc"},
+			{val: "1", type: "number", class: "number"},
+			{val: "2", type: "number", class: "number"},
+			{val: "3", type: "number", class: "number"},
+			{val: "-", type: "operator", class: "", glyph: "minus_calc"},
+			{val: "0", type: "number", class: "number"},
 			{val: ".", class: "dot"},
-			{val: "c", class: ""},
-			{val: "=", class: "equals", glyph: "equals_calc"},
-		]
+			{val: "c", type: "clear"},
+			{val: "=", type: "equals", class: "equals", glyph: "equals_calc"},
+		])
 		
 		function pressKey(key) {
-			if (key != '=' && key != 'c') display.value += key
-			else if (key === 'c') clear()
-			else if (key === '=') equals()
+			switch (key.type) {
+				case "number":
+					display.value += key.val
+					break
+				case "clear":
+					clear()
+					break
+				case "operator":
+					// key.holded = true
+					display.value += key.val
+					break
+				case "equals":
+					equals()
+					break
+				default:
+					console.log("Default")
+			}
 		}
 
 		const clear = () => display.value = ""
 		const equals = () =>  display.value = eval(display.value).toFixed(5) - 0
-
-		// watch(display, (currentValue) => {
-		// 	if(currentValue.length > 5) displayFontSize.value = currentValue * displayContainer.value.clientWidth * 0.35
-		// })
 
 		return { display, keys, pressKey }
 	}
@@ -80,6 +88,7 @@ export default {
 	background: #181918
 	display: flex
 	flex-direction: column
+	font-size: 5vw
 	.display
 		width: 100%
 		min-height: 1.2em
@@ -138,6 +147,8 @@ export default {
 			background: #EC791D
 		&.dot
 			font-family: Georgia, 'Times New Roman', Times, serif
+		&.holded
+			box-shadow: inset 0 0 0 0.1em #fff
 		&:hover
 			&:after
 				opacity: 0.3
