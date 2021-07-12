@@ -25,5 +25,11 @@ export default function deviceControl() {
 		deviceState.deviceUnlocked = state
 		localStorage.setItem("deviceUnlocked", state)
 	}
-	return { deviceState, appInstalled, deviceUnlocked }
+
+	const tornOff = () => {
+		deviceState.deviceUnlocked = false
+		deviceState.tornedOff = !deviceState.tornedOff
+		localStorage.setItem("deviceUnlocked", false)
+	}
+	return { deviceState, appInstalled, deviceUnlocked, tornOff }
 }

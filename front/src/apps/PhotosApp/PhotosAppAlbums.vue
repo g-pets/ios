@@ -29,7 +29,7 @@ export default {
 
 
 <style lang="stylus" scoped>
-@import "../../assets/styles/basic/mixins.styl"
+@import "../../assets/styles/mixins.styl"
 .navigation-bar
 	gradient-v50(rgba(#000,0.35), rgba(#000,0.5), rgba(#000,0.6), rgba(#000,0.6))
 .album

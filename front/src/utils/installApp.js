@@ -2,7 +2,6 @@
 import { reactive } from "vue"
 import { useRouter } from 'vue-router'
 import loadRandomData from './loadRandomData.js'
-// const loadRandomData = () => import('./loadRandomData.js')
 import { registerSW } from "virtual:pwa-register"
 import deviceControl from "~/store/deviceState"
 

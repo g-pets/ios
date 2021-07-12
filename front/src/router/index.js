@@ -61,7 +61,7 @@ const routes = [
 		component: InstallationLayer,
 		beforeEnter: (to, from, next) => {
 			let appInstalled = JSON.parse(localStorage.getItem("appInstalled"))
-			if(appInstalled) next({ name: 'lockScreen' })
+			if(appInstalled) next({ name: 'LockScreen' })
 			else next()
 		},
 	}, {
@@ -74,7 +74,7 @@ const routes = [
 		children: [
 			{
 				path: "/locked/",
-				name: "lockScreen",
+				name: "LockScreen",
 				component: UnauthenticatedLayer
 			},
 			{
@@ -82,7 +82,7 @@ const routes = [
 				component: AuthenticatedLayer,
 				beforeEnter: (to, from, next) => {
 					let deviceUnlocked = JSON.parse(localStorage.getItem("deviceUnlocked"))
-					if(!deviceUnlocked) next({ name: 'lockScreen' })
+					if(!deviceUnlocked) next({ name: 'LockScreen' })
 					else next()
 				},
 				children: [
@@ -217,7 +217,7 @@ const routes = [
 	},
 	{
 		path: "/:pathMatch(.*)*",
-		redirect: { name: "lockScreen" }
+		redirect: { name: "LockScreen" }
 	}
 ]
 

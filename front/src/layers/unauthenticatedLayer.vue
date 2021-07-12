@@ -12,19 +12,16 @@
 import { dateTime } from "~/store/appState"
 import slideToUnlock from "~/components/elements/slideToUnlock.vue"
 export default {
-	name: "LockScreen",
 	components: { slideToUnlock },
 	setup() {
 		return {dateTime}
 	}
-};
+}
 </script>
-
 
 
 <style lang="stylus">
 .view-lockscreen
-	// background-image: url("/img/wallpapers/001-mobile.jpg")
 	background-image: url("/img/wallpapers/planet.webp")
 	width: 100%
 	height: 100%

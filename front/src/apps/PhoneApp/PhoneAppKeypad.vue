@@ -64,7 +64,7 @@ export default {
 
 
 <style lang="stylus" scoped>
-@import "../../assets/styles/basic/mixins.styl"
+@import "../../assets/styles/mixins.styl"
 .keypad
 	display: grid
 	grid-template-columns: repeat(3, 1fr)

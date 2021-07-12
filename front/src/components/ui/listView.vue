@@ -14,7 +14,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import "../../assets/styles/basic/mixins.styl"
+@import "../../assets/styles/mixins.styl"
 .list-view
 	background: #fff
 	.list-item

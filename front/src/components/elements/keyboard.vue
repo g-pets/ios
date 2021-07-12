@@ -50,7 +50,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import "../../assets/styles/basic/mixins.styl"
+@import "../../assets/styles/mixins.styl"
 .screenshot
 	position: absolute
 	bottom: 0px

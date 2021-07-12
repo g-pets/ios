@@ -41,7 +41,7 @@ export default {
 
 
 <style lang="stylus" scoped>
-@import "../../assets/styles/basic/mixins.styl"
+@import "../../assets/styles/mixins.styl"
 .view-calling
 	position: absolute
 	top: 0

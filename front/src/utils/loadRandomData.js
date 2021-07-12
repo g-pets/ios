@@ -1,5 +1,5 @@
 "use strict"
-import generateData from "~/generator"
+import generateData from "./DataGenerator"
 import { openDB } from 'idb'
 
 async function createStores(collections) {

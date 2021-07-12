@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import "../../assets/styles/basic/mixins.styl"
+@import "../../assets/styles/mixins.styl"
 .album-view
 	position: relative
 .navigation-bar

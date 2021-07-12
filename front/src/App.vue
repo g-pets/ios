@@ -1,12 +1,12 @@
 <template lang="pug">
 .app-container
 	.device
-		.off-button(@click="tornOff()")
+		.off-button(@click="tornOffDevice()")
 		.front-side
 			.top-side
 				.speacker
 			.screen.flex-column-container
-				router-view
+				router-view(v-if="!deviceState.tornedOff")
 			.buttom-side.section-fixed
 				home-button
 //- .screenshot
@@ -20,13 +20,13 @@ export default {
 	name: "App",
 	components: { homeButton },
 	setup() {
-		const { deviceUnlocked } = deviceControl()
+		const { deviceState, tornOff } = deviceControl()
 		const router = useRouter()
-		const tornOff = () => {
-			deviceUnlocked(false)
-			router.push({name: 'lockScreen'})
+		const tornOffDevice = () => {
+			tornOff()
+			router.push({name: 'LockScreen'})
 		}
-		return { tornOff }
+		return { tornOffDevice, deviceState }
 	}
 }
 </script>
@@ -81,14 +81,29 @@ export default {
 		margin: auto
 		position: relative
 		.off-button
-			width: 3.9em
-			height: 0.1em
-			background: linear-gradient(90deg, #0D1615 0%, #4F595B 30%, #4F595B 70%, #0C1115 100%)
+			width: 4.3em
+			height: 1em
 			position: absolute
-			top: -0.1em
-			right: 3.9em
-			border-radius: 2px 2px 0 0
+			top: -0.7em
+			right: 3.7em
 			cursor: pointer
+			&:hover
+				&:after
+					background: #000
+			&:active
+				&:after
+					height: 0.1em
+			&:after
+				content: ""
+				width: 3.9em
+				height: 0.2em
+				transition: height .15s
+				position: absolute
+				bottom: 0.3em
+				left: 0.2em
+				background: linear-gradient(90deg, #0D1615 0%, #4F595B 30%, #4F595B 70%, #0C1115 100%)
+				border-radius: 2px 2px 0 0
+
 		.front-side
 			background: linear-gradient(180deg, #202930 0%, #061115 30%, #000000 100%)
 			padding: 0 0.7em
