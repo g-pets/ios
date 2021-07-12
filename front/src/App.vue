@@ -53,11 +53,7 @@ export default {
 		height: 100%
 		width: 100%
 		background: #000
-		// border-bottom: 0.2em solid #262A2D
 	.buttom-side
-		background: #000
-		position: relative
-		z-index: 1000
 		padding: 1.1em 0.3em 1em
 
 @media (max-width: 399px)
@@ -68,9 +64,6 @@ export default {
 		width: 100vw
 		height: 100vh
 		.screen
-			height: 100%
-			width: 100%
-			background: #000
 			border-bottom: 0.2em solid #262A2D
 		.buttom-side
 			background: #000
