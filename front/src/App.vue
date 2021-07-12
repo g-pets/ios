@@ -4,22 +4,13 @@
 		router-view
 	.buttom-side.section-fixed
 		home-button
-		//- .test(@click="test()") Test
 </template>
 
 <script>
-import homeButton from '~/components/elements/homeButton.vue'
-import { unsplashPhotosFromCollection_Short } from '~/generator/atoms/unsplash'
-// import { randomPhotoAlbums } from '~/generator/organisms/randomPhotoAlbums'
+import homeButton from '~/components/Buttons/HomeButton.vue'
 export default {
 	name: "App",
 	components: { homeButton },
-	methods: {
-		async test() {
-			// console.log(randomPhotoAlbums({q:1}))
-			// console.log(await unsplashPhotosFromCollection_Short(11474384, 8))
-		}
-	}
 }
 </script>
 
@@ -28,9 +19,9 @@ export default {
 .device
 	height: 100vh
 	width: 100vw
-	// width: 320px
-	// height: 580px
-	// border: 1px solid #444
+	width: 320px
+	height: 580px
+	border: 1px solid #444
 	margin: auto
 	display: flex
 	flex-direction: column
@@ -40,6 +31,9 @@ export default {
 		width: 100%
 		background: #000
 	.buttom-side
+		background: #000
+		position: relative
+		z-index: 1000
 		padding: 1em 0.3em
 		border-top: 0.2em solid #262A2D	
 </style>

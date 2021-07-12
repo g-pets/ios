@@ -1,68 +1,71 @@
 import { createWebHistory, createRouter } from "vue-router"
-// import deviceControl from "~/store/deviceState"
-// const { appInstalled, deviceUnlocked } = deviceControl()
 
 
-const comingSoon = () => import('~/apps/comingSoon.vue')
+// ––––––––––––––– Layers ––––––––––––––– //
+const InstallationLayer = () => 	import('~/layers/InstallationLayer.vue')
+const EntryLayer = () => 			import('~/layers/EntryLayer.vue')
+const UnauthenticatedLayer = () => 	import('~/layers/UnauthenticatedLayer.vue')
+const AuthenticatedLayer = () => 	import('~/layers/AuthenticatedLayer.vue')
 
-// Layers
-const installationLayer = () => import('~/layers/installationLayer.vue')
-const entryLayer = () => import('~/layers/entryLayer.vue')
-const unauthenticatedLayer = () => import('~/layers/unauthenticatedLayer.vue')
-const authenticatedLayer = () => import('~/layers/authenticatedLayer.vue')
 
-// Views
-const homeScreen = () => import('~/views/homeScreen.vue')
+// –––––––––––––––– Views ––––––––––––––– //
+const HomeScreen = () => 			import('~/views/HomeScreen.vue')
+const ComingSoon = () => 			import('~/apps/ComingSoon.vue')
+
+
+// –––––––––––––––– Apps –––––––––––––––– //
 
 // Clock App
-const clockApp = () => import('~/apps/clockApp/clockApp.vue')
-const clockApp_worldClock = () => import('~/apps/clockApp/worldClock.vue')
-const clockApp_alarm = () => import('~/apps/clockApp/alarm.vue')
-const clockApp_stopwatch = () => import('~/apps/clockApp/stopwatch.vue')
-const clockApp_timer = () => import('~/apps/clockApp/timer.vue')
-
-// Phone App
-const phoneApp = () => import('~/apps/phoneApp/phoneApp.vue')
-const phoneApp_favorites = () => import('~/apps/phoneApp/favorites.vue')
-const phoneApp_recents = () => import('~/apps/phoneApp/recents.vue')
-const phoneApp_contacts = () => import('~/apps/phoneApp/contacts.vue')
-const phoneApp_contact = () => import('~/apps/phoneApp/contact.vue')
-const phoneApp_keypad = () => import('~/apps/phoneApp/keypad.vue')
-const phoneApp_calling = () => import('~/apps/phoneApp/calling.vue')
-const phoneApp_voicemail = () => import('~/apps/phoneApp/voicemail.vue')
-
-// Text App
-const textApp = () => import('~/apps/textApp/textApp.vue')
-const textApp_conversations = () => import('~/apps/textApp/conversations.vue')
-const textApp_conversation = () => import('~/apps/textApp/conversation.vue')
+const ClockAppEntry = () => 		import('~/apps/ClockApp/ClockAppEntry.vue')
+const ClockAppWorldClock = () => 	import('~/apps/ClockApp/ClockAppWorldClock.vue')
+const ClockAppAlarm = () => 		import('~/apps/ClockApp/ClockAppAlarm.vue')
+const ClockAppStopwatch = () => 	import('~/apps/ClockApp/ClockAppStopwatch.vue')
+const ClockAppTimer = () => 		import('~/apps/ClockApp/ClockAppTimer.vue')
 
 // Calculator App
-const calculatorApp = () => import('~/apps/calculatorApp/calculatorApp.vue')
+const CalculatorAppEntry = () => 	import('~/apps/CalculatorApp/CalculatorAppEntry.vue')
 
 // Camera App
-const cameraApp = () => import('~/apps/cameraApp/cameraApp.vue')
+const CameraAppEntry = () => 		import('~/apps/CameraApp/CameraAppEntry.vue')
 
 // Photos App
-const photosApp = () => import('~/apps/photosApp/index.vue')
-const photosApp_albums = () => import('~/apps/photosApp/albums.vue')
-const photosApp_album = () => import('~/apps/photosApp/album.vue')
+const PhotosAppEntry = () => 		import('~/apps/PhotosApp/PhotosAppEntry.vue')
+const PhotosAppAlbums = () => 		import('~/apps/PhotosApp/PhotosAppAlbums.vue')
+const PhotosAppAlbum = () => 		import('~/apps/PhotosApp/PhotosAppAlbum.vue')
+
+// Phone App
+const PhoneAppEntry = () => 		import('~/apps/PhoneApp/PhoneAppEntry.vue')
+const PhoneAppFavorites = () => 	import('~/apps/PhoneApp/PhoneAppFavorites.vue')
+const PhoneAppRecents = () => 		import('~/apps/PhoneApp/PhoneAppRecents.vue')
+const PhoneAppContacts = () => 		import('~/apps/PhoneApp/PhoneAppContacts.vue')
+const PhoneAppContact = () => 		import('~/apps/PhoneApp/PhoneAppContact.vue')
+const PhoneAppKeypad = () => 		import('~/apps/PhoneApp/PhoneAppKeypad.vue')
+const PhoneAppCalling = () => 		import('~/apps/PhoneApp/PhoneAppCalling.vue')
+const PhoneAppVoicemail = () => 	import('~/apps/PhoneApp/PhoneAppVoicemail.vue')
+
+// Text App
+const TextAppEntry = () => 			import('~/apps/TextApp/TextAppEntry.vue')
+const TextAppConversations = () => 	import('~/apps/TextApp/TextAppConversations.vue')
+const TextAppConversation = () => 	import('~/apps/TextApp/TextAppConversation.vue')
 
 
 
 
-// Routes
+
+
+// ––––––––––––––– Routes ––––––––––––––– //
 const routes = [
 	{
 		path: "/installation/",
 		name: "installationScreen",
-		component: installationLayer,
+		component: InstallationLayer,
 		beforeEnter: (to, from, next) => {
 			let appInstalled = JSON.parse(localStorage.getItem("appInstalled"))
 			if(appInstalled) next({ name: 'lockScreen' })
 			else next()
 		},
 	}, {
-		component: entryLayer,
+		component: EntryLayer,
 		beforeEnter: (to, from, next) => {
 			let appInstalled = JSON.parse(localStorage.getItem("appInstalled"))
 			if(!appInstalled) next({ name: 'installationScreen' })
@@ -72,11 +75,11 @@ const routes = [
 			{
 				path: "/locked/",
 				name: "lockScreen",
-				component: unauthenticatedLayer
+				component: UnauthenticatedLayer
 			},
 			{
 				path: "/",
-				component: authenticatedLayer,
+				component: AuthenticatedLayer,
 				beforeEnter: (to, from, next) => {
 					let deviceUnlocked = JSON.parse(localStorage.getItem("deviceUnlocked"))
 					if(!deviceUnlocked) next({ name: 'lockScreen' })
@@ -86,127 +89,125 @@ const routes = [
 					// Home Screen
 					{
 						path: "home/",
-						name: "homeScreen",
-						component: homeScreen
+						name: "HomeScreen",
+						component: HomeScreen
 					},
 					// Coming Soon
 					{
 						path: "apps/soon/",
-						name: "comingSoon",
-						component: comingSoon
+						name: "ComingSoon",
+						component: ComingSoon
 					},
 					// Clock App
 					{
 						path: "apps/clock/",
-						component: clockApp,
+						component: ClockAppEntry,
 						children: [
 							{
 								path: "world-clock/",
-								name: "clockApp_worldClock",
-								component: clockApp_worldClock,
+								name: "ClockAppWorldClock",
+								component: ClockAppWorldClock,
 							}, {
 								path: "alarm/",
-								name: "clockApp_alarm",
-								component: clockApp_alarm,
+								name: "ClockAppAlarm",
+								component: ClockAppAlarm,
 							}, {
 								path: "stopwatch/",
-								name: "clockApp_stopwatch",
-								component: clockApp_stopwatch,
+								name: "ClockAppStopwatch",
+								component: ClockAppStopwatch,
 							}, {
 								path: "timer/",
-								name: "clockApp_timer",
-								component: clockApp_timer,
+								name: "ClockAppTimer",
+								component: ClockAppTimer,
 							}, {
 								path: "",
-								redirect: { name: "clockApp_worldClock" },
+								redirect: { name: "ClockAppWorldClock" },
 							}
 						]
 					},
 					// Phone App
 					{
 						path: "/apps/phone/",
-						component: phoneApp,
+						component: PhoneAppEntry,
 						children: [
 							{
 								path: "favorites/",
-								name: "phoneApp_favorites",
-								component: phoneApp_favorites,
+								name: "PhoneAppFavorites",
+								component: PhoneAppFavorites,
 							}, {
 								path: "recents/",
-								name: "phoneApp_recents",
-								component: phoneApp_recents,
+								name: "PhoneAppRecents",
+								component: PhoneAppRecents,
 							}, {
 								path: "contacts/",
-								name: "phoneApp_contacts",
-								component: phoneApp_contacts,
+								name: "PhoneAppContacts",
+								component: PhoneAppContacts,
 							}, {
 								path: "contacts/:id/",
-								name: "phoneApp_contact",
-								component: phoneApp_contact,
+								name: "PhoneAppContact",
+								component: PhoneAppContact,
 							}, {
 								path: "keypad/",
-								name: "phoneApp_keypad",
-								component: phoneApp_keypad,
+								name: "PhoneAppKeypad",
+								component: PhoneAppKeypad,
 							}, {
 								path: "calling/:number/",
-								name: "phoneApp_calling",
-								component: phoneApp_calling,
+								name: "PhoneAppCalling",
+								component: PhoneAppCalling,
 							}, {
 								path: "voicemail/",
-								name: "phoneApp_voicemail",
-								component: phoneApp_voicemail,
+								name: "PhoneAppVoicemail",
+								component: PhoneAppVoicemail,
 							}, {
 								path: "",
-								redirect: { name: "phoneApp_keypad" },
+								redirect: { name: "PhoneAppKeypad" },
 							}
 						]
 					},
 					// Text App
 					{
 						path: "/apps/text/",
-						component: textApp,
+						component: TextAppEntry,
 						children: [
 							{
 								path: "conversations/",
-								name: "textApp_conversations",
-								component: textApp_conversations,
-								meta: { title: "Messages" }
+								name: "TextAppConversations",
+								component: TextAppConversations,
 							}, {
 								path: "conversations/:id/",
-								name: "textApp_conversation",
-								component: textApp_conversation,
-								meta: { title: "Conversation" }
+								name: "TextAppConversation",
+								component: TextAppConversation,
 							}, {
 								path: "",
-								redirect: { name: "textApp_conversations" },
+								redirect: { name: "TextAppConversations" },
 							}
 						]
 					},
 					// Calculator App
 					{
 						path: "apps/calculator/",
-						name: "calculatorApp",
-						component: calculatorApp
+						name: "CalculatorAppEntry",
+						component: CalculatorAppEntry
 					},
 					// Camera App
 					{
 						path: "apps/camera/",
-						name: "cameraApp",
-						component: cameraApp
+						name: "CameraAppEntry",
+						component: CameraAppEntry
 					},
 					// Photos App
 					{
 						path: "apps/photos/",
-						component: photosApp,
+						component: PhotosAppEntry,
 						children: [
 							{
 								path: "albums/",
-								name: "photosApp_albums",
-								component: photosApp_albums,
+								name: "PhotosAppAlbums",
+								component: PhotosAppAlbums,
 							}, {
 								path: "albums/:id/",
-								name: "photosApp_album",
-								component: photosApp_album,
+								name: "PhotosAppAlbum",
+								component: PhotosAppAlbum,
 							}
 						]
 					}
@@ -225,20 +226,4 @@ const router = createRouter({
 	routes
 })
 
-
-// const { deviceState } = deviceControl()
-// router.beforeEach(async (to, from, next) => {
-// 	let installed = localStorage.getItem('installed')
-// 	// let unlocked = await deviceState.unlocked
-// 	// installed = false
-// 	// unlocked = false
-// 	if (to.name !== 'loadingScreen' && !installed) next({ name: 'loadingScreen' })
-// 	// else if (to.name !== 'lockScreen' && !unlocked) next({ name: 'lockScreen' })
-// 	else next()
-// })
-
 export default router
-// export default createRouter({
-// 	history: createWebHistory(),
-// 	routes
-// })

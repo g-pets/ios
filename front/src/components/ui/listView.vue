@@ -51,13 +51,14 @@ export default {
 		svg.icon-arrow_more
 			width: 1.15em
 			height: 1.15em
-			margin-left: 0.5em
-			gradient-v50(#81A1CA, #5C8CCA, #3D6DAF, #436CAC)
-			border-radius: 50%
-			padding: 0.15em
-			border: 0.1em solid #FBF6FA
-			box-shadow: 0 0.01em 0.05em 0.01em rgba(#000,0.5)
-			fill: #fff
+			margin-left: auto
+			&.rounded
+				gradient-v50(#81A1CA, #5C8CCA, #3D6DAF, #436CAC)
+				border-radius: 50%
+				padding: 0.15em
+				border: 0.1em solid #FBF6FA
+				box-shadow: 0 0.01em 0.05em 0.01em rgba(#000,0.5)
+				fill: #fff
 		
 		&.message-preview
 			display: flex

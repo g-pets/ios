@@ -1,0 +1,1 @@
+import{o,c as n,a as s}from"./vendor.0c58ddcb.js";const c={class:"alarm section-scrolled coming-soon"},r=s("h2",null,"Coming Soon",-1);const a={render:function(s,a){return o(),n("div",c,[r])}};export default a;

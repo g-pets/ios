@@ -36,15 +36,19 @@ export default {
 		line-height: 1
 		padding-top: 0.2em
 		letter-spacing: -0.02em
+		text-overflow: ellipsis
+		overflow: hidden
+		white-space: nowrap
 	.group
-		// min-width: 6em
-		// flex: 0 0 auto
+		min-width: 5em
+		flex: 1 1 auto
 		display: flex
 		&.left
 			justify-content: flex-start
 		&.center
 			justify-content: center
 			// width: 5em
+			flex: 2 1 auto
 		&.right
 			justify-content: flex-end
 	&.sticky

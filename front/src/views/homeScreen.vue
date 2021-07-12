@@ -1,208 +1,155 @@
 <template lang="pug">
-.view.view-homescreen(:class="{shake}")
+.view.view-homescreen
 	.apps-grid.drop-zone(@drop='onDrop($event, "screen")' @dragover.prevent @dragenter.prevent)
-		app-icon.drag-el(v-for="(app, index) in screenApps" :soon="app.soon" :name="app.name" :title="app.title" :router="app.router" :key="app.id" :draggable="true" @dragstart='startDrag($event, app)')
-
-			
-		
+		app-icon.drag-el(v-for="(app, index) in screenApps" :name="app.name" :title="app.title" :router="app.router" :key="app.id" :draggable="true" @dragstart='startDrag($event, app)')
 	.dock.drop-zone(@drop='onDrop($event, "dock")' @dragover.prevent @dragenter.prevent)
 		app-icon.drag-el(v-for="app in dockApps" :name="app.name" :title="app.title" :router="app.router" :key="app.id" :draggable="true" @dragstart='startDrag($event, app)')
-//- img.screenshot(src="/screens/01-home.jpg")
 </template>
 
+
 <script>
-import appIcon from '~/components/appsIcons/appIcon.vue'
-import {reactive} from 'vue'
+import appIcon from "~/components/appsIcons/appIcon.vue"
+import { reactive } from "vue"
 export default {
-	name: "HomeScreen",
-	components: {appIcon},
-	data() {
-		return {
-			shake: false,
-		}
-	},
+	components: { appIcon },
 	computed: {
 		screenApps () {
 			return this.apps.filter(app => app.position === "screen")
 		},
 		dockApps () {
 			return this.apps.filter(app => app.position === "dock")
-		},
+		}
 	},
 	methods: {
 		startDrag: (evt, app) => {
-			app.onDrag = true
-			evt.dataTransfer.dropEffect = 'move'
-			evt.dataTransfer.effectAllowed = 'move'
-			evt.dataTransfer.setData('appId', app.id)
+			// app.onDrag = true
+			// evt.dataTransfer.dropEffect = 'move'
+			// evt.dataTransfer.effectAllowed = 'move'
+			// evt.dataTransfer.setData('appId', app.id)
 		},
 		onDrop (evt, position) {
-			// if(position === "dock") return
-			const appId = evt.dataTransfer.getData('appId')
-			const app = this.apps.find(app => app.id == appId)
-			app.position = position
+			// const appId = evt.dataTransfer.getData('appId')
+			// const app = this.apps.find(app => app.id == appId)
+			// app.position = position
 		}
 	},
 	setup() {
 		document.title = "Home Screen | iOS 1.0"
 		const apps = reactive([
 			{
-				id: 1,
 				title: "Phone",
 				name: "phoneApp",
-				router: "phoneApp_keypad",
+				router: "PhoneAppKeypad",
 				position: "dock"
 			}, {
-				id: 2,
 				title: "Mail",
 				name: "mailApp",
 				position: "dock",
-				router: "comingSoon",
-				soon: true
+				router: "ComingSoon",
 			}, {
-				id: 3,
 				title: "Safari",
 				name: "safariApp",
 				position: "dock",
-				router: "comingSoon",
-				soon: true
+				router: "ComingSoon",
 			}, {
-				id: 4,
 				title: "iPod",
 				name: "iPodApp",
 				position: "dock",
-				router: "comingSoon",
-				soon: true
+				router: "ComingSoon",
 			
 			// Screen
 			}, {
-				id: 5,
 				title: "Text",
 				name: "textApp",
-				router: "textApp_conversations",
+				router: "TextAppConversations",
 				position: "screen"
 			}, {
-				id: 6,
 				title: "Calendar",
 				name: "calendarApp",
 				position: "screen",
-				router: "comingSoon",
-				soon: true
+				router: "ComingSoon",
 			}, {
-				id: 7,
 				title: "Photos",
 				name: "photosApp",
 				position: "screen",
-				router: "photosApp_albums",
-				soon: true
+				router: "PhotosAppAlbums",
 			}, {
-				id: 8,
 				title: "Camera",
 				name: "cameraApp",
 				position: "screen",
-				router: "cameraApp",
-				soon: true
+				router: "CameraAppEntry",
 			}, {
-				id: 9,
 				title: "YouTube",
 				name: "youTubeApp",
 				position: "screen",
-				router: "comingSoon",
-				soon: true
+				router: "ComingSoon",
 			}, {
-				id: 10,
 				title: "Stocks",
 				name: "stocksApp",
 				position: "screen",
-				router: "comingSoon",
-				soon: true
+				router: "ComingSoon",
 			}, {
-				id: 11,
 				title: "Maps",
 				name: "mapsApp",
 				position: "screen",
-				router: "comingSoon",
-				soon: true
+				router: "ComingSoon",
 			}, {
-				id: 12,
 				title: "Weather",
 				name: "weatherApp",
 				position: "screen",
-				router: "comingSoon",
-				soon: true
+				router: "ComingSoon",
 			}, {
-				id: 13,
 				title: "Clock",
 				name: "clockApp",
-				router: "clockApp_worldClock",
+				router: "ClockAppWorldClock",
 				position: "screen"
 			}, {
-				id: 14,
 				title: "Calculator",
-				name: "calculatorApp",
+				name: "CalculatorApp",
+				router: "CalculatorAppEntry",
 				position: "screen",
-				router: "calculatorApp",
-				soon: true
 			}, {
-				id: 15,
 				title: "Notes",
 				name: "notesApp",
 				position: "screen",
-				router: "comingSoon",
-				soon: true
+				router: "ComingSoon",
 			}, {
 				id: 16,
 				title: "Settings",
 				name: "settingsApp",
 				position: "screen",
-				router: "comingSoon",
-				soon: true
+				router: "ComingSoon",
 			}
 		])
 		return { apps }
 	}
-};
+}
 </script>
 
-<style lang="stylus" scoped>
-// .appsIconsTransition-enter-active, .appsIconsTransition-leave-active
-// 	transition: all 1s ease
-// .appsIconsTransition-enter-from, .appsIconsTransition-leave-to
-// 	opacity: 0
-// 	transform: translateY(30px)
 
+<style lang="stylus" scoped>
 .view-homescreen
 	display: flex
 	flex-direction: column
 	width: 100%
 	height: 100%
 	overflow: hidden
-
 	.apps-grid
 		flex: 1 0 auto
 		padding: 1.1em
 		padding-bottom: 0
 		display: grid
 		gap: 4vw
-		// gap: 0.2em
 		grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr))
-		// grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr))
 		align-content: start
 	.dock
-		// height: 9rem
 		overflow: hidden
 		margin-top: auto
 		padding: 0.7em 1em 0.4em
 		display: grid
 		grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr))
-		// grid-template-rows: repeat(1, 5em)
 		gap: 4vw
-		// justify-items: center
-		// background: url("/img/ui/dock.jpg")
-		// background-repeat: no-repeat
-		// background-size: contain
 		background: linear-gradient(180deg, #8d8d8d 80%, #6e6e6e 80%)
-		// border-bottom: 1em solid #6e6e6e
 		width: 100%
 		:deep(.app-item)
 			.app-icon
@@ -211,52 +158,4 @@ export default {
 				margin-top: 0.5em
 				color: #eee
 				text-shadow: 0 -1px #333
-
-// Jiggle on Edit
-.view-homescreen
-	.apps-grid
-		// animation: .5s appsEnter alternate ease-in-out
-		// gap: 5vw
-
-	&.shake
-		:deep(.app-item)
-			&:nth-child(2n)
-				.app-icon
-					animation: jiggleOne infinite alternate ease-in-out
-					transform-origin: 50% 10%
-			&:nth-child(2n-1)
-				.app-icon
-					animation: jiggleTwo infinite alternate ease-in-out
-					transform-origin: 30% 5%
-
-	
-	@keyframes jiggleOne
-		from
-			transform: rotate(-1deg)
-		to
-			transform: rotate(1.5deg)
-
-	@keyframes jiggleTwo
-		from
-			transform: rotate(1deg)
-		to
-			transform: rotate(-1.5deg)
-	
-	@keyframes appsEnter
-		from
-			gap: 10vw
-			opacity: 0
-		to
-			gap: 5vw
-			opacity: 1
-		
-.screenshot
-	position: absolute
-	z-index: 0
-	pointer-events: none
-	top: 0
-	left: 0
-	width: 320px
-	height: 480px
-	opacity: 0.8
 </style>

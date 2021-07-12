@@ -18,7 +18,7 @@ import iPodApp from './icons/iPodApp.vue'
 import notesApp from './icons/notesApp.vue'
 import calendarApp from './icons/calendarApp.vue'
 import settingsApp from './icons/settingApp.vue'
-import calculatorApp from './icons/calculatorApp.vue'
+import CalculatorApp from "./icons/CalculatorApp.vue"
 import weatherApp from './icons/weatherApp.vue'
 import stocksApp from './icons/stocksApp.vue'
 import mapsApp from './icons/mapsApp.vue'
@@ -32,7 +32,7 @@ import youTubeApp from './icons/youTubeApp.vue'
 
 export default {
 	name: "appIcon",
-	components: {phoneApp, textApp, clockApp, iPodApp, notesApp, calendarApp, calculatorApp, weatherApp, settingsApp, stocksApp, mapsApp, mailApp, safariApp, photosApp, cameraApp, youTubeApp},
+	components: {phoneApp, textApp, clockApp, iPodApp, notesApp, calendarApp, CalculatorApp, weatherApp, settingsApp, stocksApp, mapsApp, mailApp, safariApp, photosApp, cameraApp, youTubeApp},
 	props: {
 		name: String,
 		router: String,

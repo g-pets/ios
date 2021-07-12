@@ -28,6 +28,9 @@ export default {
 		font-weight: bold
 		line-height: 1
 		color: #fefefe
+		text-overflow: ellipsis
+		overflow: hidden
+		white-space: nowrap
 	svg.icon
 		width: 1.2em
 		height: 1.2em

@@ -1,52 +1,33 @@
 <template lang="pug">
 .picture-item
 	blurhash(:blurhash="photo.blur_hash")
-	picture(ref="aPicture" :class="{loaded: imgLoaded}")
+	picture(:class="{loaded}")
 		source(
-			v-for="source in sources"
 			sizes="100px"
-			:srcset="source.srcset"
-			:type="`image/${source.type}`")
-		img(ref="img" loading="lazy" @load="onImgLoad" :src="`https://images.unsplash.com/${photo.path}&crop=entropy&cs=srgb&fm=jpeg&ixid=${photo.ixid}&ixlib=rb-1.2.1&q=80&w=200`")
+			type="image/webp"
+			:srcset="`https://images.unsplash.com/${photo.path}?crop=entropy&cs=srgb&fm=webp&ixid=${photo.ixid}&ixlib=rb-1.2.1&q=80&w=400 400w, https://images.unsplash.com/${photo.path}?crop=entropy&cs=srgb&fm=webp&ixid=${photo.ixid}&ixlib=rb-1.2.1&q=80&w=200 200w, https://images.unsplash.com/${photo.path}?crop=entropy&cs=srgb&fm=webp&ixid=${photo.ixid}&ixlib=rb-1.2.1&q=80&w=100 100w`")
+		source(
+			sizes="100px"
+			type="image/jpeg"
+			:srcset="`https://images.unsplash.com/${photo.path}?crop=entropy&cs=srgb&fm=jpeg&ixid=${photo.ixid}&ixlib=rb-1.2.1&q=80&w=400 400w, https://images.unsplash.com/${photo.path}?crop=entropy&cs=srgb&fm=jpeg&ixid=${photo.ixid}&ixlib=rb-1.2.1&q=80&w=200 200w, https://images.unsplash.com/${photo.path}?crop=entropy&cs=srgb&fm=jpeg&ixid=${photo.ixid}&ixlib=rb-1.2.1&q=80&w=100 100w`")
+			
+		img(loading="lazy" @load="onLoaded" :src="`https://images.unsplash.com/${photo.path}?crop=entropy&cs=srgb&fm=jpeg&ixid=${photo.ixid}&ixlib=rb-1.2.1&q=80&w=200`")
 </template>
 
 <script>
 import blurhash from '~/components/atoms/blurhash.vue'
+import { ref } from "vue"
 export default {
 	name: "pictureItem",
 	components: { blurhash },
 	props: {
 		photo: Object
 	},
-	data() {
-		return {
-			imgLoaded: false,
-			pictureWidth: ""
-		}
-	},
-	
-	computed: {
-		sources() {
-			let sources = []
-			let types = ['webp','jpeg']
-			let sizes = [400,200,100]
-			types.forEach(type => {
-				let set = {type: type, srcset: []}
-				
-				sizes.forEach(size => set.srcset.push(`https://images.unsplash.com/${this.photo.path}?crop=entropy&cs=srgb&fm=${type}&ixid=${this.photo.ixid}&ixlib=rb-1.2.1&q=80&w=${size} ${size}w`))
-				sources.push(set)
-			})
-			return sources
-		}	
-	},
-	methods: {
-		onImgLoad() {
-			this.imgLoaded = true
-		},
-		pictureWidthCalc() {
-			this.pictureWidth = this.$refs.aPicture.clientWidth
-		}
-	},
+	setup() {
+		const loaded = ref(false)
+		const onLoaded = () => loaded.value = true
+		return {loaded, onLoaded}
+	}
 }
 </script>
 
