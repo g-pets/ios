@@ -1,9 +1,9 @@
 <template lang="pug">
 .view.view-homescreen
-	.apps-grid.drop-zone(@drop='onDrop($event, "screen")' @dragover.prevent @dragenter.prevent)
-		app-icon.drag-el(v-for="(app, index) in screenApps" :icon="app.icon" :title="app.title" :route="app.route" :draggable="false" @dragstart='startDrag($event, app)')
+	.apps-grid.drop-zone.section-scrolled(@drop='onDrop($event, "screen")' @dragover.prevent @dragenter.prevent)
+		app-icon.drag-el(v-for="(app, index) in screenApps" :icon="app.icon" :title="app.title" :route="app.route" :ready="app.ready" :draggable="false" @dragstart='startDrag($event, app)')
 	.dock.drop-zone(@drop='onDrop($event, "dock")' @dragover.prevent @dragenter.prevent)
-		app-icon.drag-el(v-for="app in dockApps" :icon="app.icon" :title="app.title" :route="app.route" :draggable="false" @dragstart='startDrag($event, app)')
+		app-icon.drag-el(v-for="app in dockApps" :icon="app.icon" :title="app.title" :route="app.route" :ready="app.ready" :draggable="false" @dragstart='startDrag($event, app)')
 </template>
 
 
@@ -40,7 +40,8 @@ export default {
 				icon: "IconPhoneApp",
 				title: "Phone",
 				route: "PhoneAppKeypad",
-				position: "dock"
+				position: "dock",
+				ready: true
 			}, {
 				icon: "IconMailApp",
 				title: "Mail",
@@ -62,7 +63,8 @@ export default {
 				icon: "IconTextApp",
 				title: "Text",
 				route: "TextAppConversations",
-				position: "screen"
+				position: "screen",
+				ready: true
 			}, {
 				icon: "IconCalendarApp",
 				title: "Calendar",
@@ -72,7 +74,8 @@ export default {
 				icon: "IconPhotosApp",
 				title: "Photos",
 				route: "PhotosAppAlbums",
-				position: "screen"
+				position: "screen",
+				ready: true
 			}, {
 				icon: "IconCameraApp",
 				title: "Camera",
@@ -102,12 +105,14 @@ export default {
 				icon: "IconClockApp",
 				title: "Clock",
 				route: "ClockAppWorldClock",
-				position: "screen"
+				position: "screen",
+				ready: true
 			}, {
 				icon: "IconCalculatorApp",
 				title: "Calculator",
 				route: "CalculatorAppEntry",
-				position: "screen"
+				position: "screen",
+				ready: true
 			}, {
 				icon: "IconNotesApp",
 				title: "Notes",
@@ -144,7 +149,7 @@ export default {
 	.dock
 		overflow: hidden
 		margin-top: auto
-		padding: 0.7em 1em 0.1em
+		padding: 0.7em 1.1em 0.1em
 		display: grid
 		grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr))
 		gap: 1em

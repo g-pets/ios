@@ -1,5 +1,6 @@
 <template lang="pug">
 .app-item(@click="openApp")
+	.notification(v-if="ready") 1
 	svg.app-icon(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000")
 		foreignObject(x="0" y="0")
 			component(:is="icon")
@@ -49,7 +50,8 @@ export default {
 	props: {
 		icon: String,
 		title: String,
-		route: String
+		route: String,
+		ready: Boolean
 	},
 	methods: {
 		openApp() {
@@ -64,6 +66,23 @@ export default {
 .app-item
 	cursor: pointer
 	text-align: center
+	position: relative
+	.notification
+		width: 1.3em
+		height: 1.3em
+		background: red
+		position: absolute
+		z-index: 2
+		top: -0.4em
+		right: -0.4em
+		border-radius: 50%
+		padding: 0.15em
+		border: 0.1em solid #FBF6FA
+		box-shadow: 0 0.06em 0.07em 0.01em rgba(#000,0.6)
+		fill: #fff
+		line-height: 1
+		font-weight: bold
+		color: #fff
 	.app-icon
 		width: 100%
 		overflow: hidden
