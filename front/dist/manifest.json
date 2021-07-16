@@ -1,16 +1,31 @@
 {
   "index.html": {
-    "file": "assets/index.36326422.js",
+    "file": "assets/index.7d9c25a9.js",
     "src": "index.html",
     "isEntry": true,
     "imports": [
-      "_vendor.d6c29b70.js"
+      "_vendor.7f023a6b.js"
+    ],
+    "dynamicImports": [
+      "src/layers/InstallationLayer.vue"
     ],
     "css": [
-      "assets/index.203f6e1f.css"
+      "assets/index.e30bbe96.css"
     ]
   },
-  "_vendor.d6c29b70.js": {
-    "file": "assets/vendor.d6c29b70.js"
+  "_vendor.7f023a6b.js": {
+    "file": "assets/vendor.7f023a6b.js"
+  },
+  "src/layers/InstallationLayer.vue": {
+    "file": "assets/InstallationLayer.524486e9.js",
+    "src": "src/layers/InstallationLayer.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor.7f023a6b.js",
+      "index.html"
+    ],
+    "css": [
+      "assets/InstallationLayer.590332d4.css"
+    ]
   }
 }

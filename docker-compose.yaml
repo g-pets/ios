@@ -7,7 +7,7 @@ services:
         build:
             context: ./front
             dockerfile: Dockerfile
-        image: ios1-front:1.0
+        image: ios1-front:0.1.0
         ports:
             - 81:5000 # Dev
             - 80:5001 # Preview
@@ -17,5 +17,5 @@ services:
             - ./front:/home/app
             - /home/app/node_modules
         working_dir: /home/app
-        command: tail -F anything
-        # command: npm run dev
+        # command: tail -F anything
+        command: npm run dev
