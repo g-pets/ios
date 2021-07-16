@@ -11,12 +11,7 @@
 
 
 <script>
-import navigationBar from '~/components/ui/navigationBar.vue'
-import navigationBarButton from '~/components/Buttons/NavigationBarButton.vue'
-import tabBar from '~/components/ui/tabBar.vue'
-import tabBarButton from '~/components/Buttons/TabBarButton.vue'
 export default {
-	components: {navigationBar, navigationBarButton, tabBar, tabBarButton},
 	setup() {
 		const appSections = [
 			{name: "ClockAppWorldClock", label: "World Clock", glyph: "globe"},

@@ -13,11 +13,7 @@
 import { computed } from "vue"
 import { useRouter, useRoute } from "vue-router"
 import useStore from "~/store/store"
-import navigationBar from "~/components/ui/navigationBar.vue"
-import navigationBarButton from "~/components/Buttons/NavigationBarButton.vue"
-import pictureItem from "~/components/ui/pictureItem.vue"
 export default {
-	components: { navigationBar, navigationBarButton, pictureItem },
 	setup() {
 		const router = useRouter()
 		const route = useRoute()

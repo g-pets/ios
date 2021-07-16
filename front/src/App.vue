@@ -22,11 +22,10 @@
 
 <script>
 import { useRouter } from 'vue-router'
-import homeButton from '~/components/Buttons/HomeButton.vue'
+import HomeButton from '~/components/Misc/HomeButton.vue'
 import deviceControl from "~/store/deviceState"
 export default {
-	name: "App",
-	components: { homeButton },
+	components: { HomeButton },
 	setup() {
 		const { deviceState, tornOff } = deviceControl()
 		const router = useRouter()
@@ -40,7 +39,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import "./assets/styles/index.styl"
+@import "./assets/Styles"
 .screenshot
 	position: absolute
 	top: 21px

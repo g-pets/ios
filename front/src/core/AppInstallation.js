@@ -47,29 +47,6 @@ const installationState = reactive({
 const runInstallation = async () => {
 	try {
 		const router = useRouter()
-		// console.info('Installation...')
-		// await setTimeout(function(){
-		// 	installationState.localStorage = localStorageTest()
-		// 	console.log('1. localStorageTest')
-		// }, 500)
-		// await setTimeout(function(){
-		// 	installationState.indexedDB = indexedDBTest()
-		// 	console.log('2. indexedDBTest')
-		// }, 700)
-		// await setTimeout(function(){
-		// 	installationState.fetchDataset = loadRandomData()
-		// 	console.log('3. loadRandomData')
-		// }, 1000)
-		// await setTimeout(function(){
-		// 	installationState.serviceWorker = registerSW()
-		// 	console.log('4. registerSW')
-		// }, 1500)
-		// await setTimeout(function(){
-		// 	const { appInstalled } = deviceControl()
-		// 	appInstalled(true)
-		// 	router.push({name:'lockScreen'})
-		// 	console.log('5. Router')
-		// }, 2000)
 		installationState.localStorage = await localStorageTest()
 		installationState.indexedDB = await indexedDBTest()
 		installationState.fetchDataset = await loadRandomData()
@@ -77,10 +54,6 @@ const runInstallation = async () => {
 		const { appInstalled } = deviceControl()
 		appInstalled(true)
 		router.push({name:'LockScreen'})
-		
-		
-		
-		// console.log('Installed!')
 	} catch (error) {
 		console.error('Application not installed')
 	}

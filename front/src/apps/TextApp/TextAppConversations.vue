@@ -4,7 +4,7 @@ navigation-bar(title="Messages")
 		navigation-bar-button(label="Edit")
 	template(#right)
 		navigation-bar-button(glyph="plus")
-list-view(:list="records" v-slot="records")
+table-view(:list="records" v-slot="records")
 	.list-item.message-preview(@click="openConversation(records.item.contactID)")
 		.message-badge(:class="{unread: isUnread(records.item.messages)}")
 		.message-body
@@ -21,12 +21,7 @@ list-view(:list="records" v-slot="records")
 <script>
 import useStore from "~/store/store"
 import { useRouter } from "vue-router"
-import navigationBar from "~/components/ui/navigationBar.vue"
-import navigationBarButton from "~/components/Buttons/NavigationBarButton.vue"
-import toggleButton from "~/components/Buttons/ToggleButton.vue"
-import listView from "~/components/ui/listView.vue"
 export default {
-	components: { navigationBar, navigationBarButton, toggleButton, listView },
 	setup() {
 		document.title = "All Messages | iOS"
 		const router = useRouter()

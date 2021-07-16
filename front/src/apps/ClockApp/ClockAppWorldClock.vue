@@ -3,7 +3,7 @@
 	.cities
 		.city(v-for="city in cities")
 			.city-name {{city.name}}
-			clock(:utc="city.utc")
+			analog-clock(:utc="city.utc")
 			.city-time
 				.time {{city.hour}}:{{city.minute}}
 				.day Today
@@ -13,10 +13,10 @@
 
 <script>
 import { reactive, onMounted } from "vue"
-import worldMap from "~/components/svg/ui/worldMap.vue"
-import clock from "~/components/elements/clock.vue"
+import WorldMap from "~/assets/UI/WorldMap.vue"
+import AnalogClock from "~/components/Misc/AnalogClock.vue"
 export default {
-	components: { worldMap, clock },
+	components: { WorldMap, AnalogClock },
 	setup() {
 		const cities = reactive([
 			{name: "Los Angeles", utc: -7},

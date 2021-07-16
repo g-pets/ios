@@ -1,10 +1,9 @@
 <template lang="pug">
-.ui-glare(:style="{height, opacity, borderRadius}")
+.glossy-layer(:style="{ height, opacity, borderRadius }")
 </template>
 
 <script>
 export default {
-	name: "uiGlare",
 	props: {
 		height: String,
 		opacity: String,
@@ -14,7 +13,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.ui-glare
+.glossy-layer
 	width: 100%
 	position: absolute
 	border-radius: 0 0 50% 50%/0 0 35% 35%

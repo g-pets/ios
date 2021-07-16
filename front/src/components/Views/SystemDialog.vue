@@ -1,20 +1,19 @@
 <template lang="pug">
 //- img(src="/screens/systemDialog.png")
 .system-dialog
-	uiGlare(height="1.2em" opacity="0.7")
+	glossy-layer(height="1.2em" opacity="0.7")
 	.title(v-if="title") {{title}}
 	.content(v-if="content") {{content}}
 	.buttons(v-if="buttons")
 		button(v-for="button in buttons" @click="button.method")
-			uiGlare(height="45%" opacity="0.7" borderRadius="0")
+			glossy-layer(height="45%" opacity="0.7" borderRadius="0")
 			.label {{button.label}}
 </template>
 
 <script>
-import uiGlare from '~/components/atoms/uiGlare.vue'
+import GlossyLayer from '~/components/Misc/GlossyLayer.vue'
 export default {
-	name: "systemDialog",
-	components: {uiGlare},
+	components: { GlossyLayer },
 	props: {
 		title: String,
 		content: String,

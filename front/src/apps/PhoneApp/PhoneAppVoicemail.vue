@@ -11,10 +11,7 @@
 
 
 <script>
-import navigationBar from "~/components/ui/navigationBar.vue"
-import navigationBarButton from "~/components/Buttons/NavigationBarButton.vue"
 export default {
-	components: { navigationBar, navigationBarButton },
 	setup() {
 		document.title = "Phone App - Voicemail | iOS"
 	}

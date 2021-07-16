@@ -6,7 +6,6 @@ button.tab-bar-button
 
 <script>
 export default {
-	name: "tabBarButton",
 	props: {
 		label: String,
 		glyph: String,

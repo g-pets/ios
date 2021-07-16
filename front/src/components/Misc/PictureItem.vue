@@ -1,6 +1,6 @@
 <template lang="pug">
 .picture-item
-	blurhash(:blurhash="photo.blur_hash")
+	blur-hash(:blurhash="photo.blur_hash")
 	picture(:class="{loaded}")
 		source(
 			sizes="100px"
@@ -15,11 +15,11 @@
 </template>
 
 <script>
-import blurhash from '~/components/atoms/blurhash.vue'
+import BlurHash from '~/components/Misc/BlurHash.vue'
 import { ref } from "vue"
 export default {
 	name: "pictureItem",
-	components: { blurhash },
+	components: { BlurHash },
 	props: {
 		photo: Object
 	},

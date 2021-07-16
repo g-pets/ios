@@ -5,7 +5,7 @@
 			toggle-button(id="recents-calls" :data="sections" v-model="section")
 		template(#right)
 			navigation-bar-button(label="Clear" @click="deleteAllRecords")
-	list-view(:list="sortedRecords" v-slot="sortedRecords")
+	table-view(:list="sortedRecords" v-slot="sortedRecords")
 		.list-item(@click="callContact(sortedRecords.item.phoneNumber.raw)" :class="{missed:sortedRecords.item.missed}")
 			.full-name(v-if="sortedRecords.item.lastName")
 				span.last-name {{sortedRecords.item.lastName}}&nbsp;
@@ -16,14 +16,9 @@
 <script>
 import { ref, computed } from "vue"
 import useStore from "~/store/store"
-import navigationBar from "~/components/ui/navigationBar.vue"
-import navigationBarButton from "~/components/Buttons/NavigationBarButton.vue"
-import toggleButton from "~/components/Buttons/ToggleButton.vue"
-import listView from "~/components/ui/listView.vue"
 import AppFunctions from "~/core/AppFunctions"
 import { sortObjectsByInt } from "~/core/AppHelpers"
 export default {
-	components: { navigationBar, navigationBarButton, toggleButton, listView },
 	setup() {
 		document.title = "Phone App - Recents | iOS"
 		const { records, deleteAllRecords } = useStore("calls")

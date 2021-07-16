@@ -8,7 +8,6 @@
 
 <script>
 export default {
-	name: "toggleButton",
 	emits: ['update:modelValue'],
 	props: {
 		modelValue: Object,

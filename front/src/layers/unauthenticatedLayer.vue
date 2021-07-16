@@ -10,9 +10,9 @@
 
 <script>
 import { dateTime } from "~/store/appState"
-import slideToUnlock from "~/components/elements/slideToUnlock.vue"
+import SlideToUnlock from "~/components/Misc/SlideToUnlock.vue"
 export default {
-	components: { slideToUnlock },
+	components: { SlideToUnlock },
 	setup() {
 		return {dateTime}
 	}

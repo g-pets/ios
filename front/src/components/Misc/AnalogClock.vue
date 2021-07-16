@@ -14,9 +14,8 @@ svg.clock(:class="{night:time.night}" viewBox="0 0 670 670" fill="none" xmlns="h
 
 
 <script>
-import {reactive, computed, onMounted} from 'vue'
+import {reactive, onMounted} from 'vue'
 export default {
-	name: "Clock",
 	props: {
 		utc: Number
 	},

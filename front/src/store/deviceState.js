@@ -3,7 +3,8 @@ import { reactive } from "vue"
 
 const deviceState = reactive({
 	appInstalled: false,
-	deviceUnlocked: false
+	deviceUnlocked: false,
+	tornedOff: false
 })
 
 export default function deviceControl() {

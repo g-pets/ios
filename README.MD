@@ -14,3 +14,6 @@ Change HMR Host to Your Machine Local Network IP (10.0.1.4 > localhost)
 [] - List scrolling on mobile
 [] - Recent Calls Sort (New -> Old)
 [] - Loading State
+[] - Back Button
+[] - Messages Bubbles
+[] - Contacts List

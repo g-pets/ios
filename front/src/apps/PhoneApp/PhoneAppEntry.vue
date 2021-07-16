@@ -8,9 +8,7 @@
 <script>
 import { onMounted, onUnmounted } from "vue"
 import useStore from "~/store/store"
-import tabBar from "~/components/ui/tabBar.vue"
 export default {
-	components: { tabBar },
 	setup() {
 		document.title = "Phone App | iOS"
 		const { recordsToStore, cleanStore } = useStore("contacts")

@@ -26,12 +26,9 @@
 import { ref, computed, onMounted, onUnmounted } from "vue"
 import { useRouter, useRoute } from "vue-router"
 import useStore from "~/store/store"
-import pictureItem from '~/components/ui/pictureItem.vue'
 import { Howl } from "howler"
 const callTone = new Howl({src: ["/sounds/ui/call-tone.webm", "/sounds/ui/call-tone.mp3", "/sounds/ui/call-tone.wav"], volume: 1, loop: true})
-
 export default {
-	components: { pictureItem },
 	setup() {
 		document.title = "Phone App - Calling | iOS"
 		const router = useRouter()

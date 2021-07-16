@@ -69,12 +69,4 @@
     <path d="M376 134v-2-1h-3v-2l-1-1v-1h-1l-2 1v1l1 1-1 3v1l1 2 2 1 3-1h1v-1-1z"/>
   </g>
 </svg>
-
-
 </template>
-
-<script>
-export default {
-	name: "worldMap",
-}
-</script>

@@ -14,11 +14,7 @@ navigation-bar(title="Messages")
 import { ref, computed, onMounted } from "vue"
 import { useRouter, useRoute } from "vue-router"
 import useStore from "~/store/store"
-import navigationBar from "~/components/ui/navigationBar.vue"
-import navigationBarButton from "~/components/Buttons/NavigationBarButton.vue"
-import listView from "~/components/ui/listView.vue"
 export default {
-	components: {navigationBar, navigationBarButton, listView},
 	setup() {
 		document.title = "Text App - Messages | iOS"
 		const visible = ref(false)

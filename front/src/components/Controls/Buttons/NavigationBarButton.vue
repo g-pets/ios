@@ -6,11 +6,10 @@ button.navigation-bar-button
 
 <script>
 export default {
-	name: "navigationBarButton",
 	props: {
 		label: String,
 		glyph: String
-	},
+	}
 }
 </script>
 

@@ -1,7 +1,7 @@
 <template lang="pug">
 .albums-view.section-scrolled
 	navigation-bar(title="Photo Albums" sticky)
-	list-view(:list="records" v-slot="records")
+	table-view(:list="records" v-slot="records")
 		.list-item.album(@click="openAlbum(records.item.id)")
 			picture-item.cover(:photo="records.item.photos[0]")
 			.title {{records.item.title}}
@@ -12,11 +12,7 @@
 <script>
 import { useRouter } from "vue-router"
 import useStore from "~/store/store"
-import pictureItem from '~/components/ui/pictureItem.vue'
-import navigationBar from '~/components/ui/navigationBar.vue'
-import listView from "~/components/ui/listView.vue"
 export default {
-	components: { pictureItem, navigationBar, listView },
 	setup() {
 		document.title = "Photos App | iOS"
 		const router = useRouter()
