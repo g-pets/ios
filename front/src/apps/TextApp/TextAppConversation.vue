@@ -29,16 +29,19 @@ export default {
 		const goToConversations = () => router.push({name: "TextAppConversations"})
 		const conversation = computed(() => records.value.find(record => record.contactID === route.params.id))
 		onMounted(() => {
-			let container = messagesContainer.value
-			container.scrollTo(0,container.scrollHeight)
-			visible.value = true
+			try {
+				let container = messagesContainer.value
+				container.scrollTo(0,container.scrollHeight)
+				visible.value = true
+			} catch(error) {
+				console.log(error)
+			}
 		})
 		return { visible, messagesContainer, conversation, goToConversations }
 	}
 
 }
 </script>
-
 
 <style lang="stylus" scoped>
 .messages

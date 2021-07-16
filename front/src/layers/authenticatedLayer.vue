@@ -13,7 +13,7 @@ systemDialog(
 import glyphsSet from "~/components/svg/glyphs/glyphsSet.vue"
 import systemDialog from "~/components/ui/systemDialog.vue"
 import { useRegisterSW } from "virtual:pwa-register/vue"
-// import { activityWatcher } from "~/utils/activityWatcher"
+// import { activityWatcher } from "~/core/ActivityWatcher"
 export default {
 	name: "entryLayer",
 	components: { glyphsSet, systemDialog },

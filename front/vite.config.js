@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import { VitePWA } from 'vite-plugin-pwa'
+import { defineConfig } from "vite"
+import vue from "@vitejs/plugin-vue"
+import { VitePWA } from "vite-plugin-pwa"
 import { resolve } from "path"
 
 export default defineConfig({
@@ -8,8 +8,7 @@ export default defineConfig({
 		vue(),
 		VitePWA({
 			base: '/',
-			// includeAssets: ['img/**/*.*'],
-			includeAssets: ['img/wallpapers/*.*'],
+			includeAssets: ['img/**/*.*', 'icons/favicon.ico', 'icons/favicon.svg'],
 			manifest: {
 				"name": "iOS 1.0",
 				"short_name": "iOS",
@@ -18,10 +17,10 @@ export default defineConfig({
 				"background_color": "#000000",
 				"theme_color": "#000000",
 				"icons": [
-					{ "src": "./img/icons/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
-					{ "src": "./img/icons/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" },
-					{ "src": "./img/icons/android-chrome-maskable-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
-					{ "src": "./img/icons/android-chrome-maskable-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+					{ "src": "./icons/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+					{ "src": "./icons/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" },
+					{ "src": "./icons/android-chrome-maskable-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+					{ "src": "./icons/android-chrome-maskable-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
 				]
 			}
 		})

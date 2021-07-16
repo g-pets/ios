@@ -1,3 +1,4 @@
 
 .DS_Store
 front/src/generator/atoms/secrets.js
+front/src/core/DataGenerator/atoms/secrets.js

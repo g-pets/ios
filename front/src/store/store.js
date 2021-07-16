@@ -43,7 +43,7 @@ export default function useStore(collection) {
 			const db = await openDB('iOS', 1)
 			let result = await db.getAllFromIndex(collection, 'id')
 			records.value = result
-			console.info(`Records To Store (${records.value.length}):  ${collection}`)
+			// console.info(`Records To Store (${records.value.length}):  ${collection}`)
 		} catch (error) {
 			console.error(error)
 		}

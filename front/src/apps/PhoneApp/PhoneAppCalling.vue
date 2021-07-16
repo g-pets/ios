@@ -1,9 +1,15 @@
 <template lang="pug">
-.view-calling.waiting
+.app-view.phone-app-calling.waiting
 	.top-panel
-		.calling-contact
-			.number.dark-text-shadow {{$phoneNumber(phoneNumber)}}
-			.state calling mobile...
+		template(v-if="contact")
+			.calling-contact
+				.number.dark-text-shadow {{contact.firstName}} {{contact.lastName}}
+				.state calling {{phoneNumberType}}...
+			picture-item.portrait(:photo="contact.portrait")
+		template(v-else)
+			.calling-contact
+				.number.dark-text-shadow {{$phoneNumber(phoneNumber)}}
+				.state calling...
 	.control-panel.glare
 		.cell(v-for="key in keys" :class="key.class")
 			glyph(:name="key.glyph")
@@ -17,13 +23,34 @@
 
 
 <script>
-import { computed } from "vue"
+import { ref, computed, onMounted, onUnmounted } from "vue"
 import { useRouter, useRoute } from "vue-router"
+import useStore from "~/store/store"
+import pictureItem from '~/components/ui/pictureItem.vue'
+import { Howl } from "howler"
+const callTone = new Howl({src: ["/sounds/ui/call-tone.webm", "/sounds/ui/call-tone.mp3", "/sounds/ui/call-tone.wav"], volume: 1, loop: true})
+
 export default {
+	components: { pictureItem },
 	setup() {
 		document.title = "Phone App - Calling | iOS"
 		const router = useRouter()
 		const route = useRoute()
+		const phoneNumber = route.params.number
+		const { records } = useStore("contacts")
+		const phoneNumberType = ref("")
+		const contact = computed(() => {
+			return records.value.find(record => {
+				let number = record.phones.some(number => {
+					if(number.raw === phoneNumber) {
+						phoneNumberType.value = number.type
+						return true
+					}
+				})
+				return number
+			})
+		})
+		const endCall = () => router.go(-1)
 		const keys = [
 			{label: "mute", glyph: "mute", class: "mute"},
 			{label: "keypad", glyph: "keypad_rouded", class: "keypad"},
@@ -32,9 +59,10 @@ export default {
 			{label: "hold", glyph: "hold", class: "hold"},
 			{label: "contacts", glyph: "contacts", class: "contacts"},
 		]
-		const phoneNumber = computed(() => route.params.number)
-		const endCall = () => router.push({name: "PhoneAppKeypad"})
-		return { keys, phoneNumber, endCall }
+		onMounted(() => callTone.play())
+		onUnmounted(() => callTone.stop())
+		
+		return { keys, contact, phoneNumber, phoneNumberType, endCall }
 	}
 }
 </script>
@@ -42,7 +70,7 @@ export default {
 
 <style lang="stylus" scoped>
 @import "../../assets/styles/mixins.styl"
-.view-calling
+.app-view.phone-app-calling
 	position: absolute
 	top: 0
 	left: 0
@@ -69,13 +97,14 @@ export default {
 			.state
 				margin-top: 0.45em
 				font-size: 1.4em
-		.photo
+		.portrait
 			margin-left: auto
 			flex: 0 0 auto
 			width: 4em
 			height: 4em
 			border-radius: 0.3em
 			background: #444
+			object-fit: cover
 	.control-panel
 		font-size: 0.8em
 		width: 85%

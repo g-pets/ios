@@ -22,7 +22,7 @@
 
 <script>
 import { onMounted, computed } from "vue"
-import { runInstallation, installationState } from "~/utils/installApp"
+import { runInstallation, installationState } from "~/core/AppInstallation"
 export default {
 	name: "viewLoading",
 	setup() {

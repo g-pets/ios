@@ -153,9 +153,9 @@ export default {
 		display: grid
 		grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr))
 		gap: 1em
-		// background: linear-gradient(180deg, #8d8d8d 80%, #6e6e6e 80%)
-		background: url("/temp/ui/dock.jpg")
+		background: url("/img/ui/dock.jpg"), linear-gradient(180deg, #8d8d8d 82%, #6e6e6e 82%)
 		background-size: cover
+		background-position: center bottom
 		width: 100%
 		:deep(.app-item)
 			.app-icon

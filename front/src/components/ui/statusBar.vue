@@ -1,9 +1,10 @@
 <template lang="pug">
 .status-bar
 	.group.left
-		glyph(name="signal")
-		.operator AT&T {{connectionInfo.type}}
-		glyph(name="wifi")
+		template(v-if="connectionInfo.online")
+			glyph(name="signal")
+			.operator AT&T {{connectionInfo.type}}
+			glyph(name="wifi")
 	.group.center
 		glyph(v-if="!deviceState.deviceUnlocked" name="locked")
 		.time(v-else) {{dateTime.time}}
@@ -44,6 +45,7 @@ export default {
 		})
 
 		let connectionInfo = reactive({
+			online: 'true',
 			type: ''
 		})
 
@@ -60,6 +62,14 @@ export default {
 			})
 		}
 		
+		// Connection
+		// if(navigator.online) {
+		// 	let online = navigator.online
+		// 	connectionInfo.online = online
+		// 	online.addEventListener('change', function() {
+		// 		connectionInfo.online = navigator.online
+		// 	})
+		// }
 		if(navigator.connection) {
 			let connection = navigator.connection
 			connectionInfo.type = connection.effectiveType

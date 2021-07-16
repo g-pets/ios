@@ -29,6 +29,7 @@ export default {
 	display: flex
 	justify-content: space-between
 	align-items: center
+	min-height: 45px
 	.title
 		text-shadow: 0px -0.05em 0 rgba(#000,.5)
 		font-size: 1.3em
@@ -40,15 +41,14 @@ export default {
 		overflow: hidden
 		white-space: nowrap
 	.group
-		min-width: 5em
-		flex: 1 1 auto
+		min-width: 30%
+		flex: 1 0 auto
 		display: flex
 		&.left
 			justify-content: flex-start
 		&.center
 			justify-content: center
-			// width: 5em
-			flex: 2 1 auto
+			flex: 100 0 auto
 		&.right
 			justify-content: flex-end
 	&.sticky

@@ -24,7 +24,7 @@ export default {
 	.label
 		text-shadow: 0px -0.05em 0 rgba(#000,.5)
 		// padding: 0.6em 0.9em 0.6em
-		padding: 0.6em 0.5em 0.6em
+		padding: 0.6em 0.5em
 		font-weight: bold
 		line-height: 1
 		color: #fefefe

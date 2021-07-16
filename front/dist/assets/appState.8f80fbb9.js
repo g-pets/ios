@@ -1,1 +1,0 @@
-import{r as e,h as t}from"./vendor.76519a72.js";const n={hour12:!1,hour:"2-digit",minute:"2-digit"},o={weekday:"long",month:"long",day:"numeric"},r=e({});function a(){function e(){let e=new Date;r.time=e.toLocaleTimeString("en-US",n),r.date=e.toLocaleDateString("en-US",o)}return t((()=>{e(),setInterval(e,1e3)})),{runApp:a}}e({installed:!1,locked:!0});export{r as d,a as r};

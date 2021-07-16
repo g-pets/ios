@@ -8,6 +8,9 @@ Change HMR Host to Your Machine Local Network IP (10.0.1.4 > localhost)
 
 
 ## Bugs
-[] - TextApp: "Conversations Page" lost context after reload
-[] - PhoneApp: Reent Calls Store
-[] - Navbar elements position
+[] - TextApp: "Conversations Page" Lost context after "Hard Page Reload" (TypeError: can't access property "scrollTo", container is null)
+[] - PhoneApp: Recent Calls Store
+[] - Chrome Line height
+[] - List scrolling on mobile
+[] - Recent Calls Sort (New -> Old)
+[] - Loading State

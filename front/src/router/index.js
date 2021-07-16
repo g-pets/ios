@@ -3,50 +3,50 @@ import { createWebHistory, createRouter } from "vue-router"
 
 // ––––––––––––––– Layers ––––––––––––––– //
 const InstallationLayer = () => 	import('~/layers/InstallationLayer.vue')
-const EntryLayer = () => 			import('~/layers/EntryLayer.vue')
-const UnauthenticatedLayer = () => 	import('~/layers/UnauthenticatedLayer.vue')
-const AuthenticatedLayer = () => 	import('~/layers/AuthenticatedLayer.vue')
+import EntryLayer from '~/layers/EntryLayer.vue'
+import UnauthenticatedLayer from '~/layers/UnauthenticatedLayer.vue'
+import AuthenticatedLayer from '~/layers/AuthenticatedLayer.vue'
 
 
 // –––––––––––––––– Views ––––––––––––––– //
-const HomeScreen = () => 			import('~/views/HomeScreen.vue')
-const ComingSoon = () => 			import('~/apps/ComingSoon.vue')
+import HomeScreen from '~/views/HomeScreen.vue'
+import ComingSoon from '~/apps/ComingSoon.vue'
 
 
 // –––––––––––––––– Apps –––––––––––––––– //
 
 // Clock App
-const ClockAppEntry = () => 		import('~/apps/ClockApp/ClockAppEntry.vue')
-const ClockAppWorldClock = () => 	import('~/apps/ClockApp/ClockAppWorldClock.vue')
-const ClockAppAlarm = () => 		import('~/apps/ClockApp/ClockAppAlarm.vue')
-const ClockAppStopwatch = () => 	import('~/apps/ClockApp/ClockAppStopwatch.vue')
-const ClockAppTimer = () => 		import('~/apps/ClockApp/ClockAppTimer.vue')
+import ClockAppEntry from '~/apps/ClockApp/ClockAppEntry.vue'
+import ClockAppWorldClock from '~/apps/ClockApp/ClockAppWorldClock.vue'
+import ClockAppAlarm from '~/apps/ClockApp/ClockAppAlarm.vue'
+import ClockAppStopwatch from '~/apps/ClockApp/ClockAppStopwatch.vue'
+import ClockAppTimer from '~/apps/ClockApp/ClockAppTimer.vue'
 
 // Calculator App
-const CalculatorAppEntry = () => 	import('~/apps/CalculatorApp/CalculatorAppEntry.vue')
+import CalculatorAppEntry from '~/apps/CalculatorApp/CalculatorAppEntry.vue'
 
 // Camera App
-const CameraAppEntry = () => 		import('~/apps/CameraApp/CameraAppEntry.vue')
+import CameraAppEntry from '~/apps/CameraApp/CameraAppEntry.vue'
 
 // Photos App
-const PhotosAppEntry = () => 		import('~/apps/PhotosApp/PhotosAppEntry.vue')
-const PhotosAppAlbums = () => 		import('~/apps/PhotosApp/PhotosAppAlbums.vue')
-const PhotosAppAlbum = () => 		import('~/apps/PhotosApp/PhotosAppAlbum.vue')
+import PhotosAppEntry from '~/apps/PhotosApp/PhotosAppEntry.vue'
+import PhotosAppAlbums from '~/apps/PhotosApp/PhotosAppAlbums.vue'
+import PhotosAppAlbum from '~/apps/PhotosApp/PhotosAppAlbum.vue'
 
 // Phone App
-const PhoneAppEntry = () => 		import('~/apps/PhoneApp/PhoneAppEntry.vue')
-const PhoneAppFavorites = () => 	import('~/apps/PhoneApp/PhoneAppFavorites.vue')
-const PhoneAppRecents = () => 		import('~/apps/PhoneApp/PhoneAppRecents.vue')
-const PhoneAppContacts = () => 		import('~/apps/PhoneApp/PhoneAppContacts.vue')
-const PhoneAppContact = () => 		import('~/apps/PhoneApp/PhoneAppContact.vue')
-const PhoneAppKeypad = () => 		import('~/apps/PhoneApp/PhoneAppKeypad.vue')
-const PhoneAppCalling = () => 		import('~/apps/PhoneApp/PhoneAppCalling.vue')
-const PhoneAppVoicemail = () => 	import('~/apps/PhoneApp/PhoneAppVoicemail.vue')
+import PhoneAppEntry from '~/apps/PhoneApp/PhoneAppEntry.vue'
+import PhoneAppFavorites from '~/apps/PhoneApp/PhoneAppFavorites.vue'
+import PhoneAppRecents from '~/apps/PhoneApp/PhoneAppRecents.vue'
+import PhoneAppContacts from '~/apps/PhoneApp/PhoneAppContacts.vue'
+import PhoneAppContact from '~/apps/PhoneApp/PhoneAppContact.vue'
+import PhoneAppKeypad from '~/apps/PhoneApp/PhoneAppKeypad.vue'
+import PhoneAppCalling from '~/apps/PhoneApp/PhoneAppCalling.vue'
+import PhoneAppVoicemail from '~/apps/PhoneApp/PhoneAppVoicemail.vue'
 
 // Text App
-const TextAppEntry = () => 			import('~/apps/TextApp/TextAppEntry.vue')
-const TextAppConversations = () => 	import('~/apps/TextApp/TextAppConversations.vue')
-const TextAppConversation = () => 	import('~/apps/TextApp/TextAppConversation.vue')
+import TextAppEntry from '~/apps/TextApp/TextAppEntry.vue'
+import TextAppConversations from '~/apps/TextApp/TextAppConversations.vue'
+import TextAppConversation from '~/apps/TextApp/TextAppConversation.vue'
 
 
 

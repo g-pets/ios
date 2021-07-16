@@ -1,17 +1,17 @@
 <template lang="pug">
-navigation-bar
-	template(#center)
-		toggle-button(id="recents-calls" :data="sections" v-model="section")
-	template(#right)
-		navigation-bar-button(label="Clear" @click="deleteAllRecords")
-list-view(v-if="section.value == 'all'" :list="records" v-slot="records")
-	.list-item(@click="openContact(records.item.id)")
-		.full-name(v-if="records.item.lastName")
-			span.last-name {{records.item.lastName}}&nbsp;
-			span.first-name {{records.item.firstName}}
-		.phone-number(v-else) {{$phoneNumber(records.item.phoneNumber.raw)}}
+.app-view.phone-app-recents.flex-column-container
+	navigation-bar
+		template(#center)
+			toggle-button(id="recents-calls" :data="sections" v-model="section")
+		template(#right)
+			navigation-bar-button(label="Clear" @click="deleteAllRecords")
+	list-view(:list="sortedRecords" v-slot="sortedRecords")
+		.list-item(@click="callContact(sortedRecords.item.phoneNumber.raw)" :class="{missed:sortedRecords.item.missed}")
+			.full-name(v-if="sortedRecords.item.lastName")
+				span.last-name {{sortedRecords.item.lastName}}&nbsp;
+				span.first-name {{sortedRecords.item.firstName}}
+			.phone-number(v-else) {{$phoneNumber(sortedRecords.item.phoneNumber.raw)}}
 </template>
-
 
 <script>
 import { ref, computed } from "vue"
@@ -20,18 +20,29 @@ import navigationBar from "~/components/ui/navigationBar.vue"
 import navigationBarButton from "~/components/Buttons/NavigationBarButton.vue"
 import toggleButton from "~/components/Buttons/ToggleButton.vue"
 import listView from "~/components/ui/listView.vue"
+import AppFunctions from "~/core/AppFunctions"
+import { sortObjectsByInt } from "~/core/AppHelpers"
 export default {
 	components: { navigationBar, navigationBarButton, toggleButton, listView },
 	setup() {
 		document.title = "Phone App - Recents | iOS"
 		const { records, deleteAllRecords } = useStore("calls")
+		const { callContact } = AppFunctions()
 		const section = ref({value: "all", title: "All"})
 		const sections = [
 			{value: "all", title: "All"},
 			{value: "missed", title: "Missed"}
 		]
-		const missedCalls = computed(() => records.value.filter(call => call.missed))
-		return { records, missedCalls, deleteAllRecords, section, sections }
+		const sortedRecords = computed(() => {
+			if(section.value.value == "all") {
+				return sortObjectsByInt(records.value, "date")
+			} else {
+				let missed = records.value.filter(call => call.missed)
+				return sortObjectsByInt(missed, "date")
+			}
+		})
+
+		return { sortedRecords, deleteAllRecords, section, sections, callContact }
 	}
 }
 </script>
@@ -39,5 +50,7 @@ export default {
 <style lang="stylus" scoped>
 .phone-number
 	font-weight: bold
+.missed
+	color: red
 </style>
 

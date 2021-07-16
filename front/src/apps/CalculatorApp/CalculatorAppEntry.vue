@@ -60,7 +60,10 @@ export default {
 		}
 
 		const clear = () => display.value = ""
-		const equals = () =>  display.value = eval(display.value).toFixed(5) - 0
+		const equals = () =>  {
+			let result = Function('"use strict";return (' + display.value + ')')()
+			display.value = result.toFixed(5) - 0
+		}
 		return { display, keys, pressKey }
 	}
 }

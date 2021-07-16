@@ -1,31 +1,33 @@
 <template lang="pug">
-navigation-bar(title="Info")
-	template(#left)
-		navigation-bar-button(label="All Contacts" @click="goToContacts()")
-	template(#right)
-		navigation-bar-button(label="Edit")
-.contact.section-scrolled(v-if="contact")
-	.header
-		img.portrait(:src="contact.portrait")
-		.name {{contact.firstName}} {{contact.lastName}}
-	.contact-section(v-if="contact.phones")
-		.phone-number(v-for="number in contact.phones")
-			.type {{number.type}}
-			.number {{number.formatted}}
-		.phone-number
-			.type ringtone
-			.number Ascending
-	.contact-section(v-if="contact.emails")
-		.phone-number(v-for="number in contact.emails")
-			.type {{number.type}}
-			.number {{number.email}}
-	.actions-block
-		.action-block Text Message
-		.action-block Share Contact
-		template(v-if="contact.favorite")
-			.action-block Remove from Favorites
-		template(v-else="contact.favorite")
-			.action-block Add to Favorites
+.app-view.phone-app-contact.flex-column-container
+	navigation-bar(title="Info")
+		template(#left)
+			navigation-bar-button(label="All Contacts" @click="goToContacts()")
+		template(#right)
+			navigation-bar-button(label="Edit")
+
+	.contact.section-scrolled(v-if="contact")
+		.header
+			picture-item.portrait(:photo="contact.portrait")
+			.name {{contact.firstName}} {{contact.lastName}}
+		.contact-section(v-if="contact.phones")
+			.phone-number(v-for="number in contact.phones" @click="callContact(number.raw)")
+				.type {{number.type}}
+				.number {{number.formatted}}
+			.phone-number
+				.type ringtone
+				.number Ascending
+		.contact-section(v-if="contact.emails")
+			.phone-number(v-for="number in contact.emails")
+				.type {{number.type}}
+				.number {{number.email}}
+		.actions-block
+			.action-block Text Message
+			.action-block Share Contact
+			template(v-if="contact.favorite")
+				.action-block Remove from Favorites
+			template(v-else="contact.favorite")
+				.action-block Add to Favorites
 </template>
 
 
@@ -35,16 +37,19 @@ import { useRouter, useRoute } from "vue-router"
 import useStore from "~/store/store"
 import navigationBar from "~/components/ui/navigationBar.vue"
 import navigationBarButton from "~/components/Buttons/NavigationBarButton.vue"
+import pictureItem from '~/components/ui/pictureItem.vue'
+import AppFunctions from "~/core/AppFunctions"
 export default {
-	components: { navigationBar, navigationBarButton },
+	components: { navigationBar, navigationBarButton, pictureItem },
 	setup() {
 		document.title = "Phone App - Contact | iOS"
+		const { callContact } = AppFunctions()
 		const router = useRouter()
 		const route = useRoute()
 		const { records } = useStore("contacts")
 		const contact = computed(() => records.value.find(record => record.id === route.params.id))
 		const goToContacts = () => router.push({name: "PhoneAppContacts"})
-		return { contact, goToContacts }
+		return { contact, callContact, goToContacts }
 	}
 }
 </script>

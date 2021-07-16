@@ -1,5 +1,5 @@
 <template lang="pug">
-.keypad.section-scrolled
+.app-view.phone-app-keypad.section-scrolled
 	.phone-number {{$phoneNumber(phoneNumber)}}
 	button.key(v-for="key in keys" @click="addInt(key.val)")
 		.val {{key.val}}
@@ -12,21 +12,14 @@
 
 <script>
 import { ref } from "vue"
-import { useRouter } from "vue-router"
-import useStore from "~/store/store"
+import AppFunctions from "~/core/AppFunctions"
 export default {
 	setup() {
 		document.title = "Phone App - Keypad | iOS"
-		const { createRecord } = useStore("calls")
-		const router = useRouter()
+		const { callContact } = AppFunctions()
 		const phoneNumber = ref("")
 		const makeCall = () => {
-			console.log(phoneNumber.value)
-			router.push({name: "PhoneAppCalling", params: {number: phoneNumber.value}})
-			createRecord({
-				phoneNumber: {raw: phoneNumber.value},
-				outgoing: true
-			})
+			callContact(phoneNumber.value)
 		}
 		const addInt = (int) => {
 			if(phoneNumber.value.length > 9) return
@@ -65,7 +58,7 @@ export default {
 
 <style lang="stylus" scoped>
 @import "../../assets/styles/mixins.styl"
-.keypad
+.phone-app-keypad
 	display: grid
 	grid-template-columns: repeat(3, 1fr)
 	grid-auto-rows: 1fr

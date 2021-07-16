@@ -1,1 +1,0 @@
-import{o,c as n,a as s}from"./vendor.76519a72.js";const c={class:"app coming-soon-app flex-column-container"},a=s("div",{class:"section-scrolled coming-soon"},[s("h2",null,"Coming Soon")],-1);const e={render:function(s,e){return o(),n("div",c,[a])}};export default e;

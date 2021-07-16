@@ -1,12 +1,13 @@
 <template lang="pug">
-navigation-bar(title="All Contacts")
-	template(#right)
-		navigation-bar-button(glyph="plus" v-slot:right)
-list-view(:list="sortedRecords" v-slot="sortedRecords")
-	.list-item(@click="openRecord(sortedRecords.item.id)")
-		.full-name
-			span.last-name {{sortedRecords.item.lastName}}&nbsp;
-			span.first-name {{sortedRecords.item.firstName}}
+.app-view.phone-app-contacts.flex-column-container
+	navigation-bar(title="All Contacts")
+		template(#right)
+			navigation-bar-button(glyph="plus" v-slot:right)
+	list-view(:list="sortedRecords" v-slot="sortedRecords")
+		.list-item(@click="openRecord(sortedRecords.item.id)")
+			.full-name
+				span.last-name {{sortedRecords.item.lastName}}&nbsp;
+				span.first-name {{sortedRecords.item.firstName}}
 </template>
 
 
@@ -14,7 +15,7 @@ list-view(:list="sortedRecords" v-slot="sortedRecords")
 import { computed } from "vue"
 import useStore from "~/store/store"
 import { useRouter } from "vue-router"
-import { sortObjects } from "~/utils/helpers"
+import { sortObjects } from "~/core/AppHelpers"
 import navigationBar from "~/components/ui/navigationBar.vue"
 import navigationBarButton from "~/components/Buttons/NavigationBarButton.vue"
 import listView from "~/components/ui/listView.vue"
