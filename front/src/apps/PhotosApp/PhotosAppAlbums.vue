@@ -14,7 +14,6 @@ import { useRouter } from "vue-router"
 import useStore from "~/store/store"
 export default {
 	setup() {
-		document.title = "Photos App | iOS"
 		const router = useRouter()
 		const { records } = useStore("photos")
 		const openAlbum = (id) => router.push({name: "PhotosAppAlbum", params: {id}})

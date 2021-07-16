@@ -15,7 +15,7 @@
 			| in California.<br>
 			| Assembled in Prague by 
 			a(href="https://gololobov.dev" rel="noopener" target="_blank") Constantine Gololobov
-		.version ver. 0.1.0
+			.version version: 0.1.0
 
 //- .screenshot
 </template>
@@ -108,11 +108,8 @@ export default {
 			&:hover
 				a
 					text-decoration: underline
-		.version
-			color: #777
-			line-height: 1.3
-			font-size: 0.75em
-			margin-top: 0.5em
+			.version
+				margin-top: 0.5em
 		
 	small.credits:hover
 		@media (prefers-color-scheme: light)

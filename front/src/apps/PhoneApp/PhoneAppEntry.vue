@@ -14,7 +14,7 @@ export default {
 		const { recordsToStore, cleanStore } = useStore("contacts")
 		const appSections = [
 			{name: "PhoneAppFavorites", label: "Favorites", glyph: "favorite"},
-			{name: "PhoneAppRecents", label: "Recents", glyph: "recent"},
+			{name: "PhoneAppRecents", label: "Recents", glyph: "recent", disabled: true},
 			{name: "PhoneAppContacts", label: "Contacts", glyph: "contacts"},
 			{name: "PhoneAppKeypad", label: "Keypad", glyph: "keypad"},
 			{name: "PhoneAppVoicemail", label: "Voicemail", glyph: "voicemail"}

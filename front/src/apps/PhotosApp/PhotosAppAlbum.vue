@@ -1,5 +1,5 @@
 <template lang="pug">
-.album-view.section-scrolled
+.album-view.section-scrolled(v-if="album")
 	navigation-bar(:title="album.title" sticky)
 		template(#left)
 			navigation-bar-button(label="Photo Albums" @click="goToAlbums()")
@@ -18,7 +18,8 @@ export default {
 		const router = useRouter()
 		const route = useRoute()
 		const { records } = useStore("photos")
-		const album = computed(() => records.value.find(record => record.id === route.params.id))
+		const albumId = route.params.id
+		const album = computed(() => records.value.find(record => record.id === albumId))
 		const goToAlbums = () => router.push({name: "PhotosAppAlbums"})
 		return { album, goToAlbums}
 	}
@@ -26,7 +27,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import "../../assets/styles/mixins.styl"
+@import "../../assets/Styles/mixins.styl"
 .album-view
 	position: relative
 .navigation-bar

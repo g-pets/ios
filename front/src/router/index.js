@@ -217,7 +217,7 @@ const routes = [
 	},
 	{
 		path: "/:pathMatch(.*)*",
-		redirect: { name: "LockScreen" }
+		redirect: { name: "HomeScreen" }
 	}
 ]
 

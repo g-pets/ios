@@ -1,12 +1,13 @@
 <template lang="pug">
-navigation-bar(title="Messages")
-	template(#left)
-		navigation-bar-button(label="Messages" @click="goToConversations()")
-	template(#right)
-		navigation-bar-button(label="Clear")
-.messages.section-scrolled(ref="messagesContainer" v-if="conversation" :class="{visible}")
-	.message(v-for="message in conversation.messages" :class="{recieved:message.recieved, unread:message.unread}")
-		p(v-for="p in message.text") {{p}}
+.app-view.text-app-conversation.flex-column-container
+	navigation-bar(title="Messages")
+		template(#left)
+			navigation-bar-button(label="Messages" @click="goToConversations()")
+		template(#right)
+			navigation-bar-button(label="Clear")
+	.messages.section-scrolled(ref="messagesContainer" v-if="conversation" :class="{visible}")
+		.message(v-for="message in conversation.messages" :class="{recieved:message.recieved, unread:message.unread}")
+			p(v-for="p in message.text") {{p}}
 </template>
 
 
@@ -21,9 +22,10 @@ export default {
 		const messagesContainer = ref(null)
 		const router = useRouter()
 		const route = useRoute()
-		const { records } = useStore("conversations")
+		const recordId = route.params.id
+		const { records, deleteRecord } = useStore("conversations")
 		const goToConversations = () => router.push({name: "TextAppConversations"})
-		const conversation = computed(() => records.value.find(record => record.contactID === route.params.id))
+		const conversation = computed(() => records.value.find(record => record.contactID === recordId))
 		onMounted(() => {
 			try {
 				let container = messagesContainer.value
