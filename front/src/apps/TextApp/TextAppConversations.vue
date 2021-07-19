@@ -23,7 +23,7 @@ import useStore from "~/store/store"
 import { useRouter } from "vue-router"
 export default {
 	setup() {
-		document.title = "All Messages | iOS"
+		document.title = "Text App - All Messages | iOS 1.0"
 		const router = useRouter()
 		const { records } = useStore("conversations")
 		const openConversation = (id) => router.push({name: "TextAppConversation", params: {id}})

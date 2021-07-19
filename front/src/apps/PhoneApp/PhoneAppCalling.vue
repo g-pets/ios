@@ -30,7 +30,7 @@ import { Howl } from "howler"
 const callTone = new Howl({src: ["/sounds/ui/call-tone.webm", "/sounds/ui/call-tone.mp3", "/sounds/ui/call-tone.wav"], volume: 1, loop: true})
 export default {
 	setup() {
-		document.title = "Phone App - Calling | iOS"
+		document.title = "Phone App - Calling | iOS 1.0"
 		const router = useRouter()
 		const route = useRoute()
 		const phoneNumber = route.params.number

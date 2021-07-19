@@ -15,6 +15,7 @@ import { useRouter, useRoute } from "vue-router"
 import useStore from "~/store/store"
 export default {
 	setup() {
+		document.title = "Photos App - Album | iOS 1.0"
 		const router = useRouter()
 		const route = useRoute()
 		const { records } = useStore("photos")

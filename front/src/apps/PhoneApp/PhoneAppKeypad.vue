@@ -15,7 +15,7 @@ import { ref } from "vue"
 import AppFunctions from "~/core/AppFunctions"
 export default {
 	setup() {
-		document.title = "Phone App - Keypad | iOS"
+		document.title = "Phone App - Keypad | iOS 1.0"
 		const { callContact } = AppFunctions()
 		const phoneNumber = ref("")
 		const makeCall = () => {

@@ -5,7 +5,7 @@
 			.city-name {{city.name}}
 			analog-clock(:utc="city.utc")
 			.city-time
-				.time {{city.hour}}:{{city.minute}}
+				.time {{addZero(city.hour)}}:{{addZero(city.minute)}}
 				.day Today
 	world-map
 </template>
@@ -23,6 +23,10 @@ export default {
 			{name: "London", utc: 1},
 			{name: "Prague", utc: 2}
 		])
+		const addZero = (i) => {
+			if(i < 10) i = "0" + i
+			return i
+		}
 		const getTime = () => {
 			let d = new Date()
 			let hours = d.getHours()
@@ -34,7 +38,7 @@ export default {
 			})
 		}
 		onMounted(() => getTime())
-		return { cities }
+		return { cities, addZero }
 	}
 }
 </script>

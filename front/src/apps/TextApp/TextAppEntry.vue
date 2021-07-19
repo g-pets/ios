@@ -9,7 +9,7 @@ import { onMounted, onUnmounted } from "vue"
 import useStore from "~/store/store"
 export default {
 	setup() {
-		document.title = "Text App | iOS"
+		document.title = "Text App | iOS 1.0"
 		const { recordsToStore, cleanStore } = useStore("conversations")
 		onMounted(() => recordsToStore())
 		onUnmounted(() => cleanStore())

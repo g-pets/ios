@@ -20,8 +20,9 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+@import "../../assets/styles/mixins.styl"
 .navigation-bar
-	background: linear-gradient(180deg, #c1cbdb 0%, #8093b3 50%, #577398 100%)
+	gradient-v3(#c1cbdb, #8093b3, #577398)
 	box-shadow: inset 0 -1px 0 rgba(#000,0.3), inset 0 1px 0 rgba(#fff,0.5)
 	color: #fffffa
 	padding: 0.45em 0.3em
@@ -56,4 +57,5 @@ export default {
 		position: sticky
 		top: 0
 		left: 0
+		gradient-v50(rgba(#000,0.35), rgba(#000,0.5), rgba(#000,0.6), rgba(#000,0.6))
 </style>

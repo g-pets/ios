@@ -15,7 +15,7 @@
 			| in California.<br>
 			| Assembled in Prague by 
 			a(href="https://gololobov.dev" rel="noopener" target="_blank") Constantine Gololobov
-			.version version: 0.1.0
+			a.version(title="Github" href="https://github.com/gololobov-dev/iOS1" rel="noopener" target="_blank") version: 0.1.1
 
 //- .screenshot
 </template>
@@ -109,6 +109,7 @@ export default {
 				a
 					text-decoration: underline
 			.version
+				display: block
 				margin-top: 0.5em
 		
 	small.credits:hover

@@ -18,7 +18,7 @@ import { useRouter } from "vue-router"
 import { sortObjects } from "~/core/AppHelpers"
 export default {
 	setup() {
-		document.title = "Phone App - Contacts | iOS"
+		document.title = "Phone App - Contacts | iOS 1.0"
 		const router = useRouter()
 		const { records } = useStore("contacts")
 		const sortedRecords = computed(() => sortObjects(records.value, "lastName"))

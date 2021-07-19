@@ -26,10 +26,17 @@ export default {
 .content-body
 	background: #fff
 	box-shadow: inset 0px 3em 4em rgba(#000,.25)
+	// display: flex
+	// justify-content: center
+	// align-items: center
+	line-height: 1.6
 	.date
 		color: #333
-		text-align: center
 		font-size: 41em
-		line-height: 1.15
+		line-height: 700px
 		font-weight: bold
+		flex: 0 0 auto
+@-moz-document url-prefix()
+	.content-body .date
+		line-height: 1.2
 </style>

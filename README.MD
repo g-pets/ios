@@ -20,20 +20,14 @@ Also, one of the goal, is making this App super fast and light. Maybe less than 
 4. Navigate to: `localhost:81`
 
 ## ⚡️ ToDo (ASAP):
-- Messages Bubbles
-- Back Button
-- Contacts List
-- OS Loading Indication
-- OS Transitions
-- App Icons Optimization
-- ...
-- more Apps!
+- **Phone App:** Recent Calls Page
+- **Phone App:** Contacts List Styling
+- **Text App:** Messages Bubbles
+- **App Icons:** Optimizations
+- **Global:** Back Button
+- **Global:**: iOS Loading Indication
+- **Global:** iOS Transitions
+- more **Apps**!
 
 ## 🐞 Known Bugs:
 - **Text App:** "Conversations Page" Lost context after "Hard Page Reload" `TypeError: can't access property "scrollTo", container is null`
-- **Phone App:** Recent Calls Page
-- Fix Routes `"/" => "/locked/"`
-- Custom Navigation Bar colors
-- Table Scrolling on mobile
-- Chrome Line height
-- SVG Problems on Safari 😕

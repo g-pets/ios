@@ -18,9 +18,9 @@
 				.type ringtone
 				.number Ascending
 		.contact-section(v-if="contact.emails")
-			.phone-number(v-for="number in contact.emails")
+			.email-address(v-for="number in contact.emails")
 				.type {{number.type}}
-				.number {{number.email}}
+				.email {{number.email}}
 		.actions-block
 			.action-block Text Message
 			.action-block Share Contact
@@ -38,7 +38,7 @@ import useStore from "~/store/store"
 import AppFunctions from "~/core/AppFunctions"
 export default {
 	setup() {
-		document.title = "Phone App - Contact | iOS"
+		document.title = "Phone App - Contact | iOS 1.0"
 		const { callContact } = AppFunctions()
 		const router = useRouter()
 		const route = useRoute()
@@ -81,24 +81,28 @@ export default {
 		border: 1px solid #A2A7A9
 		line-height: 1
 		overflow: hidden
-		.phone-number
+		.phone-number, .email-address
 			display: flex
 			justify-content: center
 			align-items: center
-			padding: 0.8em 0.3em
+			padding: 0.8em 0.3em 0.7em
 			.type
 				font-size: 0.8em
 				color: #525C75
 				text-align: right
 				flex: 0 0 25%
-			.number
+			.number, .email
 				font-size: 0.9em
 				flex: 0 0 75%
 				color: #1C1C1C
 				padding-left: 0.5em
 				padding-right: 0.5em
+			.email
+				overflow: hidden
+				text-overflow: ellipsis
+				white-space: nowrap
 				
-			+ .phone-number
+			+ .phone-number, + .email-address
 				border-top: 1px solid #BABABA
 	.actions-block
 		display: flex

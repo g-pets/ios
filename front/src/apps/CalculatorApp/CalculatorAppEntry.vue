@@ -14,7 +14,7 @@
 import { ref, reactive } from "vue"
 export default {
 	setup() {
-		document.title = "Calculator App | iOS"
+		document.title = "Calculator App | iOS 1.0"
 		let display = ref("")
 		const keys = reactive([
 			{val: "m+", action: "memory", class: "memory"},

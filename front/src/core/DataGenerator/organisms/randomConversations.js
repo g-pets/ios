@@ -11,7 +11,7 @@ function randomConversations({q,contacts}) {
 			let contactIndex = randomNumber(0,contacts.length-1)
 			let contact = contacts[contactIndex]
 			let messagesCount = randomNumber(1,100)
-			let messages = randomMessages({q:messagesCount, p:1, s:[1,3], w:[4,10] })
+			let messages = randomMessages({q:messagesCount, p:1, s:[1,3], w:[3,7] })
 			let lastMessage = messages[messages.length-1]
 			let randomConversation = {
 				id: randomIds({q:1})[0],

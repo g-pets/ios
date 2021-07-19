@@ -20,7 +20,7 @@ import { useRouter } from "vue-router"
 import useStore from "~/store/store"
 export default {
 	setup() {
-		document.title = "Phone App - Favorites | iOS"
+		document.title = "Phone App - Favorites | iOS 1.0"
 		const { records } = useStore("contacts")
 		const router = useRouter()
 		const favorites = computed(() => records.value.filter(contact => contact.favorite))

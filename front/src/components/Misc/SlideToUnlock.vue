@@ -14,7 +14,7 @@ import deviceControl from "~/store/deviceState"
 export default {
 	setup() {
 		const { deviceUnlocked } = deviceControl()
-		document.addEventListener('touchmove', event => event.preventDefault(), { passive:false })
+		// document.addEventListener('touchmove', event => event.preventDefault(), { passive:false })
 		const router = useRouter()
 		const container = ref(null)
 		const toggle = ref(null)
@@ -62,7 +62,7 @@ export default {
 			document.removeEventListener('touchmove', dragLock, false)
 			document.removeEventListener('mouseup', dragStop)
 			document.removeEventListener('touchend', dragStop)
-			document.removeEventListener('touchmove', event => event.preventDefault())
+			// document.removeEventListener('touchmove', event => event.preventDefault())
 		}
 		
 

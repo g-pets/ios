@@ -2,8 +2,8 @@
 .app-item(@click="openApp")
 	.notification(v-if="ready") 1
 	svg.app-icon(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000")
-		foreignObject(x="0" y="0")
-			component(:is="icon")
+		foreignObject(x="0" y="0" width="1000" height="1000")
+			component(:is="icon" xmlns="http://www.w3.org/2000/xmlns/")
 	.app-title {{title}}
 </template>
 
@@ -80,9 +80,12 @@ export default {
 		border: 0.1em solid #FBF6FA
 		box-shadow: 0 0.06em 0.07em 0.01em rgba(#000,0.6)
 		fill: #fff
-		line-height: 1
+		line-height: 0.85
 		font-weight: bold
 		color: #fff
+	@-moz-document url-prefix()
+		.notification
+			line-height: 1
 	.app-icon
 		width: 100%
 		overflow: hidden

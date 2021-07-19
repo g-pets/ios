@@ -2,7 +2,7 @@
 .app-view.text-app-conversation.flex-column-container
 	navigation-bar(title="Messages")
 		template(#left)
-			navigation-bar-button(label="Messages" @click="goToConversations()")
+			navigation-bar-button(label="Messages" @click="goToConversations()" type="back")
 		template(#right)
 			navigation-bar-button(label="Clear")
 	.messages.section-scrolled(ref="messagesContainer" v-if="conversation" :class="{visible}")
@@ -17,13 +17,13 @@ import { useRouter, useRoute } from "vue-router"
 import useStore from "~/store/store"
 export default {
 	setup() {
-		document.title = "Text App - Messages | iOS"
+		document.title = "Text App - Messages | iOS 1.0"
 		const visible = ref(false)
 		const messagesContainer = ref(null)
 		const router = useRouter()
 		const route = useRoute()
 		const recordId = route.params.id
-		const { records, deleteRecord } = useStore("conversations")
+		const { records } = useStore("conversations")
 		const goToConversations = () => router.push({name: "TextAppConversations"})
 		const conversation = computed(() => records.value.find(record => record.contactID === recordId))
 		onMounted(() => {

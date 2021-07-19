@@ -13,6 +13,7 @@
 <script>
 export default {
 	setup() {
+		document.title = "Clock App | iOS 1.0"
 		const appSections = [
 			{name: "ClockAppWorldClock", label: "World Clock", glyph: "globe"},
 			{name: "ClockAppAlarm", label: "Alarm", glyph: "alarm"},

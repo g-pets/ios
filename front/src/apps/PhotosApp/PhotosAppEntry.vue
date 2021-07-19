@@ -8,7 +8,7 @@ import { onMounted, onUnmounted } from "vue"
 import useStore from "~/store/store"
 export default {
 	setup() {
-		document.title = "Photos App | iOS"
+		document.title = "Photos App | iOS 1.0"
 		const { recordsToStore, cleanStore } = useStore("photos")
 		onMounted(() => recordsToStore())
 		onUnmounted(() => cleanStore())

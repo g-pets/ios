@@ -11,7 +11,7 @@
 <script>
 export default {
 	setup() {
-		document.title = "Camera App | iOS"
+		document.title = "Camera App | iOS 1.0"
 	}
 }
 </script>

@@ -1,11 +1,13 @@
 import { createWebHistory, createRouter } from "vue-router"
 
+const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
 
 // ––––––––––––––– Layers ––––––––––––––– //
 const InstallationLayer = () => 	import('~/layers/InstallationLayer.vue')
 import EntryLayer from '~/layers/EntryLayer.vue'
 import UnauthenticatedLayer from '~/layers/UnauthenticatedLayer.vue'
 import AuthenticatedLayer from '~/layers/AuthenticatedLayer.vue'
+import NotSupportedLayer from '~/layers/NotSupportedLayer.vue'
 
 
 // –––––––––––––––– Views ––––––––––––––– //
@@ -56,19 +58,30 @@ import TextAppConversation from '~/apps/TextApp/TextAppConversation.vue'
 // ––––––––––––––– Routes ––––––––––––––– //
 const routes = [
 	{
+		path: "/not-supported/",
+		name: "NotSupportedLayer",
+		component: NotSupportedLayer
+	},
+	{ path: '/', redirect: { name: 'LockScreen' } },
+	{
 		path: "/installation/",
 		name: "installationScreen",
 		component: InstallationLayer,
 		beforeEnter: (to, from, next) => {
 			let appInstalled = JSON.parse(localStorage.getItem("appInstalled"))
+			if(isSafari) next({ name: 'NotSupportedLayer' })
 			if(appInstalled) next({ name: 'LockScreen' })
+			
 			else next()
 		},
 	}, {
+		path: "/",
 		component: EntryLayer,
+		namе: "EntryLayer",
 		beforeEnter: (to, from, next) => {
 			let appInstalled = JSON.parse(localStorage.getItem("appInstalled"))
-			if(!appInstalled) next({ name: 'installationScreen' })
+			if(isSafari) next({ name: 'NotSupportedLayer' })
+			else if(!appInstalled) next({ name: 'installationScreen' })
 			else next()
 		},
 		children: [

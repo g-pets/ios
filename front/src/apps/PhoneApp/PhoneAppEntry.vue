@@ -10,11 +10,11 @@ import { onMounted, onUnmounted } from "vue"
 import useStore from "~/store/store"
 export default {
 	setup() {
-		document.title = "Phone App | iOS"
+		document.title = "Phone App | iOS 1.0"
 		const { recordsToStore, cleanStore } = useStore("contacts")
 		const appSections = [
 			{name: "PhoneAppFavorites", label: "Favorites", glyph: "favorite"},
-			{name: "PhoneAppRecents", label: "Recents", glyph: "recent", disabled: true},
+			{name: "PhoneAppRecents", label: "Recents", glyph: "recent"},
 			{name: "PhoneAppContacts", label: "Contacts", glyph: "contacts"},
 			{name: "PhoneAppKeypad", label: "Keypad", glyph: "keypad"},
 			{name: "PhoneAppVoicemail", label: "Voicemail", glyph: "voicemail"}
