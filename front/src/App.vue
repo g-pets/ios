@@ -15,9 +15,8 @@
 			| in California.<br>
 			| Assembled in Prague by 
 			a(href="https://gololobov.dev" rel="noopener" target="_blank") Constantine Gololobov
-			a.version(title="Github" href="https://github.com/gololobov-dev/iOS1" rel="noopener" target="_blank") version: 0.1.1
+			a.version(title="Github" href="https://github.com/gololobov-dev/iOS1" rel="noopener" target="_blank") version: 0.1.2
 
-//- .screenshot
 </template>
 
 <script>
@@ -40,18 +39,6 @@ export default {
 
 <style lang="stylus">
 @import "./assets/Styles"
-.screenshot
-	position: absolute
-	top: 21px
-	left: 0
-	right: 0
-	width: 395px
-	height: 740px
-	z-index: 99999
-	background: url("/temp/screens/device.jpg")
-	background-size: cover
-	opacity: 1
-	margin: auto
 .device
 	display: flex
 	flex-direction: column

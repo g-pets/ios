@@ -19,7 +19,6 @@
 			button.key.action-key.chars.light-text__shadow .?123
 			button.key.action-key.space.dark-text__shadow(@click="pressSpace()") space
 			button.key.action-key.return.light-text__shadow return
-	//- .screenshot
 </template>
 
 <script>
@@ -51,21 +50,6 @@ export default {
 
 <style lang="stylus">
 @import "../../assets/styles/mixins.styl"
-.screenshot
-	position: absolute
-	bottom: 0px
-	left: 1px
-	background-image: url("/temp/screens/keyboard.jpg")
-	width: 320px
-	height: 480px
-	background-repeat: no-repeat
-	background-size: contain
-	z-index: 3000
-	opacity: 1
-	opacity: 0.2
-	pointer-events: none
-
-
 .keyboard-layer
 	position: relative
 	.input-container
