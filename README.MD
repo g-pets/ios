@@ -1,7 +1,6 @@
 # iOS 1.0 on Vue.js (early access 🐞🐞🐞)
 
 [![CodeQL](https://github.com/g-pets/ios/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/g-pets/ios/actions/workflows/codeql-analysis.yml)
-[![codebeat badge](https://codebeat.co/badges/e0df4bf4-a0f8-4b57-a47b-8e994384e20c)](https://codebeat.co/projects/github-com-g-pets-ios-main)
 
 Playing with Vue.js.
 Live version: [ios.gololobov.dev](https://ios.gololobov.dev)
